@@ -1,0 +1,315 @@
+@import url("https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap");
+:root {
+  --primary-400:#2979af;
+  --primary-500:#0361a1;
+  --primary-700:#024f8f;
+  --bg:#f9fafe21;
+}
+
+.btn-primary {
+  color: #fff;
+  background-color: var(--primary-500);
+  border-color: var(--primary-500);
+}
+
+.bg-primary {
+  background-color: var(--primary-500) !important;
+}
+
+.body1 {
+  font-size: 1rem;
+}
+
+.body2 {
+  font-size: 0.875rem;
+}
+
+.subtitle1 {
+  font-size: 1rem;
+}
+
+.subtitle2 {
+  font-size: 0.875rem;
+}
+
+.caption {
+  font-family: Roboto;
+  font-size: 0.75rem;
+}
+
+body {
+  font-family: 'Roboto', sans-serif !important;
+  background-color: var(--bg);
+}
+
+h2 {
+  margin-bottom: 0 !important;
+  margin-top: 0 !important;
+}
+
+h3 {
+  margin-bottom: 0;
+}
+
+h4 {
+  font-weight: 400;
+  font-size: 1rem;
+}
+
+.subHeading {
+  font-size: 14px;
+  font-weight: 400;
+  margin-bottom: 0;
+}
+
+.site-status i {
+  line-height: 0;
+}
+
+.authHeading p {
+  font-weight: 300;
+}
+
+.logoCenter {
+  width: 50%;
+}
+
+.formLayout label {
+  font-size: 14px;
+  font-weight: 500;
+  margin-bottom: 4px;
+  color: var(--bs-gray-dark);
+}
+
+.formLayout .form-control:focus {
+  -webkit-box-shadow: none;
+          box-shadow: none;
+  border-color: var(--primary-500);
+}
+
+.formLayout .form-control:hover {
+  border-color: var(--bs-dark);
+}
+
+.formLayout > div {
+  margin-top: 12px;
+}
+
+.loginLink {
+  color: var(--primary-500);
+  font-weight: 500;
+  text-decoration: none;
+}
+
+.loginLink:hover {
+  color: var(--primary-700);
+}
+
+.forgotPassword-btn {
+  border: none;
+  -webkit-box-shadow: none;
+          box-shadow: none;
+  outline: none;
+  background: transparent;
+  color: var(--primary-500);
+}
+
+.forgotPassword-btn:hover {
+  color: var(--primary-700);
+}
+
+/* card designign */
+.card {
+  border-radius: 14px;
+  border: none;
+  -webkit-box-shadow: 0 5px 10px rgba(154, 160, 185, 0.05), 0 15px 40px rgba(166, 173, 201, 0.2);
+          box-shadow: 0 5px 10px rgba(154, 160, 185, 0.05), 0 15px 40px rgba(166, 173, 201, 0.2);
+}
+
+/* Grids */
+.grid-row {
+  display: -ms-grid;
+  display: grid;
+  gap: 1rem;
+}
+
+.grid-row-col-1 {
+  -ms-grid-columns: 1fr;
+      grid-template-columns: 1fr;
+}
+
+.grid-row-col-2 {
+  -ms-grid-columns: 1fr 1fr;
+      grid-template-columns: 1fr 1fr;
+}
+
+.grid-row-col-3 {
+  -ms-grid-columns: 1fr 1fr 1fr;
+      grid-template-columns: 1fr 1fr 1fr;
+}
+
+.grid-row-80 {
+  -ms-grid-rows: 80px;
+      grid-template-rows: 80px;
+}
+
+.grid-row-100 {
+  -ms-grid-rows: 100px;
+      grid-template-rows: 100px;
+}
+
+.grid-row-200 {
+  -ms-grid-rows: 200px;
+      grid-template-rows: 200px;
+}
+
+.graphBg {
+  background: url(../img/Frame-1.svg) no-repeat #ffffff;
+  background-position: bottom -16px right -12px;
+  background-size: 100%;
+}
+
+.healthStatus {
+  gap: 8px;
+}
+
+.healthStatus-content {
+  -webkit-box-flex: 1;
+      -ms-flex-positive: 1;
+          flex-grow: 1;
+}
+
+.healthStatus-content .subHeading {
+  font-size: 12px;
+  font-weight: 400;
+  color: var(--bs-gray);
+}
+
+.healthStatus-value {
+  width: 46px;
+  height: 46px;
+  border-radius: 50%;
+  border: 1px solid #444;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -ms-flex-line-pack: center;
+      align-content: center;
+  font-size: 12px;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+
+.num {
+  color: var(--primary-500);
+}
+
+.card-body {
+  padding: 0.75rem;
+}
+
+.cardBgWave {
+  background: url(../img/waveElements.svg) no-repeat var(--primary-500);
+  color: #fff;
+  background-position: center bottom;
+}
+
+.cardBgWave .subHeading {
+  color: #fff;
+}
+
+.cardBgWave .healthStatus-value {
+  border-color: #fff;
+  color: #fff;
+}
+
+.cardBgWave .healthStatus-value .num {
+  color: #fff;
+}
+
+.siteHealthCard .cardTitle {
+  gap: 6px;
+}
+
+.siteHealthCard .cardTitle-content {
+  -webkit-box-flex: 1;
+      -ms-flex: 1 1 100%;
+          flex: 1 1 100%;
+}
+
+.siteHealthCard .cardTitle-icon {
+  -webkit-box-flex: 1;
+      -ms-flex: 1 1 10%;
+          flex: 1 1 10%;
+  max-width: 100px;
+}
+
+.siteHealthCard .cardTitle h3 {
+  font-size: 1.2rem;
+}
+
+.siteHealthCard .cardTitle span {
+  font-size: 0.8rem;
+}
+
+.siteHealthCard-content {
+  padding: 0.75rem;
+  background: url(../img/cardBaseNew.svg) no-repeat var(--primary-500);
+  border-radius: 14px;
+  color: #fff;
+  text-align: center;
+  background-position: bottom -24px center;
+  -ms-grid-rows: 120px;
+      grid-template-rows: 120px;
+}
+
+.siteHealthCard-content-details {
+  gap: 4px;
+}
+
+.siteHealthCard-content-details img {
+  width: 30px;
+}
+
+.siteHealthCard-content-details h6 {
+  margin-bottom: 0;
+  font-weight: 400;
+}
+
+.siteHealthCard-content-details span {
+  font-size: 12px;
+}
+
+.mobileHeader {
+  height: 56px;
+  width: 100%;
+  background: var(-bs-white);
+  padding-left: 12px;
+  padding-right: 12px;
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: 1fr 3fr 1fr;
+      grid-template-columns: 1fr 3fr 1fr;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  gap: 6px;
+}
+
+.mobileHeader a {
+  text-decoration: none;
+  color: var(--bs-dark);
+}
+
+.mobileHeader h2 {
+  text-align: center;
+  font-size: 18px;
+  font-weight: 400;
+  color: var(--bs-dark);
+}
+/*# sourceMappingURL=design.css.map */
