@@ -44,7 +44,7 @@
     <div class="container">
         <div class="row py-5">
             <div class="col ">
-                <img src="{{ asset('img/IGZY_logo.png') }}" alt="description of myimage" class="logoCenter">
+                <img src="{{ asset('img/IGZY_Logo.png') }}" alt="description of myimage" class="logoCenter">
 
             </div>
         </div>

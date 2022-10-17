@@ -108,7 +108,7 @@ class CustomerController extends Controller
             CURLOPT_FOLLOWLOCATION => true,
             CURLOPT_HTTP_VERSION => CURL_HTTP_VERSION_1_1,
             CURLOPT_CUSTOMREQUEST => 'POST',
-            CURLOPT_POSTFIELDS => '{"email":"'.$request->email.'","password":"'.$request->password.'"}',
+            CURLOPT_POSTFIELDS => '{"email":"' . $request->email . '","password":"' . $request->password . '"}',
             CURLOPT_HTTPHEADER => array(
                 'Content-Type: application/json',
                 'Cookie: JSESSIONID=eyJpdiI6IkIrYXM2b0UrN3lhTmROWEM4U2RLeGc9PSIsInZhbHVlIjoiT1JXMXlCZVp3dVFDSWVYckVsRlN1V0FzYXZHSGRzRkJ2d2NUaDFKZUtva0MycnVqdElPaVN1VlB2S3VwXC82bGRQQmVtTEdFRmhwTUswMzJ3aTF3QUNnPT0iLCJtYWMiOiJjMjIwZjQxMzNjNjA0ZjQxMGU4YzY5OGU1ZmVjNDA4NjBkMWE3ODIxZWNkZWJiMmRlYzA1MGNlZmFmMDc1MzBmIn0%3D'
@@ -120,14 +120,13 @@ class CustomerController extends Controller
         curl_close($curl);
         $data = json_decode($response);
 
-        if($data->code == 1){
+        if ($data->code == 1) {
             session()->put('user_id', 1);
+
             return redirect('home');
-        }
-        else if($data->message == "User doesnt found"){
+        } else if ($data->message == "User doesnt found") {
             echo "User not found";
-        }
-        else{
+        } else {
             echo "incorrect credentials";
         }
 
@@ -178,5 +177,38 @@ class CustomerController extends Controller
     public function sitelist(Request $request)
     {
         return view('deviceListTable', ['type' => $request->type, 'status' => $request->status]);
+    }
+
+    public function getData()
+    {
+
+        $curl = curl_init();
+
+        curl_setopt_array($curl, array(
+            CURLOPT_URL => 'http://54.197.121.111:8001/iot/1.6/public/getSiteHealthStatus?business_id=193',
+            CURLOPT_RETURNTRANSFER => true,
+            CURLOPT_ENCODING => '',
+            CURLOPT_MAXREDIRS => 10,
+            CURLOPT_TIMEOUT => 0,
+            CURLOPT_FOLLOWLOCATION => true,
+            CURLOPT_HTTP_VERSION => CURL_HTTP_VERSION_1_1,
+            CURLOPT_CUSTOMREQUEST => 'GET',
+            CURLOPT_HTTPHEADER => array(
+                'Cookie: JSESSIONID=eyJpdiI6IlZoK0kwbFZ2ODAycXBhaWJjaHFUVHc9PSIsInZhbHVlIjoiUEZ2WmNNK005dnRRUnYzYWgrOXJCRFYxYUoweVV6OUFQdkhRamhCbUpoQlpGXC8xblg4azRZSE9xZ3E2dVdGZ1VVUktIbk85Nk1nZ1JWMmxCNTJiM21nPT0iLCJtYWMiOiI3YjE1YTE4YTk4ODVjOGJhNTg0MjIwMjExMTAxNDNmMTljOTY3N2FjNGM5ODExZWYwMjU1MWYyMGQxOTQ2ZTc1In0%3D'
+            ),
+        ));
+
+        $response = curl_exec($curl);
+
+        curl_close($curl);
+        // echo $response;
+
+        // $data = array(
+        //     'key' => 'value',
+        // );
+        // $payload = json_encode($data);
+        return $response;
+
+
     }
 }

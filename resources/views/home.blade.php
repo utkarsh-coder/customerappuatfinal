@@ -331,6 +331,7 @@
                     </div>
                 </div>
             </div>
+            <p id="fetchHost" hidden>{{env('APP_URL')}}</p>
         </main>
         <!-- 
         <div class="card container enclosingContainer">

@@ -100,6 +100,7 @@ Route::get("/forgotmail", [CustomerController::class, "forgotmail"]);
 Route::post("/drilldown", [CustomerController::class, 'drilldown']);
 Route::post("/sitelist", [CustomerController::class, 'sitelist']);
 Route::get("/mapuser", [CustomerController::class, 'mapuser']);
+Route::get("/getData", [CustomerController::class, 'getData']);
 
 Route::post('/send-mail', [MailController::class, 'sendOTPMail']);
 Route::post("/verifyotp", [MailController::class, "verifyOTP"]);

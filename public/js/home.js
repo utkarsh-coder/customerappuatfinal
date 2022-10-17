@@ -4,10 +4,13 @@ console.log('running the home.js file');
 
 $(document).ready(function () {
 
-    fetch('http://54.197.121.111:8001/iot/1.6/public/getSiteHealthStatus?business_id=193').then(res => {
+    // http://54.197.121.111:8001/iot/1.6/public/getSiteHealthStatus?business_id=193
+    console.log();
+    fetch(document.getElementById('fetchHost').innerHTML+"/customerapp/public/getData").then(res => {
         return res.json();
     })
         .then(data => {
+            console.log('getData:  ', data);
             console.log(data.gl[0].offline);
             document.getElementById('siteoff').innerHTML = data.nvr[0].offline_count + data.gl[0].offline + data.in[0].in_offline_count;
             document.getElementById('sitearmed').innerHTML = data.in[0].arm_count;
