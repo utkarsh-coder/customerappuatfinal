@@ -176,14 +176,14 @@
                                 <div
                                     class="cardTitle d-flex justify-content-between align-items-start"
                                 >
-                                    <div class="cardTitle-content">
-                                        <img
+                                    <div style="width: 300px; height: 300px" id="graph1" class="cardTitle-content">
+                                        <!-- <img
                                             src="{{
                                                 asset('img/graphcards.svg')
                                             }}"
                                             class="w-100"
                                             alt=""
-                                        />
+                                        /> -->
                                     </div>
                                 </div>
                             </div>

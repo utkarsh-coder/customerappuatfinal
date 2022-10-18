@@ -5,7 +5,7 @@
 
 var ROOT_PATH = 'https://echarts.apache.org/examples';
 
-var chartDom1 = document.getElementById('main1');
+var chartDom1 = document.getElementById('graph1');
 var myChart1 = echarts.init(chartDom1);
 var option1;
 // let text = '';
