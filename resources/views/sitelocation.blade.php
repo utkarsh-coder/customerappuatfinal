@@ -5,16 +5,26 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Site Health</title>
+
+    <link
+            href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css"
+            rel="stylesheet"
+            integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC"
+            crossorigin="anonymous"
+        />
+        <script
+            src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
+            integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
+            crossorigin="anonymous"
+        ></script>
+        <link rel="stylesheet" href="{{ asset('css/design.css') }}" />
+
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.1/jquery.min.js" integrity="sha512-aVKKRRi/Q/YV+4mjoKBsE4x3H+BkegoM/em46NNlCqNTmUYADjBbeNefNxYV7giUp0VxICtqdrbqU7iVaeZNXA==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
 
     <!-- Latest compiled and minified CSS -->
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@3.3.7/dist/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
-
-    <!-- Latest compiled and minified JavaScript -->
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@3.3.7/dist/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
-
+     
     <style>
         .enclosingContainer {
             width: 40rem;
@@ -115,6 +125,144 @@
 
 <body>
 
+<main>
+            <header class="mobileHeader">
+                <a href="">
+                    <img src="{{ asset('img/backArrow.svg') }}" alt="" />
+                </a>
+                <h2>Site Health</h2>
+            </header>
+
+            <div class="pt-3 pb-4 bg-primary">
+                <div class="container pb-2">
+                    <div class="row">
+                        <div class="col">
+                            <h2 class="text-white">Current Status</h2>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="container">
+                    
+                    <div class="grid-row grid-row-col-3 grid-row-80">
+                        <div class="card">
+                            <div class="card-body site-status">
+                                <div
+                                    class="d-flex flex-column justify-content-between h-100"
+                                >
+                                    <p class="subHeading">Off-Devices</p>
+                                    <span id="siteoff" class="num">...</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="card">
+                            <div class="card-body site-status">
+                                <div
+                                    class="d-flex flex-column justify-content-between h-100"
+                                >
+                                    <p class="subHeading">Armed</p>
+                                    <span id="sitearmed" class="num">...</span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="card">
+                            <div class="card-body site-status">
+                                <div
+                                    class="d-flex flex-column justify-content-between h-100"
+                                >
+                                    <p class="subHeading">Disamrmed</p>
+                                    <span id="sitedisarmed" class="num"
+                                        >...</span
+                                    >
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+
+            <!-- repeat section  start -->
+            <div class="container my-3">
+                <div class="row">
+                    
+                    <div class="col-12">
+                        <div class="card siteHealthCard">
+                            <div class="card-body">
+                                <div
+                                    class="cardTitle d-flex justify-content-between align-items-start"
+                                >
+                                    <div class="cardTitle-content">
+                                        <h3>ASTU - 09093</h3>
+                                        <span
+                                            >DLF Golf Course roar, Gurgaon,
+                                            Haryana, 122 OM</span
+                                        >
+                                    </div>
+                                    <div class="cardTitle-icon">
+                                        <!-- <img
+                                            src="{{
+                                                asset('img/powerButton.svg')
+                                            }}"
+                                            alt=""
+                                        /> -->
+                                        <!-- <span class="arm">Arm</span> -->
+                                        <span class="disarm">Disarm</span>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div
+                                class="grid-row grid-row-col-2 siteHealthCard-content"
+                            >
+                                <div
+                                    class="d-flex flex-column align-items-center siteHealthCard-content-details"
+                                >
+                                    <img
+                                        src="{{
+                                            asset('img/camera-switch.svg')
+                                        }}"
+                                        alt=""
+                                    />
+                                    <h6>Offline</h6>
+                                    <span>Error</span>
+                                </div>
+                                <div
+                                    class="d-flex flex-column align-items-center siteHealthCard-content-details"
+                                >
+                                    <img
+                                        src="{{
+                                            asset('img/network-switch.svg')
+                                        }}"
+                                        alt=""
+                                    />
+                                    <h6>Online</h6>
+                                    <span>Error</span>
+                                </div>
+                                <!-- <div
+                                    class="d-flex flex-column align-items-center siteHealthCard-content-details"
+                                >
+                                    <img
+                                        src="{{
+                                            asset('img/video-switch.svg')
+                                        }}"
+                                        alt=""
+                                    />
+                                    <h6>Hello</h6>
+                                    <span>Error</span>
+                                </div> -->
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        
+            <!-- repeat section  end -->
+
+          
+         
+        </main>
     <div class="card container enclosingContainer">
         <h2 class="heading">Sites</h2>
         <div style="width: 100%; text-align: center;">

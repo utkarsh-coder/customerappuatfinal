@@ -258,81 +258,27 @@
                 </div>
             </div>
 
-            <div class="container my-3">
-                <div class="row">
-                    <div class="col-12">
-                        <h4>Site Status</h4>
-                    </div>
-                    <div class="col-12">
-                        <div class="card siteHealthCard">
-                            <div class="card-body">
-                                <div
-                                    class="cardTitle d-flex justify-content-between align-items-start"
-                                >
-                                    <div class="cardTitle-content">
-                                        <h3>ASTU - 09093</h3>
-                                        <span
-                                            >DLF Golf Course roar, Gurgaon,
-                                            Haryana, 122 OM</span
-                                        >
-                                    </div>
-                                    <div class="cardTitle-icon">
-                                        <img
-                                            src="{{
-                                                asset('img/powerButton.svg')
-                                            }}"
-                                            alt=""
-                                        />
-                                    </div>
-                                </div>
-                            </div>
-
-                            <div
-                                class="grid-row grid-row-col-3 siteHealthCard-content"
-                            >
-                                <div
-                                    class="d-flex flex-column align-items-center siteHealthCard-content-details"
-                                >
-                                    <img
-                                        src="{{
-                                            asset('img/camera-switch.svg')
-                                        }}"
-                                        alt=""
-                                    />
-                                    <h6>Hello</h6>
-                                    <span>Error</span>
-                                </div>
-                                <div
-                                    class="d-flex flex-column align-items-center siteHealthCard-content-details"
-                                >
-                                    <img
-                                        src="{{
-                                            asset('img/network-switch.svg')
-                                        }}"
-                                        alt=""
-                                    />
-                                    <h6>Hello</h6>
-                                    <span>Error</span>
-                                </div>
-                                <div
-                                    class="d-flex flex-column align-items-center siteHealthCard-content-details"
-                                >
-                                    <img
-                                        src="{{
-                                            asset('img/video-switch.svg')
-                                        }}"
-                                        alt=""
-                                    />
-                                    <h6>Hello</h6>
-                                    <span>Error</span>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
+          
             <p id="fetchHost" hidden>{{env('APP_URL')}}</p>
         </main>
+        <footer>
+            <div class="menuItems">
+            <img src="{{asset('img/powerButton.svg')}}" alt=""/> 
+            <span>Home</span>
+            </div>
+            <div class="menuItems">
+            <img src="{{asset('img/powerButton.svg')}}" alt=""/> 
+            <span>Home</span>
+            </div>
+            <div class="menuItems">
+            <img src="{{asset('img/powerButton.svg')}}" alt=""/> 
+            <span>Home</span>
+            </div>
+            <div class="menuItems">
+            <img src="{{asset('img/powerButton.svg')}}" alt=""/> 
+            <span>Home</span>
+            </div>
+        </footer>
         <!-- 
         <div class="card container enclosingContainer">
             <h2 class="heading">Current Status</h2>

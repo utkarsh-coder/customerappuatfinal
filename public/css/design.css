@@ -3,7 +3,7 @@
   --primary-400:#2979af;
   --primary-500:#0361a1;
   --primary-700:#024f8f;
-  --bg:#f9fafe21;
+  --bg:#c1c1c121;
 }
 
 .btn-primary {
@@ -38,7 +38,7 @@
 }
 
 body {
-  font-family: 'Roboto', sans-serif !important;
+  font-family: "Roboto", sans-serif !important;
   background-color: var(--bg);
 }
 
@@ -52,13 +52,13 @@ h3 {
 }
 
 h4 {
-  font-weight: 400;
+  font-weight: 500;
   font-size: 1rem;
 }
 
 .subHeading {
   font-size: 14px;
-  font-weight: 400;
+  font-weight: 500;
   margin-bottom: 0;
 }
 
@@ -80,13 +80,10 @@ h4 {
   margin-bottom: 4px;
   color: var(--bs-gray-dark);
 }
-
 .formLayout .form-control:focus {
-  -webkit-box-shadow: none;
-          box-shadow: none;
+  box-shadow: none;
   border-color: var(--primary-500);
 }
-
 .formLayout .form-control:hover {
   border-color: var(--bs-dark);
 }
@@ -100,20 +97,17 @@ h4 {
   font-weight: 500;
   text-decoration: none;
 }
-
 .loginLink:hover {
   color: var(--primary-700);
 }
 
 .forgotPassword-btn {
   border: none;
-  -webkit-box-shadow: none;
-          box-shadow: none;
+  box-shadow: none;
   outline: none;
   background: transparent;
   color: var(--primary-500);
 }
-
 .forgotPassword-btn:hover {
   color: var(--primary-700);
 }
@@ -122,45 +116,37 @@ h4 {
 .card {
   border-radius: 14px;
   border: none;
-  -webkit-box-shadow: 0 5px 10px rgba(154, 160, 185, 0.05), 0 15px 40px rgba(166, 173, 201, 0.2);
-          box-shadow: 0 5px 10px rgba(154, 160, 185, 0.05), 0 15px 40px rgba(166, 173, 201, 0.2);
+  box-shadow: 0 5px 10px rgba(154, 160, 185, 0.05), 0 15px 40px rgba(166, 173, 201, 0.2);
 }
 
 /* Grids */
 .grid-row {
-  display: -ms-grid;
   display: grid;
   gap: 1rem;
 }
 
 .grid-row-col-1 {
-  -ms-grid-columns: 1fr;
-      grid-template-columns: 1fr;
+  grid-template-columns: 1fr;
 }
 
 .grid-row-col-2 {
-  -ms-grid-columns: 1fr 1fr;
-      grid-template-columns: 1fr 1fr;
+  grid-template-columns: 1fr 1fr;
 }
 
 .grid-row-col-3 {
-  -ms-grid-columns: 1fr 1fr 1fr;
-      grid-template-columns: 1fr 1fr 1fr;
+  grid-template-columns: 1fr 1fr 1fr;
 }
 
 .grid-row-80 {
-  -ms-grid-rows: 80px;
-      grid-template-rows: 80px;
+  grid-template-rows: 80px;
 }
 
 .grid-row-100 {
-  -ms-grid-rows: 100px;
-      grid-template-rows: 100px;
+  grid-template-rows: 100px;
 }
 
 .grid-row-200 {
-  -ms-grid-rows: 200px;
-      grid-template-rows: 200px;
+  grid-template-rows: 200px;
 }
 
 .graphBg {
@@ -172,37 +158,24 @@ h4 {
 .healthStatus {
   gap: 8px;
 }
-
 .healthStatus-content {
-  -webkit-box-flex: 1;
-      -ms-flex-positive: 1;
-          flex-grow: 1;
+  flex-grow: 1;
 }
-
 .healthStatus-content .subHeading {
   font-size: 12px;
   font-weight: 400;
   color: var(--bs-gray);
 }
-
 .healthStatus-value {
   width: 46px;
   height: 46px;
   border-radius: 50%;
   border: 1px solid #444;
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
-  -ms-flex-line-pack: center;
-      align-content: center;
+  justify-content: center;
+  align-content: center;
   font-size: 12px;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: column;
-          flex-direction: column;
+  flex-direction: column;
 }
 
 .num {
@@ -218,16 +191,13 @@ h4 {
   color: #fff;
   background-position: center bottom;
 }
-
 .cardBgWave .subHeading {
   color: #fff;
 }
-
 .cardBgWave .healthStatus-value {
   border-color: #fff;
   color: #fff;
 }
-
 .cardBgWave .healthStatus-value .num {
   color: #fff;
 }
@@ -235,28 +205,19 @@ h4 {
 .siteHealthCard .cardTitle {
   gap: 6px;
 }
-
 .siteHealthCard .cardTitle-content {
-  -webkit-box-flex: 1;
-      -ms-flex: 1 1 100%;
-          flex: 1 1 100%;
+  flex: 1 1 100%;
 }
-
 .siteHealthCard .cardTitle-icon {
-  -webkit-box-flex: 1;
-      -ms-flex: 1 1 10%;
-          flex: 1 1 10%;
+  flex: 1 1 10%;
   max-width: 100px;
 }
-
 .siteHealthCard .cardTitle h3 {
   font-size: 1.2rem;
 }
-
 .siteHealthCard .cardTitle span {
   font-size: 0.8rem;
 }
-
 .siteHealthCard-content {
   padding: 0.75rem;
   background: url(../img/cardBaseNew.svg) no-repeat var(--primary-500);
@@ -264,23 +225,18 @@ h4 {
   color: #fff;
   text-align: center;
   background-position: bottom -24px center;
-  -ms-grid-rows: 120px;
-      grid-template-rows: 120px;
+  grid-template-rows: 100px;
 }
-
 .siteHealthCard-content-details {
   gap: 4px;
 }
-
 .siteHealthCard-content-details img {
   width: 30px;
 }
-
 .siteHealthCard-content-details h6 {
   margin-bottom: 0;
   font-weight: 400;
 }
-
 .siteHealthCard-content-details span {
   font-size: 12px;
 }
@@ -291,25 +247,55 @@ h4 {
   background: var(-bs-white);
   padding-left: 12px;
   padding-right: 12px;
-  display: -ms-grid;
   display: grid;
-  -ms-grid-columns: 1fr 3fr 1fr;
-      grid-template-columns: 1fr 3fr 1fr;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
+  grid-template-columns: 1fr 3fr 1fr;
+  align-items: center;
   gap: 6px;
 }
-
 .mobileHeader a {
   text-decoration: none;
   color: var(--bs-dark);
 }
-
 .mobileHeader h2 {
   text-align: center;
   font-size: 18px;
   font-weight: 400;
   color: var(--bs-dark);
 }
-/*# sourceMappingURL=design.css.map */
+
+.arm {
+  padding: 0.5rem 1rem;
+  border-radius: 26px;
+  text-align: center;
+  background: #01d50c;
+  color: #fff;
+}
+
+.disarm {
+  padding: 0.5rem 1rem;
+  border-radius: 26px;
+  text-align: center;
+  background: #d50101;
+  color: #fff;
+}
+
+footer {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+  gap: 24px;
+  text-align: center;
+  padding: 16px;
+  background: #fff;
+  box-shadow: 0px -1px 10px 0px rgba(51, 51, 51, 0.1411764706);
+  position: fixed;
+  width: 100%;
+  bottom: 0;
+}
+footer .menuItems {
+  display: flex;
+  flex-flow: column;
+  align-items: center;
+}
+footer .menuItems img {
+  width: 24px;
+}/*# sourceMappingURL=design.css.map */
