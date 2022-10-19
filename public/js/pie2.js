@@ -9,9 +9,6 @@ var chartDom2 = document.getElementById('main2');
 var myChart2 = echarts.init(chartDom2);
 var option2;
 let text2 = '';
-if (sessionStorage.getItem('glOnlineCount') == null) {
-    text2 = 'GL not present at site';
-}
 
 // const weatherIcons = {
 //   Sunny: ROOT_PATH + '/data/asset/img/weather/sunny_128.png',
@@ -22,6 +19,9 @@ if (sessionStorage.getItem('glOnlineCount') == null) {
 // $("#main2").append("<div id='loading2' class='loading'></div");
 
 function runGlPie() {
+    if (sessionStorage.getItem('glOnlineCount') == 'null') {
+        text2 = 'GL not present at site';
+    }
     option2 = {
         title: {
             text: text2,
@@ -37,7 +37,7 @@ function runGlPie() {
         legend: {
             bottom: 10,
             left: 'center',
-            data: ['Online', 'Offline']
+            data: ['online', 'offline']
         },
         series: [
             {
@@ -132,8 +132,8 @@ function runGlPie() {
                     //     }
                     //   }
                     // },
-                    { value: sessionStorage.getItem('glOnlineCount'), name: 'Online' },
-                    { value: sessionStorage.getItem('glOfflineCount'), name: 'Offline' }
+                    { value: sessionStorage.getItem('glOnlineCount'), name: 'online' },
+                    { value: sessionStorage.getItem('glOfflineCount'), name: 'offline' }
                 ],
                 emphasis: {
                     itemStyle: {
@@ -168,5 +168,6 @@ myChart2.on('click', function (params) {
 
     document.getElementById('type').value = 'gl';
     document.getElementById('status').value = params.name;
+    console.log('test it:  ', params.name);
     document.getElementById('siteListForm').submit();
 });

@@ -5,11 +5,13 @@ var chartDom7 = document.getElementById('main7');
 var myChart7 = echarts.init(chartDom7);
 var option7;
 let text7 = '';
-if (sessionStorage.getItem('modbusOnlineCount') == null) {
-    text7 = 'Modbus not present at site';
-}
 
 function runModbusPie() {
+    console.log("this is modebus count:  ", sessionStorage.getItem('modbusOnlineCount'));
+    if (sessionStorage.getItem('modbusOnlineCount') == 'null') {
+        text7 = 'Modbus not present at site';
+    }
+
     option7 = {
         title: {
             text: text7,
@@ -50,9 +52,9 @@ function runModbusPie() {
 }
 
 myChart7.on('click', function (params) {
-      document.getElementById('type').value = 'modbus';
-      document.getElementById('status').value = params.name;
-      document.getElementById('siteListForm').submit();
+    document.getElementById('type').value = 'modbus';
+    document.getElementById('status').value = params.name;
+    document.getElementById('siteListForm').submit();
 
     // toastr.warning("Data not available");
 });

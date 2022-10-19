@@ -122,6 +122,7 @@
                 </div> -->
 
             <div class="container">
+            <img id="loaderimg" src="img/loaderImg.gif" alt="">
                 <div class="row">
                     <div class="col-12">
                         <h4 class="text-white">Devices</h4>
@@ -269,7 +270,7 @@
     </main>
     
     <footer>
-        <div class="menuItems" onclick="hitLink(getElementById('fetchHost').innerHTML+'/public/home')">
+        <div class="menuItems" onclick="hitLink(getElementById('fetchHost').innerHTML+'/home')">
             <img src="{{asset('img/home.svg')}}" alt="" />
             <span>Home</span>
         </div>

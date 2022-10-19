@@ -101,6 +101,10 @@ Route::post("/drilldown", [CustomerController::class, 'drilldown']);
 Route::post("/sitelist", [CustomerController::class, 'sitelist']);
 Route::get("/mapuser", [CustomerController::class, 'mapuser']);
 Route::get("/getData", [CustomerController::class, 'getData']);
+Route::get("/getLocationData", [CustomerController::class, 'getLocationData']);
+Route::get("/getChartData", [CustomerController::class, 'getChartData']);
+Route::post("/getTableData", [CustomerController::class, 'getTableData']);
+Route::post("/getDeviceList", [CustomerController::class, 'getDeviceList']);
 
 Route::post('/send-mail', [MailController::class, 'sendOTPMail']);
 Route::post("/verifyotp", [MailController::class, "verifyOTP"]);

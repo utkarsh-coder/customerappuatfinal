@@ -122,6 +122,7 @@ class CustomerController extends Controller
 
         if ($data->code == 1) {
             session()->put('user_id', 1);
+            session()->put('business_id', 193);
 
             return redirect('home');
         } else if ($data->message == "User doesnt found") {
@@ -185,7 +186,7 @@ class CustomerController extends Controller
         $curl = curl_init();
 
         curl_setopt_array($curl, array(
-            CURLOPT_URL => 'http://54.197.121.111:8001/iot/1.6/public/getSiteHealthStatus?business_id=193',
+            CURLOPT_URL => 'http://54.197.121.111:8001/iot/1.6/public/getSiteHealthStatus?business_id='.session()->get('business_id'),
             CURLOPT_RETURNTRANSFER => true,
             CURLOPT_ENCODING => '',
             CURLOPT_MAXREDIRS => 10,
@@ -208,7 +209,102 @@ class CustomerController extends Controller
         // );
         // $payload = json_encode($data);
         return $response;
+    }
 
+    public function getLocationData()
+    {
+        $curl = curl_init();
 
+        curl_setopt_array($curl, array(
+            CURLOPT_URL => 'http://54.197.121.111:8001/iot/1.6/public/getDeviceInfo?business_id='.session()->get('business_id').'&type=location&status=active',
+            CURLOPT_RETURNTRANSFER => true,
+            CURLOPT_ENCODING => '',
+            CURLOPT_MAXREDIRS => 10,
+            CURLOPT_TIMEOUT => 0,
+            CURLOPT_FOLLOWLOCATION => true,
+            CURLOPT_HTTP_VERSION => CURL_HTTP_VERSION_1_1,
+            CURLOPT_CUSTOMREQUEST => 'GET',
+            CURLOPT_HTTPHEADER => array(
+                'Cookie: JSESSIONID=eyJpdiI6InU5WTNxSGJaQnJTTXEyWFhyM2g1UXc9PSIsInZhbHVlIjoiRTBxS3BmZXBZN3ZYSDhzQzBGbzVBclwvZEVuOHhiR244c2ppbXVXcDFKcUlyV1FpM01UQ3RcL3h1UkF3MHJ5czVuXC9kMFl2ZlZUbmNHVlVWZVwvbXdyU2ZnPT0iLCJtYWMiOiI4ODhhZWEzZjNiOTFjYWFjNGYxZmZhODQwNDA3N2QyNzJhNWQ3Njc4ZGJlNGVkZmQzMzhiMGZjYzMxMjQwNGY1In0%3D'
+            ),
+        ));
+
+        $response = curl_exec($curl);
+
+        curl_close($curl);
+        return $response;
+    }
+
+    public function getDeviceList(Request $request)
+    {
+        // echo 'printing data of the curl request';
+        $curl = curl_init();
+
+        curl_setopt_array($curl, array(
+            CURLOPT_URL => 'http://54.197.121.111:8001/iot/1.6/public/getDeviceInfo?business_id='.session()->get('business_id').'&type=' . $request->typeValue . '&status=' . $request->statusValue,
+            CURLOPT_RETURNTRANSFER => true,
+            CURLOPT_ENCODING => '',
+            CURLOPT_MAXREDIRS => 10,
+            CURLOPT_TIMEOUT => 0,
+            CURLOPT_FOLLOWLOCATION => true,
+            CURLOPT_HTTP_VERSION => CURL_HTTP_VERSION_1_1,
+            CURLOPT_CUSTOMREQUEST => 'GET',
+            CURLOPT_HTTPHEADER => array(
+                'Cookie: JSESSIONID=eyJpdiI6IlVsYTJHdE94ZlppeVNLeVBVM00zWUE9PSIsInZhbHVlIjoiNEhnV1RtUjBzQ2J5eFAxZEs3eFlqdmxKVVlyeGs1N0diOE5QbnQxQ3kxTDJjb3Z3XC8xbGhndGNlMUg4XC9Hc3VkalIzcGlMODBrTXhXeDN4YnFiSjVNQT09IiwibWFjIjoiNzZlOGFjMjQ0MTI0YTBlN2UxYzgxNjBmZDQ3OTM4ZWNlNjMzMjNjOTBhMTI3NzVmOTMwZDJiYmViYzk5ZDgwYiJ9'
+            ),
+        ));
+
+        $response = curl_exec($curl);
+
+        curl_close($curl);
+        return  $response;
+    }
+
+    public function getChartData()
+    {
+        $curl = curl_init();
+
+        curl_setopt_array($curl, array(
+            CURLOPT_URL => 'http://54.197.121.111:8001/iot/1.6/public/getSiteHealthStatus?business_id='.session()->get('business_id'),
+            CURLOPT_RETURNTRANSFER => true,
+            CURLOPT_ENCODING => '',
+            CURLOPT_MAXREDIRS => 10,
+            CURLOPT_TIMEOUT => 0,
+            CURLOPT_FOLLOWLOCATION => true,
+            CURLOPT_HTTP_VERSION => CURL_HTTP_VERSION_1_1,
+            CURLOPT_CUSTOMREQUEST => 'GET',
+            CURLOPT_HTTPHEADER => array(
+                'Cookie: JSESSIONID=eyJpdiI6Iks3d05yam1mT3FZcmdxZ0N3UzZYa2c9PSIsInZhbHVlIjoiZ05JcmpOWXd4dVRNSWlCdGt4VzBIYVZQclE4blRUcVBhZjlXWXVDMElkU0ZrYkFWKzByWUNtdGxZcSt0aXNcL2VpQmxDVlh1cjhcL3Y0bzl2ZThYRnEzQT09IiwibWFjIjoiYWRjYWYyNmFhOTdjNmJjZTRjM2VjMmUzNTI0YjkxYjM5M2E1ZWExMTU1Y2U3MmFhYWQwODdmNjVmNGVkY2ZhMyJ9'
+            ),
+        ));
+
+        $response = curl_exec($curl);
+
+        curl_close($curl);
+        return $response;
+    }
+
+    public function getTableData(Request $request)
+    {
+        $curl = curl_init();
+
+        curl_setopt_array($curl, array(
+            CURLOPT_URL => 'http://54.197.121.111:8001/iot/1.6/public/getDeviceInfo?business_id='.session()->get('business_id').'&type='.$request->type.'&status='.$request->status,
+            CURLOPT_RETURNTRANSFER => true,
+            CURLOPT_ENCODING => '',
+            CURLOPT_MAXREDIRS => 10,
+            CURLOPT_TIMEOUT => 0,
+            CURLOPT_FOLLOWLOCATION => true,
+            CURLOPT_HTTP_VERSION => CURL_HTTP_VERSION_1_1,
+            CURLOPT_CUSTOMREQUEST => 'GET',
+            CURLOPT_HTTPHEADER => array(
+                'Cookie: JSESSIONID=eyJpdiI6ImRNK2JYR0NrcG5DdWJoeWdDbXdnclE9PSIsInZhbHVlIjoiUzVEeTBNa0RSd0tKQkd5R3ZZWmNPUFo3UlBQM3M2WmFzQytKTG5GaVpOdmRkZjRDclBIRmJCSXpvOFhGN2lWY0pIck9qbUIwQ2ZvZnkwZnB3cjV5T1E9PSIsIm1hYyI6IjQyMjU5ZTJkNGNiM2MxNzQxNDllZTQzMmVmZTdlZTkzNzNhYzBiZjQ3ZDAwZmQ4NDkxZTI2MjIyYTdlMmE5OGUifQ%3D%3D'
+            ),
+        ));
+
+        $response = curl_exec($curl);
+
+        curl_close($curl);
+        return $response;
     }
 }

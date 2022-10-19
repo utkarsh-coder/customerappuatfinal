@@ -131,6 +131,7 @@
         </header>
 
         <div class="pt-3 pb-4 bg-primary">
+            <img id="loaderimg" src="img/loaderImg.gif" alt="">
             <div class="container pb-2">
                 <div class="row">
                     <div class="col">

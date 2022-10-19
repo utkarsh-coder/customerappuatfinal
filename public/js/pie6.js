@@ -5,14 +5,15 @@ var chartDom6 = document.getElementById('main6');
 var myChart6 = echarts.init(chartDom6);
 var option6;
 let text6 = '';
-if (sessionStorage.getItem('armCount') == null) {
-    text6 = 'IN not present at site';
-}
 
 function runArmDisarmPie() {
+  if (sessionStorage.getItem('armCount') == 'null') {
+    text6 = 'IN not present at site';
+  }
+
   option6 = {
     title: {
-      text : text6,
+      text: text6,
       left: 'center'
     },
     color: ["#5470c6", "#ffa500"],
@@ -55,5 +56,5 @@ myChart6.on('click', function (params) {
   document.getElementById('status').value = params.name;
   document.getElementById('siteListForm').submit();
 
-//   toastr.warning("Data not available");
+  //   toastr.warning("Data not available");
 });

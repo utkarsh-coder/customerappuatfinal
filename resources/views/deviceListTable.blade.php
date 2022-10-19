@@ -47,9 +47,15 @@
 
                             </tbody>
 
+                            <img id="loaderimg" src="img/loaderImgBlack.gif" alt="">
+
                             <div class="content">
 
                             </div>
+                            <p id="fetchHost" hidden>{{env('APP_URL')}}</p>
+                            <p id="fetchType" hidden>{{$type}}</p>
+                            <p id="fetchStatus" hidden>{{$status}}</p>
+                            <!-- document.getElementById('fetchHost').innerHTML + "/getLocationData" -->
 
                             <script>
                                 $(".content").append("<div id='load' class='loading'></div");
@@ -64,11 +70,15 @@
                                         // },
                                         // cache: false,
                                         // async: true,
-                                        type: 'GET',
+                                        type: 'POST',
                                         dataType: 'json',
-                                        url: 'http://54.197.121.111:8001/iot/1.6/public/getDeviceInfo?business_id=193&type=' + '{{$type}}' + '&status={{$status}}',
+                                        url: document.getElementById('fetchHost').innerHTML + "/getTableData",
                                         // crossDomain: true,
                                         // mode: 'no-cors',
+                                        data: {
+                                            'type': document.getElementById('fetchType').innerHTML,
+                                            'status': document.getElementById('fetchStatus').innerHTML // <-- the $ sign in the parameter name seems unusual, I would avoid it
+                                        },
                                         success: successFn,
                                         error: errorFn,
                                         complete: function(xhr, status) {
@@ -80,6 +90,7 @@
 
                                     function successFn(result) {
                                         console.log('success');
+                                        $('#loaderimg').remove();
                                         $('.loading').remove();
                                         for (let i in result.data) {
                                             console.log(result.data[i]);

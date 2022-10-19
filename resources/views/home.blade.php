@@ -52,6 +52,7 @@
                     </div>
                 </div>
             </div>
+            <img id="loaderimg" src="img/loaderImg.gif" alt="">
 
             <div class="container">
                 <div class="row">

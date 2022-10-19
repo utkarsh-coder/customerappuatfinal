@@ -18,12 +18,14 @@ let text1 = '';
 //   Showers: ROOT_PATH + '/data/asset/img/weather/showers_128.png'
 // };
 
-
-fetch('http://54.197.121.111:8001/iot/1.6/public/getSiteHealthStatus?business_id=193').then(res => {
+// 'http://54.197.121.111:8001/iot/1.6/public/getSiteHealthStatus?business_id=193'
+console.log("url is:  ", document.getElementById('fetchHost').innerHTML + "/getChartData");
+fetch(document.getElementById('fetchHost').innerHTML + "/getChartData").then(res => {
     return res.json();
 })
     .then(data => {
         console.log(data);
+        $('#loaderimg').remove();
 
         // if (data.data.modbus[0] != undefined) {
         //     sessionStorage.setItem('modbusOnlineCount', data.data.modbus[1].count);
@@ -52,7 +54,7 @@ fetch('http://54.197.121.111:8001/iot/1.6/public/getSiteHealthStatus?business_id
         document.getElementById('alloffline').innerHTML = data.nvr[0].offline_count + data.gl[0].offline + data.in[0].in_offline_count;
         console.log("starting hello world!");
 
-        if (data.nvr[0].online_count == null) {
+        if (data.nvr[0].online_count == 'null') {
             text1 = 'NVR not present at site';
         }
 

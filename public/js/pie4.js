@@ -5,11 +5,12 @@ var chartDom4 = document.getElementById('main4');
 var myChart4 = echarts.init(chartDom4);
 var option4;
 let text4 = '';
-if (sessionStorage.getItem('cameraOnlineCount') == null) {
-    text4 = 'Camera not present at site';
-}
 
 function runCameraPie() {
+  if (sessionStorage.getItem('cameraOnlineCount') == 'null') {
+    text4 = 'Camera not present at site';
+  }
+
   option4 = {
     title: {
       text: text4,
@@ -55,5 +56,5 @@ myChart4.on('click', function (params) {
   document.getElementById('status').value = params.name;
   document.getElementById('siteListForm').submit();
 
-//   toastr.warning("Data not available");
+  //   toastr.warning("Data not available");
 });

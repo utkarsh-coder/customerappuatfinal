@@ -6,16 +6,18 @@ $(document).ready(function () {
 
     // http://54.197.121.111:8001/iot/1.6/public/getSiteHealthStatus?business_id=193
     console.log();
-    fetch(document.getElementById('fetchHost').innerHTML+"/customerapp/public/getData").then(res => {
+    fetch(document.getElementById('fetchHost').innerHTML + "/getData").then(res => {
         return res.json();
     })
         .then(data => {
+            document.getElementById('loaderimg').remove();
+
             console.log('getData:  ', data);
             console.log(data.gl[0].offline);
             document.getElementById('siteoff').innerHTML = data.nvr[0].offline_count + data.gl[0].offline + data.in[0].in_offline_count;
             document.getElementById('sitearmed').innerHTML = data.in[0].arm_count;
             document.getElementById('sitedisarmed').innerHTML = data.in[0].disarm_count;
-            
+
             document.getElementById('networkeffected').innerHTML = data.effected[0].effect_count;
             document.getElementById('networkoffline').innerHTML = data.gl[0].offline;
             document.getElementById('networkup').innerHTML = data.gl[0].online;

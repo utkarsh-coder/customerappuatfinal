@@ -19,6 +19,8 @@ class VerifyCsrfToken extends Middleware
         "verifyotp",
         "update",
         "drilldown",
-        "sitelist"
+        "sitelist",
+        "getDeviceList",
+        "getTableData"
     ];
 }
