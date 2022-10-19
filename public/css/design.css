@@ -42,6 +42,11 @@ body {
   background-color: var(--bg);
 }
 
+main {
+  margin-bottom: 74px;
+  padding-bottom: 16px;
+}
+
 h2 {
   margin-bottom: 0 !important;
   margin-top: 0 !important;
@@ -244,7 +249,7 @@ h4 {
 .mobileHeader {
   height: 56px;
   width: 100%;
-  background: var(-bs-white);
+  background: #fff;
   padding-left: 12px;
   padding-right: 12px;
   display: grid;
@@ -263,6 +268,10 @@ h4 {
   color: var(--bs-dark);
 }
 
+.pe-8 {
+  padding-right: 100px !important;
+}
+
 .arm {
   padding: 0.5rem 1rem;
   border-radius: 26px;
@@ -279,13 +288,22 @@ h4 {
   color: #fff;
 }
 
+.offline {
+  padding: 0.5rem 1rem;
+  border-radius: 26px;
+  text-align: center;
+  background: #fb840e;
+  color: #fff;
+}
+
 footer {
   display: grid;
   grid-template-columns: 1fr 1fr 1fr 1fr;
   gap: 24px;
   text-align: center;
-  padding: 16px;
-  background: #fff;
+  padding: 10px 16px;
+  background: var(--primary-500);
+  color: #fff;
   box-shadow: 0px -1px 10px 0px rgba(51, 51, 51, 0.1411764706);
   position: fixed;
   width: 100%;
@@ -294,6 +312,7 @@ footer {
 footer .menuItems {
   display: flex;
   flex-flow: column;
+  font-size: 14px;
   align-items: center;
 }
 footer .menuItems img {

@@ -193,11 +193,18 @@ function runProcess() {
             tempVal = siteArray[i].mode;
         }
         else {
-            tempVal = siteArray[i].status;
+            // tempVal = siteArray[i].status;
+            tempVal = "offline";
         }
-        document.getElementById('siteblockcontainer').innerHTML += '<div class="cardbck siteblock"><div style="display:inline-block; width: 60%;"><h4>' + siteArray[i].name + '</h4><p>This is the address of the site</p></div><strong>' + tempVal + '</strong><div><div class="colstatus cardbck"><strong id="networkoffline" class="num stronghealth">' + siteArray[i].offline + '</strong><p>Offline</p></div><div class="colstatus cardbck"><strong id="networkup" class="num stronghealth">' + siteArray[i].online + '</strong><p>Online</p></div></div></div>';
+
         document.getElementById('siteoff').innerHTML = totalOffline;
         document.getElementById('sitearmed').innerHTML = totalArmed;
         document.getElementById('sitedisarmed').innerHTML = totalDisarmed;
+
+
+        // document.getElementById('siteblockcontainer').innerHTML += '<div class="cardbck siteblock"><div style="display:inline-block; width: 60%;"><h4>' + siteArray[i].name + '</h4><p>This is the address of the site</p></div><strong>' + tempVal + '</strong><div><div class="colstatus cardbck"><strong id="networkoffline" class="num stronghealth">' + siteArray[i].offline + '</strong><p>Offline</p></div><div class="colstatus cardbck"><strong id="networkup" class="num stronghealth">' + siteArray[i].online + '</strong><p>Online</p></div></div></div>';
+        
+        document.getElementById('siteblockcontainer').innerHTML += `<div class="container my-3"><div class="row"><div class="col-12"><div class="card siteHealthCard"><div class="card-body"><div class="cardTitle d-flex justify-content-between align-items-start"><div class="cardTitle-content"><h3>${siteArray[i].name}</h3><span>Address will be displayed when integrated in API</span></div><div class="cardTitle-icon"><!-- <img src="{{asset('img/powerButton.svg')}}"alt=""/> --><!-- <span class="arm">Arm</span> --><span class="${tempVal}">${tempVal}</span></div></div></div><div class="grid-row grid-row-col-2 siteHealthCard-content"><div class="d-flex flex-column align-items-center siteHealthCard-content-details"><imgsrc="{{asset('img/camera-switch.svg')}}"alt=""/><h6>Offline</h6><span>${siteArray[i].offline}</span></div><divclass="d-flex flex-column align-items-center siteHealthCard-content-details"><imgsrc="{{asset('img/network-switch.svg')}}"alt=""/><h6>Online</h6><span>${siteArray[i].online}</span></div><!-- <divclass="d-flex flex-column align-items-center siteHealthCard-content-details"><imgsrc="{{asset('img/video-switch.svg')}}"alt=""/><h6>Hello</h6><span>Error</span></div> --></div></div></div></div></div>`;
+
     }
 }

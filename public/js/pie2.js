@@ -8,6 +8,10 @@ var ROOT_PATH = 'https://echarts.apache.org/examples';
 var chartDom2 = document.getElementById('main2');
 var myChart2 = echarts.init(chartDom2);
 var option2;
+let text2 = '';
+if (sessionStorage.getItem('glOnlineCount') == null) {
+    text2 = 'GL not present at site';
+}
 
 // const weatherIcons = {
 //   Sunny: ROOT_PATH + '/data/asset/img/weather/sunny_128.png',
@@ -20,6 +24,7 @@ var option2;
 function runGlPie() {
     option2 = {
         title: {
+            text: text2,
             // text: 'Modbus',
             // subtext: 'Real-time data',
             left: 'center'
@@ -142,7 +147,7 @@ function runGlPie() {
     };
 
     option2 && myChart2.setOption(option2);
-    runNvrPie();
+    runInPie();
 
     // var tr = document.createElement('tr');
     // var td1 = tr.appendChild(document.createElement('td'));

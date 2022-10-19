@@ -5,13 +5,10 @@
 
 var ROOT_PATH = 'https://echarts.apache.org/examples';
 
-var chartDom1 = document.getElementById('graph1');
+var chartDom1 = document.getElementById('main1');
 var myChart1 = echarts.init(chartDom1);
 var option1;
-// let text = '';
-// if (sessionStorage.getItem('modbusOnlineCount') == null) {
-//     text = 'Modbus not present at site';
-// }
+let text1 = '';
 
 // $("#main1").append("<div id='loading1' class='loading';></div");
 
@@ -55,8 +52,13 @@ fetch('http://54.197.121.111:8001/iot/1.6/public/getSiteHealthStatus?business_id
         document.getElementById('alloffline').innerHTML = data.nvr[0].offline_count + data.gl[0].offline + data.in[0].in_offline_count;
         console.log("starting hello world!");
 
+        if (data.nvr[0].online_count == null) {
+            text1 = 'NVR not present at site';
+        }
+
         option1 = {
             title: {
+                text: text1,
                 // text: 'NVR',
                 // subtext: 'Real-time data',
                 left: 'center'
@@ -69,7 +71,7 @@ fetch('http://54.197.121.111:8001/iot/1.6/public/getSiteHealthStatus?business_id
             legend: {
                 bottom: 10,
                 left: 'center',
-                data: ['Online', 'Offline']
+                data: ['online', 'offline']
             },
             series: [
                 {
@@ -164,8 +166,8 @@ fetch('http://54.197.121.111:8001/iot/1.6/public/getSiteHealthStatus?business_id
                         //     }
                         //   }
                         // },
-                        { value: data.nvr[0].online_count, name: 'Online' },
-                        { value: data.nvr[0].offline_count, name: 'Offline' }
+                        { value: data.nvr[0].online_count, name: 'online' },
+                        { value: data.nvr[0].offline_count, name: 'offline' }
                     ],
                     emphasis: {
                         itemStyle: {
@@ -217,6 +219,7 @@ myChart1.on('click', function (params) {
 
     document.getElementById('type').value = 'nvr';
     document.getElementById('status').value = params.name;
+    console.log("This is the data of the site:  ", params.name);
     document.getElementById('siteListForm').submit();
 
     // const data = { type: 'nvr' }

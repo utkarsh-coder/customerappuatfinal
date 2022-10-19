@@ -4,10 +4,15 @@ var ROOT_PATH = 'https://echarts.apache.org/examples';
 var chartDom6 = document.getElementById('main6');
 var myChart6 = echarts.init(chartDom6);
 var option6;
+let text6 = '';
+if (sessionStorage.getItem('armCount') == null) {
+    text6 = 'IN not present at site';
+}
 
 function runArmDisarmPie() {
   option6 = {
     title: {
+      text : text6,
       left: 'center'
     },
     color: ["#5470c6", "#ffa500"],

@@ -4,10 +4,15 @@ var ROOT_PATH = 'https://echarts.apache.org/examples';
 var chartDom4 = document.getElementById('main4');
 var myChart4 = echarts.init(chartDom4);
 var option4;
+let text4 = '';
+if (sessionStorage.getItem('cameraOnlineCount') == null) {
+    text4 = 'Camera not present at site';
+}
 
 function runCameraPie() {
   option4 = {
     title: {
+      text: text4,
       left: 'center'
     },
     color: ["#5470c6", "#ffa500"],

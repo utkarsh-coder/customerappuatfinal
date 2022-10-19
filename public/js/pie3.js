@@ -8,6 +8,10 @@ var ROOT_PATH = 'https://echarts.apache.org/examples';
 var chartDom3 = document.getElementById('main3');
 var myChart3 = echarts.init(chartDom3);
 var option3;
+let text3 = '';
+if (sessionStorage.getItem('inOnlineCount') == null) {
+    text3 = 'In not present at site';
+}
 
 // const weatherIcons = {
 //   Sunny: ROOT_PATH + '/data/asset/img/weather/sunny_128.png',
@@ -17,9 +21,10 @@ var option3;
 
 // $("#main3").append("<div id='loading3' class='loading'></div");
 
-function runNvrPie() {
+function runInPie() {
   option3 = {
     title: {
+      text: text3,
       //   text: 'IN',
       // subtext: 'Real-time data',
       left: 'center'

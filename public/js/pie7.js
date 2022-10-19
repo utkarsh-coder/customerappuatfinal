@@ -4,15 +4,15 @@ var ROOT_PATH = 'https://echarts.apache.org/examples';
 var chartDom7 = document.getElementById('main7');
 var myChart7 = echarts.init(chartDom7);
 var option7;
-let text = '';
+let text7 = '';
 if (sessionStorage.getItem('modbusOnlineCount') == null) {
-    text = 'Modbus not present at site';
+    text7 = 'Modbus not present at site';
 }
 
 function runModbusPie() {
     option7 = {
         title: {
-            text: text,
+            text: text7,
             left: 'center'
         },
         color: ["#5470c6", "#ffa500"],
