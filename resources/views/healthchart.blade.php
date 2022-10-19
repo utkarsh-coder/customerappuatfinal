@@ -269,15 +269,15 @@
     </main>
     
     <footer>
-        <div class="menuItems" onclick="hitLink(getElementById('fetchHost').innerHTML+'/customerapp/public/home')">
+        <div class="menuItems" onclick="hitLink(getElementById('fetchHost').innerHTML+'/public/home')">
             <img src="{{asset('img/home.svg')}}" alt="" />
             <span>Home</span>
         </div>
-        <div class="menuItems" onclick="hitLink(getElementById('fetchHost').innerHTML+'/customerapp/public/sitelocation')">
+        <div class="menuItems" onclick="hitLink(getElementById('fetchHost').innerHTML+'/sitelocation')">
             <img src="{{asset('img/location.svg')}}" alt="" />
             <span>Location</span>
         </div>
-        <div class="menuItems" onclick="hitLink(getElementById('fetchHost').innerHTML+'/customerapp/public/healthchart')">
+        <div class="menuItems" onclick="hitLink(getElementById('fetchHost').innerHTML+'/healthchart')">
             <img src="{{asset('img/graph.svg')}}" alt="" />
             <span>Status</span>
         </div>

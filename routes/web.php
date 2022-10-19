@@ -87,7 +87,7 @@ Route::get('/login', function () {
 
 //middleware protected
 Route::get("/home", [CustomerController::class, "home"])->middleware('guard');
-Route::get("/healthchart", [CustomerController::class, "healthChart"]);
+Route::get("/healthchart", [CustomerController::class, "healthChart"])->middleware('guard');
 Route::get("/sitelocation", [CustomerController::class, "sitelocation"])->middleware('guard');
 
 Route::get("/customer", [CustomerController::class, 'index']);
