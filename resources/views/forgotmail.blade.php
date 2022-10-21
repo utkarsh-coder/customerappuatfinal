@@ -34,11 +34,23 @@
 
 <body>
 
-    <div class="card container enclosingContainer">
+    <!-- <div class="card container enclosingContainer">
         <img src="{{ asset('img/IGZY_logo.png') }}" alt="description of myimage">
         <form action="{{url('/')}}/send-mail" method="post" onSubmit="return validateForm()" class="primeContainer">
             <x-input id="email" type="text" name="email" label="enter email" />
             <button type="submit" class="btn btn-primary" style="width: 100%; margin-top: 20px">Send OTP</button>
+        </form>
+    </div> -->
+
+    <div>
+        <img src="{{ asset('img/IGZY_logo.png') }}" alt="">
+        <form action="{{url('/')}}/send-mail">
+            <div class="form-group" method="post" onSubmit="return validateForm()">
+                <label for="exampleInputEmail1">Email address</label>
+                <input type="email" class="form-control" id="email" aria-describedby="emailHelp" placeholder="Enter email">
+                <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small>
+            </div>
+            <button type="submit" class="btn btn-primary">Get OTP</button>
         </form>
     </div>
 

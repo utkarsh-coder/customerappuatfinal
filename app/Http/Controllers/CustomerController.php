@@ -100,7 +100,7 @@ class CustomerController extends Controller
         $curl = curl_init();
 
         curl_setopt_array($curl, array(
-            CURLOPT_URL => 'http://uat.gizmosmart.io/igzy/1.6/public/api_login',
+            CURLOPT_URL => 'http://uat.gizmosmart.io/igzy/sukh/1.6/public/api_login',
             CURLOPT_RETURNTRANSFER => true,
             CURLOPT_ENCODING => '',
             CURLOPT_MAXREDIRS => 10,

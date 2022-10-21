@@ -87,6 +87,10 @@
              }
              return true;
          }
+
+         document.getElementById("forgotPassword").onclick = function() {
+            window.location.href = "forgotmail";
+        };
      </script>
  </body>
 
