@@ -163,7 +163,7 @@
                     <div class="card">
                         <div class="card-body site-status">
                             <div class="d-flex flex-column justify-content-between h-100">
-                                <p class="subHeading">Disamrmed</p>
+                                <p class="subHeading">Disarmed</p>
                                 <span id="sitedisarmed" class="num">...</span>
                             </div>
                         </div>

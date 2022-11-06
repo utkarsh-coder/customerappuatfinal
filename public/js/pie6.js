@@ -48,7 +48,6 @@ function runArmDisarmPie() {
   };
 
   option6 && myChart6.setOption(option6);
-  runModbusPie();
 }
 
 myChart6.on('click', function (params) {
