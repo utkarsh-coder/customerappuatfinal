@@ -116,11 +116,22 @@
 
 <body>
 
+    <style>
+        body {
+            opacity: 0.3;
+            pointer-events: none;
+        }
+    </style>
+
     <script>
         function hitLink(link) {
             window.location.href = link;
         }
     </script>
+
+    <div id="loader" style="position: absolute; top: 50%; left:50%; z-index: 2; opacity:1;">
+        <img id="loaderImgBlack" src="img/loaderImgBlack.gif" alt="">
+    </div>
 
     <main>
         <header class="mobileHeader">
@@ -131,7 +142,7 @@
         </header>
 
         <div class="pt-3 pb-4 bg-primary">
-            <img id="loaderimg" src="img/loaderImg.gif" alt="">
+            <!-- <img id="loaderimg" src="img/loaderImg.gif" alt=""> -->
             <div class="container pb-2">
                 <div class="row">
                     <div class="col">

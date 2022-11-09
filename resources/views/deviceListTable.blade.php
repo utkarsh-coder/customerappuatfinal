@@ -11,7 +11,7 @@
     <link rel="stylesheet" href="{{ asset('css/design.css') }}" />
     <script src="https://code.jquery.com/jquery-3.6.0.js" integrity="sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk=" crossorigin="anonymous"></script>
 
-    <style>
+    <!-- <style>
         .loading {
             height: 200px;
             width: 200px;
@@ -21,10 +21,21 @@
             background-image: url(loading.gif);
             background-position: center center;
         }
+    </style> -->
+
+    <style>
+        body {
+            opacity: 0.3;
+            pointer-events: none;
+        }
     </style>
 </head>
 
 <body>
+
+    <div id="loader" style="position: absolute; top: 50%; left:50%; z-index: 2; opacity:1;">
+        <img id="loaderImgBlack" id="loaderimg" src="img/loaderImgBlack.gif" alt="">
+    </div>
     <main>
         <header class="mobileHeader">
             <a href="">
@@ -47,7 +58,7 @@
 
                             </tbody>
 
-                            <img id="loaderimg" src="img/loaderImgBlack.gif" alt="">
+                            <!-- <img id="loaderimg" src="img/loaderImgBlack.gif" alt=""> -->
 
                             <div class="content">
 
@@ -83,12 +94,20 @@
                                         error: errorFn,
                                         complete: function(xhr, status) {
                                             console.log("the request is complete");
+                                            document.body.style.opacity = 1;
+                                            document.getElementById('loader').style.opacity = 1;
+                                            document.getElementById('loaderImgBlack').remove();
+                                            document.body.style.pointerEvents = "auto";
                                         }
                                     })
 
                                     console.log('log1');
 
                                     function successFn(result) {
+                                        document.body.style.opacity = 1;
+                                        document.getElementById('loader').style.opacity = 1;
+                                        document.getElementById('loaderImgBlack').remove();
+                                        document.body.style.pointerEvents = "auto";
                                         console.log('success');
                                         $('#loaderimg').remove();
                                         $('.loading').remove();

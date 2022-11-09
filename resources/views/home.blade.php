@@ -22,6 +22,14 @@
 </head>
 
 <body>
+
+    <style>
+        body {
+            opacity: 0.3;
+            pointer-events: none;
+        }
+    </style>
+
     <script>
         function pieHealth() {
             window.location.href = "http://127.0.0.1:8000/healthchart";
@@ -38,12 +46,16 @@
         //     // console.log('git'); // x8WIv7-mJelg7on_ALbx
         // });
 
-        function hitLink(link){
+        function hitLink(link) {
             window.location.href = link;
         }
     </script>
 
     <main>
+        <div id="loader" style="position: absolute; top: 50%; left:50%; z-index: 2; opacity:1;">
+            <img id="loaderImgBlack" id="loaderimg" src="img/loaderImgBlack.gif" alt="">
+        </div>
+
         <div class="pt-3 pb-4 bg-primary">
             <div class="container pb-2">
                 <div class="row">
@@ -52,7 +64,7 @@
                     </div>
                 </div>
             </div>
-            <img id="loaderimg" src="img/loaderImg.gif" alt="">
+            <!-- <img id="loaderimg" src="img/loaderImg.gif" alt=""> -->
 
             <div class="container">
                 <div class="row">
