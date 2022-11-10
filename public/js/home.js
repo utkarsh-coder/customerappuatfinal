@@ -10,7 +10,11 @@ $(document).ready(function () {
         return res.json();
     })
         .then(data => {
+            // document.getElementById('loaderImgBlack').remove();
+            document.body.style.opacity = 1;
+            // document.getElementById('loader').style.opacity = 1;
             document.getElementById('loaderImgBlack').remove();
+            document.body.style.pointerEvents = "auto";
 
             console.log('getData:  ', data);
             console.log(data.gl[0].offline);
@@ -24,6 +28,7 @@ $(document).ready(function () {
 
             document.getElementById('nvrtotal').innerHTML = data.nvr[0].offline_count + data.nvr[0].online_count;
             document.getElementById('nvroff').innerHTML = data.nvr[0].offline_count;
+            
             // document.getElementById('footagetotal').innerHTML = data.nvr[0].footage_count;
             // document.getElementById('footageoff').innerHTML = (data.nvr[0].camera_offline_count +  Number(data.nvr[0].camera_online_count))-data.nvr[0].footage_count;
             document.getElementById('alarmpaneltotal').innerHTML = data.in[0].in_offline_count + data.in[0].in_online_count;
