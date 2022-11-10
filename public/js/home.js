@@ -10,7 +10,7 @@ $(document).ready(function () {
         return res.json();
     })
         .then(data => {
-            document.getElementById('loaderimg').remove();
+            document.getElementById('loaderImgBlack').remove();
 
             console.log('getData:  ', data);
             console.log(data.gl[0].offline);
