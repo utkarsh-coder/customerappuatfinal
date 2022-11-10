@@ -25,7 +25,11 @@ fetch(document.getElementById('fetchHost').innerHTML + "/getChartData").then(res
 })
     .then(data => {
         console.log(data);
-        $('#loaderimg').remove();
+        // $('#loaderimg').remove();
+        document.body.style.opacity = 1;
+        // document.getElementById('loader').style.opacity = 1;
+        document.getElementById('loaderImgBlack').remove();
+        document.body.style.pointerEvents = "auto";
 
         // if (data.data.modbus[0] != undefined) {
         //     sessionStorage.setItem('modbusOnlineCount', data.data.modbus[1].count);

@@ -82,6 +82,14 @@
 </head>
 
 <body>
+
+    <style>
+        body {
+            opacity: 0.3;
+            pointer-events: none;
+        }
+    </style>
+
     <script>
         sessionStorage.removeItem("glOnlineCount");
         sessionStorage.removeItem("glOfflineCount");
@@ -112,6 +120,10 @@
             </a>
             <h2>Health Status</h2>
         </header>
+
+        <div id="loader" style="position: absolute; top: 50%; left:50%; z-index: 2; opacity:1;">
+            <img id="loaderImgBlack" id="loaderimg" src="img/loaderImgBlack.gif" alt="">
+        </div>
         <div class="pt-3 pb-4 bg-primary">
             <!-- <div class="container pb-2">
                     <div class="row">
@@ -122,7 +134,7 @@
                 </div> -->
 
             <div class="container">
-            <img id="loaderimg" src="img/loaderImg.gif" alt="">
+                <!-- <img id="loaderimg" src="img/loaderImg.gif" alt=""> -->
                 <div class="row">
                     <div class="col-12">
                         <h4 class="text-white">Devices</h4>
@@ -268,7 +280,7 @@
 
         <p id="fetchHost" hidden>{{env('APP_URL')}}</p>
     </main>
-    
+
     <footer>
         <div class="menuItems" onclick="hitLink(getElementById('fetchHost').innerHTML+'/home')">
             <img src="{{asset('img/home.svg')}}" alt="" />
@@ -345,23 +357,23 @@
         </div>
     </div> -->
 
-    <form id="siteListForm" action="{{ url('/') }}/sitelist" method="post" class="primeContainer">
-        <input id="type" type="hidden" name="type" value="" />
-        <input id="status" type="hidden" name="status" value="" />
-    </form>
+        <form id="siteListForm" action="{{ url('/') }}/sitelist" method="post" class="primeContainer">
+            <input id="type" type="hidden" name="type" value="" />
+            <input id="status" type="hidden" name="status" value="" />
+        </form>
 
-    <!-- Latest compiled and minified JavaScript -->
+        <!-- Latest compiled and minified JavaScript -->
 
-    <script src="js/pie1.js"></script>
-    <script src="js/pie2.js"></script>
-    <script src="js/pie3.js"></script>
-    <script src="js/pie4.js"></script>
-    <script src="js/pie6.js"></script>
-    <script src="js/pie7.js"></script>
+        <script src="js/pie1.js"></script>
+        <script src="js/pie2.js"></script>
+        <script src="js/pie3.js"></script>
+        <script src="js/pie4.js"></script>
+        <script src="js/pie6.js"></script>
+        <script src="js/pie7.js"></script>
 
-    <script>
-        //your code here...
-    </script>
+        <script>
+            //your code here...
+        </script>
 </body>
 
 </html>
