@@ -106,6 +106,29 @@
                             <i class="bi bi-search"></i>
                         </div>
                     </div>
+
+                    <div class="grid-row grid-row-col-2 grid-row-80">
+                        <div class="card">
+                            <div class="card-body site-status">
+                                <div
+                                    class="d-flex flex-column justify-content-between h-100"
+                                >
+                                    <p class="subHeading">Off-Devices</p>
+                                    <span id="siteoff" class="num">...</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="card">
+                            <div class="card-body site-status">
+                                <div
+                                    class="d-flex flex-column justify-content-between h-100"
+                                >
+                                    <p class="subHeading">Armed</p>
+                                    <span id="sitearmed" class="num">...</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
                 </div>
             </div>
             <div class="pt-3 pb-4 bg-primary">
