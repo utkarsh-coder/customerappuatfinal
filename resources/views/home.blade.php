@@ -96,11 +96,13 @@
             <div class="pt-3 pb-4">
                 <div class="container pb-2">
                     <div class="row">
-                        <div class="col-9">
+                        <div class="col-10">
                             <span>Updated Just Now</span>
-                            <h2 class="text-white">Current Status</h2>
+                            <h2>Current Status</h2>
                         </div>
-                        <div class="col-3">
+                        <div
+                            class="col-2 d-flex align-items-end justify-content-end"
+                        >
                             <i class="bi bi-search"></i>
                         </div>
                     </div>
