@@ -60,7 +60,7 @@
             <div class="container pb-2">
                 <div class="row">
                     <div class="col">
-                        <h2 class="text-white">Current Status 1</h2>
+                        <h2 class="text-white">Current Status </h2>
                     </div>
                 </div>
             </div>
