@@ -185,148 +185,187 @@
                     </div>
                 </div>
             </div>
-            <div class="pt-3 pb-4 bg-primary">
-                <div class="container pb-2">
-                    <div class="row">
-                        <div class="col">
-                            <h2 class="text-white">Current Status</h2>
-                        </div>
-                    </div>
-                </div>
-                <!-- <img id="loaderimg" src="img/loaderImg.gif" alt=""> -->
 
-                <div class="container">
-                    <div class="row">
-                        <div class="col-12">
-                            <h4 class="text-white">Site Health</h4>
+            <section class="d-none">
+                <div class="pt-3 pb-4 bg-primary">
+                    <div class="container pb-2">
+                        <div class="row">
+                            <div class="col">
+                                <h2 class="text-white">Current Status</h2>
+                            </div>
                         </div>
                     </div>
-                    <div class="grid-row grid-row-col-3 grid-row-80">
-                        <div class="card">
-                            <div class="card-body site-status">
-                                <div
-                                    class="d-flex flex-column justify-content-between h-100"
-                                >
-                                    <p class="subHeading">Off-Devices</p>
-                                    <span id="siteoff" class="num">...</span>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="card">
-                            <div class="card-body site-status">
-                                <div
-                                    class="d-flex flex-column justify-content-between h-100"
-                                >
-                                    <p class="subHeading">Armed</p>
-                                    <span id="sitearmed" class="num">...</span>
-                                </div>
-                            </div>
-                        </div>
+                    <!-- <img id="loaderimg" src="img/loaderImg.gif" alt=""> -->
 
-                        <div class="card">
-                            <div class="card-body site-status">
-                                <div
-                                    class="d-flex flex-column justify-content-between h-100"
-                                >
-                                    <p class="subHeading">Disamrmed</p>
-                                    <span id="sitedisarmed" class="num"
-                                        >...</span
-                                    >
-                                </div>
+                    <div class="container">
+                        <div class="row">
+                            <div class="col-12">
+                                <h4 class="text-white">Site Health</h4>
                             </div>
                         </div>
-                    </div>
-                </div>
-            </div>
-            <div class="container my-3">
-                <div class="row">
-                    <div class="col-12">
-                        <h4>Network Health</h4>
-                    </div>
-                    <div class="grid-row grid-row-col-3 grid-row-80">
-                        <div class="card">
-                            <div class="card-body site-status">
-                                <div
-                                    class="d-flex flex-column justify-content-between h-100"
-                                >
-                                    <p class="subHeading">Effected</p>
-                                    <span id="networkeffected" class="num"
-                                        >...</span
-                                    >
-                                </div>
-                            </div>
-                        </div>
-
-                        <div class="card">
-                            <div class="card-body site-status">
-                                <div
-                                    class="d-flex flex-column justify-content-between h-100"
-                                >
-                                    <p class="subHeading">Offline</p>
-                                    <span id="networkoffline" class="num"
-                                        >...</span
-                                    >
-                                </div>
-                            </div>
-                        </div>
-
-                        <div class="card">
-                            <div class="card-body site-status">
-                                <div
-                                    class="d-flex flex-column justify-content-between h-100"
-                                >
-                                    <p class="subHeading">Up</p>
-                                    <span id="networkup" class="num">...</span>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-            <div class="container my-3">
-                <div class="row">
-                    <div class="col-12">
-                        <h4>Health Status</h4>
-                    </div>
-                    <div class="grid-row grid-row-col-2 grid-row-200">
-                        <div class="grid-row grid-row-col-1">
-                            <div class="card graphBg">
+                        <div class="grid-row grid-row-col-3 grid-row-80">
+                            <div class="card">
                                 <div class="card-body site-status">
                                     <div
                                         class="d-flex flex-column justify-content-between h-100"
                                     >
-                                        <div
-                                            class="d-flex justify-content-between align-items-center healthStatus"
+                                        <p class="subHeading">Off-Devices</p>
+                                        <span id="siteoff" class="num"
+                                            >...</span
                                         >
-                                            <div class="healthStatus-content">
-                                                <h3 id="nvrtotal">...</h3>
-                                                <span class="subHeading"
-                                                    >NVR</span
-                                                >
-                                            </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="card">
+                                <div class="card-body site-status">
+                                    <div
+                                        class="d-flex flex-column justify-content-between h-100"
+                                    >
+                                        <p class="subHeading">Armed</p>
+                                        <span id="sitearmed" class="num"
+                                            >...</span
+                                        >
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="card">
+                                <div class="card-body site-status">
+                                    <div
+                                        class="d-flex flex-column justify-content-between h-100"
+                                    >
+                                        <p class="subHeading">Disamrmed</p>
+                                        <span id="sitedisarmed" class="num"
+                                            >...</span
+                                        >
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="container my-3">
+                    <div class="row">
+                        <div class="col-12">
+                            <h4>Network Health</h4>
+                        </div>
+                        <div class="grid-row grid-row-col-3 grid-row-80">
+                            <div class="card">
+                                <div class="card-body site-status">
+                                    <div
+                                        class="d-flex flex-column justify-content-between h-100"
+                                    >
+                                        <p class="subHeading">Effected</p>
+                                        <span id="networkeffected" class="num"
+                                            >...</span
+                                        >
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="card">
+                                <div class="card-body site-status">
+                                    <div
+                                        class="d-flex flex-column justify-content-between h-100"
+                                    >
+                                        <p class="subHeading">Offline</p>
+                                        <span id="networkoffline" class="num"
+                                            >...</span
+                                        >
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="card">
+                                <div class="card-body site-status">
+                                    <div
+                                        class="d-flex flex-column justify-content-between h-100"
+                                    >
+                                        <p class="subHeading">Up</p>
+                                        <span id="networkup" class="num"
+                                            >...</span
+                                        >
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="container my-3">
+                    <div class="row">
+                        <div class="col-12">
+                            <h4>Health Status</h4>
+                        </div>
+                        <div class="grid-row grid-row-col-2 grid-row-200">
+                            <div class="grid-row grid-row-col-1">
+                                <div class="card graphBg">
+                                    <div class="card-body site-status">
+                                        <div
+                                            class="d-flex flex-column justify-content-between h-100"
+                                        >
                                             <div
-                                                class="healthStatus-value text-center"
+                                                class="d-flex justify-content-between align-items-center healthStatus"
                                             >
-                                                <span id="nvroff">1 </span>
-                                                <span>Off</span>
+                                                <div
+                                                    class="healthStatus-content"
+                                                >
+                                                    <h3 id="nvrtotal">...</h3>
+                                                    <span class="subHeading"
+                                                        >NVR</span
+                                                    >
+                                                </div>
+                                                <div
+                                                    class="healthStatus-value text-center"
+                                                >
+                                                    <span id="nvroff">1 </span>
+                                                    <span>Off</span>
+                                                </div>
+                                            </div>
+
+                                            <div
+                                                class="d-flex justify-content-between align-items-center healthStatus"
+                                            >
+                                                <div
+                                                    class="healthStatus-content"
+                                                >
+                                                    <h3 id="compliance">...</h3>
+
+                                                    <span class="subHeading"
+                                                        >Compliance</span
+                                                    >
+                                                </div>
+                                                <div
+                                                    class="healthStatus-value text-center"
+                                                >
+                                                    <span id="noncompliance"
+                                                        >...
+                                                    </span>
+                                                    <span>Off</span>
+                                                </div>
                                             </div>
                                         </div>
-
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="grid-row grid-row-col-1">
+                                <div class="card cardBgWave">
+                                    <div class="card-body site-status d-flex">
                                         <div
-                                            class="d-flex justify-content-between align-items-center healthStatus"
+                                            class="d-flex justify-content-between w-100 align-items-center healthStatus"
                                         >
                                             <div class="healthStatus-content">
-                                                <h3 id="compliance">...</h3>
-
-                                                <span class="subHeading"
-                                                    >Compliance</span
-                                                >
+                                                <h3 id="alarmpaneltotal">
+                                                    ...
+                                                </h3>
+                                                <p class="subHeading">
+                                                    Alarm Panel
+                                                </p>
                                             </div>
                                             <div
                                                 class="healthStatus-value text-center"
                                             >
-                                                <span id="noncompliance"
+                                                <span id="alarmpaneloff"
                                                     >...
                                                 </span>
                                                 <span>Off</span>
@@ -334,46 +373,24 @@
                                         </div>
                                     </div>
                                 </div>
-                            </div>
-                        </div>
-                        <div class="grid-row grid-row-col-1">
-                            <div class="card cardBgWave">
-                                <div class="card-body site-status d-flex">
-                                    <div
-                                        class="d-flex justify-content-between w-100 align-items-center healthStatus"
-                                    >
-                                        <div class="healthStatus-content">
-                                            <h3 id="alarmpaneltotal">...</h3>
-                                            <p class="subHeading">
-                                                Alarm Panel
-                                            </p>
-                                        </div>
-                                        <div
-                                            class="healthStatus-value text-center"
-                                        >
-                                            <span id="alarmpaneloff">... </span>
-                                            <span>Off</span>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
 
-                            <div class="card cardBgWave">
-                                <div class="card-body site-status d-flex">
-                                    <div
-                                        class="d-flex justify-content-between w-100 align-items-center healthStatus"
-                                    >
-                                        <div class="healthStatus-content">
-                                            <h3 id="cameratotal">...</h3>
-                                            <span class="subHeading"
-                                                >Camera</span
-                                            >
-                                        </div>
+                                <div class="card cardBgWave">
+                                    <div class="card-body site-status d-flex">
                                         <div
-                                            class="healthStatus-value text-center"
+                                            class="d-flex justify-content-between w-100 align-items-center healthStatus"
                                         >
-                                            <span id="cameraoff">... </span>
-                                            <span>Off</span>
+                                            <div class="healthStatus-content">
+                                                <h3 id="cameratotal">...</h3>
+                                                <span class="subHeading"
+                                                    >Camera</span
+                                                >
+                                            </div>
+                                            <div
+                                                class="healthStatus-value text-center"
+                                            >
+                                                <span id="cameraoff">... </span>
+                                                <span>Off</span>
+                                            </div>
                                         </div>
                                     </div>
                                 </div>
@@ -381,7 +398,7 @@
                         </div>
                     </div>
                 </div>
-            </div>
+            </section>
 
             <p id="fetchHost" hidden>{{ env("APP_URL") }}</p>
         </main>
