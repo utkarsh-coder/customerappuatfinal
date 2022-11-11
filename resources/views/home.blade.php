@@ -49,6 +49,7 @@
                 border: none;
                 box-shadow: none;
                 outline: none;
+                background: transparent;
             }
         </style>
     </head>
@@ -207,6 +208,16 @@
                             <button type="button" class="searchBtn">
                                 <i class="bi bi-search"></i>
                             </button>
+                        </div>
+
+                        <div class="col-12 mt-2">
+                            <div class="input-group">
+                                <input
+                                    type="text"
+                                    name="search"
+                                    class="form-control"
+                                />
+                            </div>
                         </div>
                     </div>
                 </div>
