@@ -91,6 +91,7 @@ Route::get("/healthchart", [CustomerController::class, "healthChart"])->middlewa
 Route::get("/sitelocation", [CustomerController::class, "sitelocation"])->middleware('guard');
 
 Route::get("/customer", [CustomerController::class, 'index']);
+Route::get("/search", [CustomerController::class, 'search']);
 Route::post("/customer", [CustomerController::class, 'store']);
 Route::post("/update", [CustomerController::class, 'update']);
 Route::post("/getResult", [CustomerController::class, 'view']);
