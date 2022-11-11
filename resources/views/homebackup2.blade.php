@@ -65,6 +65,13 @@
                 text-decoration: none;
                 color: #212529;
             }
+            .search-item h3{
+                font-size:1.3rem;
+            }
+            .search-item p{
+                font-size:14px;
+                color:var(--bs-secondary);
+            }
         </style>
     </head>
 
@@ -146,12 +153,15 @@
                         <div class="col-12">
                             <ul class="searchLists">
                                 <li>
-                                    <a href="#" class="search-item">
-                                    <div>
+                                    <a href="#" class="search-item d-flex align-items-start gap-2">
+                                    <div class="flex-grow-1">
                                         <h3>Chikhli, Gujrat</h3>
                                         <p>Address will be displayed when integrated in</p>
                                     </div>
-                                    <span class="Disarm">Disarm</span>
+                                    <span class="badge rounded-pill text-bg-danger">Disarm</span>
+                                    {{-- <span class="badge rounded-pill text-bg-success">Arm</span> --}}
+
+                                   
                                     </a>
                                 </li>
                                 <li>
