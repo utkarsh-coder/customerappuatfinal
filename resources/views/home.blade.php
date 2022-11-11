@@ -55,8 +55,15 @@
                 list-style: none;
                 padding-left: 0;
             }
+            .searchLists li {
+                margin-bottom: 8px;
+            }
             .searchLists .search-item {
-                border-bottom: 1px solid #e0e0e0;
+                border-bottom: 1px solid #dfdfdf;
+                padding: 6px 0px;
+                display: block;
+                text-decoration: none;
+                color: #212529;
             }
         </style>
     </head>
