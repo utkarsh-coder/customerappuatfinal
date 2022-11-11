@@ -85,6 +85,9 @@ class CustomerController extends Controller
     {
         return view('usermapping');
     }
+    
+    public function search(){
+        return view(homebackup2);
 
     public function verify(Request $request)
     {
