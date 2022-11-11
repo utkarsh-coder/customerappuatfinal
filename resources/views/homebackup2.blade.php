@@ -117,7 +117,7 @@
             </div>
       
 
-            <section class="searchSection">
+            <section class="searchSection mt-3">
                 <div class="container">
                     <div class="row">
                         <div class="col-10">
@@ -146,9 +146,13 @@
                         <div class="col-12">
                             <ul class="searchLists">
                                 <li>
-                                    <a href="#" class="search-item"
-                                        >New delhi ICICI bank</a
-                                    >
+                                    <a href="#" class="search-item">
+                                    <div>
+                                        <h3>Chikhli, Gujrat</h3>
+                                        <p>Address will be displayed when integrated in</p>
+                                    </div>
+                                    <span class="Disarm">Disarm</span>
+                                    </a>
                                 </li>
                                 <li>
                                     <a href="#" class="search-item"
