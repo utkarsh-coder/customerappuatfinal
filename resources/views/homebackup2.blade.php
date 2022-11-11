@@ -158,8 +158,8 @@
                                         <h3>Chikhli, Gujrat</h3>
                                         <p>Address will be displayed when integrated in</p>
                                     </div>
-                                    <span class="badge rounded-pill text-bg-danger">Disarm</span>
-                                    {{-- <span class="badge rounded-pill text-bg-success">Arm</span> --}}
+                                    <span class="badge bg-danger ">Disarm</span>
+                                    {{-- <span class="badge bg-success">Arm</span> --}}
 
                                    
                                     </a>
