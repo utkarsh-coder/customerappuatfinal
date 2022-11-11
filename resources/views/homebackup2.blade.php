@@ -166,20 +166,42 @@
                                     </a>
                                 </li>
                                 <li>
-                                    <a href="#" class="search-item"
-                                        >New delhi HDFC bank</a
-                                    >
+                                    <a href="#" class="search-item d-flex align-items-start gap-2">
+                                    <div class="flex-grow-1">
+                                        <h3>Shahdra, Delhi</h3>
+                                        <p>Address will be displayed when integrated in</p>
+                                    </div>
+                                    {{-- <span class="badge bg-danger ">Disarm</span> --}}
+                                    <span class="badge bg-success">Arm</span>
+
+                                   
+                                    </a>
+                                </li>
+                                 <li>
+                                    <a href="#" class="search-item d-flex align-items-start gap-2">
+                                    <div class="flex-grow-1">
+                                        <h3>Chikhli, Gujrat</h3>
+                                        <p>Address will be displayed when integrated in</p>
+                                    </div>
+                                    <span class="badge bg-danger ">Disarm</span>
+                                    {{-- <span class="badge bg-success">Arm</span> --}}
+
+                                   
+                                    </a>
                                 </li>
                                 <li>
-                                    <a href="#" class="search-item"
-                                        >New amritsar ICICI bank</a
-                                    >
+                                    <a href="#" class="search-item d-flex align-items-start gap-2">
+                                    <div class="flex-grow-1">
+                                        <h3>Shahdra, Delhi</h3>
+                                        <p>Address will be displayed when integrated in</p>
+                                    </div>
+                                    {{-- <span class="badge bg-danger ">Disarm</span> --}}
+                                    <span class="badge bg-success">Arm</span>
+
+                                   
+                                    </a>
                                 </li>
-                                <li>
-                                    <a href="#" class="search-item"
-                                        >New amritsar HDFC bank</a
-                                    >
-                                </li>
+                               
                             </ul>
                         </div>
                     </div>
