@@ -66,7 +66,7 @@
                 color: #212529;
             }
             .search-item h3{
-                font-size:1.3rem;
+                font-size:1rem;
             }
             .search-item p{
                 font-size:14px;
