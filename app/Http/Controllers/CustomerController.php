@@ -87,7 +87,7 @@ class CustomerController extends Controller
     }
     
     public function search(){
-        return view(homebackup2);
+        return view("homebackup2");
     }
 
     public function verify(Request $request)
