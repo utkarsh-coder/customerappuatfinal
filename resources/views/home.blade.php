@@ -129,6 +129,9 @@
                             </div>
                         </div>
                     </div>
+                    <div class="col-10">
+                        <h2>Network health</h2>
+                    </div>
                     <div class="grid-row grid-row-col-1 grid-row-80">
                         <div class="card">
                             <div class="card-body site-status">
