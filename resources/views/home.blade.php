@@ -144,6 +144,45 @@
                             </div>
                         </div>
                     </div>
+
+                    <div class="col-10 mt-3">
+                        <h2>Health status</h2>
+                    </div>
+                    <div class="grid-row grid-row-col-3 mt-2 mb-3 grid-row-80">
+                        <div class="card">
+                            <div class="card-body site-status">
+                                <div
+                                    class="d-flex flex-column justify-content-between h-100"
+                                >
+                                    <p class="subHeading">Off-Devices</p>
+                                    <span id="siteoff" class="num">...</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="card">
+                            <div class="card-body site-status">
+                                <div
+                                    class="d-flex flex-column justify-content-between h-100"
+                                >
+                                    <p class="subHeading">Armed</p>
+                                    <span id="sitearmed" class="num">...</span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="card">
+                            <div class="card-body site-status">
+                                <div
+                                    class="d-flex flex-column justify-content-between h-100"
+                                >
+                                    <p class="subHeading">Disamrmed</p>
+                                    <span id="sitedisarmed" class="num"
+                                        >...</span
+                                    >
+                                </div>
+                            </div>
+                        </div>
+                    </div>
                 </div>
             </div>
             <div class="pt-3 pb-4 bg-primary">
