@@ -44,6 +44,13 @@
         <script src="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/2.1.0/js/toastr.js"></script>
 
         <script src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/2.3.0/socket.io.js"></script>
+        <style>
+            .searchBtn {
+                border: none;
+                box-shadow: none;
+                outline: none;
+            }
+        </style>
     </head>
 
     <body>
@@ -103,7 +110,9 @@
                         <div
                             class="col-2 d-flex align-items-end justify-content-end"
                         >
-                            <i class="bi bi-search"></i>
+                            <button type="button" class="searchBtn">
+                                <i class="bi bi-search"></i>
+                            </button>
                         </div>
                     </div>
 
@@ -185,6 +194,23 @@
                     </div>
                 </div>
             </div>
+
+            <section class="searchSection">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-10">
+                            <h2>Search location</h2>
+                        </div>
+                        <div
+                            class="col-2 d-flex align-items-end justify-content-end"
+                        >
+                            <button type="button" class="searchBtn">
+                                <i class="bi bi-search"></i>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </section>
 
             <section class="d-none">
                 <div class="pt-3 pb-4 bg-primary">
