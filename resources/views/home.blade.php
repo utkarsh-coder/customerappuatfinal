@@ -51,6 +51,13 @@
                 outline: none;
                 background: transparent;
             }
+            .searchLists {
+                list-style: none;
+                padding-left: 0;
+            }
+            .searchLists .search-item {
+                border-bottom: 1px solid #e0e0e0;
+            }
         </style>
     </head>
 
@@ -218,6 +225,33 @@
                                     class="form-control"
                                 />
                             </div>
+                        </div>
+                    </div>
+
+                    <div class="row mt-3">
+                        <div class="col-12">
+                            <ul class="searchLists">
+                                <li>
+                                    <a href="#" class="search-item"
+                                        >New delhi ICICI bank</a
+                                    >
+                                </li>
+                                <li>
+                                    <a href="#" class="search-item"
+                                        >New delhi HDFC bank</a
+                                    >
+                                </li>
+                                <li>
+                                    <a href="#" class="search-item"
+                                        >New amritsar ICICI bank</a
+                                    >
+                                </li>
+                                <li>
+                                    <a href="#" class="search-item"
+                                        >New amritsar HDFC bank</a
+                                    >
+                                </li>
+                            </ul>
                         </div>
                     </div>
                 </div>
