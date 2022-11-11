@@ -107,7 +107,7 @@
                         </div>
                     </div>
 
-                    <div class="grid-row grid-row-col-2 grid-row-80">
+                    <div class="grid-row my-3 grid-row-col-2 grid-row-80">
                         <div class="card">
                             <div class="card-body site-status">
                                 <div
@@ -125,6 +125,18 @@
                                 >
                                     <p class="subHeading">Armed</p>
                                     <span id="sitearmed" class="num">...</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="grid-row grid-row-col-1 grid-row-80">
+                        <div class="card">
+                            <div class="card-body site-status">
+                                <div
+                                    class="d-flex flex-column justify-content-between h-100"
+                                >
+                                    <p class="subHeading">Off-Devices</p>
+                                    <span id="siteoff" class="num">...</span>
                                 </div>
                             </div>
                         </div>
