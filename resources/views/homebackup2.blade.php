@@ -71,6 +71,7 @@
             .search-item p{
                 font-size:14px;
                 color:var(--bs-secondary);
+                margin-bottom:0px;
             }
         </style>
     </head>
