@@ -210,60 +210,6 @@
                 </div>
             </div>
 
-            <section class="searchSection">
-                <div class="container">
-                    <div class="row">
-                        <div class="col-10">
-                            <h2>Search location</h2>
-                        </div>
-                        <div
-                            class="col-2 d-flex align-items-end justify-content-end"
-                        >
-                            <button type="button" class="searchBtn">
-                                <i class="bi bi-search"></i>
-                            </button>
-                        </div>
-
-                        <div class="col-12 mt-2">
-                            <div class="input-group">
-                                <input
-                                    type="text"
-                                    name="search"
-                                    class="form-control"
-                                />
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="row mt-3">
-                        <div class="col-12">
-                            <ul class="searchLists">
-                                <li>
-                                    <a href="#" class="search-item"
-                                        >New delhi ICICI bank</a
-                                    >
-                                </li>
-                                <li>
-                                    <a href="#" class="search-item"
-                                        >New delhi HDFC bank</a
-                                    >
-                                </li>
-                                <li>
-                                    <a href="#" class="search-item"
-                                        >New amritsar ICICI bank</a
-                                    >
-                                </li>
-                                <li>
-                                    <a href="#" class="search-item"
-                                        >New amritsar HDFC bank</a
-                                    >
-                                </li>
-                            </ul>
-                        </div>
-                    </div>
-                </div>
-            </section>
-
             <section class="d-none">
                 <div class="pt-3 pb-4 bg-primary">
                     <div class="container pb-2">
