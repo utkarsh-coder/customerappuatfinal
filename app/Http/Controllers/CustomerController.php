@@ -51,6 +51,10 @@ class CustomerController extends Controller
     //     $customers->save();
     //     return redirect('login');
     // }
+    
+    public function search(){
+        return view("homebackup2");
+    }
 
     // public function view()
     // {
