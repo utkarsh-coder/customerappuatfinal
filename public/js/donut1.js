@@ -68,6 +68,9 @@ fetch(document.getElementById('fetchHost').innerHTML + "/getChartData").then(res
                 // subtext: 'Real-time data',
                 left: 'center'
             },
+            tooltip: {
+                trigger: 'item'
+            },
             legend: {
                 top: '5%',
                 left: 'center',
@@ -93,7 +96,7 @@ fetch(document.getElementById('fetchHost').innerHTML + "/getChartData").then(res
                             show: true,
                             fontSize: "18",
                             fontWeight: "regular"
-                        },
+                        }
                     },
                     labelLine: {
                         show: false
