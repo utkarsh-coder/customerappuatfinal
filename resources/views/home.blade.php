@@ -79,17 +79,16 @@
 
         function hitLink(link, id) {
             window.location.href = link;
-            classList.add("mystyle");
-            document.getElementById("home").classList.add("inactive-state");
+            document.getElementById("home").classList.remove("active-state");
             document
                 .getElementById("location")
-                .classList.add("inactive-state");
+                .classList.remove("active-state");
             document
                 .getElementById("healthchart")
-                .classList.add("inactive-state");
+                .classList.remove("active-state");
             document
                 .getElementById("setting")
-                .classList.add("inactive-state");
+                .classList.remove("active-state");
             document.getElementById(id).classList.add("active-state");
         }
     </script>
@@ -345,7 +344,7 @@
         <p id="fetchHost" hidden>{{ env("APP_URL") }}</p>
     </main>
     <footer>
-        <div id="home" class="menuItems" onclick="hitLink(getElementById('fetchHost').innerHTML+'/home', 'home')">
+        <div id="home" class="active-state menuItems" onclick="hitLink(getElementById('fetchHost').innerHTML+'/home', 'home')">
             <img src="{{ asset('img/home.svg') }}" alt="" />
             <span>Home</span>
         </div>
