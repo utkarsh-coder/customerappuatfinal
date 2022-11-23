@@ -68,9 +68,6 @@ fetch(document.getElementById('fetchHost').innerHTML + "/getChartData").then(res
                 // subtext: 'Real-time data',
                 left: 'center'
             },
-            tooltip: {
-                trigger: 'item'
-            },
             legend: {
                 top: '5%',
                 left: 'center',
