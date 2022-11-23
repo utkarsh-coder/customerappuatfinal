@@ -5,7 +5,7 @@ console.log('running the home.js file');
 $(document).ready(function () {
 
     // http://54.197.121.111:8001/iot/1.6/public/getSiteHealthStatus?business_id=193
-    console.log();
+    console.log('printing data to check document ready function');
     fetch(document.getElementById('fetchHost').innerHTML + "/getData").then(res => {
         return res.json();
     })
@@ -36,5 +36,5 @@ $(document).ready(function () {
             document.getElementById('cameratotal').innerHTML = Number(data.nvr[0].camera_online_count) + data.nvr[0].camera_offline_count;
             document.getElementById('cameraoff').innerHTML = data.nvr[0].camera_offline_count;
         })
-        .catch(error => console.log('ERROR'));
+        .catch(error => console.log('ERROR: ',error));
 });
