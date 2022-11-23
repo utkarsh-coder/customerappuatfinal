@@ -479,7 +479,7 @@
         </div> -->
 
     <script src="js/home.js"></script>
-    <script src="js/donut1.js"></script>
+    <script src="js/doughnut1.js"></script>
 </body>
 
 </html>
