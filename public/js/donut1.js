@@ -94,8 +94,8 @@ fetch(document.getElementById('fetchHost').innerHTML + "/getChartData").then(res
                     emphasis: {
                         label: {
                             show: true,
-                            fontSize: '40',
-                            fontWeight: 'bold'
+                            fontSize: '18',
+                            fontWeight: 'regular'
                         }
                     },
                     labelLine: {
@@ -106,7 +106,16 @@ fetch(document.getElementById('fetchHost').innerHTML + "/getChartData").then(res
                         { value: data.nvr[0].offline_count, name: 'offline' }
                     ]
                 }
-            ]
+            ],
+            legend:[
+                {
+                    bottom: 10,
+                    orient: "horizontal",
+                    selectorLabel:{
+                        show: false
+                    }
+                }
+            ],
         };
 
         console.log("11");
