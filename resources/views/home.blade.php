@@ -121,9 +121,8 @@
                 <div class="grid-row mt-2 mb-3 grid-row-col-2" style="grid-template-rows: 200px">
                     <div class="card">
                         <div class="card-body site-status">
+                            <p class="subHeading">Off-Devices</p>
                             <div id="main1" class="d-flex flex-column justify-content-between h-100">
-                                <p class="subHeading">Off-Devices</p>
-                                <span id="siteoff" class="num">...</span>
                             </div>
                         </div>
                     </div>
