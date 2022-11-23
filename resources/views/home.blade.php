@@ -150,7 +150,7 @@
 
                     <div
                         class="grid-row mt-2 mb-3 grid-row-col-2"
-                        style="grid-template-rows: 170px"
+                        style="grid-template-rows: 200px"
                     >
                         <div class="card">
                             <div class="card-body site-status">
