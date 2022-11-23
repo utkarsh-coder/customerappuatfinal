@@ -70,12 +70,6 @@
                 text-decoration: none;
                 color: #212529;
             }
-            .menuItems {
-                opacity: 0.6;
-            }
-            .active-state {
-                opacity: 1;
-            }
         </style>
     </head>
 
@@ -161,7 +155,7 @@
                     >
                         <div class="card">
                             <div class="card-body site-status">
-                                <p class="subHeading">Off-Devices</p>
+                                <p class="notificationContent">Online: 100</p>
                                 <div
                                     id="main1"
                                     class="d-flex flex-column justify-content-between h-100"
