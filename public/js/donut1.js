@@ -94,9 +94,9 @@ fetch(document.getElementById('fetchHost').innerHTML + "/getChartData").then(res
                     emphasis: {
                         label: {
                             show: true,
-                            fontSize: '18',
-                            fontWeight: 'regular'
-                        }
+                            fontSize: "18",
+                            fontWeight: "regular"
+                        },
                     },
                     labelLine: {
                         show: false
