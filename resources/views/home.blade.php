@@ -155,7 +155,14 @@
                     >
                         <div class="card">
                             <div class="card-body site-status">
-                                <p class="notificationContent">Online: 100</p>
+                                <div class="notificationContainer">
+                                    <p class="notificationContent">
+                                        Online: 100
+                                    </p>
+                                    <p class="notificationContent">
+                                        Offline: 100
+                                    </p>
+                                </div>
                                 <div
                                     id="main1"
                                     class="d-flex flex-column justify-content-between h-100"
