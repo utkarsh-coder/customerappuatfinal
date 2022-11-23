@@ -3,12 +3,12 @@
 // var express = require('express');
 // var router = express.Router();
 
-var ROOT_PATH = 'https://echarts.apache.org/examples';
+var ROOT_PATH = "https://echarts.apache.org/examples";
 
-var chartDom1 = document.getElementById('main1');
+var chartDom1 = document.getElementById("main1");
 var myChart1 = echarts.init(chartDom1);
 var option1;
-let text1 = '';
+let text1 = "";
 
 // $("#main1").append("<div id='loading1' class='loading';></div");
 
@@ -19,11 +19,15 @@ let text1 = '';
 // };
 
 // 'http://54.197.121.111:8001/iot/1.6/public/getSiteHealthStatus?business_id=193'
-console.log("url is:  ", document.getElementById('fetchHost').innerHTML + "/getChartData");
-fetch(document.getElementById('fetchHost').innerHTML + "/getChartData").then(res => {
-    return res.json();
-})
-    .then(data => {
+console.log(
+    "url is:  ",
+    document.getElementById("fetchHost").innerHTML + "/getChartData"
+);
+fetch(document.getElementById("fetchHost").innerHTML + "/getChartData")
+    .then((res) => {
+        return res.json();
+    })
+    .then((data) => {
         console.log(data);
         // document.body.style.opacity = 1;
         // document.getElementById('loaderImgBlack').remove();
@@ -37,28 +41,34 @@ fetch(document.getElementById('fetchHost').innerHTML + "/getChartData").then(res
         //     sessionStorage.setItem('modbusOnlineCount', 0);
         //     sessionStorage.setItem('modbusOfflineCount', 0);
         // }
-        
-        sessionStorage.setItem('glOnlineCount', data.gl[0].online);
-        sessionStorage.setItem('glOfflineCount', data.gl[0].offline);
 
-        sessionStorage.setItem('inOnlineCount', data.in[0].in_online_count);
-        sessionStorage.setItem('inOfflineCount', data.in[0].in_offline_count);
+        sessionStorage.setItem("glOnlineCount", data.gl[0].online);
+        sessionStorage.setItem("glOfflineCount", data.gl[0].offline);
 
-        sessionStorage.setItem('cameraOnlineCount', Number(data.nvr[0].camera_online_count));
-        sessionStorage.setItem('cameraOfflineCount', data.nvr[0].camera_offline_count);
+        sessionStorage.setItem("inOnlineCount", data.in[0].in_online_count);
+        sessionStorage.setItem("inOfflineCount", data.in[0].in_offline_count);
 
-        sessionStorage.setItem('modbusOnlineCount', data.modbus[0].online);
-        sessionStorage.setItem('modbusOfflineCount', data.modbus[0].offline);
+        sessionStorage.setItem(
+            "cameraOnlineCount",
+            Number(data.nvr[0].camera_online_count)
+        );
+        sessionStorage.setItem(
+            "cameraOfflineCount",
+            data.nvr[0].camera_offline_count
+        );
 
-        sessionStorage.setItem('armCount', data.in[0].arm_count);
-        sessionStorage.setItem('disarmCount', data.in[0].disarm_count);
+        sessionStorage.setItem("modbusOnlineCount", data.modbus[0].online);
+        sessionStorage.setItem("modbusOfflineCount", data.modbus[0].offline);
+
+        sessionStorage.setItem("armCount", data.in[0].arm_count);
+        sessionStorage.setItem("disarmCount", data.in[0].disarm_count);
 
         // document.getElementById('allonline').innerHTML = data.nvr[0].online_count + data.gl[0].online + data.in[0].in_online_count;
         // document.getElementById('alloffline').innerHTML = data.nvr[0].offline_count + data.gl[0].offline + data.in[0].in_offline_count;
         console.log("starting hello world!");
 
-        if (data.nvr[0].online_count == 'null') {
-            text1 = 'NVR not present at site';
+        if (data.nvr[0].online_count == "null") {
+            text1 = "NVR not present at site";
         }
 
         option1 = {
@@ -66,47 +76,47 @@ fetch(document.getElementById('fetchHost').innerHTML + "/getChartData").then(res
                 text: text1,
                 // text: 'NVR',
                 // subtext: 'Real-time data',
-                left: 'center'
+                left: "center",
             },
             tooltip: {
-                trigger: 'item'
+                trigger: "item",
             },
             legend: {
-                top: '5%',
-                left: 'center',
-                data: ['online', 'offline']
+                top: "5%",
+                left: "center",
+                data: ["online", "offline"],
             },
             series: [
                 {
-                    name: 'Access From',
-                    type: 'pie',
-                    radius: ['40%', '70%'],
+                    name: "Access From",
+                    type: "pie",
+                    radius: ["40%", "70%"],
                     avoidLabelOverlap: false,
                     itemStyle: {
                         borderRadius: 10,
-                        borderColor: '#fff',
-                        borderWidth: 2
+                        borderColor: "#fff",
+                        borderWidth: 2,
                     },
                     label: {
                         show: false,
-                        position: 'center'
+                        position: "center",
                     },
                     emphasis: {
                         label: {
                             show: true,
-                            fontSize: '40',
-                            fontWeight: 'bold'
-                        }
+                            fontSize: "18",
+                            fontWeight: "regular",
+                        },
                     },
                     labelLine: {
-                        show: false
+                        show: false,
                     },
                     data: [
-                        { value: data.nvr[0].online_count, name: 'online' },
-                        { value: data.nvr[0].offline_count, name: 'offline' }
-                    ]
-                }
-            ]
+                        { value: data.nvr[0].online_count, name: "online" },
+                        { value: data.nvr[0].offline_count, name: "offline" },
+                    ],
+                },
+            ],
         };
 
         console.log("11");
@@ -130,11 +140,10 @@ fetch(document.getElementById('fetchHost').innerHTML + "/getChartData").then(res
         // let script = $(document).createElement('script');
         // script.src = './example2.js';
         // document.body.appendChild(script);
-
     })
-    .catch(error => console.log('ERROR: ', error));
+    .catch((error) => console.log("ERROR: ", error));
 
-myChart1.on('click', function (params) {
+myChart1.on("click", function (params) {
     // printing data name in console
 
     // console.log(params.name);
@@ -145,12 +154,12 @@ myChart1.on('click', function (params) {
     //     window.location.href = "/TableNvrOffline.html";
     // }
 
-    console.log('val: ', params.name);
+    console.log("val: ", params.name);
 
-    document.getElementById('type').value = 'nvr';
-    document.getElementById('status').value = params.name;
+    document.getElementById("type").value = "nvr";
+    document.getElementById("status").value = params.name;
     console.log("This is the data of the site:  ", params.name);
-    document.getElementById('siteListForm').submit();
+    document.getElementById("siteListForm").submit();
 
     // const data = { type: 'nvr' }
 
@@ -172,5 +181,4 @@ myChart1.on('click', function (params) {
     //     .catch((error) => {
     //         console.error('Error: ', error);
     //     });
-
 });
