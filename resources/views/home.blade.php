@@ -140,9 +140,7 @@
                             <span>Updated Just Now</span>
                             <h2>Current Status</h2>
                         </div>
-                        <div
-                            class="col-2 d-flex align-items-end justify-content-end"
-                        >
+                        <div class="col-2 d-flex justify-content-end">
                             <button type="button" class="searchBtn">
                                 <i class="bi bi-search"></i>
                             </button>
