@@ -412,6 +412,7 @@ footer .menuItems img {
 }
 
 .minRowHeight {
-  grid-template-row: minmax(186px, auto);
+  -ms-grid-rows: minmax(186px, auto);
+      grid-template-rows: minmax(186px, auto);
 }
 /*# sourceMappingURL=design.css.map */
