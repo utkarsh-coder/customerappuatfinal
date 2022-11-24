@@ -37,7 +37,10 @@ fetch(document.getElementById('fetchHost').innerHTML + "/getChartData").then(res
         //     sessionStorage.setItem('modbusOnlineCount', 0);
         //     sessionStorage.setItem('modbusOfflineCount', 0);
         // }
-        
+
+        sessionStorage.setItem('nvrOnlineCount', data.nvr[0].online);
+        sessionStorage.setItem('nvrOfflineCount', data.nvr[0].offline);
+
         sessionStorage.setItem('glOnlineCount', data.gl[0].online);
         sessionStorage.setItem('glOfflineCount', data.gl[0].offline);
 
@@ -52,6 +55,9 @@ fetch(document.getElementById('fetchHost').innerHTML + "/getChartData").then(res
 
         sessionStorage.setItem('armCount', data.in[0].arm_count);
         sessionStorage.setItem('disarmCount', data.in[0].disarm_count);
+
+        document.getElementById('inonlinecount').innerHTML = 'Online: '+sessionStorage.getItem('inOnlineCount');
+        document.getElementById('inofflinecount').innerHTML = 'Offline: '+sessionStorage.getItem('inOfflineCount');
 
         // document.getElementById('allonline').innerHTML = data.nvr[0].online_count + data.gl[0].online + data.in[0].in_online_count;
         // document.getElementById('alloffline').innerHTML = data.nvr[0].offline_count + data.gl[0].offline + data.in[0].in_offline_count;
@@ -98,16 +104,16 @@ fetch(document.getElementById('fetchHost').innerHTML + "/getChartData").then(res
                         show: false
                     },
                     data: [
-                        { value: data.nvr[0].online_count, name: 'online' },
-                        { value: data.nvr[0].offline_count, name: 'offline' }
+                        { value: sessionStorage.getItem('inOnlineCount'), name: 'online' },
+                        { value: sessionStorage.getItem('inOfflineCount'), name: 'offline' }
                     ]
                 }
             ],
-            legend:[
+            legend: [
                 {
                     bottom: 10,
                     orient: "horizontal",
-                    selectorLabel:{
+                    selectorLabel: {
                         show: false
                     }
                 }
@@ -117,7 +123,7 @@ fetch(document.getElementById('fetchHost').innerHTML + "/getChartData").then(res
         console.log("11");
 
         option1 && myChart1.setOption(option1);
-        // runGlPie();
+        runArmDisarm();
 
         // var tr = document.createElement('tr');
         // var td1 = tr.appendChild(document.createElement('td'));
