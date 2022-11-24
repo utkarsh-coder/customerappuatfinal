@@ -18,7 +18,7 @@ $(document).ready(function () {
 
             console.log('getData:  ', data);
             console.log(data.gl[0].offline);
-            document.getElementById('siteoff').innerHTML = data.nvr[0].offline_count + data.gl[0].offline + data.in[0].in_offline_count;
+            document.getElementById('siteoff').innerHTML = data.in[0].in_offline_count;
             document.getElementById('sitearmed').innerHTML = data.in[0].arm_count;
             document.getElementById('sitedisarmed').innerHTML = data.in[0].disarm_count;
 
