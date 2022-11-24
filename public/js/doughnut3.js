@@ -5,10 +5,10 @@
 
 var ROOT_PATH = 'https://echarts.apache.org/examples';
 
-var chartDom2 = document.getElementById('main2');
-var myChart2 = echarts.init(chartDom2);
-var option2;
-let text2 = '';
+var chartDom3 = document.getElementById('main3');
+var myChart3 = echarts.init(chartDom3);
+var option3;
+let text3 = '';
 
 // $("#main1").append("<div id='loading1' class='loading';></div");
 
@@ -20,7 +20,7 @@ let text2 = '';
 
 // 'http://54.197.121.111:8001/iot/1.6/public/getSiteHealthStatus?business_id=193'
 console.log("url is:  ", document.getElementById('fetchHost').innerHTML + "/getChartData");
-function runArmDisarm() {
+function runGl() {
     // console.log(data);
     // document.body.style.opacity = 1;
     // document.getElementById('loaderImgBlack').remove();
@@ -38,16 +38,16 @@ function runArmDisarm() {
     // document.getElementById('alloffline').innerHTML = data.nvr[0].offline_count + data.gl[0].offline + data.in[0].in_offline_count;
     console.log("starting hello world!");
 
-    if (sessionStorage.getItem('armCount') == 'null') {
-        text2 = 'IN not present at site';
+    if (sessionStorage.getItem('glOnlineCount') == 'null') {
+        text3 = 'GL not present at site';
     }
 
-    document.getElementById('armcount').innerHTML = 'Arm: ' + sessionStorage.getItem('armCount');
-    document.getElementById('disarmcount').innerHTML = 'Disarm: ' + sessionStorage.getItem('disarmCount');
+    document.getElementById('glonlinecount').innerHTML = 'Online: ' + sessionStorage.getItem('glOnlineCount');
+    document.getElementById('glofflinecount').innerHTML = 'Offline: ' + sessionStorage.getItem('glOfflineCount');
 
-    option2 = {
+    option3 = {
         title: {
-            text: text2,
+            text: text3,
             // text: 'NVR',
             // subtext: 'Real-time data',
             left: 'center'
@@ -82,8 +82,8 @@ function runArmDisarm() {
                     show: false
                 },
                 data: [
-                    { value: sessionStorage.getItem('armCount'), name: 'arm' },
-                    { value: sessionStorage.getItem('disarmCount'), name: 'disarm' }
+                    { value: sessionStorage.getItem('glOnlineCount'), name: 'arm' },
+                    { value: sessionStorage.getItem('glOfflineCount'), name: 'disarm' }
                 ]
             }
         ],
@@ -100,8 +100,8 @@ function runArmDisarm() {
 
     console.log("11");
 
-    option2 && myChart2.setOption(option2);
-    runGl();
+    option3 && myChart3.setOption(option3);
+    // runGlPie();
 
     // var tr = document.createElement('tr');
     // var td1 = tr.appendChild(document.createElement('td'));
@@ -121,7 +121,7 @@ function runArmDisarm() {
     // document.body.appendChild(script);
 }
 
-myChart2.on('click', function (params) {
+myChart3.on('click', function (params) {
     // printing data name in console
 
     // console.log(params.name);

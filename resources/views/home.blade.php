@@ -150,9 +150,16 @@
                 <div class="grid-row grid-row-col-1 mt-2 mb-3 grid-row-80">
                     <div class="card">
                         <div class="card-body site-status">
-                            <div class="d-flex flex-column justify-content-between h-100">
-                                <p class="subHeading">Off-Devices</p>
-                                <span id="siteoff" class="num">...</span>
+                            <div class="notificationContainer">
+                                <p id="glonlinecount" class="notificationContent">
+                                    Online: ...
+                                </p>
+                                <p id="glofflinecount" class="notificationContent">
+                                    Offline: ...
+                                </p>
+                            </div>
+                            <div id="main3" class="d-flex flex-column justify-content-between h-100">
+                                
                             </div>
                         </div>
                     </div>
@@ -489,6 +496,7 @@
     <script src="js/home.js"></script>
     <script src="js/doughnut1.js"></script>
     <script src="js/doughnut2.js"></script>
+    <script src="js/doughnut3.js"></script>
 </body>
 
 </html>
