@@ -156,9 +156,9 @@
                                     <p class="notificationContent">
                                         Offline: 100
                                     </p>
-                                    <!-- <p class="notificationContent">
+                                    <p class="notificationContent">
                                         Offline: 100
-                                    </p> -->
+                                    </p>
                                 </div>
                                 <div
                                     id="main1"
