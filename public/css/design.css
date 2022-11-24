@@ -400,10 +400,14 @@ footer .menuItems img {
   -webkit-box-pack: justify;
       -ms-flex-pack: justify;
           justify-content: space-between;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-flow: row;
+          flex-flow: row;
 }
 
 .notificationContent {
   margin-bottom: 0;
-  font-size: 12px;
+  font-size: 10px;
 }
 /*# sourceMappingURL=design.css.map */

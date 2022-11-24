@@ -335,9 +335,10 @@ footer{
     align-items: center;
     gap:12px;
     justify-content: space-between;
+    flex-flow: row;
 }
 .notificationContent{
     margin-bottom: 0;
-    font-size: 12px;
+    font-size: 10px;
 }
 
