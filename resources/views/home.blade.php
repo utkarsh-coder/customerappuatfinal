@@ -224,7 +224,7 @@
                     <div class="col-10 mt-3">
                         <h2>Health status</h2>
                     </div>
-                    <div class="grid-row grid-row-col-3 mt-2 mb-3 grid-row-80">
+                    <div class="grid-row grid-row-col-3 mt-2 mb-3">
                         <div class="card">
                             <div class="card-body site-status">
                                 <div
