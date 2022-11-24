@@ -411,7 +411,7 @@ footer .menuItems img {
   font-size: 10px;
 }
 
-.autoheight > div {
-  height: 186px !important;
+.minRowHeight {
+  grid-template-row: minmax(186px, auto);
 }
 /*# sourceMappingURL=design.css.map */
