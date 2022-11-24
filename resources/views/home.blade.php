@@ -196,7 +196,7 @@
                     <div class="col-10 mt-3">
                         <h2>Network health</h2>
                     </div>
-                    <div class="grid-row grid-row-col-1 mt-2 mb-3">
+                    <div class="grid-row grid-row-col-1 mt-2 mb-3 networdHelth">
                         <div class="card">
                             <div class="card-body site-status">
                                 <div class="notificationContainer">
@@ -215,7 +215,7 @@
                                 </div>
                                 <div
                                     id="main3"
-                                    class="d-flex flex-column justify-content-between h-100 networdHelth"
+                                    class="d-flex flex-column justify-content-between h-100"
                                 ></div>
                             </div>
                         </div>

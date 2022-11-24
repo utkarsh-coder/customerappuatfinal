@@ -416,7 +416,8 @@ footer .menuItems img {
       grid-template-rows: minmax(220px, auto);
 }
 
-.networdHelth div {
-  height: 238px !important;
+.networdHelth {
+  -ms-grid-rows: 238px;
+      grid-template-rows: 238px;
 }
 /*# sourceMappingURL=design.css.map */

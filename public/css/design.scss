@@ -347,7 +347,5 @@ footer{
     grid-template-rows:minmax(220px, auto) ;
 }
 .networdHelth{
-    div{
-        height: 238px !important;
-    }
+  grid-template-rows: 238px;
 }
