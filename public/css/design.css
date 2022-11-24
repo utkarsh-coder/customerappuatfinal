@@ -410,4 +410,9 @@ footer .menuItems img {
   margin-bottom: 0;
   font-size: 10px;
 }
+
+.autoheight > div {
+  min-height: 186px;
+  height: auto !important;
+}
 /*# sourceMappingURL=design.css.map */

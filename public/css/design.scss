@@ -342,3 +342,8 @@ footer{
     font-size: 10px;
 }
 
+
+.autoheight > div{
+    min-height: 186px;
+height: auto !important;
+}

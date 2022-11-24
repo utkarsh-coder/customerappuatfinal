@@ -149,10 +149,7 @@
                         </div>
                     </div>
 
-                    <div
-                        class="grid-row mt-2 mb-3 grid-row-col-2"
-                        style="grid-template-rows: 210px"
-                    >
+                    <div class="grid-row mt-2 mb-3 grid-row-col-2">
                         <div class="card">
                             <div class="card-body site-status">
                                 <div class="notificationContainer">
@@ -165,14 +162,14 @@
                                 </div>
                                 <div
                                     id="main1"
-                                    class="d-flex flex-column justify-content-between h-100"
+                                    class="d-flex flex-column justify-content-between h-100 autoheight"
                                 ></div>
                             </div>
                         </div>
                         <div class="card">
                             <div class="card-body site-status">
                                 <div
-                                    class="d-flex flex-column justify-content-between h-100"
+                                    class="d-flex flex-column justify-content-between h-100 autoheight"
                                 >
                                     <p class="subHeading">Armed</p>
                                     <span id="sitearmed" class="num">...</span>
