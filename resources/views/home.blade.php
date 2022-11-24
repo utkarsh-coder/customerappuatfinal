@@ -196,7 +196,7 @@
                     <div class="col-10 mt-3">
                         <h2>Network health</h2>
                     </div>
-                    <div class="grid-row grid-row-col-1 mt-2 mb-3 grid-row-80">
+                    <div class="grid-row grid-row-col-1 mt-2 mb-3">
                         <div class="card">
                             <div class="card-body site-status">
                                 <div class="notificationContainer">
