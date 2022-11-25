@@ -157,7 +157,7 @@
                     <div class="card">
                         <div class="card-body site-status">
                             <div class="d-flex flex-column justify-content-between h-100">
-                                <p class="subHeading">Off-Devices</p>
+                                <p class="subHeading">Off-Sites</p>
                                 <span id="siteoff" class="num">...</span>
                             </div>
                         </div>

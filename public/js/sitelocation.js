@@ -10,7 +10,7 @@ let totalArmed = 0;
 let totalDisarmed = 0;
 
 
-let typeValues = ['nvr', 'in', 'gl', 'modbus'];
+let typeValues = ['nvr', 'in', 'gl'];
 let statusValues = ['online', 'offline'];
 
 // document.getElementById('fetchHost').innerHTML+"/customerapp/public/getData"
@@ -39,13 +39,13 @@ fetch(document.getElementById('fetchHost').innerHTML + "/getLocationData").then(
                         checkCount++;
                         eval(typeValue + 'List=' + typeValue + 'List.concat(dataDevices.data)');
                         // console.log('nvrList:  ', nvrList);
-                        console.log('count' + typeValue + "  " + statusValue, eval(typeValue + 'List.length'));
-                        console.log('print it: ', inList);
+                        // console.log('count' + typeValue + "  " + statusValue, eval(typeValue + 'List.length'));
+                        // console.log('print it: ', inList);
                         // if(typeValue == 'in'){
                         //     console.log(inList);
                         // }
-                        console.log('count original:  ', dataDevices.data.length);
-                        if (checkCount == 9) {
+                        // console.log('count original:  ', dataDevices.data.length);
+                        if (checkCount == 6) {
                             runProcess();
                         }
                     })
@@ -69,16 +69,16 @@ function runProcess() {
         let totalOfflineDevices = 0;
         let siteStatus = null;
         let siteMode = null;
-        let checkForOffline = 0;
+        let checkForTotal = 0;
 
         for (let c = 0; c < inList.length; c++) {
             if (inList[c].location_id == locationList[a].location_id) {
-                console.log(inList[c].name + "      " + inList[c].status + inList[c].mode);
+                checkForTotal++;
+                // console.log(inList[c].name + "      " + inList[c].status + inList[c].mode);
                 if (name == null) {
                     name = locationList[a].location_name;
                 }
                 if (inList[c].status == "offline    ") {
-                    checkForOffline++;
                     // totalOffline++;
                     totalOfflineDevices++;
                     if (siteStatus == null) {
@@ -122,12 +122,12 @@ function runProcess() {
 
         for (let b = 0; b < nvrList.length; b++) {
             if (nvrList[b].location_id == locationList[a].location_id) {
+                checkForTotal++;
                 if (name == null) {
                     name = locationList[a].location_name;
                 }
 
                 if (nvrList[b].status == "offline") {
-                    checkForOffline++;
                     // totalOffline++;
                     totalOfflineDevices++;
                     if (siteStatus == null) {
@@ -146,11 +146,11 @@ function runProcess() {
 
         for (let d = 0; d < glList.length; d++) {
             if (glList[d].location_id == locationList[a].location_id) {
+                checkForTotal++;
                 if (name == null) {
                     name = locationList[a].location_name;
                 }
                 if (glList[d].status == "offline") {
-                    checkForOffline++;
                     // totalOffline++;
                     totalOfflineDevices++;
                     if (siteStatus == null) {
@@ -167,28 +167,28 @@ function runProcess() {
             }
         }
 
-        for (let e = 0; e < modbusList.length; e++) {
-            if (modbusList[e].location_id == locationList[a].location_id) {
-                if (name == null) {
-                    name = locationList[a].location_name;
-                }
-                if (modbusList[e].status == "offline") {
-                    checkForOffline++;
-                    // totalOffline++;
-                    totalOfflineDevices++;
-                    if (siteStatus == null) {
-                        siteStatus = 'offline';
-                    }
-                }
-                else if (modbusList[e].status == "online") {
-                    // checkForOnline = 1;
-                    totalOnlineDevices++;
-                    if (siteStatus == null) {
-                        siteStatus = 'online';
-                    }
-                }
-            }
-        }
+        // for (let e = 0; e < modbusList.length; e++) {
+        //     if (modbusList[e].location_id == locationList[a].location_id) {
+        //         if (name == null) {
+        //             name = locationList[a].location_name;
+        //         }
+        //         if (modbusList[e].status == "offline") {
+        //             checkForOffline++;
+        //             // totalOffline++;
+        //             totalOfflineDevices++;
+        //             if (siteStatus == null) {
+        //                 siteStatus = 'offline';
+        //             }
+        //         }
+        //         else if (modbusList[e].status == "online") {
+        //             // checkForOnline = 1;
+        //             totalOnlineDevices++;
+        //             if (siteStatus == null) {
+        //                 siteStatus = 'online';
+        //             }
+        //         }
+        //     }
+        // }
 
         if (name != null) {
             const jsonOb = {
@@ -200,10 +200,9 @@ function runProcess() {
             }
             siteArray.push(jsonOb);
             // console.log(jsonOb);
-        }
-
-        if (checkForOffline > 0) {
-            totalOffline++;
+            if (totalOfflineDevices == checkForTotal) {
+                totalOffline++;
+            }
         }
     }
 
