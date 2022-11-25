@@ -56,8 +56,8 @@ fetch(document.getElementById('fetchHost').innerHTML + "/getChartData").then(res
         sessionStorage.setItem('armCount', data.in[0].arm_count);
         sessionStorage.setItem('disarmCount', data.in[0].disarm_count);
 
-        document.getElementById('inonlinecount').innerHTML = 'Online: '+sessionStorage.getItem('inOnlineCount');
-        document.getElementById('inofflinecount').innerHTML = 'Offline: '+sessionStorage.getItem('inOfflineCount');
+        document.getElementById('inonlinecount').innerHTML = 'Online: ' + sessionStorage.getItem('inOnlineCount');
+        document.getElementById('inofflinecount').innerHTML = 'Offline: ' + sessionStorage.getItem('inOfflineCount');
 
         // document.getElementById('allonline').innerHTML = data.nvr[0].online_count + data.gl[0].online + data.in[0].in_online_count;
         // document.getElementById('alloffline').innerHTML = data.nvr[0].offline_count + data.gl[0].offline + data.in[0].in_offline_count;
@@ -79,6 +79,10 @@ fetch(document.getElementById('fetchHost').innerHTML + "/getChartData").then(res
                 left: 'center',
                 data: ['online', 'offline']
             },
+            color: [
+                '#024f8f',
+                '#FF0000'
+            ],
             series: [
                 {
                     type: 'pie',

@@ -57,6 +57,10 @@ function runGl() {
             left: 'center',
             data: ['arm', 'disarm']
         },
+        color: [
+            '#024f8f',
+            '#FF0000'
+        ],
         series: [
             {
                 type: 'pie',
