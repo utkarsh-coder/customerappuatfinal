@@ -104,7 +104,7 @@ class CustomerController extends Controller
         $curl = curl_init();
 
         curl_setopt_array($curl, array(
-            CURLOPT_URL => 'http://uat.gizmosmart.io/igzy/sukh/1.6/public/api_login',
+            CURLOPT_URL => 'http://cc.gizmosmart.io/iot/1.6/public/api_login',
             CURLOPT_RETURNTRANSFER => true,
             CURLOPT_ENCODING => '',
             CURLOPT_MAXREDIRS => 10,
@@ -190,7 +190,7 @@ class CustomerController extends Controller
         $curl = curl_init();
 
         curl_setopt_array($curl, array(
-            CURLOPT_URL => 'http://54.197.121.111:8001/iot/1.6/public/getSiteHealthStatus?business_id='.session()->get('business_id'),
+            CURLOPT_URL => 'http://cc.gizmosmart.io/iot/1.6/public/getSiteHealthStatus?business_id='.session()->get('business_id'),
             CURLOPT_RETURNTRANSFER => true,
             CURLOPT_ENCODING => '',
             CURLOPT_MAXREDIRS => 10,
@@ -220,7 +220,7 @@ class CustomerController extends Controller
         $curl = curl_init();
 
         curl_setopt_array($curl, array(
-            CURLOPT_URL => 'http://54.197.121.111:8001/iot/1.6/public/getDeviceInfo?business_id='.session()->get('business_id').'&type=location&status=active',
+            CURLOPT_URL => 'https://cc.gizmosmart.io/iot/1.6/public/getDeviceInfo?business_id='.session()->get('business_id').'&type=location&status=active',
             CURLOPT_RETURNTRANSFER => true,
             CURLOPT_ENCODING => '',
             CURLOPT_MAXREDIRS => 10,
@@ -245,7 +245,7 @@ class CustomerController extends Controller
         $curl = curl_init();
 
         curl_setopt_array($curl, array(
-            CURLOPT_URL => 'http://54.197.121.111:8001/iot/1.6/public/getDeviceInfo?business_id='.session()->get('business_id').'&type=' . $request->typeValue . '&status=' . $request->statusValue,
+            CURLOPT_URL => 'https://cc.gizmosmart.io/iot/1.6/public/getDeviceInfo?business_id='.session()->get('business_id').'&type=' . $request->typeValue . '&status=' . $request->statusValue,
             CURLOPT_RETURNTRANSFER => true,
             CURLOPT_ENCODING => '',
             CURLOPT_MAXREDIRS => 10,
@@ -269,7 +269,7 @@ class CustomerController extends Controller
         $curl = curl_init();
 
         curl_setopt_array($curl, array(
-            CURLOPT_URL => 'http://54.197.121.111:8001/iot/1.6/public/getSiteHealthStatus?business_id='.session()->get('business_id'),
+            CURLOPT_URL => 'http://cc.gizmosmart.io/iot/1.6/public/getSiteHealthStatus?business_id='.session()->get('business_id'),
             CURLOPT_RETURNTRANSFER => true,
             CURLOPT_ENCODING => '',
             CURLOPT_MAXREDIRS => 10,
