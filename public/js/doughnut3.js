@@ -55,7 +55,7 @@ function runGl() {
         legend: {
             top: '5%',
             left: 'center',
-            data: ['arm', 'disarm']
+            data: ['online', 'offline']
         },
         color: [
             '#024f8f',
@@ -86,8 +86,8 @@ function runGl() {
                     show: false
                 },
                 data: [
-                    { value: sessionStorage.getItem('glOnlineCount'), name: 'arm' },
-                    { value: sessionStorage.getItem('glOfflineCount'), name: 'disarm' }
+                    { value: sessionStorage.getItem('glOnlineCount'), name: 'Online' },
+                    { value: sessionStorage.getItem('glOfflineCount'), name: 'Offline' }
                 ]
             }
         ],

@@ -108,8 +108,8 @@ fetch(document.getElementById('fetchHost').innerHTML + "/getChartData").then(res
                         show: false
                     },
                     data: [
-                        { value: sessionStorage.getItem('inOnlineCount'), name: 'online' },
-                        { value: sessionStorage.getItem('inOfflineCount'), name: 'offline' }
+                        { value: sessionStorage.getItem('inOnlineCount'), name: 'Online' },
+                        { value: sessionStorage.getItem('inOfflineCount'), name: 'Offline' }
                     ]
                 }
             ],
