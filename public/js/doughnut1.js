@@ -80,7 +80,7 @@ fetch(document.getElementById('fetchHost').innerHTML + "/getChartData").then(res
                 data: ['online', 'offline']
             },
             color: [
-                '#024f8f',
+                '#0361a1',
                 '#FF0000'
             ],
             series: [

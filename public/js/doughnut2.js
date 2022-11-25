@@ -58,7 +58,7 @@ function runArmDisarm() {
             data: ['arm', 'disarm']
         },
         color: [
-            '#024f8f',
+            '#0361a1',
             '#FF0000'
         ],
         series: [
