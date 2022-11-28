@@ -220,7 +220,7 @@ class CustomerController extends Controller
         $curl = curl_init();
 
         curl_setopt_array($curl, array(
-            CURLOPT_URL => 'https://cc.gizmosmart.io/iot/1.6/public/getDeviceInfo?business_id='.session()->get('business_id').'&type=location&status=active',
+            CURLOPT_URL => 'http://cc.gizmosmart.io/iot/1.6/public/getDeviceInfo?business_id='.session()->get('business_id').'&type=location&status=active',
             CURLOPT_RETURNTRANSFER => true,
             CURLOPT_ENCODING => '',
             CURLOPT_MAXREDIRS => 10,
@@ -245,7 +245,7 @@ class CustomerController extends Controller
         $curl = curl_init();
 
         curl_setopt_array($curl, array(
-            CURLOPT_URL => 'https://cc.gizmosmart.io/iot/1.6/public/getDeviceInfo?business_id='.session()->get('business_id').'&type=' . $request->typeValue . '&status=' . $request->statusValue,
+            CURLOPT_URL => 'http://cc.gizmosmart.io/iot/1.6/public/getDeviceInfo?business_id='.session()->get('business_id').'&type=' . $request->typeValue . '&status=' . $request->statusValue,
             CURLOPT_RETURNTRANSFER => true,
             CURLOPT_ENCODING => '',
             CURLOPT_MAXREDIRS => 10,
