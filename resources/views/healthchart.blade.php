@@ -115,9 +115,9 @@
     </script>
     <main>
         <header class="mobileHeader">
-            <a href="">
+            <!-- <a href="">
                 <img src="{{ asset('img/backArrow.svg') }}" alt="" />
-            </a>
+            </a> -->
             <h2>Health Status</h2>
         </header>
 
