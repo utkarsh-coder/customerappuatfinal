@@ -52,11 +52,6 @@ function runArmDisarm() {
             // subtext: 'Real-time data',
             left: 'center'
         },
-        legend: {
-            top: '5%',
-            left: 'center',
-            data: ['arm', 'disarm']
-        },
         color: [
             '#0361a1',
             '#FF0000'
@@ -97,7 +92,9 @@ function runArmDisarm() {
                 orient: "horizontal",
                 selectorLabel: {
                     show: false
-                }
+                },
+                left: 'center',
+                data: ['arm', 'disarm']
             }
         ],
     };

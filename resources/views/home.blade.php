@@ -194,7 +194,7 @@
                         </div>
                     </div>
                     <div class="col-10 mt-3">
-                        <h2>Network health</h2>
+                        <h2>Network Health</h2>
                     </div>
                     <div class="grid-row grid-row-col-1 mt-2 mb-3 networdHelth">
                         <div class="card">
@@ -222,7 +222,7 @@
                     </div>
 
                     <div class="col-10 mt-3">
-                        <h2>Health status</h2>
+                        <h2>Health Status</h2>
                     </div>
                     <div class="grid-row grid-row-col-3 mt-2 mb-3">
                         <div class="card">

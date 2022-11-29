@@ -20,11 +20,24 @@ let text1 = '';
 
 // 'http://54.197.121.111:8001/iot/1.6/public/getSiteHealthStatus?business_id=193'
 console.log("url is:  ", document.getElementById('fetchHost').innerHTML + "/getChartData");
-
 fetch(document.getElementById('fetchHost').innerHTML + "/getChartData").then(res => {
     return res.json();
 })
     .then(data => {
+        // console.log(data);
+        // document.body.style.opacity = 1;
+        // document.getElementById('loaderImgBlack').remove();
+        // document.body.style.pointerEvents = "auto";
+
+        // if (data.data.modbus[0] != undefined) {
+        //     sessionStorage.setItem('modbusOnlineCount', data.data.modbus[1].count);
+        //     sessionStorage.setItem('modbusOfflineCount', data.data.modbus[0].count);
+        // }
+        // else {
+        //     sessionStorage.setItem('modbusOnlineCount', 0);
+        //     sessionStorage.setItem('modbusOfflineCount', 0);
+        // }
+
         sessionStorage.setItem('nvrOnlineCount', data.nvr[0].online);
         sessionStorage.setItem('nvrOfflineCount', data.nvr[0].offline);
 
@@ -46,8 +59,12 @@ fetch(document.getElementById('fetchHost').innerHTML + "/getChartData").then(res
         document.getElementById('inonlinecount').innerHTML = 'Online: ' + sessionStorage.getItem('inOnlineCount');
         document.getElementById('inofflinecount').innerHTML = 'Offline: ' + sessionStorage.getItem('inOfflineCount');
 
-        if (sessionStorage.getItem('inOnlineCount') == 'null') {
-            text1 = 'IN not present at site';
+        // document.getElementById('allonline').innerHTML = data.nvr[0].online_count + data.gl[0].online + data.in[0].in_online_count;
+        // document.getElementById('alloffline').innerHTML = data.nvr[0].offline_count + data.gl[0].offline + data.in[0].in_offline_count;
+        console.log("starting hello world!");
+
+        if (data.nvr[0].online_count == 'null') {
+            text1 = 'NVR not present at site';
         }
 
         option1 = {
@@ -104,8 +121,28 @@ fetch(document.getElementById('fetchHost').innerHTML + "/getChartData").then(res
             ],
         };
 
+        console.log("11");
+
         option1 && myChart1.setOption(option1);
         runArmDisarm();
+
+        // var tr = document.createElement('tr');
+        // var td1 = tr.appendChild(document.createElement('td'));
+        // var td2 = tr.appendChild(document.createElement('td'));
+
+        // let uptime = ((data.data.nvr[1].count) / (data.data.nvr[1].count + data.data.nvr[0].count)) * 100;
+        // td1.innerHTML = 'NVR';
+        // td2.innerHTML = uptime.toFixed(2);
+        // document.getElementById('tb').appendChild(tr);
+
+        // $('#loading1').remove();
+        // runModbusPie();
+        // runNvrPie();
+
+        // let script = $(document).createElement('script');
+        // script.src = './example2.js';
+        // document.body.appendChild(script);
+
     })
     .catch(error => console.log('ERROR: ', error));
 
@@ -117,5 +154,4 @@ myChart1.on('click', function (params) {
     document.getElementById('status').value = params.name;
     console.log("This is the data of the site:  ", params.name);
     document.getElementById('siteListForm').submit();
-
 });
