@@ -293,7 +293,7 @@ class CustomerController extends Controller
         $curl = curl_init();
 
         curl_setopt_array($curl, array(
-            CURLOPT_URL => 'http://54.197.121.111:8001/iot/1.6/public/getDeviceInfo?business_id='.session()->get('business_id').'&type='.$request->type.'&status='.$request->status,
+            CURLOPT_URL => 'http://cc.gizmosmart.io/iot/1.6/public/getDeviceInfo?business_id='.session()->get('business_id').'&type='.$request->type.'&status='.$request->status,
             CURLOPT_RETURNTRANSFER => true,
             CURLOPT_ENCODING => '',
             CURLOPT_MAXREDIRS => 10,
