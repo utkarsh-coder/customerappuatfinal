@@ -25,8 +25,8 @@ fetch(document.getElementById('fetchHost').innerHTML + "/getChartData").then(res
     return res.json();
 })
     .then(data => {
-        sessionStorage.setItem('nvrOnlineCount', data.nvr[0].online);
-        sessionStorage.setItem('nvrOfflineCount', data.nvr[0].offline);
+        sessionStorage.setItem('nvrOnlineCount', data.nvr[0].online_count);
+        sessionStorage.setItem('nvrOfflineCount', data.nvr[0].offline_count);
 
         sessionStorage.setItem('glOnlineCount', data.gl[0].online);
         sessionStorage.setItem('glOfflineCount', data.gl[0].offline);
@@ -34,17 +34,28 @@ fetch(document.getElementById('fetchHost').innerHTML + "/getChartData").then(res
         sessionStorage.setItem('inOnlineCount', data.in[0].in_online_count);
         sessionStorage.setItem('inOfflineCount', data.in[0].in_offline_count);
 
+        sessionStorage.setItem('armCount', data.in[0].arm_count);
+        sessionStorage.setItem('disarmCount', data.in[0].disarm_count);
+
+        sessionStorage.setItem('compCount', data.nvr[0].comp_count);
+        sessionStorage.setItem('nonCompCount', data.nvr[0].non_cpm_count);
+
+        sessionStorage.setItem('offSites', data.in[0].in_offline_count);
+        sessionStorage.setItem('hardDriveCount', data.nvr[0].hdd_count);
+        sessionStorage.setItem('open-noti', data.openNotification[0].count);
+
         sessionStorage.setItem('cameraOnlineCount', Number(data.nvr[0].camera_online_count));
         sessionStorage.setItem('cameraOfflineCount', data.nvr[0].camera_offline_count);
 
         sessionStorage.setItem('modbusOnlineCount', data.modbus[0].online);
         sessionStorage.setItem('modbusOfflineCount', data.modbus[0].offline);
 
-        sessionStorage.setItem('armCount', data.in[0].arm_count);
-        sessionStorage.setItem('disarmCount', data.in[0].disarm_count);
-
         document.getElementById('inonlinecount').innerHTML = 'Online: ' + sessionStorage.getItem('inOnlineCount');
         document.getElementById('inofflinecount').innerHTML = 'Offline: ' + sessionStorage.getItem('inOfflineCount');
+
+        document.getElementById('siteoff').innerHTML = sessionStorage.getItem('offSites');
+        document.getElementById('hddCount').innerHTML = sessionStorage.getItem('hardDriveCount');
+        document.getElementById('open-noti').innerHTML = sessionStorage.getItem('open-noti');
 
         if (sessionStorage.getItem('inOnlineCount') == 'null') {
             text1 = 'IN not present at site';
@@ -67,13 +78,27 @@ fetch(document.getElementById('fetchHost').innerHTML + "/getChartData").then(res
                     radius: ['40%', '70%'],
                     avoidLabelOverlap: false,
                     itemStyle: {
-                        borderRadius: 10,
+                        borderRadius: 0,
                         borderColor: '#fff',
                         borderWidth: 2
                     },
                     label: {
-                        show: false,
-                        position: 'center'
+                        show: true,
+                        position: 'right',
+                        // distanceToLabelLine: -20,
+                        // edgeDistance: '-20%',
+                        // bleedMargin: 0,
+                        formatter: function (d) {
+                            return d.value;
+                        },
+                        fontSize: 10,
+                    },
+                    labelLayout: {
+                        verticalAlign: "bottom",
+                        align: "left"
+                    },
+                    labelLine: {
+                        show: true,
                     },
                     emphasis: {
                         label: {

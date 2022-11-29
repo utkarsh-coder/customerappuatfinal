@@ -5,10 +5,10 @@
 
 var ROOT_PATH = 'https://echarts.apache.org/examples';
 
-var chartDom2 = document.getElementById('main2');
-var myChart2 = echarts.init(chartDom2);
-var option2;
-let text2 = '';
+var chartDom4 = document.getElementById('main4');
+var myChart4 = echarts.init(chartDom4);
+var option4;
+let text4 = '';
 
 // $("#main1").append("<div id='loading1' class='loading';></div");
 
@@ -20,7 +20,7 @@ let text2 = '';
 
 // 'http://54.197.121.111:8001/iot/1.6/public/getSiteHealthStatus?business_id=193'
 console.log("url is:  ", document.getElementById('fetchHost').innerHTML + "/getChartData");
-function runArmDisarm() {
+function runNvr() {
     // console.log(data);
     // document.body.style.opacity = 1;
     // document.getElementById('loaderImgBlack').remove();
@@ -38,19 +38,24 @@ function runArmDisarm() {
     // document.getElementById('alloffline').innerHTML = data.nvr[0].offline_count + data.gl[0].offline + data.in[0].in_offline_count;
     console.log("starting hello world!");
 
-    if (sessionStorage.getItem('armCount') == 'null') {
-        text2 = 'IN not present at site';
+    if (sessionStorage.getItem('nvrOnlineCount') == 'null') {
+        text3 = 'NVR not present at site';
     }
 
-    document.getElementById('armcount').innerHTML = 'Arm: ' + sessionStorage.getItem('armCount');
-    document.getElementById('disarmcount').innerHTML = 'Disarm: ' + sessionStorage.getItem('disarmCount');
+    document.getElementById('nvronlinecount').innerHTML = 'Online: ' + sessionStorage.getItem('nvrOnlineCount');
+    document.getElementById('nvrofflinecount').innerHTML = 'Offline: ' + sessionStorage.getItem('nvrOfflineCount');
 
-    option2 = {
+    option4 = {
         title: {
-            text: text2,
+            text: text4,
             // text: 'NVR',
             // subtext: 'Real-time data',
             left: 'center'
+        },
+        legend: {
+            top: '5%',
+            left: 'center',
+            data: ['online', 'offline']
         },
         color: [
             '#0361a1',
@@ -67,12 +72,8 @@ function runArmDisarm() {
                     borderWidth: 2
                 },
                 label: {
-                    show: true,
-                    position: 'outside',
-                    formatter: function (d) {
-                        return d.value;
-                    },
-                    fontSize: 10,
+                    show: false,
+                    position: 'center'
                 },
                 emphasis: {
                     label: {
@@ -85,8 +86,8 @@ function runArmDisarm() {
                     show: false
                 },
                 data: [
-                    { value: sessionStorage.getItem('armCount'), name: 'arm' },
-                    { value: sessionStorage.getItem('disarmCount'), name: 'disarm' }
+                    { value: sessionStorage.getItem('nvrOnlineCount'), name: 'online' },
+                    { value: sessionStorage.getItem('nvrOfflineCount'), name: 'offline' }
                 ]
             }
         ],
@@ -96,17 +97,16 @@ function runArmDisarm() {
                 orient: "horizontal",
                 selectorLabel: {
                     show: false
-                },
-                left: 'center',
-                data: ['arm', 'disarm']
+                }
             }
         ],
     };
 
     console.log("11");
 
-    option2 && myChart2.setOption(option2);
-    runGl();
+    option4 && myChart4.setOption(option4);
+    runCompNonComp();
+    // runGlPie();
 
     // var tr = document.createElement('tr');
     // var td1 = tr.appendChild(document.createElement('td'));
@@ -126,7 +126,7 @@ function runArmDisarm() {
     // document.body.appendChild(script);
 }
 
-myChart2.on('click', function (params) {
+myChart4.on('click', function (params) {
     // printing data name in console
 
     // console.log(params.name);

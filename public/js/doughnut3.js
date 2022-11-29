@@ -67,13 +67,17 @@ function runGl() {
                 radius: ['40%', '70%'],
                 avoidLabelOverlap: false,
                 itemStyle: {
-                    borderRadius: 10,
+                    borderRadius: 0,
                     borderColor: '#fff',
                     borderWidth: 2
                 },
                 label: {
-                    show: false,
-                    position: 'center'
+                    show: true,
+                    position: 'outside',
+                    formatter: function (d) {
+                        return d.value;
+                    },
+                    fontSize: 10,
                 },
                 emphasis: {
                     label: {
@@ -105,6 +109,7 @@ function runGl() {
     console.log("11");
 
     option3 && myChart3.setOption(option3);
+    runNvr();
     // runGlPie();
 
     // var tr = document.createElement('tr');
