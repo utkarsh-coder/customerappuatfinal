@@ -114,12 +114,12 @@
         }
     </script>
     <main>
-        <header class="mobileHeader">
-            <!-- <a href="">
+        <!-- <header class="mobileHeader">
+            <a href="">
                 <img src="{{ asset('img/backArrow.svg') }}" alt="" />
-            </a> -->
+            </a>
             <h2>Health Status</h2>
-        </header>
+        </header> -->
 
         <div id="loader" style="position: absolute; top: 50%; left:50%; z-index: 2; opacity:1;">
             <img id="loaderImgBlack" id="loaderimg" src="img/loaderImgBlack.gif" alt="">

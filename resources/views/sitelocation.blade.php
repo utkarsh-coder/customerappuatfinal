@@ -134,12 +134,12 @@
     </div>
 
     <main>
-        <header class="mobileHeader">
-            <!-- <a href="">
+        <!-- <header class="mobileHeader">
+            <a href="">
                 <img src="{{ asset('img/backArrow.svg') }}" alt="" />
-            </a> -->
+            </a>
             <h2>Site Health</h2>
-        </header>
+        </header> -->
 
         <div class="pt-3 pb-4 bg-primary">
             <!-- <img id="loaderimg" src="img/loaderImg.gif" alt=""> -->
