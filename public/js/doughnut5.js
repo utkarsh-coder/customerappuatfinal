@@ -17,6 +17,9 @@ function runCompNonComp() {
     document.getElementById('compcount').innerHTML = 'Compliance: ' + sessionStorage.getItem('compCount');
     document.getElementById('noncompcount').innerHTML = 'Non-Compliance: ' + sessionStorage.getItem('nonCompCount');
 
+    let compPercent = Math.round((Number(sessionStorage.getItem('compCount')) / (Number(sessionStorage.getItem('compCount')) + Number(sessionStorage.getItem('nonCompCount')))) * 100);
+    let nonCompPercent = Math.round((Number(sessionStorage.getItem('nonCompCount')) / (Number(sessionStorage.getItem('compCount')) + Number(sessionStorage.getItem('nonCompCount')))) * 100);
+
     option5 = {
         title: {
             text: text4,
@@ -27,7 +30,7 @@ function runCompNonComp() {
         legend: {
             top: '5%',
             left: 'center',
-            data: ['online', 'offline']
+            data: ['online: '+compPercent+'%', 'offline: '+nonCompPercent+'%']
         },
         color: [
             '#0361a1',
@@ -49,7 +52,7 @@ function runCompNonComp() {
                 },
                 emphasis: {
                     label: {
-                        show: true,
+                        show: false,
                         fontSize: "18",
                         fontWeight: "regular"
                     }
@@ -58,15 +61,15 @@ function runCompNonComp() {
                     show: false
                 },
                 data: [
-                    { value: sessionStorage.getItem('compCount'), name: 'compliance' },
-                    { value: sessionStorage.getItem('nonCompCount'), name: 'non-compliance' }
+                    { value: compPercent, name: 'compliance: '+compPercent+'%' },
+                    { value: nonCompPercent, name: 'non-compliance: '+nonCompPercent+'%' }
                 ]
             }
         ],
         legend: [
             {
                 bottom: 10,
-                orient: "horizontal",
+                orient: "vertical",
                 selectorLabel: {
                     show: false
                 }

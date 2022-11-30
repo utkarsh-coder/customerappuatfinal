@@ -17,6 +17,9 @@ function runCamera() {
     document.getElementById('camOnlineCount').innerHTML = 'Camera Online: ' + sessionStorage.getItem('cameraOnlineCount');
     document.getElementById('camOfflineCount').innerHTML = 'Camera Offline: ' + sessionStorage.getItem('cameraOfflineCount');
 
+    let cameraOnlinePercent = Math.round((Number(sessionStorage.getItem('cameraOnlineCount')) / (Number(sessionStorage.getItem('cameraOnlineCount')) + Number(sessionStorage.getItem('cameraOfflineCount')))) * 100);
+    let cameraOfflinePercent = Math.round((Number(sessionStorage.getItem('cameraOfflineCount')) / (Number(sessionStorage.getItem('cameraOnlineCount')) + Number(sessionStorage.getItem('cameraOfflineCount')))) * 100);
+
     option6 = {
         title: {
             text: text6,
@@ -27,7 +30,7 @@ function runCamera() {
         legend: {
             top: '5%',
             left: 'center',
-            data: ['online', 'offline']
+            data: ['online: '+cameraOnlinePercent+'%', 'offline: '+cameraOfflinePercent+'%']
         },
         color: [
             '#0361a1',
@@ -49,7 +52,7 @@ function runCamera() {
                 },
                 emphasis: {
                     label: {
-                        show: true,
+                        show: false,
                         fontSize: "18",
                         fontWeight: "regular"
                     }
@@ -58,15 +61,15 @@ function runCamera() {
                     show: false
                 },
                 data: [
-                    { value: sessionStorage.getItem('cameraOnlineCount'), name: 'online' },
-                    { value: sessionStorage.getItem('cameraOfflineCount'), name: 'offline' }
+                    { value: cameraOnlinePercent, name: 'online: '+cameraOnlinePercent+'%' },
+                    { value: cameraOfflinePercent, name: 'offline: '+cameraOfflinePercent+'%' }
                 ]
             }
         ],
         legend: [
             {
                 bottom: 10,
-                orient: "horizontal",
+                orient: "vertical",
                 selectorLabel: {
                     show: false
                 }

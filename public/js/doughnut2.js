@@ -45,6 +45,9 @@ function runArmDisarm() {
     document.getElementById('armcount').innerHTML = 'Arm: ' + sessionStorage.getItem('armCount');
     document.getElementById('disarmcount').innerHTML = 'Disarm: ' + sessionStorage.getItem('disarmCount');
 
+    let armPercent = Math.round((Number(sessionStorage.getItem('armCount')) / (Number(sessionStorage.getItem('armCount')) + Number(sessionStorage.getItem('disarmCount')))) * 100);
+    let disarmPercent = Math.round((Number(sessionStorage.getItem('disarmCount')) / (Number(sessionStorage.getItem('armCount')) + Number(sessionStorage.getItem('disarmCount')))) * 100);
+
     option2 = {
         title: {
             text: text2,
@@ -67,7 +70,7 @@ function runArmDisarm() {
                     borderWidth: 2
                 },
                 label: {
-                    show: true,
+                    show: false,
                     position: 'outside',
                     formatter: function (d) {
                         return d.value;
@@ -76,7 +79,7 @@ function runArmDisarm() {
                 },
                 emphasis: {
                     label: {
-                        show: true,
+                        show: false,
                         fontSize: "18",
                         fontWeight: "regular"
                     }
@@ -85,20 +88,20 @@ function runArmDisarm() {
                     show: false
                 },
                 data: [
-                    { value: sessionStorage.getItem('armCount'), name: 'arm' },
-                    { value: sessionStorage.getItem('disarmCount'), name: 'disarm' }
+                    { value: armPercent, name: 'arm: '+armPercent+'%' },
+                    { value: disarmPercent, name: 'disarm: '+disarmPercent+'%' }
                 ]
             }
         ],
         legend: [
             {
                 bottom: 10,
-                orient: "horizontal",
+                orient: "vertical",
                 selectorLabel: {
                     show: false
                 },
                 left: 'center',
-                data: ['arm', 'disarm']
+                data: ['arm: '+armPercent+'%', 'disarm: '+disarmPercent+'%']
             }
         ],
     };

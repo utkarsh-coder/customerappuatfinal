@@ -45,6 +45,9 @@ function runNvr() {
     document.getElementById('nvronlinecount').innerHTML = 'Online: ' + sessionStorage.getItem('nvrOnlineCount');
     document.getElementById('nvrofflinecount').innerHTML = 'Offline: ' + sessionStorage.getItem('nvrOfflineCount');
 
+    let nvrOnlinePercent = Math.round((Number(sessionStorage.getItem('nvrOnlineCount')) / (Number(sessionStorage.getItem('nvrOnlineCount')) + Number(sessionStorage.getItem('nvrOfflineCount')))) * 100);
+    let nvrOfflinePercent = Math.round((Number(sessionStorage.getItem('nvrOfflineCount')) / (Number(sessionStorage.getItem('nvrOnlineCount')) + Number(sessionStorage.getItem('nvrOfflineCount')))) * 100);
+
     option4 = {
         title: {
             text: text4,
@@ -55,7 +58,7 @@ function runNvr() {
         legend: {
             top: '5%',
             left: 'center',
-            data: ['online', 'offline']
+            data: ['online: '+nvrOnlinePercent+'%', 'offline: '+nvrOfflinePercent+'%']
         },
         color: [
             '#0361a1',
@@ -77,7 +80,7 @@ function runNvr() {
                 },
                 emphasis: {
                     label: {
-                        show: true,
+                        show: false,
                         fontSize: "18",
                         fontWeight: "regular"
                     }
@@ -86,15 +89,15 @@ function runNvr() {
                     show: false
                 },
                 data: [
-                    { value: sessionStorage.getItem('nvrOnlineCount'), name: 'online' },
-                    { value: sessionStorage.getItem('nvrOfflineCount'), name: 'offline' }
+                    { value: nvrOnlinePercent, name: 'online: '+nvrOnlinePercent+'%' },
+                    { value: nvrOfflinePercent, name: 'offline: '+nvrOfflinePercent+'%' }
                 ]
             }
         ],
         legend: [
             {
                 bottom: 10,
-                orient: "horizontal",
+                orient: "vertical",
                 selectorLabel: {
                     show: false
                 }

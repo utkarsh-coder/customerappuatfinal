@@ -45,6 +45,9 @@ function runGl() {
     document.getElementById('glonlinecount').innerHTML = 'Online: ' + sessionStorage.getItem('glOnlineCount');
     document.getElementById('glofflinecount').innerHTML = 'Offline: ' + sessionStorage.getItem('glOfflineCount');
 
+    let glOnlinePercent = Math.round((Number(sessionStorage.getItem('glOnlineCount')) / (Number(sessionStorage.getItem('glOnlineCount')) + Number(sessionStorage.getItem('glOfflineCount')))) * 100);
+    let glOfflinePercent = Math.round((Number(sessionStorage.getItem('glOfflineCount')) / (Number(sessionStorage.getItem('glOnlineCount')) + Number(sessionStorage.getItem('glOfflineCount')))) * 100);
+
     option3 = {
         title: {
             text: text3,
@@ -55,7 +58,7 @@ function runGl() {
         legend: {
             top: '5%',
             left: 'center',
-            data: ['online', 'offline']
+            data: ['online: '+glOnlinePercent+'%', 'offline: '+glOfflinePercent+'%']
         },
         color: [
             '#0361a1',
@@ -72,7 +75,7 @@ function runGl() {
                     borderWidth: 2
                 },
                 label: {
-                    show: true,
+                    show: false,
                     position: 'outside',
                     formatter: function (d) {
                         return d.value;
@@ -81,7 +84,7 @@ function runGl() {
                 },
                 emphasis: {
                     label: {
-                        show: true,
+                        show: false,
                         fontSize: "18",
                         fontWeight: "regular"
                     }
@@ -90,15 +93,15 @@ function runGl() {
                     show: false
                 },
                 data: [
-                    { value: sessionStorage.getItem('glOnlineCount'), name: 'Online' },
-                    { value: sessionStorage.getItem('glOfflineCount'), name: 'Offline' }
+                    { value: glOnlinePercent, name: 'online: '+glOnlinePercent+'%' },
+                    { value: glOfflinePercent, name: 'offline: '+glOfflinePercent+'%' }
                 ]
             }
         ],
         legend: [
             {
                 bottom: 10,
-                orient: "horizontal",
+                orient: "vertical",
                 selectorLabel: {
                     show: false
                 }

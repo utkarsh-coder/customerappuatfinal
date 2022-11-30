@@ -61,6 +61,9 @@ fetch(document.getElementById('fetchHost').innerHTML + "/getChartData").then(res
             text1 = 'IN not present at site';
         }
 
+        let onlinePercent = Math.round((Number(sessionStorage.getItem('inOnlineCount'))/(Number(sessionStorage.getItem('inOnlineCount'))+Number(sessionStorage.getItem('inOfflineCount'))))*100);
+        let offlinePercent = Math.round((Number(sessionStorage.getItem('inOfflineCount'))/(Number(sessionStorage.getItem('inOnlineCount'))+Number(sessionStorage.getItem('inOfflineCount'))))*100);
+
         option1 = {
             title: {
                 text: text1,
@@ -83,7 +86,7 @@ fetch(document.getElementById('fetchHost').innerHTML + "/getChartData").then(res
                         borderWidth: 2
                     },
                     label: {
-                        show: true,
+                        show: false,
                         position: 'right',
                         // distanceToLabelLine: -20,
                         // edgeDistance: '-20%',
@@ -102,29 +105,27 @@ fetch(document.getElementById('fetchHost').innerHTML + "/getChartData").then(res
                     },
                     emphasis: {
                         label: {
-                            show: true,
+                            show: false,
                             fontSize: "18",
                             fontWeight: "regular"
                         }
                     },
-                    labelLine: {
-                        show: false
-                    },
                     data: [
-                        { value: sessionStorage.getItem('inOnlineCount'), name: 'online' },
-                        { value: sessionStorage.getItem('inOfflineCount'), name: 'offline' }
+                        { value: onlinePercent, name: 'online: '+onlinePercent+'%' },
+                        { value: offlinePercent, name: 'offline: '+offlinePercent+'%' }
                     ]
                 }
             ],
             legend: [
                 {
+                    show: true,
                     bottom: 10,
-                    orient: "horizontal",
+                    orient: "vertical",
                     selectorLabel: {
                         show: false
                     },
                     left: 'center',
-                    data: ['online', 'offline']
+                    data: ['online: '+onlinePercent+'%', 'offline: '+offlinePercent+'%']
                 }
             ],
         };
@@ -134,7 +135,7 @@ fetch(document.getElementById('fetchHost').innerHTML + "/getChartData").then(res
     })
     .catch(error => console.log('ERROR: ', error));
 
-myChart1.on('click', function (params) {
+myChart1.on('click','legend', function (params) {
 
     console.log('val: ', params.name);
 

@@ -32,13 +32,19 @@
 </head>
 
 <body>
+    <p id="fetchHost" hidden>{{ env("APP_URL") }}</p>
+    <script>
+        function backTable() {
+            location.replace(document.getElementById('fetchHost').innerHTML+'/healthchart');
+        }
+    </script>
 
     <div id="loader" style="position: absolute; top: 50%; left:50%; z-index: 2; opacity:1;">
         <img id="loaderImgBlack" id="loaderimg" src="img/loaderImgBlack.gif" alt="">
     </div>
     <main>
         <header class="mobileHeader">
-            <a href="">
+            <a onclick="backTable()">
                 <img src="{{ asset('img/backArrow.svg') }}" alt="" />
             </a>
             <h2>Health Status</h2>
