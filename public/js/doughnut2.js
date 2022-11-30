@@ -55,6 +55,8 @@ function runArmDisarm() {
             // subtext: 'Real-time data',
             left: 'center'
         },
+        height: '80%',
+        width: '100%',
         color: [
             '#0361a1',
             '#FF0000'
@@ -88,8 +90,8 @@ function runArmDisarm() {
                     show: false
                 },
                 data: [
-                    { value: armPercent, name: 'arm: '+armPercent+'%' },
-                    { value: disarmPercent, name: 'disarm: '+disarmPercent+'%' }
+                    { value: armPercent, name: 'arm: ' + armPercent + '%' },
+                    { value: disarmPercent, name: 'disarm: ' + disarmPercent + '%' }
                 ]
             }
         ],
@@ -101,7 +103,7 @@ function runArmDisarm() {
                     show: false
                 },
                 left: 'center',
-                data: ['arm: '+armPercent+'%', 'disarm: '+disarmPercent+'%']
+                data: ['arm: ' + armPercent + '%', 'disarm: ' + disarmPercent + '%']
             }
         ],
     };

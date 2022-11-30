@@ -71,15 +71,19 @@ fetch(document.getElementById('fetchHost').innerHTML + "/getChartData").then(res
                 // subtext: 'Real-time data',
                 left: 'center'
             },
+            height: '80%',
+            width: '100%',
             color: [
                 '#0361a1',
                 '#FF0000'
             ],
+            // width: '60%',
             series: [
                 {
+                    position: 'auto',
                     type: 'pie',
                     radius: ['40%', '70%'],
-                    avoidLabelOverlap: false,
+                    avoidLabelOverlap: true,
                     itemStyle: {
                         borderRadius: 0,
                         borderColor: '#fff',

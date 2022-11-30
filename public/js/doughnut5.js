@@ -30,8 +30,10 @@ function runCompNonComp() {
         legend: {
             top: '5%',
             left: 'center',
-            data: ['online: '+compPercent+'%', 'offline: '+nonCompPercent+'%']
+            data: ['online: ' + compPercent + '%', 'offline: ' + nonCompPercent + '%']
         },
+        height: '80%',
+        width: '100%',
         color: [
             '#0361a1',
             '#FF0000'
@@ -61,8 +63,8 @@ function runCompNonComp() {
                     show: false
                 },
                 data: [
-                    { value: compPercent, name: 'compliance: '+compPercent+'%' },
-                    { value: nonCompPercent, name: 'non-compliance: '+nonCompPercent+'%' }
+                    { value: compPercent, name: 'compliance: ' + compPercent + '%' },
+                    { value: nonCompPercent, name: 'non-compliance: ' + nonCompPercent + '%' }
                 ]
             }
         ],

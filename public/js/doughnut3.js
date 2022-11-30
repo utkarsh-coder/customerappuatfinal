@@ -55,10 +55,12 @@ function runGl() {
             // subtext: 'Real-time data',
             left: 'center'
         },
+        height: '80%',
+        width: '100%',
         legend: {
             top: '5%',
             left: 'center',
-            data: ['online: '+glOnlinePercent+'%', 'offline: '+glOfflinePercent+'%']
+            data: ['online: ' + glOnlinePercent + '%', 'offline: ' + glOfflinePercent + '%']
         },
         color: [
             '#0361a1',
@@ -93,8 +95,8 @@ function runGl() {
                     show: false
                 },
                 data: [
-                    { value: glOnlinePercent, name: 'online: '+glOnlinePercent+'%' },
-                    { value: glOfflinePercent, name: 'offline: '+glOfflinePercent+'%' }
+                    { value: glOnlinePercent, name: 'online: ' + glOnlinePercent + '%' },
+                    { value: glOfflinePercent, name: 'offline: ' + glOfflinePercent + '%' }
                 ]
             }
         ],
