@@ -212,7 +212,7 @@ function runProcess() {
     document.getElementById('sitearmed').innerHTML = totalArmed;
     document.getElementById('sitedisarmed').innerHTML = totalDisarmed;
 
-    console.log('site Array lengt: ', siteArray.length);
+    console.log('site Array length: ', siteArray.length);
     
     for (let i = 0; i < siteArray.length; i++) {
         let tempVal = null;
