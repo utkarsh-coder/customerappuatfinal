@@ -121,7 +121,7 @@
             <h2>Health Status</h2>
         </header> -->
 
-        <div id="loader" style="position: absolute; top: 50%; left:50%; z-index: 2; opacity:1;">
+        <div id="loader" style="position: absolute; top: 50%; left:45%; z-index: 2; opacity:1;">
             <img id="loaderImgBlack" id="loaderimg" src="img/loaderImgBlack.gif" alt="">
         </div>
         <div class="pt-3 pb-4 bg-primary">

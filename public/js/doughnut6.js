@@ -88,7 +88,7 @@ function runCamera() {
     document.body.style.pointerEvents = "auto";
 }
 
-myChart5.on('click', function (params) {
+myChart6.on('click', function (params) {
 
     console.log('val: ', params.name);
 
