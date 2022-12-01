@@ -58,11 +58,11 @@ function runNvr() {
         legend: {
             top: '5%',
             left: 'center',
-            data: ['online: ' + nvrOnlinePercent + '%', 'offline: ' + nvrOfflinePercent + '%']
+            data: ['offline: ' + nvrOfflinePercent + '%','online: ' + nvrOnlinePercent + '%']
         },
         color: [
+            '#FF0000',
             '#0361a1',
-            '#FF0000'
         ],
         height: '80%',
         width: '100%',
@@ -91,8 +91,8 @@ function runNvr() {
                     show: false
                 },
                 data: [
+                    { value: nvrOfflinePercent, name: 'offline: ' + nvrOfflinePercent + '%' },
                     { value: nvrOnlinePercent, name: 'online: ' + nvrOnlinePercent + '%' },
-                    { value: nvrOfflinePercent, name: 'offline: ' + nvrOfflinePercent + '%' }
                 ]
             }
         ],

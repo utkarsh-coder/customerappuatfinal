@@ -74,8 +74,8 @@ fetch(document.getElementById('fetchHost').innerHTML + "/getChartData").then(res
             height: '80%',
             width: '100%',
             color: [
+                '#FF0000',
                 '#0361a1',
-                '#FF0000'
             ],
             // width: '60%',
             series: [
@@ -115,8 +115,8 @@ fetch(document.getElementById('fetchHost').innerHTML + "/getChartData").then(res
                         }
                     },
                     data: [
+                        { value: offlinePercent, name: 'offline: '+offlinePercent+'%' },
                         { value: onlinePercent, name: 'online: '+onlinePercent+'%' },
-                        { value: offlinePercent, name: 'offline: '+offlinePercent+'%' }
                     ]
                 }
             ],
@@ -129,7 +129,7 @@ fetch(document.getElementById('fetchHost').innerHTML + "/getChartData").then(res
                         show: false
                     },
                     left: 'center',
-                    data: ['online: '+onlinePercent+'%', 'offline: '+offlinePercent+'%']
+                    data: ['offline: '+offlinePercent+'%', 'online: '+onlinePercent+'%']
                 }
             ],
         };

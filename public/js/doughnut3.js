@@ -60,11 +60,11 @@ function runGl() {
         legend: {
             top: '5%',
             left: 'center',
-            data: ['online: ' + glOnlinePercent + '%', 'offline: ' + glOfflinePercent + '%']
+            data: ['offline: ' + glOfflinePercent + '%','online: ' + glOnlinePercent + '%']
         },
         color: [
+            '#FF0000',
             '#0361a1',
-            '#FF0000'
         ],
         series: [
             {
@@ -95,8 +95,8 @@ function runGl() {
                     show: false
                 },
                 data: [
+                    { value: glOfflinePercent, name: 'offline: ' + glOfflinePercent + '%' },
                     { value: glOnlinePercent, name: 'online: ' + glOnlinePercent + '%' },
-                    { value: glOfflinePercent, name: 'offline: ' + glOfflinePercent + '%' }
                 ]
             }
         ],

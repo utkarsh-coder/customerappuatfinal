@@ -30,13 +30,13 @@ function runCamera() {
         legend: {
             top: '5%',
             left: 'center',
-            data: ['online: ' + cameraOnlinePercent + '%', 'offline: ' + cameraOfflinePercent + '%']
+            data: ['offline: ' + cameraOfflinePercent + '%','online: ' + cameraOnlinePercent + '%']
         },
         height: '80%',
         width: '100%',
         color: [
+            '#FF0000',
             '#0361a1',
-            '#FF0000'
         ],
         series: [
             {
@@ -63,8 +63,8 @@ function runCamera() {
                     show: false
                 },
                 data: [
+                    { value: cameraOfflinePercent, name: 'offline: ' + cameraOfflinePercent + '%' },
                     { value: cameraOnlinePercent, name: 'online: ' + cameraOnlinePercent + '%' },
-                    { value: cameraOfflinePercent, name: 'offline: ' + cameraOfflinePercent + '%' }
                 ]
             }
         ],

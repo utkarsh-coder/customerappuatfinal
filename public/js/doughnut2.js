@@ -58,8 +58,8 @@ function runArmDisarm() {
         height: '80%',
         width: '100%',
         color: [
+            '#FF0000',
             '#0361a1',
-            '#FF0000'
         ],
         series: [
             {
@@ -90,8 +90,8 @@ function runArmDisarm() {
                     show: false
                 },
                 data: [
+                    { value: disarmPercent, name: 'disarm: ' + disarmPercent + '%' },
                     { value: armPercent, name: 'arm: ' + armPercent + '%' },
-                    { value: disarmPercent, name: 'disarm: ' + disarmPercent + '%' }
                 ]
             }
         ],
@@ -103,7 +103,7 @@ function runArmDisarm() {
                     show: false
                 },
                 left: 'center',
-                data: ['arm: ' + armPercent + '%', 'disarm: ' + disarmPercent + '%']
+                data: ['disarm: ' + disarmPercent + '%','arm: ' + armPercent + '%']
             }
         ],
     };
