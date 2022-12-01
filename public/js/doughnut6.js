@@ -30,7 +30,7 @@ function runCamera() {
         legend: {
             top: '5%',
             left: 'center',
-            data: ['offline: ' + cameraOfflinePercent + '%','online: ' + cameraOnlinePercent + '%']
+            data: ['offline: ' + cameraOfflinePercent + '%', 'online: ' + cameraOnlinePercent + '%']
         },
         height: '80%',
         width: '100%',
@@ -83,9 +83,11 @@ function runCamera() {
 
     option6 && myChart6.setOption(option6);
 
-    document.body.style.opacity = 1;
-    document.getElementById('loaderImgBlack').remove();
-    document.body.style.pointerEvents = "auto";
+    if (checkAllData == 2) {
+        document.body.style.opacity = 1;
+        document.getElementById('loaderImgBlack').remove();
+        document.body.style.pointerEvents = "auto";
+    }
 }
 
 myChart6.on('click', function (params) {

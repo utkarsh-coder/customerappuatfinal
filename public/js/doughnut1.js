@@ -9,6 +9,7 @@ var chartDom1 = document.getElementById('main1');
 var myChart1 = echarts.init(chartDom1);
 var option1;
 let text1 = '';
+let checkAllData = 0;
 
 // $("#main1").append("<div id='loading1' class='loading';></div");
 
@@ -21,20 +22,29 @@ let text1 = '';
 // 'http://54.197.121.111:8001/iot/1.6/public/getSiteHealthStatus?business_id=193'
 console.log("url is:  ", document.getElementById('fetchHost').innerHTML + "/getChartData");
 
+console.log("url is check it:  ", document.getElementById('fetchHost').innerHTML + "/getSensorData");
+fetch(document.getElementById('fetchHost').innerHTML + "/getSensorData").then(resSensor => {
+    return resSensor.json();
+})
+    .then(dataSensor => {
+        checkAllData++;
+        console.log(dataSensor[0]['count(id)']);
+        sessionStorage.setItem('faultySensorCount', dataSensor[0]['count(id)']);
+        
+        if (checkAllData == 2) {
+            document.body.style.opacity = 1;
+            document.getElementById('loaderImgBlack').remove();
+            document.body.style.pointerEvents = "auto";
+        }
+    })
+    .catch(error => console.log('ERROR: ', error));
+
 fetch(document.getElementById('fetchHost').innerHTML + "/getChartData").then(res => {
     return res.json();
 })
     .then(data => {
 
-        console.log("url is check it:  ", document.getElementById('fetchHost').innerHTML + "/getSensorData");
-        fetch(document.getElementById('fetchHost').innerHTML + "/getSensorData").then(resSensor => {
-            return resSensor.json();
-        })
-        .then(dataSensor => {
-            console.log(dataSensor[0]['count(id)']);
-            sessionStorage.setItem('faultySensorCount', dataSensor[0]['count(id)']);
-        })
-        .catch(error => console.log('ERROR: ', error));
+        checkAllData++;
 
 
 
