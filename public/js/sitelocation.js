@@ -91,11 +91,11 @@ function runProcess() {
                     if (siteStatus == null) {
                         siteStatus = "online";
                         if (inList[c].mode == 1) {
-                            siteMode = 'arm';
+                            siteMode = 'Arm';
                             totalArmed++;
                         }
                         else {
-                            siteMode = 'disarm';
+                            siteMode = 'Disarm';
                             totalDisarmed++;
                         }
                     }

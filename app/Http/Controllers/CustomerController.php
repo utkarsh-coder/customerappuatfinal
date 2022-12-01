@@ -51,8 +51,9 @@ class CustomerController extends Controller
     //     $customers->save();
     //     return redirect('login');
     // }
-    
-    public function search(){
+
+    public function search()
+    {
         return view("homebackup2");
     }
 
@@ -190,7 +191,7 @@ class CustomerController extends Controller
         $curl = curl_init();
 
         curl_setopt_array($curl, array(
-            CURLOPT_URL => 'http://cc.gizmosmart.io/iot/1.6/public/getSiteHealthStatus?business_id='.session()->get('business_id'),
+            CURLOPT_URL => 'http://cc.gizmosmart.io/iot/1.6/public/getSiteHealthStatus?business_id=' . session()->get('business_id'),
             CURLOPT_RETURNTRANSFER => true,
             CURLOPT_ENCODING => '',
             CURLOPT_MAXREDIRS => 10,
@@ -220,7 +221,7 @@ class CustomerController extends Controller
         $curl = curl_init();
 
         curl_setopt_array($curl, array(
-            CURLOPT_URL => 'http://cc.gizmosmart.io/iot/1.6/public/getDeviceInfo?business_id='.session()->get('business_id').'&type=location&status=active',
+            CURLOPT_URL => 'http://cc.gizmosmart.io/iot/1.6/public/getDeviceInfo?business_id=' . session()->get('business_id') . '&type=location&status=active',
             CURLOPT_RETURNTRANSFER => true,
             CURLOPT_ENCODING => '',
             CURLOPT_MAXREDIRS => 10,
@@ -245,7 +246,7 @@ class CustomerController extends Controller
         $curl = curl_init();
 
         curl_setopt_array($curl, array(
-            CURLOPT_URL => 'http://cc.gizmosmart.io/iot/1.6/public/getDeviceInfo?business_id='.session()->get('business_id').'&type=' . $request->typeValue . '&status=' . $request->statusValue,
+            CURLOPT_URL => 'http://cc.gizmosmart.io/iot/1.6/public/getDeviceInfo?business_id=' . session()->get('business_id') . '&type=' . $request->typeValue . '&status=' . $request->statusValue,
             CURLOPT_RETURNTRANSFER => true,
             CURLOPT_ENCODING => '',
             CURLOPT_MAXREDIRS => 10,
@@ -264,12 +265,43 @@ class CustomerController extends Controller
         return  $response;
     }
 
+    public function getSensorData()
+    {
+        $siteName = 'icici';
+        if(session()->get('business_id') == 193){
+            $siteName = 'fincare';
+        }
+        else if(session()->get('business_id') == 257){
+            $siteName = 'icici';
+        }
+        $curl = curl_init();
+
+        curl_setopt_array($curl, array(
+            CURLOPT_URL => 'https://crm.igzy.com/get_faulty_sensors.php?account_name='.$siteName,
+            CURLOPT_RETURNTRANSFER => true,
+            CURLOPT_ENCODING => '',
+            CURLOPT_MAXREDIRS => 10,
+            CURLOPT_TIMEOUT => 0,
+            CURLOPT_FOLLOWLOCATION => true,
+            CURLOPT_HTTP_VERSION => CURL_HTTP_VERSION_1_1,
+            CURLOPT_CUSTOMREQUEST => 'GET',
+            CURLOPT_HTTPHEADER => array(
+                'Content-Type: application/json'
+            ),
+        ));
+
+        $response = curl_exec($curl);
+
+        curl_close($curl);
+        return $response;
+    }
+
     public function getChartData()
     {
         $curl = curl_init();
 
         curl_setopt_array($curl, array(
-            CURLOPT_URL => 'http://cc.gizmosmart.io/iot/1.6/public/getSiteHealthStatus?business_id='.session()->get('business_id'),
+            CURLOPT_URL => 'http://cc.gizmosmart.io/iot/1.6/public/getSiteHealthStatus?business_id=' . session()->get('business_id'),
             CURLOPT_RETURNTRANSFER => true,
             CURLOPT_ENCODING => '',
             CURLOPT_MAXREDIRS => 10,
@@ -293,7 +325,7 @@ class CustomerController extends Controller
         $curl = curl_init();
 
         curl_setopt_array($curl, array(
-            CURLOPT_URL => 'http://cc.gizmosmart.io/iot/1.6/public/getDeviceInfo?business_id='.session()->get('business_id').'&type='.$request->type.'&status='.$request->status,
+            CURLOPT_URL => 'http://cc.gizmosmart.io/iot/1.6/public/getDeviceInfo?business_id=' . session()->get('business_id') . '&type=' . $request->type . '&status=' . $request->status,
             CURLOPT_RETURNTRANSFER => true,
             CURLOPT_ENCODING => '',
             CURLOPT_MAXREDIRS => 10,

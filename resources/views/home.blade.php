@@ -222,7 +222,16 @@
                 <div class="col-10 mt-3">
                     <h2>Health Status</h2>
                 </div>
-                <div class="grid-row grid-row-col-2 mt-2 mb-3">
+                <div class="grid-row grid-row-col-3 mt-2 mb-3">
+                    <div class="card">
+                        <div class="card-body site-status">
+                            <div class="d-flex flex-column justify-content-between h-100">
+                                <p class="subHeading">Faulty Sensors</p>
+                                <span id="faultySensorCount" class="num">...</span>
+                            </div>
+                        </div>
+                    </div>
+
                     <div class="card">
                         <div class="card-body site-status">
                             <div class="d-flex flex-column justify-content-between h-100">

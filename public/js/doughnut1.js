@@ -25,6 +25,19 @@ fetch(document.getElementById('fetchHost').innerHTML + "/getChartData").then(res
     return res.json();
 })
     .then(data => {
+
+        console.log("url is check it:  ", document.getElementById('fetchHost').innerHTML + "/getSensorData");
+        fetch(document.getElementById('fetchHost').innerHTML + "/getSensorData").then(resSensor => {
+            return resSensor.json();
+        })
+        .then(dataSensor => {
+            console.log(dataSensor[0]['count(id)']);
+            sessionStorage.setItem('faultySensorCount', dataSensor[0]['count(id)']);
+        })
+        .catch(error => console.log('ERROR: ', error));
+
+
+
         sessionStorage.setItem('nvrOnlineCount', data.nvr[0].online_count);
         sessionStorage.setItem('nvrOfflineCount', data.nvr[0].offline_count);
 
@@ -56,13 +69,14 @@ fetch(document.getElementById('fetchHost').innerHTML + "/getChartData").then(res
         document.getElementById('siteoff').innerHTML = sessionStorage.getItem('offSites');
         document.getElementById('hddCount').innerHTML = sessionStorage.getItem('hardDriveCount');
         document.getElementById('open-noti').innerHTML = sessionStorage.getItem('open-noti');
+        document.getElementById('faultySensorCount').innerHTML = sessionStorage.getItem('faultySensorCount');
 
         if (sessionStorage.getItem('inOnlineCount') == 'null') {
             text1 = 'IN not present at site';
         }
 
-        let onlinePercent = Math.round((Number(sessionStorage.getItem('inOnlineCount'))/(Number(sessionStorage.getItem('inOnlineCount'))+Number(sessionStorage.getItem('inOfflineCount'))))*100);
-        let offlinePercent = Math.round((Number(sessionStorage.getItem('inOfflineCount'))/(Number(sessionStorage.getItem('inOnlineCount'))+Number(sessionStorage.getItem('inOfflineCount'))))*100);
+        let onlinePercent = Math.round((Number(sessionStorage.getItem('inOnlineCount')) / (Number(sessionStorage.getItem('inOnlineCount')) + Number(sessionStorage.getItem('inOfflineCount')))) * 100);
+        let offlinePercent = Math.round((Number(sessionStorage.getItem('inOfflineCount')) / (Number(sessionStorage.getItem('inOnlineCount')) + Number(sessionStorage.getItem('inOfflineCount')))) * 100);
 
         option1 = {
             title: {
@@ -115,8 +129,8 @@ fetch(document.getElementById('fetchHost').innerHTML + "/getChartData").then(res
                         }
                     },
                     data: [
-                        { value: offlinePercent, name: 'offline: '+offlinePercent+'%' },
-                        { value: onlinePercent, name: 'online: '+onlinePercent+'%' },
+                        { value: offlinePercent, name: 'offline: ' + offlinePercent + '%' },
+                        { value: onlinePercent, name: 'online: ' + onlinePercent + '%' },
                     ]
                 }
             ],
@@ -129,7 +143,7 @@ fetch(document.getElementById('fetchHost').innerHTML + "/getChartData").then(res
                         show: false
                     },
                     left: 'center',
-                    data: ['offline: '+offlinePercent+'%', 'online: '+onlinePercent+'%']
+                    data: ['offline: ' + offlinePercent + '%', 'online: ' + onlinePercent + '%']
                 }
             ],
         };
@@ -139,7 +153,7 @@ fetch(document.getElementById('fetchHost').innerHTML + "/getChartData").then(res
     })
     .catch(error => console.log('ERROR: ', error));
 
-myChart1.on('click','legend', function (params) {
+myChart1.on('click', 'legend', function (params) {
 
     console.log('val: ', params.name);
 
