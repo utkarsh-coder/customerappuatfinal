@@ -77,7 +77,7 @@ fetch(document.getElementById('fetchHost').innerHTML + "/getChartData").then(res
         document.getElementById('inofflinecount').innerHTML = 'Offline: ' + sessionStorage.getItem('inOfflineCount');
 
         document.getElementById('siteoff').innerHTML = sessionStorage.getItem('offSites');
-        document.getElementById('hddCount').innerHTML = sessionStorage.getItem('hardDriveCount');
+        document.getElementById('hddCount').innerHTML = Number(sessionStorage.getItem('nvrOnlineCount'))+Number(sessionStorage.getItem('nvrOfflineCount'))-Number(sessionStorage.getItem('hardDriveCount'));
         document.getElementById('open-noti').innerHTML = sessionStorage.getItem('open-noti');
         document.getElementById('faultySensorCount').innerHTML = sessionStorage.getItem('faultySensorCount');
 
