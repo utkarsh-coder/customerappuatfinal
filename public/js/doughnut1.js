@@ -114,13 +114,13 @@ fetch(document.getElementById('fetchHost').innerHTML + "/getChartData").then(res
                         borderWidth: 2
                     },
                     label: {
-                        show: false,
-                        position: 'right',
+                        show: true,
+                        position: 'outside',
                         // distanceToLabelLine: -20,
                         // edgeDistance: '-20%',
                         // bleedMargin: 0,
                         formatter: function (d) {
-                            return d.value;
+                            return d.name;
                         },
                         fontSize: 10,
                     },
@@ -133,7 +133,7 @@ fetch(document.getElementById('fetchHost').innerHTML + "/getChartData").then(res
                     },
                     emphasis: {
                         label: {
-                            show: false,
+                            show: true,
                             fontSize: "18",
                             fontWeight: "regular"
                         }
@@ -146,7 +146,7 @@ fetch(document.getElementById('fetchHost').innerHTML + "/getChartData").then(res
             ],
             legend: [
                 {
-                    show: true,
+                    show: false,
                     bottom: 10,
                     orient: "vertical",
                     selectorLabel: {

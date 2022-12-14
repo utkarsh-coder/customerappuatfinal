@@ -182,6 +182,32 @@
                 </div>
 
                 <div class="col-10 mt-3">
+                    <h2>Network Uptime</h2>
+                </div>
+                <div class="grid-row grid-row-col-1 mt-2 mb-3 networdHelth" style="height: 400px;">
+                    <div class="card" style="height: 400px;">
+                        <div class="card-body site-status">
+                            <div class="notificationContainer">
+                            </div>
+                            <div id="mainDummy" class="d-flex flex-column justify-content-between h-100"></div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-10 mt-3">
+                    <h2>Alarm Panel Uptime</h2>
+                </div>
+                <div class="grid-row grid-row-col-1 mt-2 mb-3 networdHelth" style="height: 400px;">
+                    <div class="card" style="height: 400px;">
+                        <div class="card-body site-status">
+                            <div class="notificationContainer">
+                            </div>
+                            <div id="mainDummy2" class="d-flex flex-column justify-content-between h-100"></div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-10 mt-3">
                     <h2>Compliance Status</h2>
                 </div>
                 <div class="grid-row grid-row-col-1 mt-2 mb-3 networdHelth">
@@ -554,6 +580,8 @@
     <script src="js/doughnut4.js"></script>
     <script src="js/doughnut5.js"></script>
     <script src="js/doughnut6.js"></script>
+    <script src="js/chartDummy.js"></script>
+    <script src="js/chartDummy2.js"></script>
 </body>
 
 </html>
