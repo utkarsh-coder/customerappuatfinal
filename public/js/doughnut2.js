@@ -3,12 +3,12 @@
 // var express = require('express');
 // var router = express.Router();
 
-var ROOT_PATH = 'https://echarts.apache.org/examples';
+var ROOT_PATH = "https://echarts.apache.org/examples";
 
-var chartDom2 = document.getElementById('main2');
+var chartDom2 = document.getElementById("main2");
 var myChart2 = echarts.init(chartDom2);
 var option2;
-let text2 = '';
+let text2 = "";
 
 // $("#main1").append("<div id='loading1' class='loading';></div");
 
@@ -19,7 +19,10 @@ let text2 = '';
 // };
 
 // 'http://54.197.121.111:8001/iot/1.6/public/getSiteHealthStatus?business_id=193'
-console.log("url is:  ", document.getElementById('fetchHost').innerHTML + "/getChartData");
+console.log(
+    "url is:  ",
+    document.getElementById("fetchHost").innerHTML + "/getChartData"
+);
 function runArmDisarm() {
     // console.log(data);
     // document.body.style.opacity = 1;
@@ -38,42 +41,51 @@ function runArmDisarm() {
     // document.getElementById('alloffline').innerHTML = data.nvr[0].offline_count + data.gl[0].offline + data.in[0].in_offline_count;
     console.log("starting hello world!");
 
-    if (sessionStorage.getItem('armCount') == 'null') {
-        text2 = 'IN not present at site';
+    if (sessionStorage.getItem("armCount") == "null") {
+        text2 = "IN not present at site";
     }
 
-    document.getElementById('armcount').innerHTML = 'Arm: ' + sessionStorage.getItem('armCount');
-    document.getElementById('disarmcount').innerHTML = 'Disarm: ' + sessionStorage.getItem('disarmCount');
+    document.getElementById("armcount").innerHTML =
+        "Arm: " + sessionStorage.getItem("armCount");
+    document.getElementById("disarmcount").innerHTML =
+        "Disarm: " + sessionStorage.getItem("disarmCount");
 
-    let armPercent = Math.round((Number(sessionStorage.getItem('armCount')) / (Number(sessionStorage.getItem('armCount')) + Number(sessionStorage.getItem('disarmCount')))) * 100);
-    let disarmPercent = Math.round((Number(sessionStorage.getItem('disarmCount')) / (Number(sessionStorage.getItem('armCount')) + Number(sessionStorage.getItem('disarmCount')))) * 100);
+    let armPercent = Math.round(
+        (Number(sessionStorage.getItem("armCount")) /
+            (Number(sessionStorage.getItem("armCount")) +
+                Number(sessionStorage.getItem("disarmCount")))) *
+            100
+    );
+    let disarmPercent = Math.round(
+        (Number(sessionStorage.getItem("disarmCount")) /
+            (Number(sessionStorage.getItem("armCount")) +
+                Number(sessionStorage.getItem("disarmCount")))) *
+            100
+    );
 
     option2 = {
         title: {
             text: text2,
             // text: 'NVR',
             // subtext: 'Real-time data',
-            left: 'center'
+            left: "center",
         },
-        height: '80%',
-        width: '100%',
-        color: [
-            '#FF0000',
-            '#0361a1',
-        ],
+        // height: '80%',
+        width: "100%",
+        color: ["#FF0000", "#0361a1"],
         series: [
             {
-                type: 'pie',
-                radius: ['40%', '70%'],
+                type: "pie",
+                radius: ["40%", "70%"],
                 avoidLabelOverlap: false,
                 itemStyle: {
                     borderRadius: 0,
-                    borderColor: '#fff',
-                    borderWidth: 2
+                    borderColor: "#fff",
+                    borderWidth: 2,
                 },
                 label: {
                     show: false,
-                    position: 'outside',
+                    position: "outside",
                     formatter: function (d) {
                         return d.value;
                     },
@@ -83,28 +95,34 @@ function runArmDisarm() {
                     label: {
                         show: false,
                         fontSize: "18",
-                        fontWeight: "regular"
-                    }
+                        fontWeight: "regular",
+                    },
                 },
                 labelLine: {
-                    show: false
+                    show: false,
                 },
                 data: [
-                    { value: disarmPercent, name: 'disarm: ' + disarmPercent + '%' },
-                    { value: armPercent, name: 'arm: ' + armPercent + '%' },
-                ]
-            }
+                    {
+                        value: disarmPercent,
+                        name: "disarm: " + disarmPercent + "%",
+                    },
+                    { value: armPercent, name: "arm: " + armPercent + "%" },
+                ],
+            },
         ],
         legend: [
             {
                 bottom: 10,
                 orient: "vertical",
                 selectorLabel: {
-                    show: false
+                    show: false,
                 },
-                left: 'center',
-                data: ['disarm: ' + disarmPercent + '%','arm: ' + armPercent + '%']
-            }
+                left: "center",
+                data: [
+                    "disarm: " + disarmPercent + "%",
+                    "arm: " + armPercent + "%",
+                ],
+            },
         ],
     };
 
@@ -131,7 +149,7 @@ function runArmDisarm() {
     // document.body.appendChild(script);
 }
 
-myChart2.on('click', function (params) {
+myChart2.on("click", function (params) {
     // printing data name in console
 
     // console.log(params.name);
@@ -142,12 +160,12 @@ myChart2.on('click', function (params) {
     //     window.location.href = "/TableNvrOffline.html";
     // }
 
-    console.log('val: ', params.name);
+    console.log("val: ", params.name);
 
-    document.getElementById('type').value = 'nvr';
-    document.getElementById('status').value = params.name;
+    document.getElementById("type").value = "nvr";
+    document.getElementById("status").value = params.name;
     console.log("This is the data of the site:  ", params.name);
-    document.getElementById('siteListForm').submit();
+    document.getElementById("siteListForm").submit();
 
     // const data = { type: 'nvr' }
 
@@ -169,5 +187,4 @@ myChart2.on('click', function (params) {
     //     .catch((error) => {
     //         console.error('Error: ', error);
     //     });
-
 });
