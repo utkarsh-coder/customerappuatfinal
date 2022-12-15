@@ -366,6 +366,10 @@ footer{
     box-shadow: none;
     border: none;
     background: #fafafa;
+    &:focus{
+        outline: 0;
+        border: 1px solid #a7a7a7;
+    }
 }
 .searchIcon{
     position: absolute;

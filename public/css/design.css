@@ -441,6 +441,11 @@ footer .menuItems img {
   background: #fafafa;
 }
 
+.searchBar:focus {
+  outline: 0;
+  border: 1px solid #a7a7a7;
+}
+
 .searchIcon {
   position: absolute;
   left: 16px;
