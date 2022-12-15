@@ -238,11 +238,11 @@
                                             </p>
                                         </div>
                                     </div>
-                                    <div class="notificationWithGraph ps-2">
+                                    <div class="notificationWithGraph ps-1">
                                         <ul class="notificationLists">
                                             <li>
                                                 <div
-                                                    class="row align-items-start flex-nowrap"
+                                                    class="row w-100 align-items-start flex-nowrap"
                                                 >
                                                     <div
                                                         class="NotificationDate"
@@ -262,7 +262,7 @@
                                             </li>
                                             <li>
                                                 <div
-                                                    class="row align-items-start flex-nowrap"
+                                                    class="row w-100 align-items-start flex-nowrap"
                                                 >
                                                     <div
                                                         class="NotificationDate"
