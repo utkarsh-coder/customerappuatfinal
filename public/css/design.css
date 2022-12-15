@@ -505,6 +505,7 @@ footer .menuItems img {
 .notificationLists li {
   border-bottom: 1px solid #a7a7a7;
   margin-bottom: 16px;
+  padding-bottom: 0.5rem;
 }
 
 .notificationLists li:nth-last-child(1) {
@@ -541,6 +542,7 @@ footer .menuItems img {
   text-align: center;
   background: #000;
   color: #fff;
+  line-height: 1;
 }
 
 .notificationLists li .NotificationDate span {
