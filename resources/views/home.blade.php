@@ -214,9 +214,7 @@
                     <div class="col-10 mt-4 mb-3">
                         <h3>Network Health</h3>
                     </div>
-                    <div
-                        class="grid-row grid-row-col-2 no-gap mb-3 networdHelth"
-                    >
+                    <div class="grid-row grid-row-col-2 no-gap mb-3">
                         <div class="card">
                             <div class="card-body site-status">
                                 <div
