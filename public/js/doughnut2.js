@@ -70,7 +70,7 @@ function runArmDisarm() {
             // subtext: 'Real-time data',
             left: "center",
         },
-        height: "170px",
+        // height: "170px",
         width: "100%",
         color: ["#FF0000", "#0361a1"],
         series: [

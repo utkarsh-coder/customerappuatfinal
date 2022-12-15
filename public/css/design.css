@@ -461,4 +461,8 @@ footer .menuItems img {
       -ms-flex-flow: column-reverse;
           flex-flow: column-reverse;
 }
+
+.autoheight {
+  height: 180px;
+}
 /*# sourceMappingURL=design.css.map */
