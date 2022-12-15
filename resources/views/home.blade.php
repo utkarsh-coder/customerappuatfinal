@@ -242,7 +242,7 @@
                                         <ul>
                                             <li>
                                                 <div class="row">
-                                                    <div class="col-2"></div>
+                                                    <div class="col-2">Hi</div>
                                                     <div class="col">
                                                         <h5>Gurgaon CC</h5>
                                                         <p>
