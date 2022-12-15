@@ -95,7 +95,7 @@ fetch(document.getElementById('fetchHost').innerHTML + "/getChartData").then(res
                 // subtext: 'Real-time data',
                 left: 'center'
             },
-            height: '80%',
+            height: '100%',
             width: '100%',
             color: [
                 '#FF0000',
@@ -114,8 +114,8 @@ fetch(document.getElementById('fetchHost').innerHTML + "/getChartData").then(res
                         borderWidth: 2
                     },
                     label: {
-                        show: true,
-                        position: 'outside',
+                        show: false,
+                        position: 'center',
                         // distanceToLabelLine: -20,
                         // edgeDistance: '-20%',
                         // bleedMargin: 0,
@@ -125,8 +125,8 @@ fetch(document.getElementById('fetchHost').innerHTML + "/getChartData").then(res
                         fontSize: 10,
                     },
                     labelLayout: {
-                        verticalAlign: "bottom",
-                        align: "left"
+                        verticalAlign: "center",
+                        align: "center"
                     },
                     labelLine: {
                         show: true,
@@ -139,8 +139,8 @@ fetch(document.getElementById('fetchHost').innerHTML + "/getChartData").then(res
                         }
                     },
                     data: [
-                        { value: offlinePercent, name: 'offline: ' + offlinePercent + '%' },
-                        { value: onlinePercent, name: 'online: ' + onlinePercent + '%' },
+                        { value: offlinePercent, name: 'Offline: ' + offlinePercent + '%' },
+                        { value: onlinePercent, name: 'Online: ' + onlinePercent + '%' },
                     ]
                 }
             ],

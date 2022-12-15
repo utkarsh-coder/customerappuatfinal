@@ -55,7 +55,7 @@ function runGl() {
             // subtext: 'Real-time data',
             left: 'center'
         },
-        height: '80%',
+        height: '100%',
         width: '100%',
         legend: {
             top: '5%',
@@ -78,15 +78,15 @@ function runGl() {
                 },
                 label: {
                     show: false,
-                    position: 'outside',
+                    position: 'center',
                     formatter: function (d) {
-                        return d.value;
+                        return d.name;
                     },
                     fontSize: 10,
                 },
                 emphasis: {
                     label: {
-                        show: false,
+                        show: true,
                         fontSize: "18",
                         fontWeight: "regular"
                     }
@@ -95,13 +95,14 @@ function runGl() {
                     show: false
                 },
                 data: [
-                    { value: glOfflinePercent, name: 'offline: ' + glOfflinePercent + '%' },
-                    { value: glOnlinePercent, name: 'online: ' + glOnlinePercent + '%' },
+                    { value: glOfflinePercent, name: 'Offline: ' + glOfflinePercent + '%' },
+                    { value: glOnlinePercent, name: 'Online: ' + glOnlinePercent + '%' },
                 ]
             }
         ],
         legend: [
             {
+                show: false,
                 bottom: 10,
                 orient: "vertical",
                 selectorLabel: {

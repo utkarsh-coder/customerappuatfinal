@@ -64,7 +64,7 @@ function runNvr() {
             '#FF0000',
             '#0361a1',
         ],
-        height: '80%',
+        height: '100%',
         width: '100%',
         series: [
             {
@@ -78,11 +78,14 @@ function runNvr() {
                 },
                 label: {
                     show: false,
-                    position: 'center'
+                    position: 'center',
+                    formatter: function (d) {
+                        return d.name;
+                    },
                 },
                 emphasis: {
                     label: {
-                        show: false,
+                        show: true,
                         fontSize: "18",
                         fontWeight: "regular"
                     }
@@ -91,13 +94,14 @@ function runNvr() {
                     show: false
                 },
                 data: [
-                    { value: nvrOfflinePercent, name: 'offline: ' + nvrOfflinePercent + '%' },
-                    { value: nvrOnlinePercent, name: 'online: ' + nvrOnlinePercent + '%' },
+                    { value: nvrOfflinePercent, name: 'Offline: ' + nvrOfflinePercent + '%' },
+                    { value: nvrOnlinePercent, name: 'Online: ' + nvrOnlinePercent + '%' },
                 ]
             }
         ],
         legend: [
             {
+                show: false,
                 bottom: 10,
                 orient: "vertical",
                 selectorLabel: {

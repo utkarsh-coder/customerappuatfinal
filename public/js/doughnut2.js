@@ -55,7 +55,7 @@ function runArmDisarm() {
             // subtext: 'Real-time data',
             left: 'center'
         },
-        height: '80%',
+        height: '100%',
         width: '100%',
         color: [
             '#FF0000',
@@ -73,15 +73,15 @@ function runArmDisarm() {
                 },
                 label: {
                     show: false,
-                    position: 'outside',
+                    position: 'center',
                     formatter: function (d) {
-                        return d.value;
+                        return d.name;
                     },
                     fontSize: 10,
                 },
                 emphasis: {
                     label: {
-                        show: false,
+                        show: true,
                         fontSize: "18",
                         fontWeight: "regular"
                     }
@@ -90,13 +90,14 @@ function runArmDisarm() {
                     show: false
                 },
                 data: [
-                    { value: disarmPercent, name: 'disarm: ' + disarmPercent + '%' },
-                    { value: armPercent, name: 'arm: ' + armPercent + '%' },
+                    { value: disarmPercent, name: 'Disarm: ' + disarmPercent + '%' },
+                    { value: armPercent, name: 'Arm: ' + armPercent + '%' },
                 ]
             }
         ],
         legend: [
             {
+                show: false,
                 bottom: 10,
                 orient: "vertical",
                 selectorLabel: {
