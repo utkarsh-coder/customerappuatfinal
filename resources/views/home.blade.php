@@ -239,7 +239,7 @@
                                         </div>
                                     </div>
                                     <div class="notificationWithGraph p-2">
-                                        <ul>
+                                        <ul class="notificationLists">
                                             <li>
                                                 <div class="row">
                                                     <div class="col-2">Hi</div>
