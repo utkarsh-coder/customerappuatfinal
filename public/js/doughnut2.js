@@ -112,7 +112,7 @@ function runArmDisarm() {
         ],
         legend: [
             {
-                bottom: 10,
+                top: "5%",
                 orient: "vertical",
                 selectorLabel: {
                     show: false,
