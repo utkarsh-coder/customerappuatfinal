@@ -226,13 +226,13 @@
                                         id="glonlinecount"
                                         class="notificationContent br-right"
                                     >
-                                        Online: ...
+                                        <span>Online</span> ...
                                     </p>
                                     <p
                                         id="glofflinecount"
                                         class="notificationContent"
                                     >
-                                        Offline: ...
+                                        <span>Offline</span> ...
                                     </p>
                                 </div>
                             </div>
