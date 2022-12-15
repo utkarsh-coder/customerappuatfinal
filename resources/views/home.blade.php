@@ -176,9 +176,7 @@
                                     <p
                                         id="inonlinecount"
                                         class="notificationContent"
-                                    >
-                                        <span>Online</span> ...
-                                    </p>
+                                    ></p>
                                     <p
                                         id="inofflinecount"
                                         class="notificationContent"
