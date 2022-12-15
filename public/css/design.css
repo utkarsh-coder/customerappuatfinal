@@ -417,6 +417,7 @@ footer .menuItems img {
       -ms-flex-flow: column;
           flex-flow: column;
   gap: 6px;
+  font-size: 14px;
 }
 
 .notificationContent span {
