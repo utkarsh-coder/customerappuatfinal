@@ -250,7 +250,7 @@
                                                         16
                                                         <p>mins</p>
                                                     </div>
-                                                    <div class="col">
+                                                    <div class="listData">
                                                         <h5>Gurgaon CC</h5>
                                                         <p>
                                                             Gurgaon Post Office,
