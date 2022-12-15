@@ -241,8 +241,15 @@
                                     <div class="notificationWithGraph p-2">
                                         <ul class="notificationLists">
                                             <li>
-                                                <div class="row">
-                                                    <div class="col-3">Hi</div>
+                                                <div
+                                                    class="row align-items-start"
+                                                >
+                                                    <div
+                                                        class="NotificationDate"
+                                                    >
+                                                        16
+                                                        <p>mins</p>
+                                                    </div>
                                                     <div class="col">
                                                         <h5>Gurgaon CC</h5>
                                                         <p>
@@ -253,10 +260,14 @@
                                                     </div>
                                                 </div>
                                             </li>
-
                                             <li>
                                                 <div class="row">
-                                                    <div class="col-3">Hi</div>
+                                                    <div
+                                                        class="NotificationDate"
+                                                    >
+                                                        16
+                                                        <p>mins</p>
+                                                    </div>
                                                     <div class="col">
                                                         <h5>Gurgaon CC</h5>
                                                         <p>

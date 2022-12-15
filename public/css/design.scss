@@ -424,6 +424,7 @@ footer{
         h5{
             font-size: 14px;
             font-weight: 400;
+            margin-bottom: 2px;
         }
         p{
             margin-bottom: 0;
@@ -432,6 +433,13 @@ footer{
             white-space: no-wrap;
             text-overflow: ellipsis;
             overflow: hidden;
+        }
+        .NotificationDate{
+            width: 30px;
+padding: 4px;
+text-align: center;
+background: #000;
+color: #fff;
         }
     }
 }
