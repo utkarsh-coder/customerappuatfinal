@@ -146,12 +146,17 @@
 
                     <div class="row">
                         <div class="col-12">
-                            <input
-                                type="text"
-                                name=""
-                                class="searchBar"
-                                id=""
-                            />
+                            <label for="" class="position-relative">
+                                <span class="searchIcon"
+                                    ><i class="bi bi-search"></i
+                                ></span>
+                                <input
+                                    type="text"
+                                    name=""
+                                    class="searchBar"
+                                    id=""
+                                />
+                            </label>
                         </div>
                     </div>
                     <div class="row">

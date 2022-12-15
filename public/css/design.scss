@@ -361,9 +361,13 @@ footer{
 .searchBar{
     width: 100%;
     padding: 8px 16px;
-    height: 42px;
+    height: 40px;
     border-radius: 30px;
     box-shadow: none;
     border: none;
     background: #fafafa;
+}
+.searchIcon{
+    position: absolute;
+    left: 8px;
 }
