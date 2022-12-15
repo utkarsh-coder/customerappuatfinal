@@ -3,7 +3,7 @@
   --primary-400:#2979af;
   --primary-500:#0361a1;
   --primary-700:#024f8f;
-  --bg:#c1c1c121;
+  --bg:#ffffff;
 }
 
 .btn-primary {
@@ -127,8 +127,8 @@ h4 {
 .card {
   border-radius: 14px;
   border: none;
-  -webkit-box-shadow: 0 5px 10px rgba(154, 160, 185, 0.05), 0 15px 40px rgba(166, 173, 201, 0.2);
-          box-shadow: 0 5px 10px rgba(154, 160, 185, 0.05), 0 15px 40px rgba(166, 173, 201, 0.2);
+  -webkit-box-shadow: 0 5px 10px rgba(154, 160, 185, 0.05), 0px 2px 15px rgba(166, 173, 201, 0.22);
+          box-shadow: 0 5px 10px rgba(154, 160, 185, 0.05), 0px 2px 15px rgba(166, 173, 201, 0.22);
 }
 
 /* Grids */
@@ -408,7 +408,23 @@ footer .menuItems img {
 
 .notificationContent {
   margin-bottom: 0;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-flow: column;
+          flex-flow: column;
+  gap: 2px;
+  font-size: 14px;
+  -webkit-box-flex: 1;
+      -ms-flex: 1 1 50%;
+          flex: 1 1 50%;
+}
+
+.notificationContent span {
   font-size: 12px;
+  color: #a7a7a7;
 }
 
 .minRowHeight {
@@ -419,5 +435,40 @@ footer .menuItems img {
 .networdHelth {
   -ms-grid-rows: 238px;
       grid-template-rows: 238px;
+}
+
+.timeAgo {
+  font-size: 12px;
+  color: #a7a7a7;
+}
+
+.headerBar {
+  height: 56px;
+}
+
+.searchBar {
+  width: 100%;
+  padding: 8px 16px 8px 40px;
+  height: 40px;
+  border-radius: 30px;
+  -webkit-box-shadow: none;
+          box-shadow: none;
+  border: none;
+  background: #fafafa;
+}
+
+.searchBar:focus {
+  outline: 0;
+  border: 1px solid #a7a7a7;
+}
+
+.searchIcon {
+  position: absolute;
+  left: 16px;
+  top: 9px;
+}
+
+.autoheight {
+  height: 160px;
 }
 /*# sourceMappingURL=design.css.map */
