@@ -127,8 +127,8 @@ h4 {
 .card {
   border-radius: 14px;
   border: none;
-  -webkit-box-shadow: 0 5px 10px rgba(154, 160, 185, 0.05), 0 15px 15px rgba(166, 173, 201, 0.22);
-          box-shadow: 0 5px 10px rgba(154, 160, 185, 0.05), 0 15px 15px rgba(166, 173, 201, 0.22);
+  -webkit-box-shadow: 0 5px 10px rgba(154, 160, 185, 0.05), 0px 2px 15px rgba(166, 173, 201, 0.22);
+          box-shadow: 0 5px 10px rgba(154, 160, 185, 0.05), 0px 2px 15px rgba(166, 173, 201, 0.22);
 }
 
 /* Grids */
