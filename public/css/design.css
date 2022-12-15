@@ -516,6 +516,7 @@ footer .menuItems img {
       -ms-flex-positive: 1;
           flex-grow: 1;
   width: calc(100% - 20px);
+  padding: 0;
 }
 
 .notificationLists li h5 {

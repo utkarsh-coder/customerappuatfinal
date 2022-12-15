@@ -242,7 +242,7 @@
                                         <ul class="notificationLists">
                                             <li>
                                                 <div
-                                                    class="row w-100 align-items-start flex-nowrap"
+                                                    class="d-flex w-100 align-items-start flex-nowrap gap-1"
                                                 >
                                                     <div
                                                         class="NotificationDate"
@@ -262,7 +262,7 @@
                                             </li>
                                             <li>
                                                 <div
-                                                    class="row w-100 align-items-start flex-nowrap"
+                                                    class="d-flex w-100 align-items-start flex-nowrap gap-1"
                                                 >
                                                     <div
                                                         class="NotificationDate"
