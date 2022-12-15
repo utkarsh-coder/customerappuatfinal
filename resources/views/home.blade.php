@@ -177,13 +177,13 @@
                                         id="inonlinecount"
                                         class="notificationContent"
                                     >
-                                        Online: ...
+                                        <span>Online</span> ...
                                     </p>
                                     <p
                                         id="inofflinecount"
                                         class="notificationContent"
                                     >
-                                        Offline: ...
+                                        <span>Offline</span> ...
                                     </p>
                                 </div>
                             </div>

@@ -342,6 +342,14 @@ footer{
 .notificationContent{
     margin-bottom: 0;
     font-size: 12px;
+    display: flex;
+    flex-flow: column;
+    gap:6px;
+
+    span{
+        font-size: 12px;
+        color:#a7a7a7;
+    }
 }
 
 
@@ -381,6 +389,7 @@ footer{
     // display: flex;
     // flex-flow: column-reverse;
 }
+
 .autoheight{
     height: 160px;
 }
