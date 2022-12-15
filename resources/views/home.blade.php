@@ -247,7 +247,7 @@
                                                     <div
                                                         class="NotificationDate"
                                                     >
-                                                        16
+                                                        <span>16</span>
                                                         <p>mins</p>
                                                     </div>
                                                     <div class="listData">
@@ -267,7 +267,7 @@
                                                     <div
                                                         class="NotificationDate"
                                                     >
-                                                        16
+                                                        <span>16</span>
                                                         <p>mins</p>
                                                     </div>
                                                     <div class="listData">

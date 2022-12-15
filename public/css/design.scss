@@ -418,7 +418,8 @@ footer{
 
     li{
        border-bottom: 1px solid #a7a7a7;
-       margin-bottom: 16px;
+       margin-bottom: 8px;
+       padding-bottom: 0.5rem;
        &:nth-last-child(1){
         border-bottom: none;
         margin-bottom: 0px;
@@ -447,10 +448,15 @@ padding: 4px;
 text-align: center;
 background: #000;
 color: #fff;
+line-height: 1;
+span{
+    font-size: 14px;
+}
 p{
     font-size: 10px;
     color:#fff;
     margin-bottom: 0;
+    line-height: 1;
 }
         }
     }
