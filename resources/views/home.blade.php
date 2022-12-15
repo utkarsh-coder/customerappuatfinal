@@ -184,7 +184,7 @@
                                 </div>
                                 <div
                                     id="main1"
-                                    class="d-flex flex-column justify-content-between h-100 autoheight"
+                                    class="d-flex flex-column justify-content-between autoheight"
                                 ></div>
                             </div>
                         </div>
