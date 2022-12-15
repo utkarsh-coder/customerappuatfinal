@@ -133,9 +133,9 @@
                     alt=""
                 />
             </div>
-            <div class="pt-3 pb-4">
+            <div class="pb-4">
                 <div class="container pb-2">
-                    <div class="row headerBar">
+                    <div class="row headerBar align-items-center">
                         <div class="col">
                             <h2>Good Morning!</h2>
                         </div>
