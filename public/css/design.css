@@ -406,6 +406,10 @@ footer .menuItems img {
           flex-flow: row;
 }
 
+.br-right {
+  border-right: 1px solid #a7a7a7;
+}
+
 .notificationContent {
   margin-bottom: 0;
   display: -webkit-box;

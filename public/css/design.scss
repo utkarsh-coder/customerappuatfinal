@@ -339,7 +339,9 @@ footer{
     flex-flow: row;
  
 }
-.br-right:1px solid #a7a7a7;
+.br-right{
+    border-right: 1px solid #a7a7a7;
+}
 .notificationContent{
     margin-bottom: 0;
     display: flex;
