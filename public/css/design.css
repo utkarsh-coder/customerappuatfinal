@@ -494,6 +494,7 @@ footer .menuItems img {
       -ms-flex: 1 1 50%;
           flex: 1 1 50%;
   width: 50%;
+  border-left: 1px solid #a7a7a7;
 }
 
 .notificationLists {
