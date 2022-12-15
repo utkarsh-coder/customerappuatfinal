@@ -146,7 +146,7 @@
 
                     <div class="row">
                         <div class="col-12">
-                            <label for="" class="position-relative">
+                            <label for="" class="position-relative w-100">
                                 <span class="searchIcon"
                                     ><i class="bi bi-search"></i
                                 ></span>
