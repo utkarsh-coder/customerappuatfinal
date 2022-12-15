@@ -482,4 +482,16 @@ footer .menuItems img {
 .autoheight {
   height: 160px;
 }
+
+.graphsection {
+  -webkit-box-flex: 0;
+      -ms-flex: 0 0 50%;
+          flex: 0 0 50%;
+}
+
+.notificationWithGraph {
+  -webkit-box-flex: 1;
+      -ms-flex: 1 0 50%;
+          flex: 1 0 50%;
+}
 /*# sourceMappingURL=design.css.map */
