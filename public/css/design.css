@@ -513,6 +513,7 @@ footer .menuItems img {
 .notificationLists li h5 {
   font-size: 14px;
   font-weight: 400;
+  margin-bottom: 2px;
 }
 
 .notificationLists li p {
@@ -522,5 +523,19 @@ footer .menuItems img {
   white-space: no-wrap;
   text-overflow: ellipsis;
   overflow: hidden;
+}
+
+.notificationLists li .NotificationDate {
+  width: 30px;
+  padding: 4px;
+  text-align: center;
+  background: #000;
+  color: #fff;
+}
+
+.notificationLists li .NotificationDate p {
+  font-size: 10px;
+  color: #fff;
+  margin-bottom: 0;
 }
 /*# sourceMappingURL=design.css.map */
