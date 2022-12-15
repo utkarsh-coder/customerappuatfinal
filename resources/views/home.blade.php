@@ -173,16 +173,24 @@
                                     class="d-flex flex-column justify-content-between autoheight"
                                 ></div>
                                 <div class="notificationContainer">
-                                    <p
-                                        id="inonlinecount"
-                                        class="notificationContent"
-                                    >
-                                        <span>Online</span> ...
-                                    </p>
-                                    <p
+                                    <!-- <p
+                                    id="inonlinecount"
+                                    class="notificationContent"
+                                >
+                                    <span>Online</span> ...
+                                </p> 
+                            
+                             <p
                                         id="inofflinecount"
                                         class="notificationContent"
                                     >
+                                        <span>Offline</span> ...
+                                    </p>
+                                -->
+                                    <p class="notificationContent">
+                                        <span>Online</span> ...
+                                    </p>
+                                    <p class="notificationContent">
                                         <span>Offline</span> ...
                                     </p>
                                 </div>
