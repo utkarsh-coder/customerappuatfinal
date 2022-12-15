@@ -434,6 +434,10 @@ footer .menuItems img {
   color: #a7a7a7;
 }
 
+.no-gap {
+  gap: 0px !important;
+}
+
 .minRowHeight {
   -ms-grid-rows: minmax(220px, auto);
       grid-template-rows: minmax(220px, auto);

@@ -211,16 +211,22 @@
                             </div>
                         </div>
                     </div>
-                    <div class="col-10 mt-3">
-                        <h2>Network Health</h2>
+                    <div class="col-10 mt-4 mb-3">
+                        <h3>Network Health</h3>
                     </div>
-                    <div class="grid-row grid-row-col-1 mt-2 mb-3 networdHelth">
+                    <div
+                        class="grid-row grid-row-col-2 no-gap mb-3 networdHelth"
+                    >
                         <div class="card">
                             <div class="card-body site-status">
+                                <div
+                                    id="main3"
+                                    class="d-flex flex-column justify-content-between autoheight"
+                                ></div>
                                 <div class="notificationContainer">
                                     <p
                                         id="glonlinecount"
-                                        class="notificationContent"
+                                        class="notificationContent br-right"
                                     >
                                         Online: ...
                                     </p>
@@ -231,10 +237,6 @@
                                         Offline: ...
                                     </p>
                                 </div>
-                                <div
-                                    id="main3"
-                                    class="d-flex flex-column justify-content-between h-100"
-                                ></div>
                             </div>
                         </div>
                     </div>
