@@ -170,9 +170,9 @@
                             <div class="card-body site-status">
                                 <div
                                     id="main1"
-                                    class="d-flex flex-column justify-content-between h-100 autoheight"
+                                    class="d-flex flex-wrap h-100 autoheight"
                                 ></div>
-                                <div class="notificationContainer">
+                                <div class="notificationContainer w-100">
                                     <p
                                         id="inonlinecount"
                                         class="notificationContent"
