@@ -221,7 +221,7 @@
                             <div class="card-body site-status">
                                 <div
                                     id="main3"
-                                    class="d-flex flex-column justify-content-between h-100"
+                                    class="d-flex flex-column justify-content-between"
                                 ></div>
                                 <div class="notificationContainer">
                                     <p
