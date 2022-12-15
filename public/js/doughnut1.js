@@ -86,9 +86,7 @@ fetch(document.getElementById("fetchHost").innerHTML + "/getChartData")
 
         document.getElementById("inonlinecount").innerHTML =
             "<span>Online</span> " + sessionStorage.getItem("inOnlineCount");
-        document
-            .getElementById("inonlinecount")
-            .setAttribute("class", "br-right");
+        document.getElementById("inonlinecount").classList.add("br-right");
         document.getElementById("inofflinecount").innerHTML =
             "<span>Offline</span> " + sessionStorage.getItem("inOfflineCount");
 
