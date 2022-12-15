@@ -4,7 +4,8 @@
     --primary-500:#0361a1;
     --primary-700:#024f8f;
     // --bg:#f9fafe21;
-    --bg:#c1c1c121;
+    // --bg:#c1c1c121;
+    --bg:#ffffff;
 }
 .btn-primary {
     color: #fff;
@@ -348,4 +349,21 @@ footer{
 }
 .networdHelth{
   grid-template-rows: 238px;
+}
+.timeAgo {
+    font-size: 12px;
+    color: #a7a7a7;
+}
+
+.headerBar{
+    height: 56px;
+}
+.searchBar{
+    width: 100%;
+    padding: 8px 16px;
+    height: 42px;
+    border-radius: 30px;
+    box-shadow: none;
+    border: none;
+    background: #fafafa;
 }

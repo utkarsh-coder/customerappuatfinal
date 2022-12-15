@@ -70,10 +70,6 @@
                 text-decoration: none;
                 color: #212529;
             }
-            .timeAgo {
-                font-size: 12px;
-                color: #a7a7a7;
-            }
         </style>
     </head>
 
@@ -139,12 +135,23 @@
             </div>
             <div class="pt-3 pb-4">
                 <div class="container pb-2">
-                    <div class="row">
+                    <div class="row headerBar">
                         <div class="col">
                             <h2>Good Morning!</h2>
                         </div>
-                        <div class="col-2">
+                        <div class="col-3 text-end">
                             <span class="timeAgo">5mins ago</span>
+                        </div>
+                    </div>
+
+                    <div class="row">
+                        <div class="col-12">
+                            <input
+                                type="text"
+                                name=""
+                                class="searchBar"
+                                id=""
+                            />
                         </div>
                     </div>
                     <div class="row">
