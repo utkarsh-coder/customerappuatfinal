@@ -242,7 +242,7 @@
                                         <ul class="notificationLists">
                                             <li>
                                                 <div
-                                                    class="row align-items-start"
+                                                    class="row align-items-start flex-nowrap"
                                                 >
                                                     <div
                                                         class="NotificationDate"
@@ -261,7 +261,9 @@
                                                 </div>
                                             </li>
                                             <li>
-                                                <div class="row">
+                                                <div
+                                                    class="row align-items-start flex-nowrap"
+                                                >
                                                     <div
                                                         class="NotificationDate"
                                                     >
