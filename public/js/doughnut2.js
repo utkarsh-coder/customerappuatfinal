@@ -71,6 +71,7 @@ function runArmDisarm() {
             left: "center",
         },
         // height: "170px",
+        top: "5%",
         width: "100%",
         color: ["#FF0000", "#0361a1"],
         series: [
