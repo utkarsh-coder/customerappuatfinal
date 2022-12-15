@@ -422,6 +422,10 @@ footer{
         border-bottom: none;
         margin-bottom: 0px;
        }
+       .listData{
+        flex-grow: 1;
+        width: calc(100% - 20px);
+       }
         h5{
             font-size: 14px;
             font-weight: 400;
