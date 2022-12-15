@@ -238,7 +238,7 @@
                                             </p>
                                         </div>
                                     </div>
-                                    <div class="notificationWithGraph p-2">
+                                    <div class="notificationWithGraph ps-2">
                                         <ul class="notificationLists">
                                             <li>
                                                 <div
