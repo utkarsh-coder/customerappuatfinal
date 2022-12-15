@@ -168,24 +168,24 @@
                     <div class="grid-row mb-3 grid-row-col-2 minRowHeight">
                         <div class="card">
                             <div class="card-body site-status">
+                                <div
+                                    id="main1"
+                                    class="d-flex flex-column justify-content-between h-100 autoheight"
+                                ></div>
                                 <div class="notificationContainer">
                                     <p
                                         id="inonlinecount"
                                         class="notificationContent"
                                     >
-                                        Online: ...
+                                        <span>Online</span>
                                     </p>
                                     <p
                                         id="inofflinecount"
                                         class="notificationContent"
                                     >
-                                        Offline: ...
+                                        <span>Offline</span>
                                     </p>
                                 </div>
-                                <div
-                                    id="main1"
-                                    class="d-flex flex-column justify-content-between h-100 autoheight"
-                                ></div>
                             </div>
                         </div>
                         <div class="card">
