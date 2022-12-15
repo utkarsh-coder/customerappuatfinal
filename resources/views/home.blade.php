@@ -214,26 +214,47 @@
                     <div class="col-10 mt-4 mb-3">
                         <h3>Network Health</h3>
                     </div>
-                    <div class="grid-row grid-row-col-2 no-gap mb-3">
+                    <div class="grid-row grid-row-col-1 mb-3">
                         <div class="card">
                             <div class="card-body site-status">
-                                <div
-                                    id="main3"
-                                    class="d-flex flex-column justify-content-between autoheight"
-                                ></div>
-                                <div class="notificationContainer">
-                                    <p
-                                        id="glonlinecount"
-                                        class="notificationContent br-right"
-                                    >
-                                        <span>Online</span> ...
-                                    </p>
-                                    <p
-                                        id="glofflinecount"
-                                        class="notificationContent"
-                                    >
-                                        <span>Offline</span> ...
-                                    </p>
+                                <div class="d-flex">
+                                    <div class="graphsection">
+                                        <div
+                                            id="main3"
+                                            class="d-flex flex-column justify-content-between autoheight"
+                                        ></div>
+                                        <div class="notificationContainer">
+                                            <p
+                                                id="glonlinecount"
+                                                class="notificationContent br-right"
+                                            >
+                                                <span>Online</span> ...
+                                            </p>
+                                            <p
+                                                id="glofflinecount"
+                                                class="notificationContent"
+                                            >
+                                                <span>Offline</span> ...
+                                            </p>
+                                        </div>
+                                    </div>
+                                    <div class="notificationWithGraph p-2">
+                                        <ul>
+                                            <li>
+                                                <div class="row">
+                                                    <div class="col-2"></div>
+                                                    <div class="col">
+                                                        <h5>Gurgaon CC</h5>
+                                                        <p>
+                                                            Gurgaon Post Office,
+                                                            Gurgaon, along with
+                                                            its address
+                                                        </p>
+                                                    </div>
+                                                </div>
+                                            </li>
+                                        </ul>
+                                    </div>
                                 </div>
                             </div>
                         </div>
