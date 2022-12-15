@@ -494,4 +494,33 @@ footer .menuItems img {
       -ms-flex: 1 0 50%;
           flex: 1 0 50%;
 }
+
+.notificationLists {
+  padding: 0;
+  list-style: none;
+}
+
+.notificationLists li {
+  border-bottom: 1px solid #a7a7a7;
+  margin-bottom: 16px;
+}
+
+.notificationLists li:nth-last-child(1) {
+  border-bottom: none;
+  margin-bottom: 0px;
+}
+
+.notificationLists li h5 {
+  font-size: 14px;
+  font-weight: 400;
+}
+
+.notificationLists li p {
+  margin-bottom: 0;
+  color: #a7a7a7;
+  font-size: 10px;
+  white-space: no-wrap;
+  text-overflow: ellipsis;
+  overflow: hidden;
+}
 /*# sourceMappingURL=design.css.map */

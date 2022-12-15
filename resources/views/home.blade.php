@@ -239,10 +239,24 @@
                                         </div>
                                     </div>
                                     <div class="notificationWithGraph p-2">
-                                        <ul>
+                                        <ul class="notificationLists">
                                             <li>
                                                 <div class="row">
-                                                    <div class="col-2">Hi</div>
+                                                    <div class="col-3">Hi</div>
+                                                    <div class="col">
+                                                        <h5>Gurgaon CC</h5>
+                                                        <p>
+                                                            Gurgaon Post Office,
+                                                            Gurgaon, along with
+                                                            its address
+                                                        </p>
+                                                    </div>
+                                                </div>
+                                            </li>
+
+                                            <li>
+                                                <div class="row">
+                                                    <div class="col-3">Hi</div>
                                                     <div class="col">
                                                         <h5>Gurgaon CC</h5>
                                                         <p>
