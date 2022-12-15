@@ -137,14 +137,14 @@
                 <div class="container pb-2">
                     <div class="row headerBar align-items-center">
                         <div class="col">
-                            <h2>Good Morning!</h2>
+                            <h2 class="fw-bold">Good Morning!</h2>
                         </div>
                         <div class="col-3 text-end">
                             <span class="timeAgo">5mins ago</span>
                         </div>
                     </div>
 
-                    <div class="row">
+                    <div class="row mb-3">
                         <div class="col-12">
                             <label for="" class="position-relative w-100">
                                 <span class="searchIcon"
@@ -159,19 +159,13 @@
                             </label>
                         </div>
                     </div>
-                    <div class="row">
-                        <div class="col-10">
-                            <span>Current Status</span>
-                            <h2>Alarm Panel Status</h2>
-                        </div>
-                        <div class="col-2 d-flex justify-content-end">
-                            <button type="button" class="searchBtn">
-                                <i class="bi bi-search"></i>
-                            </button>
+                    <div class="row my-3">
+                        <div class="col-12">
+                            <h3>Alarm Panel</h3>
                         </div>
                     </div>
 
-                    <div class="grid-row mt-2 mb-3 grid-row-col-2 minRowHeight">
+                    <div class="grid-row mb-3 grid-row-col-2 minRowHeight">
                         <div class="card">
                             <div class="card-body site-status">
                                 <div class="notificationContainer">
