@@ -543,6 +543,10 @@ footer .menuItems img {
   color: #fff;
 }
 
+.notificationLists li .NotificationDate span {
+  font-size: 14px;
+}
+
 .notificationLists li .NotificationDate p {
   font-size: 10px;
   color: #fff;
