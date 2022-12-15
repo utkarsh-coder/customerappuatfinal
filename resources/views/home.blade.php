@@ -238,11 +238,11 @@
                                             </p>
                                         </div>
                                     </div>
-                                    <div class="notificationWithGraph ps-2">
+                                    <div class="notificationWithGraph ps-1">
                                         <ul class="notificationLists">
                                             <li>
                                                 <div
-                                                    class="row align-items-start"
+                                                    class="d-flex w-100 align-items-start flex-nowrap gap-1"
                                                 >
                                                     <div
                                                         class="NotificationDate"
@@ -250,7 +250,7 @@
                                                         16
                                                         <p>mins</p>
                                                     </div>
-                                                    <div class="col">
+                                                    <div class="listData">
                                                         <h5>Gurgaon CC</h5>
                                                         <p>
                                                             Gurgaon Post Office,
@@ -261,14 +261,16 @@
                                                 </div>
                                             </li>
                                             <li>
-                                                <div class="row">
+                                                <div
+                                                    class="d-flex w-100 align-items-start flex-nowrap gap-1"
+                                                >
                                                     <div
                                                         class="NotificationDate"
                                                     >
                                                         16
                                                         <p>mins</p>
                                                     </div>
-                                                    <div class="col">
+                                                    <div class="listData">
                                                         <h5>Gurgaon CC</h5>
                                                         <p>
                                                             Gurgaon Post Office,
