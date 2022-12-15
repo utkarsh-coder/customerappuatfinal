@@ -190,6 +190,10 @@
                         </div>
                         <div class="card">
                             <div class="card-body site-status">
+                                <div
+                                    id="main2"
+                                    class="d-flex flex-column justify-content-between autoheight"
+                                ></div>
                                 <div class="notificationContainer">
                                     <p
                                         id="armcount"
@@ -204,10 +208,6 @@
                                         DISARM: ...
                                     </p>
                                 </div>
-                                <div
-                                    id="main2"
-                                    class="d-flex flex-column justify-content-between autoheight"
-                                ></div>
                             </div>
                         </div>
                     </div>
