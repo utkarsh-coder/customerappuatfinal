@@ -168,6 +168,10 @@
                     <div class="grid-row mb-3 grid-row-col-2 minRowHeight">
                         <div class="card">
                             <div class="card-body site-status graphsReverse">
+                                <div
+                                    id="main1"
+                                    class="d-flex flex-column justify-content-between autoheight"
+                                ></div>
                                 <div class="notificationContainer">
                                     <p
                                         id="inonlinecount"
@@ -182,10 +186,6 @@
                                         Offline: ...
                                     </p>
                                 </div>
-                                <div
-                                    id="main1"
-                                    class="d-flex flex-column justify-content-between autoheight"
-                                ></div>
                             </div>
                         </div>
                         <div class="card">
