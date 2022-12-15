@@ -415,8 +415,11 @@ footer .menuItems img {
   -webkit-box-direction: normal;
       -ms-flex-flow: column;
           flex-flow: column;
-  gap: 6px;
+  gap: 2px;
   font-size: 14px;
+  -webkit-box-flex: 1;
+      -ms-flex: 1 1 50%;
+          flex: 1 1 50%;
 }
 
 .notificationContent span {

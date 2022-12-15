@@ -175,7 +175,7 @@
                                 <div class="notificationContainer">
                                     <p
                                         id="inonlinecount"
-                                        class="notificationContent"
+                                        class="notificationContent br-right"
                                     >
                                         <span>Online</span> ...
                                     </p>
@@ -197,7 +197,7 @@
                                 <div class="notificationContainer">
                                     <p
                                         id="armcount"
-                                        class="notificationContent"
+                                        class="notificationContent br-right"
                                     >
                                         ARM: ...
                                     </p>

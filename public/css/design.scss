@@ -339,12 +339,14 @@ footer{
     flex-flow: row;
  
 }
+.br-right:1px solid #a7a7a7;
 .notificationContent{
     margin-bottom: 0;
     display: flex;
     flex-flow: column;
-    gap:6px;
+    gap:2px;
     font-size: 14px;
+  flex:1 1 50%;
 
     span{
         font-size: 12px;
