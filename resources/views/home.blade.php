@@ -239,7 +239,7 @@
                                         </div>
                                     </div>
                                     <div class="notificationWithGraph ps-1">
-                                        <ul class="notificationLists">
+                                        <ul class="notificationLists mb-0">
                                             <li>
                                                 <div
                                                     class="d-flex w-100 align-items-start flex-nowrap gap-1"
@@ -319,6 +319,14 @@
                                                         </p>
                                                     </div>
                                                 </div>
+                                            </li>
+
+                                            <li
+                                                class="text-center pb-0 viewAll"
+                                            >
+                                                <a href="#" class="text-dark"
+                                                    >All</a
+                                                >
                                             </li>
                                         </ul>
                                     </div>

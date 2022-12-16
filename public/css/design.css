@@ -555,4 +555,12 @@ footer .menuItems img {
   margin-bottom: 0;
   line-height: 1;
 }
+
+.notificationLists .viewAll {
+  line-height: 1;
+}
+
+.notificationLists .viewAll a {
+  font-size: 12px;
+}
 /*# sourceMappingURL=design.css.map */

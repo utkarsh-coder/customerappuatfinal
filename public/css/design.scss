@@ -424,6 +424,7 @@ footer{
         border-bottom: none;
         margin-bottom: 0px;
        }
+       
        .listData{
         flex-grow: 1;
         width: calc(100% - 22px);
@@ -460,4 +461,12 @@ p{
 }
         }
     }
+
+    .viewAll{
+        line-height: 1;
+        a{
+
+            font-size: 12px;
+        }
+       }
 }
