@@ -168,10 +168,16 @@
                     <div class="grid-row mb-3 grid-row-col-2 minRowHeight">
                         <div class="card">
                             <div class="card-body site-status graphsReverse">
+                                <!-- id="main1" . for graph -->
                                 <div
                                     id="main1"
                                     class="d-flex flex-column justify-content-between autoheight"
-                                ></div>
+                                >
+                                    <img
+                                        src="https://cdn-icons-png.flaticon.com/512/5555/5555775.png"
+                                        class="img-flude"
+                                    />
+                                </div>
                                 <div class="notificationContainer">
                                     <p
                                         id="inonlinecount"
