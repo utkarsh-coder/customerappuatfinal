@@ -168,10 +168,8 @@
                     <div class="grid-row mb-3 grid-row-col-2 minRowHeight">
                         <div class="card">
                             <div class="card-body site-status graphsReverse">
-                                <!-- id="main1" . for graph -->
-                                <!-- id="inonlinecount" -->
-                                <!-- id="inofflinecount" -->
                                 <div
+                                    id="main1"
                                     class="d-flex flex-column justify-content-between autoheight"
                                 >
                                     <img
@@ -180,10 +178,16 @@
                                     />
                                 </div>
                                 <div class="notificationContainer">
-                                    <p class="notificationContent br-right">
+                                    <p
+                                        id="inonlinecount"
+                                        class="notificationContent br-right"
+                                    >
                                         <span>Online</span> ...
                                     </p>
-                                    <p class="notificationContent">
+                                    <p
+                                        id="inofflinecount"
+                                        class="notificationContent"
+                                    >
                                         <span>Offline</span> ...
                                     </p>
                                 </div>
