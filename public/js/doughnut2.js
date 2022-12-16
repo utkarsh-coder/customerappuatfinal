@@ -39,16 +39,18 @@ function runArmDisarm() {
 
     // document.getElementById('allonline').innerHTML = data.nvr[0].online_count + data.gl[0].online + data.in[0].in_online_count;
     // document.getElementById('alloffline').innerHTML = data.nvr[0].offline_count + data.gl[0].offline + data.in[0].in_offline_count;
+
+    document.getElementById("armcount").innerHTML =
+            "<span>Arm</span> " + sessionStorage.getItem("armCount");
+        document.getElementById("armcount").classList.add("br-right");
+        document.getElementById("disarmcount").innerHTML =
+            "<span>Disarm</span> " + sessionStorage.getItem("disarmCount");
+
     console.log("starting hello world!");
 
     if (sessionStorage.getItem("armCount") == "null") {
         text2 = "IN not present at site";
     }
-
-    document.getElementById("armcount").innerHTML =
-        "Arm: " + sessionStorage.getItem("armCount");
-    document.getElementById("disarmcount").innerHTML =
-        "Disarm: " + sessionStorage.getItem("disarmCount");
 
     let armPercent = Math.round(
         (Number(sessionStorage.getItem("armCount")) /
@@ -77,12 +79,12 @@ function runArmDisarm() {
         series: [
             {
                 type: "pie",
-                radius: ["40%", "70%"],
+                radius: ["50%", "70%"],
                 avoidLabelOverlap: false,
                 itemStyle: {
                     borderRadius: 0,
                     borderColor: "#fff",
-                    borderWidth: 2,
+                    borderWidth: 0,
                 },
                 label: {
                     show: false,
@@ -103,8 +105,8 @@ function runArmDisarm() {
                     show: false,
                 },
                 data: [
-                    { value: disarmPercent, name: 'Disarm: ' + disarmPercent + '%' },
-                    { value: armPercent, name: 'Arm: ' + armPercent + '%' },
+                    { value: disarmPercent, name: disarmPercent + '%'+'\n Disarm' },
+                    { value: armPercent, name: armPercent + '%'+'\n Arm' },
                 ]
             }
         ],

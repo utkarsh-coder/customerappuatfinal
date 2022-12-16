@@ -36,14 +36,18 @@ function runGl() {
 
     // document.getElementById('allonline').innerHTML = data.nvr[0].online_count + data.gl[0].online + data.in[0].in_online_count;
     // document.getElementById('alloffline').innerHTML = data.nvr[0].offline_count + data.gl[0].offline + data.in[0].in_offline_count;
+
+    document.getElementById("glonlinecount").innerHTML =
+            "<span>Online</span> " + sessionStorage.getItem('glOnlineCount');
+        document.getElementById("glonlinecount").classList.add("br-right");
+        document.getElementById("glofflinecount").innerHTML =
+            "<span>Offline</span> " + sessionStorage.getItem('glOfflineCount');
+
     console.log("starting hello world!");
 
     if (sessionStorage.getItem('glOnlineCount') == 'null') {
         text3 = 'GL not present at site';
     }
-
-    document.getElementById('glonlinecount').innerHTML = 'Online: ' + sessionStorage.getItem('glOnlineCount');
-    document.getElementById('glofflinecount').innerHTML = 'Offline: ' + sessionStorage.getItem('glOfflineCount');
 
     let glOnlinePercent = Math.round((Number(sessionStorage.getItem('glOnlineCount')) / (Number(sessionStorage.getItem('glOnlineCount')) + Number(sessionStorage.getItem('glOfflineCount')))) * 100);
     let glOfflinePercent = Math.round((Number(sessionStorage.getItem('glOfflineCount')) / (Number(sessionStorage.getItem('glOnlineCount')) + Number(sessionStorage.getItem('glOfflineCount')))) * 100);
@@ -69,12 +73,12 @@ function runGl() {
         series: [
             {
                 type: 'pie',
-                radius: ['40%', '70%'],
+                radius: ['50%', '70%'],
                 avoidLabelOverlap: false,
                 itemStyle: {
                     borderRadius: 0,
                     borderColor: '#fff',
-                    borderWidth: 2
+                    borderWidth: 0
                 },
                 label: {
                     show: false,
@@ -95,8 +99,8 @@ function runGl() {
                     show: false
                 },
                 data: [
-                    { value: glOfflinePercent, name: 'Offline: ' + glOfflinePercent + '%' },
-                    { value: glOnlinePercent, name: 'Online: ' + glOnlinePercent + '%' },
+                    { value: glOfflinePercent, name: glOfflinePercent + '%'+ '\n Offline' },
+                    { value: glOnlinePercent, name: glOnlinePercent + '%'+'\n Online' },
                 ]
             }
         ],

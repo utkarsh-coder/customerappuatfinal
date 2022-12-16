@@ -69,12 +69,12 @@ function runNvr() {
         series: [
             {
                 type: 'pie',
-                radius: ['40%', '70%'],
+                radius: ['50%', '70%'],
                 avoidLabelOverlap: false,
                 itemStyle: {
                     borderRadius: 0,
                     borderColor: '#fff',
-                    borderWidth: 2
+                    borderWidth: 0
                 },
                 label: {
                     show: false,

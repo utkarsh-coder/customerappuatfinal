@@ -136,12 +136,12 @@ fetch(document.getElementById("fetchHost").innerHTML + "/getChartData")
                 {
                     position: "auto",
                     type: "pie",
-                    radius: ["40%", "70%"],
+                    radius: ["50%", "70%"],
                     avoidLabelOverlap: true,
                     itemStyle: {
                         borderRadius: 0,
                         borderColor: "#fff",
-                        borderWidth: 2,
+                        borderWidth: 0,
                     },
                     label: {
                         show: false,
@@ -169,8 +169,8 @@ fetch(document.getElementById("fetchHost").innerHTML + "/getChartData")
                         },
                     },
                     data: [
-                        { value: offlinePercent, name: 'Offline: ' + offlinePercent + '%' },
-                        { value: onlinePercent, name: 'Online: ' + onlinePercent + '%' },
+                        { value: offlinePercent, name: offlinePercent + '%'+'\n Offline' },
+                        { value: onlinePercent, name: onlinePercent + '%'+'\n Online' },
                     ]
                 }
             ],
