@@ -170,7 +170,6 @@
                             <div class="card-body site-status graphsReverse">
                                 <!-- id="main1" . for graph -->
                                 <div
-                                    id="main1"
                                     class="d-flex flex-column justify-content-between autoheight"
                                 >
                                     <img
