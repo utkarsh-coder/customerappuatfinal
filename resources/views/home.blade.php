@@ -169,6 +169,8 @@
                         <div class="card">
                             <div class="card-body site-status graphsReverse">
                                 <!-- id="main1" . for graph -->
+                                <!-- id="inonlinecount" -->
+                                <!-- id="inofflinecount" -->
                                 <div
                                     class="d-flex flex-column justify-content-between autoheight"
                                 >
@@ -178,16 +180,10 @@
                                     />
                                 </div>
                                 <div class="notificationContainer">
-                                    <p
-                                        id="inonlinecount"
-                                        class="notificationContent br-right"
-                                    >
+                                    <p class="notificationContent br-right">
                                         <span>Online</span> ...
                                     </p>
-                                    <p
-                                        id="inofflinecount"
-                                        class="notificationContent"
-                                    >
+                                    <p class="notificationContent">
                                         <span>Offline</span> ...
                                     </p>
                                 </div>
