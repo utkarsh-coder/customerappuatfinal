@@ -54,6 +54,7 @@ h2 {
 
 h3 {
   margin-bottom: 0;
+  font-weight: 400;
 }
 
 h4 {
@@ -554,5 +555,13 @@ footer .menuItems img {
   color: #fff;
   margin-bottom: 0;
   line-height: 1;
+}
+
+.notificationLists li.viewAll {
+  line-height: 1;
+}
+
+.notificationLists li.viewAll a {
+  font-size: 12px;
 }
 /*# sourceMappingURL=design.css.map */

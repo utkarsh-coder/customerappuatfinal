@@ -171,7 +171,12 @@
                                 <div
                                     id="main1"
                                     class="d-flex flex-column justify-content-between autoheight"
-                                ></div>
+                                >
+                                    <img
+                                        src="https://cdn-icons-png.flaticon.com/512/5555/5555775.png"
+                                        class="img-flude"
+                                    />
+                                </div>
                                 <div class="notificationContainer">
                                     <p
                                         id="inonlinecount"
@@ -239,7 +244,7 @@
                                         </div>
                                     </div>
                                     <div class="notificationWithGraph ps-1">
-                                        <ul class="notificationLists">
+                                        <ul class="notificationLists mb-0">
                                             <li>
                                                 <div
                                                     class="d-flex w-100 align-items-start flex-nowrap gap-1"
@@ -279,6 +284,54 @@
                                                         </p>
                                                     </div>
                                                 </div>
+                                            </li>
+                                            <li>
+                                                <div
+                                                    class="d-flex w-100 align-items-start flex-nowrap gap-1"
+                                                >
+                                                    <div
+                                                        class="NotificationDate"
+                                                    >
+                                                        <span>16</span>
+                                                        <p>mins</p>
+                                                    </div>
+                                                    <div class="listData">
+                                                        <h5>Gurgaon CC</h5>
+                                                        <p>
+                                                            Gurgaon Post Office,
+                                                            Gurgaon, along with
+                                                            its address
+                                                        </p>
+                                                    </div>
+                                                </div>
+                                            </li>
+                                            <li>
+                                                <div
+                                                    class="d-flex w-100 align-items-start flex-nowrap gap-1"
+                                                >
+                                                    <div
+                                                        class="NotificationDate"
+                                                    >
+                                                        <span>16</span>
+                                                        <p>mins</p>
+                                                    </div>
+                                                    <div class="listData">
+                                                        <h5>Gurgaon CC</h5>
+                                                        <p>
+                                                            Gurgaon Post Office,
+                                                            Gurgaon, along with
+                                                            its address
+                                                        </p>
+                                                    </div>
+                                                </div>
+                                            </li>
+
+                                            <li
+                                                class="text-center pb-0 viewAll"
+                                            >
+                                                <a href="#" class="text-dark"
+                                                    >All</a
+                                                >
                                             </li>
                                         </ul>
                                     </div>

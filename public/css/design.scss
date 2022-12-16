@@ -52,6 +52,7 @@ h2{
 }
 h3{
     margin-bottom: 0;
+    font-weight: 400;
 }
 h4{
     font-weight: 500;
@@ -424,6 +425,7 @@ footer{
         border-bottom: none;
         margin-bottom: 0px;
        }
+       
        .listData{
         flex-grow: 1;
         width: calc(100% - 22px);
@@ -460,4 +462,11 @@ p{
 }
         }
     }
+
+    li.viewAll{
+        line-height: 1;
+        a{ 
+            font-size: 12px;
+        }
+       }
 }
