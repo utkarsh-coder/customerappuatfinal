@@ -107,6 +107,7 @@ Route::get("/getChartData", [CustomerController::class, 'getChartData']);
 Route::post("/getTableData", [CustomerController::class, 'getTableData']);
 Route::post("/getDeviceList", [CustomerController::class, 'getDeviceList']);
 Route::get("/getSensorData", [CustomerController::class, 'getSensorData']);
+Route::get("/deviceList", [CustomerController::class, 'deviceList']);
 
 Route::post('/send-mail', [MailController::class, 'sendOTPMail']);
 Route::post("/verifyotp", [MailController::class, "verifyOTP"]);

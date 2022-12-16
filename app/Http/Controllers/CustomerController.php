@@ -91,6 +91,10 @@ class CustomerController extends Controller
         return view('usermapping');
     }
 
+    public function deviceList(){
+        return view('devicelist');
+    }
+
     public function verify(Request $request)
     {
         // $customers = new customers();
