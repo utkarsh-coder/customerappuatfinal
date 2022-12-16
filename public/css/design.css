@@ -556,11 +556,11 @@ footer .menuItems img {
   line-height: 1;
 }
 
-.notificationLists .viewAll {
+.notificationLists li.viewAll {
   line-height: 1;
 }
 
-.notificationLists .viewAll a {
+.notificationLists li.viewAll a {
   font-size: 12px;
 }
 /*# sourceMappingURL=design.css.map */
