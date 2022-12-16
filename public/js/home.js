@@ -13,7 +13,7 @@ $(document).ready(function () {
             // document.getElementById('loaderImgBlack').remove();
             document.body.style.opacity = 1;
             // document.getElementById('loader').style.opacity = 1;
-            document.getElementById('loaderImg').remove();
+            document.getElementById('loaderImgBlack').remove();
             document.body.style.pointerEvents = "auto";
 
             console.log('getData:  ', data);
