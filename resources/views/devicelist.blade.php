@@ -76,6 +76,21 @@
         <main>
             <div class="pb-4">
                 <div class="container">
+                    <div class="row mb-3">
+                        <div class="col-12">
+                            <label for="" class="position-relative w-100">
+                                <span class="searchIcon"
+                                    ><i class="bi bi-search"></i
+                                ></span>
+                                <input
+                                    type="text"
+                                    name=""
+                                    class="searchBar"
+                                    id=""
+                                />
+                            </label>
+                        </div>
+                    </div>
                     <div class="grid-row grid-row-col-1 mb-3">
                         <div class="card">
                             <div class="card-body site-status">
