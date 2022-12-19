@@ -92,88 +92,84 @@
                         </div>
                     </div>
                     <div class="grid-row grid-row-col-1 mb-3">
-                        <div class="card">
-                            <div class="card-body site-status">
-                                <ul class="notificationLists mb-0">
-                                    <li>
-                                        <div
-                                            class="d-flex w-100 align-items-start flex-nowrap gap-1"
-                                        >
-                                            <div class="NotificationDate">
-                                                <span>16</span>
-                                                <p>mins</p>
-                                            </div>
-                                            <div class="listData">
-                                                <h5>Gurgaon CC</h5>
-                                                <p>
-                                                    Gurgaon Post Office,
-                                                    Gurgaon, along with its
-                                                    address
-                                                </p>
-                                            </div>
+                        <div class="card-body px-0 site-status">
+                            <ul class="notificationLists mb-0">
+                                <li>
+                                    <div
+                                        class="d-flex w-100 align-items-start flex-nowrap gap-1"
+                                    >
+                                        <div class="NotificationDate">
+                                            <span>16</span>
+                                            <p>mins</p>
                                         </div>
-                                    </li>
-                                    <li>
-                                        <div
-                                            class="d-flex w-100 align-items-start flex-nowrap gap-1"
-                                        >
-                                            <div class="NotificationDate">
-                                                <span>16</span>
-                                                <p>mins</p>
-                                            </div>
-                                            <div class="listData">
-                                                <h5>Gurgaon CC</h5>
-                                                <p>
-                                                    Gurgaon Post Office,
-                                                    Gurgaon, along with its
-                                                    address
-                                                </p>
-                                            </div>
+                                        <div class="listData">
+                                            <h5>Gurgaon CC</h5>
+                                            <p>
+                                                Gurgaon Post Office, Gurgaon,
+                                                along with its address
+                                            </p>
                                         </div>
-                                    </li>
-                                    <li>
-                                        <div
-                                            class="d-flex w-100 align-items-start flex-nowrap gap-1"
-                                        >
-                                            <div class="NotificationDate">
-                                                <span>16</span>
-                                                <p>mins</p>
-                                            </div>
-                                            <div class="listData">
-                                                <h5>Gurgaon CC</h5>
-                                                <p>
-                                                    Gurgaon Post Office,
-                                                    Gurgaon, along with its
-                                                    address
-                                                </p>
-                                            </div>
+                                    </div>
+                                </li>
+                                <li>
+                                    <div
+                                        class="d-flex w-100 align-items-start flex-nowrap gap-1"
+                                    >
+                                        <div class="NotificationDate">
+                                            <span>16</span>
+                                            <p>mins</p>
                                         </div>
-                                    </li>
-                                    <li>
-                                        <div
-                                            class="d-flex w-100 align-items-start flex-nowrap gap-1"
-                                        >
-                                            <div class="NotificationDate">
-                                                <span>16</span>
-                                                <p>mins</p>
-                                            </div>
-                                            <div class="listData">
-                                                <h5>Gurgaon CC</h5>
-                                                <p>
-                                                    Gurgaon Post Office,
-                                                    Gurgaon, along with its
-                                                    address
-                                                </p>
-                                            </div>
+                                        <div class="listData">
+                                            <h5>Gurgaon CC</h5>
+                                            <p>
+                                                Gurgaon Post Office, Gurgaon,
+                                                along with its address
+                                            </p>
                                         </div>
-                                    </li>
+                                    </div>
+                                </li>
+                                <li>
+                                    <div
+                                        class="d-flex w-100 align-items-start flex-nowrap gap-1"
+                                    >
+                                        <div class="NotificationDate">
+                                            <span>16</span>
+                                            <p>mins</p>
+                                        </div>
+                                        <div class="listData">
+                                            <h5>Gurgaon CC</h5>
+                                            <p>
+                                                Gurgaon Post Office, Gurgaon,
+                                                along with its address
+                                            </p>
+                                        </div>
+                                    </div>
+                                </li>
+                                <li>
+                                    <div
+                                        class="d-flex w-100 align-items-start flex-nowrap gap-1"
+                                    >
+                                        <div class="NotificationDate">
+                                            <span>16</span>
+                                            <p>mins</p>
+                                        </div>
+                                        <div class="listData">
+                                            <h5>Gurgaon CC</h5>
+                                            <p>
+                                                Gurgaon Post Office, Gurgaon,
+                                                along with its address
+                                            </p>
+                                        </div>
+                                    </div>
+                                </li>
 
-                                    <li class="text-center pb-0 viewAll">
-                                        <a href="#" class="text-dark">All</a>
-                                    </li>
-                                </ul>
-                            </div>
+                                <li class="text-center pb-0 viewAll">
+                                    <a href="#" class="text-dark">All</a>
+                                </li>
+                            </ul>
                         </div>
+                        <!-- <div class="card">
+                        </div> -->
                     </div>
                 </div>
             </div>
