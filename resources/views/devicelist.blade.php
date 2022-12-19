@@ -75,107 +75,85 @@
     <body>
         <main>
             <div class="pb-4"></div>
-        </main>
-        <h1>Device List Page... Design Remaining...</h1>
-
-        <div class="card">
-            <div class="card-body site-status">
-                <div class="d-flex">
-                    <div class="graphsection">
-                        <div
-                            id="main3"
-                            class="d-flex flex-column justify-content-between autoheight"
-                        ></div>
-                        <div class="notificationContainer">
-                            <p
-                                id="glonlinecount"
-                                class="notificationContent br-right"
+            <h1>Device List Page... Design Remaining...</h1>
+            <div class="card">
+                <div class="card-body site-status">
+                    <ul class="notificationLists mb-0">
+                        <li>
+                            <div
+                                class="d-flex w-100 align-items-start flex-nowrap gap-1"
                             >
-                                <span>Online</span> ...
-                            </p>
-                            <p id="glofflinecount" class="notificationContent">
-                                <span>Offline</span> ...
-                            </p>
-                        </div>
-                    </div>
-                    <div class="notificationWithGraph ps-1">
-                        <ul class="notificationLists mb-0">
-                            <li>
-                                <div
-                                    class="d-flex w-100 align-items-start flex-nowrap gap-1"
-                                >
-                                    <div class="NotificationDate">
-                                        <span>16</span>
-                                        <p>mins</p>
-                                    </div>
-                                    <div class="listData">
-                                        <h5>Gurgaon CC</h5>
-                                        <p>
-                                            Gurgaon Post Office, Gurgaon, along
-                                            with its address
-                                        </p>
-                                    </div>
+                                <div class="NotificationDate">
+                                    <span>16</span>
+                                    <p>mins</p>
                                 </div>
-                            </li>
-                            <li>
-                                <div
-                                    class="d-flex w-100 align-items-start flex-nowrap gap-1"
-                                >
-                                    <div class="NotificationDate">
-                                        <span>16</span>
-                                        <p>mins</p>
-                                    </div>
-                                    <div class="listData">
-                                        <h5>Gurgaon CC</h5>
-                                        <p>
-                                            Gurgaon Post Office, Gurgaon, along
-                                            with its address
-                                        </p>
-                                    </div>
+                                <div class="listData">
+                                    <h5>Gurgaon CC</h5>
+                                    <p>
+                                        Gurgaon Post Office, Gurgaon, along with
+                                        its address
+                                    </p>
                                 </div>
-                            </li>
-                            <li>
-                                <div
-                                    class="d-flex w-100 align-items-start flex-nowrap gap-1"
-                                >
-                                    <div class="NotificationDate">
-                                        <span>16</span>
-                                        <p>mins</p>
-                                    </div>
-                                    <div class="listData">
-                                        <h5>Gurgaon CC</h5>
-                                        <p>
-                                            Gurgaon Post Office, Gurgaon, along
-                                            with its address
-                                        </p>
-                                    </div>
+                            </div>
+                        </li>
+                        <li>
+                            <div
+                                class="d-flex w-100 align-items-start flex-nowrap gap-1"
+                            >
+                                <div class="NotificationDate">
+                                    <span>16</span>
+                                    <p>mins</p>
                                 </div>
-                            </li>
-                            <li>
-                                <div
-                                    class="d-flex w-100 align-items-start flex-nowrap gap-1"
-                                >
-                                    <div class="NotificationDate">
-                                        <span>16</span>
-                                        <p>mins</p>
-                                    </div>
-                                    <div class="listData">
-                                        <h5>Gurgaon CC</h5>
-                                        <p>
-                                            Gurgaon Post Office, Gurgaon, along
-                                            with its address
-                                        </p>
-                                    </div>
+                                <div class="listData">
+                                    <h5>Gurgaon CC</h5>
+                                    <p>
+                                        Gurgaon Post Office, Gurgaon, along with
+                                        its address
+                                    </p>
                                 </div>
-                            </li>
+                            </div>
+                        </li>
+                        <li>
+                            <div
+                                class="d-flex w-100 align-items-start flex-nowrap gap-1"
+                            >
+                                <div class="NotificationDate">
+                                    <span>16</span>
+                                    <p>mins</p>
+                                </div>
+                                <div class="listData">
+                                    <h5>Gurgaon CC</h5>
+                                    <p>
+                                        Gurgaon Post Office, Gurgaon, along with
+                                        its address
+                                    </p>
+                                </div>
+                            </div>
+                        </li>
+                        <li>
+                            <div
+                                class="d-flex w-100 align-items-start flex-nowrap gap-1"
+                            >
+                                <div class="NotificationDate">
+                                    <span>16</span>
+                                    <p>mins</p>
+                                </div>
+                                <div class="listData">
+                                    <h5>Gurgaon CC</h5>
+                                    <p>
+                                        Gurgaon Post Office, Gurgaon, along with
+                                        its address
+                                    </p>
+                                </div>
+                            </div>
+                        </li>
 
-                            <li class="text-center pb-0 viewAll">
-                                <a href="#" class="text-dark">All</a>
-                            </li>
-                        </ul>
-                    </div>
+                        <li class="text-center pb-0 viewAll">
+                            <a href="#" class="text-dark">All</a>
+                        </li>
+                    </ul>
                 </div>
             </div>
-        </div>
+        </main>
     </body>
 </html>
