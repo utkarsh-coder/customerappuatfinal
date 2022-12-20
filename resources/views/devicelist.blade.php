@@ -74,7 +74,9 @@
     </head>
     <body>
         <main>
-            <header class="p-3 bg-primary d-flex appHeader align-items-center">
+            <header
+                class="p-3 bg-primary d-flex appHeader align-items-center text-white"
+            >
                 <a href="#"><</a>
                 <h6>Network Health</h6>
                 <div class="searchBoxBar ms-auto">
