@@ -603,6 +603,21 @@ footer .menuItems img {
 
 .tabspage .nav-tabs .nav-item.show .nav-link, .tabspage .nav-tabs .nav-link.active {
   color: #f45137;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+.tabspage .nav-tabs .nav-item.show .nav-link::before, .tabspage .nav-tabs .nav-link.active::before {
+  content: '';
+  position: absolute;
+  width: 20px;
+  height: 3px;
+  background: #f45137;
+  bottom: 0;
 }
 
 .tabspage .nav-tabs .nav-item.show .nav-link, .tabspage .nav-tabs .nav-link.active {
