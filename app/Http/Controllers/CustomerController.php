@@ -91,12 +91,12 @@ class CustomerController extends Controller
         return view('usermapping');
     }
 
-    public function deviceListView(){
-        return view('devicelist');
-    }
-
     public function deviceList(Request $request){
         return view('devicelist', ['type' => $request->type, 'status' => $request->status]);
+    }
+
+    public function alarmPanelList(){
+        return view("alarmpanellist");
     }
 
     public function verify(Request $request)
