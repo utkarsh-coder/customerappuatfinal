@@ -52,13 +52,13 @@
 <body>
 
     <main>
-        <header class="p-3 bg-primary d-flex appHeader align-items-center text-white">
+        {{-- <header class="p-3 bg-primary d-flex appHeader align-items-center text-white">
             <a href="#"><i class="bi bi-arrow-left"></i></a>
             <h6>Network Health</h6>
             <div class="searchBoxBar ms-auto">
                 <i class="bi bi-search"></i>
             </div>
-        </header>
+        </header> --}}
            <div class="pb-4">
                 <div class="container pb-2">
                     <div class="row headerBar align-items-center">
@@ -74,7 +74,7 @@
                 <nav>
 
                 <section>                
-                    <div class="nav nav-tabs" id="nav-tab" role="tablist">
+                    <div class="nav nav-tabs px-3" id="nav-tab" role="tablist">
                         <button class="nav-link active" id="nav-home-tab" data-bs-toggle="tab" data-bs-target="#nav-home" type="button" role="tab" aria-controls="nav-home" aria-selected="true">Home</button>
                         <button class="nav-link" id="nav-profile-tab" data-bs-toggle="tab" data-bs-target="#nav-profile" type="button" role="tab" aria-controls="nav-profile" aria-selected="false">Profile</button>
                         <button class="nav-link" id="nav-contact-tab" data-bs-toggle="tab" data-bs-target="#nav-contact" type="button" role="tab" aria-controls="nav-contact" aria-selected="false">Contact</button>

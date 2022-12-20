@@ -591,4 +591,8 @@ footer .menuItems img {
   text-decoration: none;
   color: var(--bg);
 }
+
+.nav-tabs .nav-link {
+  margin-bottom: 0;
+}
 /*# sourceMappingURL=design.css.map */
