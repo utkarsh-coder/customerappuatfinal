@@ -500,6 +500,7 @@ footer .menuItems img {
 
 .devicelist .notificationLists li .listData p {
   white-space: normal;
+  width: 100%;
 }
 
 .notificationLists {
