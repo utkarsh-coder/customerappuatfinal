@@ -525,12 +525,13 @@ footer .menuItems img {
 .notificationLists li .listData p {
   font-size: 12px;
   font-weight: 300;
+  width: 95%;
 }
 
 .notificationLists li h5 {
   font-size: 14px;
   font-weight: 400;
-  margin-bottom: 2px;
+  margin-bottom: 0px;
 }
 
 .notificationLists li p {
