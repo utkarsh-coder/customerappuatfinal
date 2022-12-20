@@ -498,6 +498,11 @@ footer .menuItems img {
   border-left: 1px solid #a7a7a7;
 }
 
+.devicelist .notificationLists li .listData p {
+  white-space: normal;
+  width: 100%;
+}
+
 .notificationLists {
   padding: 0;
   list-style: none;
@@ -522,10 +527,16 @@ footer .menuItems img {
   padding: 0;
 }
 
+.notificationLists li .listData p {
+  font-size: 12px;
+  font-weight: 300;
+  width: 95%;
+}
+
 .notificationLists li h5 {
   font-size: 14px;
   font-weight: 400;
-  margin-bottom: 2px;
+  margin-bottom: 0px;
 }
 
 .notificationLists li p {
@@ -563,5 +574,17 @@ footer .menuItems img {
 
 .notificationLists li.viewAll a {
   font-size: 12px;
+}
+
+.appHeader h6 {
+  font-size: 20px;
+  font-weight: 500;
+  margin-left: 32px;
+  margin-bottom: 0;
+}
+
+.appHeader a {
+  text-decoration: none;
+  color: var(--bg);
 }
 /*# sourceMappingURL=design.css.map */

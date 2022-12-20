@@ -412,7 +412,12 @@ footer{
     width: 50%;
     border-left: 1px solid #a7a7a7;
 }
-
+.devicelist{
+    .notificationLists li .listData p{
+        white-space: normal;
+        width: 100%;
+    }
+}
 .notificationLists{
     padding: 0;
     list-style: none;
@@ -430,11 +435,17 @@ footer{
         flex-grow: 1;
         width: calc(100% - 22px);
         padding: 0;
+        p{
+            font-size: 12px;
+            font-weight: 300;
+            width: 95%;
+
+        }
        }
         h5{
             font-size: 14px;
             font-weight: 400;
-            margin-bottom: 2px;
+            margin-bottom: 0px;
         }
         p{
             margin-bottom: 0;
@@ -469,4 +480,16 @@ p{
             font-size: 12px;
         }
        }
+}
+.appHeader{
+    h6{
+        font-size: 20px;
+        font-weight: 500;
+        margin-left: 32px;
+       margin-bottom: 0;
+    }
+    a{
+        text-decoration: none;
+        color:var(--bg);
+    }
 }

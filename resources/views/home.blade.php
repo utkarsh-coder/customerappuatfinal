@@ -558,44 +558,38 @@
             </div>
         </section>
 
-        <p id="fetchHost" hidden>{{ env("APP_URL") }}</p>
-    </main>
-    <footer>
-        <div id="home" class="active-state menuItems" onclick="hitLink(getElementById('fetchHost').innerHTML+'/home', 'home')">
-            <img src="{{ asset('img/home.svg') }}" alt="" />
-            <span>Home</span>
-        </div>
-        <div id="location" class="menuItems" onclick="hitLink(getElementById('fetchHost').innerHTML+'/sitelocation', 'location')">
-            <img src="{{ asset('img/location.svg') }}" alt="" />
-            <span>Location</span>
-        </div>
-        <div id="healthchart" class="menuItems" onclick="hitLink(getElementById('fetchHost').innerHTML+'/healthchart', 'healthchart')">
-            <img src="{{ asset('img/graph.svg') }}" alt="" />
-            <span>Status</span>
-        </div>
-        <div id="setting" class="menuItems">
-            <img src="{{ asset('img/setting.svg') }}" alt="" />
-            <span>Settings</span>
-        </div>
-    </footer>
-    <!-- 
-        <div class="card container enclosingContainer">
-            <h2 class="heading">Current Status</h2>
-            <h4 class="heading">Site Health</h4>
-            <div style="width: 100%; text-align: center">
-                <div class="colstatus cardbck">
-                    <p class="pstatus">Off-Devices</p>
-                    <strong id="siteoff" class="num">...</strong>
-                </div>
-                <div class="colstatus cardbck">
-                    <p class="pstatus">Armed</p>
-                    <strong id="sitearmed" class="num">...</strong>
-                </div>
-                <div class="colstatus cardbck">
-                    <p class="pstatus">Disamrmed</p>
-                    <strong id="sitedisarmed" class="num">...</strong>
-                </div>
+            <p id="fetchHost" hidden>{{ env("APP_URL") }}</p>
+        </main>
+        <footer>
+            <div
+                id="home"
+                class="active-state menuItems"
+                onclick="hitLink(getElementById('fetchHost').innerHTML+'/home', 'home')"
+            >
+                <img src="{{ asset('img/home.svg') }}" alt="" />
+                <span>Home</span>
             </div>
+            <div
+                id="location"
+                class="menuItems"
+                onclick="hitLink(getElementById('fetchHost').innerHTML+'/sitelocation', 'location')"
+            >
+                <img src="{{ asset('img/location.svg') }}" alt="" />
+                <span>Location</span>
+            </div>
+            <div
+                id="healthchart"
+                class="menuItems"
+                onclick="hitLink(getElementById('fetchHost').innerHTML+'/healthchart', 'healthchart')"
+            >
+                <img src="{{ asset('img/graph.svg') }}" alt="" />
+                <span>Status</span>
+            </div>
+            <div id="setting" class="menuItems">
+                <img src="{{ asset('img/setting.svg') }}" alt="" />
+                <span>Setting</span>
+            </div>
+        </footer>
 
             <h4 class="heading">Network Health</h4>
             <div class="cardbck networkblock">
