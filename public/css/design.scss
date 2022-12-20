@@ -517,6 +517,7 @@ p{
         color:#f45137;
         display: flex;
         justify-content: center;
+        position: relative;
        &::before {
             content: '';
             position: absolute;

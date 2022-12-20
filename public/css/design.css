@@ -609,6 +609,7 @@ footer .menuItems img {
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
+  position: relative;
 }
 
 .tabspage .nav-tabs .nav-item.show .nav-link::before, .tabspage .nav-tabs .nav-link.active::before {
