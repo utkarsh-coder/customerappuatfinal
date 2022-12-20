@@ -412,7 +412,11 @@ footer{
     width: 50%;
     border-left: 1px solid #a7a7a7;
 }
-
+.devicelist{
+    .notificationLists li .listData p{
+        white-space: normal;
+    }
+}
 .notificationLists{
     padding: 0;
     list-style: none;

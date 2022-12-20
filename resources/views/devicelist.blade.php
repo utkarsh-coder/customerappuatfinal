@@ -74,7 +74,7 @@
     </head>
     <body>
         <main>
-            <div class="pb-4">
+            <div class="pb-4 devicelist">
                 <div class="container">
                     <div class="row my-3">
                         <div class="col-12">
