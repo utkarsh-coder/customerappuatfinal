@@ -3,6 +3,7 @@ console.log('running the home.js file');
 // console.log('session storage: ', sessionStorage.getItem("business_id"));
 
 var glData = null;
+setInterval(waitAndshow, 60000);
 
 $(document).ready(function () {
 
@@ -23,7 +24,8 @@ $(document).ready(function () {
         return res.json();
     })
         .then(data => {
-            glData = data;
+            
+            sessionStorage.setItem("glOffline", JSON.stringify(data.data));
             console.log('device List data gl: ', data);
 
             let glListString = ``;
@@ -31,7 +33,7 @@ $(document).ready(function () {
                 glListString += `<li><div class="d-flex w-100 align-items-start flex-nowrap gap-1"><div class="NotificationDate"><span>16</span><p>mins</p></div><div class="listData"><h5>${data.data[i].location_name}</h5><p>${data.data[i].address}</p></div></div></li>`;
             }
 
-            glListString += `<li class="text-center pb-0 viewAll"><a href="#" class="text-dark">All</a></li>`;
+            glListString += `<li class="text-center pb-0 viewAll"><a onclick="hitDeviceListPage('gl')" class="text-dark">All</a></li>`;
 
             document.getElementById('glList').innerHTML = glListString;
 
@@ -79,7 +81,7 @@ $(document).ready(function () {
         return res.json();
     })
         .then(data => {
-            sessionStorage.setItem("nvrOffline", data.data);
+            sessionStorage.setItem("nvrOffline", JSON.stringify(data.data));
             console.log('device List data nvr: ', data.data);
 
             let nvrListString = ``;
@@ -107,6 +109,7 @@ $(document).ready(function () {
         return res.json();
     })
         .then(data1 => {
+            sessionStorage.setItem("camerasOffline", JSON.stringify(data1.data));
             console.log('device List data cameras: ', data1);
 
             let camerasListString = ``;
@@ -114,7 +117,7 @@ $(document).ready(function () {
                 camerasListString += `<li><div class="d-flex w-100 align-items-start flex-nowrap gap-1"><div class="NotificationDate"><span>16</span><p>mins</p></div><div class="listData"><h5>${data1.data[i].location_name}</h5><p>${data1.data[i].address}</p></div></div></li>`;
             }
 
-            camerasListString += `<li class="text-center pb-0 viewAll"><a href="#" class="text-dark">All</a></li>`;
+            camerasListString += `<li class="text-center pb-0 viewAll"><a onclick="hitDeviceListPage('cameras')" class="text-dark">All</a></li>`;
 
             document.getElementById('camerasList').innerHTML = camerasListString;
         })

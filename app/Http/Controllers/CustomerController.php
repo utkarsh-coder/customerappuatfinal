@@ -96,7 +96,7 @@ class CustomerController extends Controller
     }
 
     public function deviceList(Request $request){
-        return view('deviceListView');
+        return view('devicelist', ['type' => $request->type, 'status' => $request->status]);
     }
 
     public function verify(Request $request)

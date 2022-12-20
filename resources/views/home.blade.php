@@ -58,6 +58,13 @@
     </style>
 
     <script>
+        var minutes = 0;
+        function waitAndshow() {
+            minutes++; 
+            document.getElementById("timeAgoId").innerHTML = minutes+"min ago";
+        }
+
+
         var glData = null;
 
         function pieHealth() {
@@ -93,22 +100,6 @@
         }
 
         function hitDeviceListPage(type) {
-            // fetch(document.getElementById('fetchHost').innerHTML + "/deviceList", {
-            //         method: 'POST',
-            //         headers: {
-            //             'Content-Type': 'application/json',
-            //         },
-            //         body: JSON.stringify({
-            //             'data': glData,
-            //         }),
-            //     }).then(res => {
-            //         return res;
-            //     })
-            //     .then(data => {
-            //         // window.href
-            //         console.log('check the running status !!', data.url);
-            //     })
-            //     .catch(error => console.log('ERROR: ', error));
 
             document.getElementById('type').value = type;
             document.getElementById('status').value = 'offline';
@@ -139,7 +130,7 @@
                         <h2 class="fw-bold">Good Morning!</h2>
                     </div>
                     <div class="col-3 text-end">
-                        <span class="timeAgo">5mins ago</span>
+                        <span id="timeAgoId" class="timeAgo">0mins ago</span>
                     </div>
                 </div>
 
@@ -558,134 +549,113 @@
             </div>
         </section>
 
-            <p id="fetchHost" hidden>{{ env("APP_URL") }}</p>
-        </main>
-        <footer>
-            <div
-                id="home"
-                class="active-state menuItems"
-                onclick="hitLink(getElementById('fetchHost').innerHTML+'/home', 'home')"
-            >
-                <img src="{{ asset('img/home.svg') }}" alt="" />
-                <span>Home</span>
-            </div>
-            <div
-                id="location"
-                class="menuItems"
-                onclick="hitLink(getElementById('fetchHost').innerHTML+'/sitelocation', 'location')"
-            >
-                <img src="{{ asset('img/location.svg') }}" alt="" />
-                <span>Location</span>
-            </div>
-            <div
-                id="healthchart"
-                class="menuItems"
-                onclick="hitLink(getElementById('fetchHost').innerHTML+'/healthchart', 'healthchart')"
-            >
-                <img src="{{ asset('img/graph.svg') }}" alt="" />
-                <span>Status</span>
-            </div>
-            <div id="setting" class="menuItems">
-                <img src="{{ asset('img/setting.svg') }}" alt="" />
-                <span>Setting</span>
-            </div>
-        </footer>
+        <p id="fetchHost" hidden>{{ env("APP_URL") }}</p>
+    </main>
+    <footer>
+        <div id="home" class="active-state menuItems" onclick="hitLink(getElementById('fetchHost').innerHTML+'/home', 'home')">
+            <img src="{{ asset('img/home.svg') }}" alt="" />
+            <span>Home</span>
+        </div>
+        <div id="location" class="menuItems" onclick="hitLink(getElementById('fetchHost').innerHTML+'/sitelocation', 'location')">
+            <img src="{{ asset('img/location.svg') }}" alt="" />
+            <span>Location</span>
+        </div>
+        <div id="healthchart" class="menuItems" onclick="hitLink(getElementById('fetchHost').innerHTML+'/healthchart', 'healthchart')">
+            <img src="{{ asset('img/graph.svg') }}" alt="" />
+            <span>Status</span>
+        </div>
+        <div id="setting" class="menuItems">
+            <img src="{{ asset('img/setting.svg') }}" alt="" />
+            <span>Setting</span>
+        </div>
+    </footer>
 
-            <h4 class="heading">Network Health</h4>
-            <div class="cardbck networkblock">
-                <div class="colstatus cardbck">
-                    <strong id="networkeffected" class="num stronghealth"
-                        >...</strong
-                    >
-                    <p>Effected</p>
+    <!-- <h4 class="heading">Network Health</h4>
+    <div class="cardbck networkblock">
+        <div class="colstatus cardbck">
+            <strong id="networkeffected" class="num stronghealth">...</strong>
+            <p>Effected</p>
+        </div>
+        <div class="colstatus cardbck">
+            <strong id="networkoffline" class="num stronghealth">...</strong>
+            <p>Offline</p>
+        </div>
+        <div class="colstatus cardbck">
+            <strong id="networkup" class="num stronghealth">...</strong>
+            <p>Up</p>
+        </div>
+    </div>
+
+    <h4 class="heading">Health Status</h4>
+    <div style="height: 200px">
+        <div class="cardbck verticalcard">
+            <div>
+                <div class="subhorizontal">
+                    <strong id="nvrtotal" class="num stronghealth">...</strong>
+                    <p>NVR</p>
                 </div>
-                <div class="colstatus cardbck">
-                    <strong id="networkoffline" class="num stronghealth"
-                        >...</strong
-                    >
-                    <p>Offline</p>
-                </div>
-                <div class="colstatus cardbck">
-                    <strong id="networkup" class="num stronghealth">...</strong>
-                    <p>Up</p>
+                <div class="subhorizontal2 encircle">
+                    <strong id="nvroff">...</strong>
+                    <p>Off</p>
                 </div>
             </div>
 
-            <h4 class="heading">Health Status</h4>
-            <div style="height: 200px">
-                <div class="cardbck verticalcard">
-                    <div>
-                        <div class="subhorizontal">
-                            <strong id="nvrtotal" class="num stronghealth"
-                                >...</strong
-                            >
-                            <p>NVR</p>
-                        </div>
-                        <div class="subhorizontal2 encircle">
-                            <strong id="nvroff">...</strong>
-                            <p>Off</p>
-                        </div>
-                    </div>
-
-                    <div style="margin: 100px 0px 0px 20px">
-                        <div class="subhorizontal">
-                            <strong id="footagetotal" class="num stronghealth"
-                                >N/A</strong
-                            >
-                            <p>Footage</p>
-                        </div>
-                        <div class="subhorizontal2 encircle">
-                            <strong id="footageoff">N/A</strong>
-                            <p>Off</p>
-                        </div>
-                    </div>
+            <div style="margin: 100px 0px 0px 20px">
+                <div class="subhorizontal">
+                    <strong id="footagetotal" class="num stronghealth">N/A</strong>
+                    <p>Footage</p>
                 </div>
-                <div class="verticalblock">
-                    <div class="cardbck horizontalcard">
-                        <div>
-                            <div class="subhorizontal">
-                                <strong id="alarmpaneltotal">...</strong>
-                                <p>Alarm Panel</p>
-                            </div>
-                            <div class="subhorizontal2 encircle">
-                                <strong id="alarmpaneloff">...</strong>
-                                <p>Off</p>
-                            </div>
-                        </div>
+                <div class="subhorizontal2 encircle">
+                    <strong id="footageoff">N/A</strong>
+                    <p>Off</p>
+                </div>
+            </div>
+        </div>
+        <div class="verticalblock">
+            <div class="cardbck horizontalcard">
+                <div>
+                    <div class="subhorizontal">
+                        <strong id="alarmpaneltotal">...</strong>
+                        <p>Alarm Panel</p>
                     </div>
-                    <div class="cardbck horizontalcard">
-                        <div class="subhorizontal">
-                            <strong id="cameratotal">...</strong>
-                            <p>Camera</p>
-                        </div>
-                        <div class="subhorizontal2 encircle">
-                            <strong id="cameraoff">...</strong>
-                            <p>Off</p>
-                        </div>
+                    <div class="subhorizontal2 encircle">
+                        <strong id="alarmpaneloff">...</strong>
+                        <p>Off</p>
                     </div>
                 </div>
             </div>
-            <div style="margin-top: 30px; text-align: center">
-                <div class="icons">
-                    <i class="fa-solid fa-house-user"></i>
+            <div class="cardbck horizontalcard">
+                <div class="subhorizontal">
+                    <strong id="cameratotal">...</strong>
+                    <p>Camera</p>
                 </div>
-
-                <div class="icons">
-                    <i onclick="siteLocation()" class="fa-solid fa-map-pin"></i>
-                </div>
-
-                <div class="icons">
-                    <i onclick="pieHealth()" class="fas fa-camera"></i>
-                </div>
-
-                <div class="icons">
-                    <i class="fa-solid fa-exclamation"></i>
-                </div>
-                <div class="icons">
-                    <i class="fa-solid fa-gear"></i>
+                <div class="subhorizontal2 encircle">
+                    <strong id="cameraoff">...</strong>
+                    <p>Off</p>
                 </div>
             </div>
-        </div> -->
+        </div>
+    </div>
+    <div style="margin-top: 30px; text-align: center">
+        <div class="icons">
+            <i class="fa-solid fa-house-user"></i>
+        </div>
+
+        <div class="icons">
+            <i onclick="siteLocation()" class="fa-solid fa-map-pin"></i>
+        </div>
+
+        <div class="icons">
+            <i onclick="pieHealth()" class="fas fa-camera"></i>
+        </div>
+
+        <div class="icons">
+            <i class="fa-solid fa-exclamation"></i>
+        </div>
+        <div class="icons">
+            <i class="fa-solid fa-gear"></i>
+        </div>
+    </div> -->
 
     <script src="js/doughnut1.js"></script>
     <script src="js/doughnut2.js"></script>
