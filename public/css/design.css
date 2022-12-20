@@ -575,4 +575,15 @@ footer .menuItems img {
 .notificationLists li.viewAll a {
   font-size: 12px;
 }
+
+.appHeader h6 {
+  font-size: 20px;
+  font-weight: 500;
+  margin-left: 32px;
+}
+
+.appHeader a {
+  text-decoration: none;
+  color: var(--bg);
+}
 /*# sourceMappingURL=design.css.map */

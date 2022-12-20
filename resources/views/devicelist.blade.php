@@ -74,10 +74,10 @@
     </head>
     <body>
         <main>
-            <header class="p-3 bg-primary d-flex justify-content-between">
+            <header class="p-3 bg-primary d-flex appHeader align-items-center">
                 <a href="#"><</a>
-                <h2>Network Health</h2>
-                <div class="searchBoxBar">
+                <h6>Network Health</h6>
+                <div class="searchBoxBar ms-auto">
                     <i class="bi bi-search"></i>
                 </div>
             </header>
