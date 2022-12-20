@@ -167,7 +167,7 @@
                         </div>
                         <div class="col-3 text-end">
                             <span id="timeAgoId" class="timeAgo"
-                                >0mins ago</span
+                                >0 mins ago</span
                             >
                         </div>
                     </div>
