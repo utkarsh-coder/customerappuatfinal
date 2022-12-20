@@ -74,6 +74,13 @@
     </head>
     <body>
         <main>
+            <header class="p-3 bg-primary d-flex justify-content-between">
+                <a href="#"><</a>
+                <h2>Network Health</h2>
+                <div class="searchBoxBar">
+                    <i class="bi bi-search"></i>
+                </div>
+            </header>
             <div class="pb-4 devicelist">
                 <div class="container">
                     <div class="row my-3">
