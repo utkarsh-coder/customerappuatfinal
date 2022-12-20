@@ -55,7 +55,7 @@ function runCamera() {
                     borderWidth: 0
                 },
                 label: {
-                    show: false,
+                    show: true,
                     position: 'center',
                     formatter: function (d) {
                         return d.name;
@@ -63,7 +63,7 @@ function runCamera() {
                 },
                 emphasis: {
                     label: {
-                        show: true,
+                        show: false,
                         fontSize: "18",
                         fontWeight: "regular"
                     }
@@ -72,8 +72,8 @@ function runCamera() {
                     show: false
                 },
                 data: [
-                    { value: cameraOfflinePercent, name: 'Offline: ' + cameraOfflinePercent + '%' },
-                    { value: cameraOnlinePercent, name: 'Online: ' + cameraOnlinePercent + '%' },
+                    { value: cameraOfflinePercent, name: cameraOfflinePercent + '%' +'\n Offline' },
+                    { value: cameraOnlinePercent, name: cameraOnlinePercent + '%' +'\n Online' },
                 ]
             }
         ],

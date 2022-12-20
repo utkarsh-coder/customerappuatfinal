@@ -81,7 +81,7 @@ function runNvr() {
                     borderWidth: 0
                 },
                 label: {
-                    show: false,
+                    show: true,
                     position: 'center',
                     formatter: function (d) {
                         return d.name;
@@ -89,7 +89,7 @@ function runNvr() {
                 },
                 emphasis: {
                     label: {
-                        show: true,
+                        show: false,
                         fontSize: "18",
                         fontWeight: "regular"
                     }
@@ -98,8 +98,8 @@ function runNvr() {
                     show: false
                 },
                 data: [
-                    { value: nvrOfflinePercent, name: 'Offline: ' + nvrOfflinePercent + '%' },
-                    { value: nvrOnlinePercent, name: 'Online: ' + nvrOnlinePercent + '%' },
+                    { value: nvrOfflinePercent, name: nvrOfflinePercent + '%'+ '\n Offline' },
+                    { value: nvrOnlinePercent, name: nvrOnlinePercent + '%'+' \n Online' },
                 ]
             }
         ],

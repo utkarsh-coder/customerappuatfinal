@@ -87,7 +87,7 @@ function runArmDisarm() {
                     borderWidth: 0,
                 },
                 label: {
-                    show: false,
+                    show: true,
                     position: 'center',
                     formatter: function (d) {
                         return d.name;
@@ -96,7 +96,7 @@ function runArmDisarm() {
                 },
                 emphasis: {
                     label: {
-                        show: true,
+                        show: false,
                         fontSize: "18",
                         fontWeight: "regular",
                     },

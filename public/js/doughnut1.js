@@ -144,7 +144,7 @@ fetch(document.getElementById("fetchHost").innerHTML + "/getChartData")
                         borderWidth: 0,
                     },
                     label: {
-                        show: false,
+                        show: true,
                         position: 'center',
                         // distanceToLabelLine: -20,
                         // edgeDistance: '-20%',
@@ -163,7 +163,7 @@ fetch(document.getElementById("fetchHost").innerHTML + "/getChartData")
                     },
                     emphasis: {
                         label: {
-                            show: true,
+                            show: false,
                             fontSize: "18",
                             fontWeight: "regular",
                         },

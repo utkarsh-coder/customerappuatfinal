@@ -52,7 +52,7 @@ function runCompNonComp() {
                     borderWidth: 0
                 },
                 label: {
-                    show: false,
+                    show: true,
                     position: 'center',
                     formatter: function (d) {
                         return d.name;
@@ -60,7 +60,7 @@ function runCompNonComp() {
                 },
                 emphasis: {
                     label: {
-                        show: true,
+                        show: false,
                         fontSize: "18",
                         fontWeight: "regular"
                     }
@@ -69,8 +69,8 @@ function runCompNonComp() {
                     show: false
                 },
                 data: [
-                    { value: nonCompPercent, name: 'Non-Compliance: ' + nonCompPercent + '%' },
-                    { value: compPercent, name: 'Compliance: ' + compPercent + '%' },
+                    { value: nonCompPercent, name: nonCompPercent + '%' +'\n Non-Compliance' },
+                    { value: compPercent, name: compPercent + '%' +'Compliance' },
                 ]
             }
         ],

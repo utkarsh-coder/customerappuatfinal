@@ -81,7 +81,7 @@ function runGl() {
                     borderWidth: 0
                 },
                 label: {
-                    show: false,
+                    show: true,
                     position: 'center',
                     formatter: function (d) {
                         return d.name;
@@ -90,7 +90,7 @@ function runGl() {
                 },
                 emphasis: {
                     label: {
-                        show: true,
+                        show: false,
                         fontSize: "18",
                         fontWeight: "regular"
                     }
