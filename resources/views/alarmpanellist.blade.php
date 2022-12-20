@@ -85,6 +85,34 @@
                             </div>
                         </div>
                     </li>
+
+                    <li>
+                        <div class="d-flex w-100 align-items-start flex-nowrap gap-1">
+                            <div class="listData">
+                                <h5>Mothkur,Telangana</h5>
+                                <p>Fincare Small Finance Bank Ltd,H No.5-245, First Floor Opp APMC Market Yard,Bhongiri Road, Mothkur,Yadadri Dist,Telangana </p>
+                            </div>
+                        </div>
+                    </li>
+
+                    <li>
+                        <div class="d-flex w-100 align-items-start flex-nowrap gap-1">
+                            <div class="listData">
+                                <h5>Mothkur,Telangana</h5>
+                                <p>Fincare Small Finance Bank Ltd,H No.5-245, First Floor Opp APMC Market Yard,Bhongiri Road, Mothkur,Yadadri Dist,Telangana </p>
+                            </div>
+                        </div>
+                    </li>
+
+
+                    <li>
+                        <div class="d-flex w-100 align-items-start flex-nowrap gap-1">
+                            <div class="listData">
+                                <h5>Mothkur,Telangana</h5>
+                                <p>Fincare Small Finance Bank Ltd,H No.5-245, First Floor Opp APMC Market Yard,Bhongiri Road, Mothkur,Yadadri Dist,Telangana </p>
+                            </div>
+                        </div>
+                    </li>
                     </ul>
                     </div>
                     <div class="tab-pane fade" id="nav-profile" role="tabpanel" aria-labelledby="nav-profile-tab">...</div>
