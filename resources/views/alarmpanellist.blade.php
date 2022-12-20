@@ -53,7 +53,7 @@
 
     <main>
       
-           <div class="pb-4">
+           <div class="pb-4 tabspage">
                 <div class="container pb-2">
                     <div class="row headerBar align-items-center">
                         <div class="col">

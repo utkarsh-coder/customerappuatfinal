@@ -506,3 +506,13 @@ p{
 .nav-tabs .nav-link{
     margin-bottom: 0;
 }
+
+.tabspage{
+
+    .nav-tabs .nav-link{
+        font-size: 14px;
+    }
+    .nav-link.active{
+        color:#f45137;
+    }
+}

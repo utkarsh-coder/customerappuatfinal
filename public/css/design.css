@@ -595,4 +595,12 @@ footer .menuItems img {
 .nav-tabs .nav-link {
   margin-bottom: 0;
 }
+
+.tabspage .nav-tabs .nav-link {
+  font-size: 14px;
+}
+
+.tabspage .nav-link.active {
+  color: #f45137;
+}
 /*# sourceMappingURL=design.css.map */
