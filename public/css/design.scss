@@ -430,6 +430,11 @@ footer{
         flex-grow: 1;
         width: calc(100% - 22px);
         padding: 0;
+        p{
+            font-size: 12px;
+            font-weight: 300;
+
+        }
        }
         h5{
             font-size: 14px;
