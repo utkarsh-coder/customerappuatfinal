@@ -598,6 +598,7 @@ footer .menuItems img {
 
 .tabspage .nav-tabs .nav-link {
   font-size: 14px;
+  color: #212529;
 }
 
 .tabspage .nav-tabs .nav-item.show .nav-link, .tabspage .nav-tabs .nav-link.active {
