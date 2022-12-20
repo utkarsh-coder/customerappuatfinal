@@ -14,8 +14,14 @@ let text6 = '';
 function runCamera() {
     console.log("starting hello world!");
 
-    document.getElementById('camOnlineCount').innerHTML = 'Camera Online: ' + sessionStorage.getItem('cameraOnlineCount');
-    document.getElementById('camOfflineCount').innerHTML = 'Camera Offline: ' + sessionStorage.getItem('cameraOfflineCount');
+    document.getElementById("camOnlineCount").innerHTML =
+            "<span>Online</span> " + sessionStorage.getItem('cameraOnlineCount');
+        document.getElementById("camOnlineCount").classList.add("br-right");
+        document.getElementById("camOfflineCount").innerHTML =
+            "<span>Offline</span> " + sessionStorage.getItem('cameraOfflineCount');
+
+    // document.getElementById('camOnlineCount').innerHTML = 'Online: ' + sessionStorage.getItem('cameraOnlineCount');
+    // document.getElementById('camOfflineCount').innerHTML = 'Offline: ' + sessionStorage.getItem('cameraOfflineCount');
 
     let cameraOnlinePercent = Math.round((Number(sessionStorage.getItem('cameraOnlineCount')) / (Number(sessionStorage.getItem('cameraOnlineCount')) + Number(sessionStorage.getItem('cameraOfflineCount')))) * 100);
     let cameraOfflinePercent = Math.round((Number(sessionStorage.getItem('cameraOfflineCount')) / (Number(sessionStorage.getItem('cameraOnlineCount')) + Number(sessionStorage.getItem('cameraOfflineCount')))) * 100);

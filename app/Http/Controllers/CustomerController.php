@@ -91,8 +91,12 @@ class CustomerController extends Controller
         return view('usermapping');
     }
 
-    public function deviceList(){
+    public function deviceListView(){
         return view('devicelist');
+    }
+
+    public function deviceList(Request $request){
+        return view('deviceListView');
     }
 
     public function verify(Request $request)
@@ -249,6 +253,7 @@ class CustomerController extends Controller
         // echo 'printing data of the curl request';
         $curl = curl_init();
 
+        // https://cc.gizmosmart.io/iot/1.6/public/getDeviceInfo?business_id=257&type=nvr&status=offline
         curl_setopt_array($curl, array(
             CURLOPT_URL => 'http://cc.gizmosmart.io/iot/1.6/public/getDeviceInfo?business_id=' . session()->get('business_id') . '&type=' . $request->typeValue . '&status=' . $request->statusValue,
             CURLOPT_RETURNTRANSFER => true,
@@ -266,6 +271,7 @@ class CustomerController extends Controller
         $response = curl_exec($curl);
 
         curl_close($curl);
+        // session()->put($request->typeValue, $response);
         return  $response;
     }
 

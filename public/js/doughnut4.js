@@ -36,14 +36,18 @@ function runNvr() {
 
     // document.getElementById('allonline').innerHTML = data.nvr[0].online_count + data.gl[0].online + data.in[0].in_online_count;
     // document.getElementById('alloffline').innerHTML = data.nvr[0].offline_count + data.gl[0].offline + data.in[0].in_offline_count;
+
+    document.getElementById("nvronlinecount").innerHTML =
+            "<span>Online</span> " + sessionStorage.getItem('nvrOnlineCount');
+        document.getElementById("nvronlinecount").classList.add("br-right");
+        document.getElementById("nvrofflinecount").innerHTML =
+            "<span>Offline</span> " + sessionStorage.getItem('nvrOfflineCount');
+
     console.log("starting hello world!");
 
     if (sessionStorage.getItem('nvrOnlineCount') == 'null') {
         text3 = 'NVR not present at site';
     }
-
-    document.getElementById('nvronlinecount').innerHTML = 'Online: ' + sessionStorage.getItem('nvrOnlineCount');
-    document.getElementById('nvrofflinecount').innerHTML = 'Offline: ' + sessionStorage.getItem('nvrOfflineCount');
 
     let nvrOnlinePercent = Math.round((Number(sessionStorage.getItem('nvrOnlineCount')) / (Number(sessionStorage.getItem('nvrOnlineCount')) + Number(sessionStorage.getItem('nvrOfflineCount')))) * 100);
     let nvrOfflinePercent = Math.round((Number(sessionStorage.getItem('nvrOfflineCount')) / (Number(sessionStorage.getItem('nvrOnlineCount')) + Number(sessionStorage.getItem('nvrOfflineCount')))) * 100);

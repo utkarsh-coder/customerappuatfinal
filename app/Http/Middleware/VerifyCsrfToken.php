@@ -21,6 +21,6 @@ class VerifyCsrfToken extends Middleware
         "drilldown",
         "sitelist",
         "getDeviceList",
-        "getTableData"
+        "getTableData",
     ];
 }

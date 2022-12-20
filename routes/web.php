@@ -85,6 +85,7 @@ Route::get('/login', function () {
 //     print_r($customers->toArray());
 // });
 
+
 //middleware protected
 Route::get("/home", [CustomerController::class, "home"])->middleware('guard');
 Route::get("/healthchart", [CustomerController::class, "healthChart"])->middleware('guard');
@@ -107,7 +108,8 @@ Route::get("/getChartData", [CustomerController::class, 'getChartData']);
 Route::post("/getTableData", [CustomerController::class, 'getTableData']);
 Route::post("/getDeviceList", [CustomerController::class, 'getDeviceList']);
 Route::get("/getSensorData", [CustomerController::class, 'getSensorData']);
-Route::get("/deviceList", [CustomerController::class, 'deviceList']);
+Route::post("/deviceList", [CustomerController::class, 'deviceList']);
+
 
 Route::post('/send-mail', [MailController::class, 'sendOTPMail']);
 Route::post("/verifyotp", [MailController::class, "verifyOTP"]);

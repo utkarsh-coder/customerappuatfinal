@@ -14,8 +14,11 @@ let text5 = '';
 function runCompNonComp() {
     console.log("starting hello world!");
 
-    document.getElementById('compcount').innerHTML = 'Compliance: ' + sessionStorage.getItem('compCount');
-    document.getElementById('noncompcount').innerHTML = 'Non-Compliance: ' + sessionStorage.getItem('nonCompCount');
+    document.getElementById("compcount").innerHTML =
+            "<span>Online</span> " + sessionStorage.getItem('compCount');
+        document.getElementById("compcount").classList.add("br-right");
+        document.getElementById("noncompcount").innerHTML =
+            "<span>Offline</span> " + sessionStorage.getItem('nonCompCount');
 
     let compPercent = Math.round((Number(sessionStorage.getItem('compCount')) / (Number(sessionStorage.getItem('compCount')) + Number(sessionStorage.getItem('nonCompCount')))) * 100);
     let nonCompPercent = Math.round((Number(sessionStorage.getItem('nonCompCount')) / (Number(sessionStorage.getItem('compCount')) + Number(sessionStorage.getItem('nonCompCount')))) * 100);
