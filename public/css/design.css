@@ -600,7 +600,7 @@ footer .menuItems img {
   font-size: 14px;
 }
 
-.tabspage .nav-tabs .nav-link.active {
+.tabspage .nav-tabs .nav-item.show .nav-link, .tabspage .nav-tabs .nav-link.active {
   color: #f45137;
 }
 /*# sourceMappingURL=design.css.map */
