@@ -52,13 +52,7 @@
 <body>
 
     <main>
-        {{-- <header class="p-3 bg-primary d-flex appHeader align-items-center text-white">
-            <a href="#"><i class="bi bi-arrow-left"></i></a>
-            <h6>Network Health</h6>
-            <div class="searchBoxBar ms-auto">
-                <i class="bi bi-search"></i>
-            </div>
-        </header> --}}
+      
            <div class="pb-4">
                 <div class="container pb-2">
                     <div class="row headerBar align-items-center">
