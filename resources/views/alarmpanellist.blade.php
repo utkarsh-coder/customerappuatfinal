@@ -75,8 +75,8 @@
                     </div>
                     </nav>
                     <div class="tab-content" id="nav-tabContent">
-                    <div class="tab-pane fade show active" id="nav-home" role="tabpanel" aria-labelledby="nav-home-tab">
-                    <ul id="glList" class="notificationLists mb-0">
+                    <div class="tab-pane fade show active px-3" id="nav-home" role="tabpanel" aria-labelledby="nav-home-tab">
+                    <ul class="notificationLists mb-0 mt-3">
                     <li>
                         <div class="d-flex w-100 align-items-start flex-nowrap gap-1">
                             <div class="listData">
@@ -85,7 +85,7 @@
                             </div>
                         </div>
                     </li>
-                    <li><div class="d-flex w-100 align-items-start flex-nowrap gap-1"><div class="NotificationDate"><span>16</span><p>mins</p></div><div class="listData"><h5>Kanigiri,AP</h5><p>No.5-14-4, G V Reddy Press Colony Veedhi, Opp Head Post Office, Revenue WardNo.5, Kanigiri, A.P-523230</p></div></div></li><li><div class="d-flex w-100 align-items-start flex-nowrap gap-1"><div class="NotificationDate"><span>16</span><p>mins</p></div><div class="listData"><h5>Bhilwara, RJ</h5><p>A-1 PLAZA,PLOT NO.163,SUBASH NAGAR,NEAR UTI, AJMER ROAD,AT &amp; POST-BHILWARA,RJ,PIN-311001 </p></div></div></li><li><div class="d-flex w-100 align-items-start flex-nowrap gap-1"><div class="NotificationDate"><span>16</span><p>mins</p></div><div class="listData"><h5>Giddalur,AP</h5><p>First Floor, N0.8-20-11, Opp Ganesh temple,Ganesh Nagar Street, Giddalur,Prakasam Dist,AP - 523357</p></div></div></li><li class="text-center pb-0 viewAll"><a onclick="hitDeviceListPage('gl')" class="text-dark">All</a></li></ul>
+                    </ul>
                     </div>
                     <div class="tab-pane fade" id="nav-profile" role="tabpanel" aria-labelledby="nav-profile-tab">...</div>
                     <div class="tab-pane fade" id="nav-contact" role="tabpanel" aria-labelledby="nav-contact-tab">...</div>
