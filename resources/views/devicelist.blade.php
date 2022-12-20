@@ -85,7 +85,7 @@
             </header>
             <div class="pb-4 devicelist">
                 <div class="container">
-                    <div class="row my-3">
+                    <!-- <div class="row my-3">
                         <div class="col-12">
                             <label for="" class="position-relative w-100">
                                 <span class="searchIcon"
@@ -99,7 +99,7 @@
                                 />
                             </label>
                         </div>
-                    </div>
+                    </div> -->
                     <div class="grid-row grid-row-col-1 mb-3">
                         <div class="card-body px-0 site-status">
                             <ul class="notificationLists mb-0">
