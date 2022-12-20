@@ -59,9 +59,16 @@
                 <i class="bi bi-search"></i>
             </div>
         </header>
-        <div class="pb-4 devicelist">
-            <div class="container">
-                <!-- <div class="row my-3">
+           <div class="pb-4">
+                <div class="container pb-2">
+                    <div class="row headerBar align-items-center">
+                        <div class="col">
+                            <h2 class="fw-bold">Alarm Panel</h2>
+                        </div>
+                        
+                    </div>
+
+                    <div class="row mb-3">
                         <div class="col-12">
                             <label for="" class="position-relative w-100">
                                 <span class="searchIcon"
@@ -75,72 +82,12 @@
                                 />
                             </label>
                         </div>
-                    </div> -->
-                <div class="grid-row grid-row-col-1 mb-3">
-                    <div class="card-body px-0 site-status">
-                        <ul id="deviceListUl" class="notificationLists mb-0">
-                            <li>
-                                <div class="d-flex w-100 align-items-start flex-nowrap gap-1">
-                                    <div class="NotificationDate"><span>16</span>
-                                        <p>mins</p>
-                                    </div>
-                                    <div class="listData">
-                                        <h5>Branch 1</h5>
-                                        <p>Gurgaon</p>
-                                    </div>
-                                </div>
-                            </li>
-                            <li>
-                                <div class="d-flex w-100 align-items-start flex-nowrap gap-1">
-                                    <div class="NotificationDate"><span>16</span>
-                                        <p>mins</p>
-                                    </div>
-                                    <div class="listData">
-                                        <h5>Branch 1</h5>
-                                        <p>Gurgaon</p>
-                                    </div>
-                                </div>
-                            </li>
-                            <li>
-                                <div class="d-flex w-100 align-items-start flex-nowrap gap-1">
-                                    <div class="NotificationDate"><span>16</span>
-                                        <p>mins</p>
-                                    </div>
-                                    <div class="listData">
-                                        <h5>Branch 1</h5>
-                                        <p>Gurgaon</p>
-                                    </div>
-                                </div>
-                            </li>
-                            <li>
-                                <div class="d-flex w-100 align-items-start flex-nowrap gap-1">
-                                    <div class="NotificationDate"><span>16</span>
-                                        <p>mins</p>
-                                    </div>
-                                    <div class="listData">
-                                        <h5>Branch 1</h5>
-                                        <p>Gurgaon</p>
-                                    </div>
-                                </div>
-                            </li>
-                            <li>
-                                <div class="d-flex w-100 align-items-start flex-nowrap gap-1">
-                                    <div class="NotificationDate"><span>16</span>
-                                        <p>mins</p>
-                                    </div>
-                                    <div class="listData">
-                                        <h5>Branch 1</h5>
-                                        <p>Gurgaon</p>
-                                    </div>
-                                </div>
-                            </li>
-                        </ul>
                     </div>
-                    <!-- <div class="card">
-                        </div> -->
+                     
+  
                 </div>
             </div>
-        </div>
+
     </main>
 
     <script src="js/devicelist.js"></script>
