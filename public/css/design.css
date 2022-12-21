@@ -508,6 +508,11 @@ footer .menuItems img {
   top: -12px;
 }
 
+.devicelist .notificationLists li {
+  margin-bottom: 8px;
+  margin-top: 8px;
+}
+
 .devicelist .notificationLists li .listData h5 {
   margin-bottom: 4px;
 }
