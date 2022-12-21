@@ -527,6 +527,7 @@ footer .menuItems img {
   white-space: normal;
   width: 100%;
   font-size: 14px;
+  text-transform: capitalize;
 }
 
 .notificationLists {
