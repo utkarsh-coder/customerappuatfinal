@@ -151,7 +151,7 @@ fetch(document.getElementById("fetchHost").innerHTML + "/getChartData")
                         formatter: function (d) {
                             return d.name;
                         },
-                        fontSize: 18,
+                        fontSize: 16,
                     },
                     labelLayout: {
                         verticalAlign: "center",

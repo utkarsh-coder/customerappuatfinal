@@ -86,7 +86,7 @@ function runNvr() {
                     formatter: function (d) {
                         return d.name;
                     },
-                    fontSize: 18,
+                    fontSize: 16,
                 },
                 emphasis: {
                     label: {
