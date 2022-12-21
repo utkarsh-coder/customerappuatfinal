@@ -349,7 +349,7 @@ footer{
     flex-flow: column;
     align-items: center;
     gap:2px;
-    font-size: 14px;
+    font-size: 16px;
   flex:1 1 50%;
 
     span{
@@ -410,11 +410,25 @@ footer{
 .notificationWithGraph{
     flex:1 1 50%;
     width: 50%;
-    border-left: 1px solid #dfdada;
+    // border-left: 1px solid #dfdada;
+    position: relative;
+    &::before{
+        content: '';
+width: 1px;
+height: calc(100% + 24px);
+position: absolute;
+background: #dfdada;
+left: -1px;
+top: -12px;
+    }
 }
 .devicelist{
     .notificationLists {
         li {
+            margin-bottom: 0.5rem;
+            margin-top: 0.5rem;
+            padding-top: 0.5rem;
+
 
             .listData{
                 h5{
@@ -456,6 +470,10 @@ footer{
             font-size: 14px;
             font-weight: 400;
             margin-bottom: 0px;
+            text-transform: lowercase;
+            &::first-letter{
+                text-transform: capitalize;
+            }
         }
         p{
             margin-bottom: 0;
@@ -467,20 +485,21 @@ footer{
         }
         .NotificationDate{
             width: 30px;
-padding: 4px;
-text-align: center;
-background: #000;
-color: #fff;
-line-height: 1;
-span{
-    font-size: 14px;
-}
-p{
-    font-size: 10px;
-    color:#fff;
-    margin-bottom: 0;
-    line-height: 1;
-}
+            padding: 4px;
+            text-align: center;
+            background: #000;
+            color: #fff;
+            line-height: 1;
+            border-radius: 4px;
+            span{
+                font-size: 14px;
+            }
+            p{
+                font-size: 10px;
+                color:#fff;
+                margin-bottom: 0;
+                line-height: 1;
+            }
         }
     }
 
@@ -525,9 +544,23 @@ p{
             height: 3px;
             background: #f45137;
             bottom: 0;
+            border-radius: 10px;
           }
     }
     .nav-tabs .nav-item.show .nav-link, .nav-tabs .nav-link.active{
         border-color:transparent ;
+    }
+    li{
+    .listData{
+            h5{
+
+                font-size:16px;
+            }
+       
+
+            p{
+                font-size: 14px;
+            }
+        }
     }
 }

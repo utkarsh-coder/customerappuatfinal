@@ -134,113 +134,171 @@
                     </div>
                 </div>
 
-                <div class="row mb-3">
-                    <div class="col-12">
-                        <label for="" class="position-relative w-100">
-                            <span class="searchIcon"><i class="bi bi-search"></i></span>
-                            <input type="text" name="" class="searchBar" id="" />
-                        </label>
+                    <div class="row mb-4">
+                        <div class="col-12">
+                            <label for="" class="position-relative w-100">
+                                <span class="searchIcon"
+                                    ><i class="bi bi-search"></i
+                                ></span>
+                                <input
+                                    type="text"
+                                    name=""
+                                    class="searchBar"
+                                    id=""
+                                />
+                            </label>
+                        </div>
                     </div>
-                </div>
-                <div class="row my-3">
-                    <div class="col-12">
-                        <h3>Alarm Panel</h3>
+                    <div class="row my-3">
+                        <div class="col-12">
+                            <h3>Alarm Panel</h3>
+                        </div>
                     </div>
-                </div>
 
-                <div class="grid-row mb-3 grid-row-col-2 minRowHeight">
-                    <div class="card">
-                        <div class="card-body site-status graphsReverse">
-                            <div id="main1" class="d-flex flex-column justify-content-between autoheight">
-                                <img src="https://cdn-icons-png.flaticon.com/512/5555/5555775.png" class="img-flude" />
+                    <div class="grid-row mb-3 grid-row-col-2 minRowHeight">
+                        <div class="card">
+                            <div class="card-body site-status graphsReverse">
+                                <div
+                                    id="main1"
+                                    class="d-flex flex-column justify-content-between autoheight"
+                                >
+                                    <img
+                                        src="https://cdn-icons-png.flaticon.com/512/5555/5555775.png"
+                                        class="img-flude"
+                                    />
+                                </div>
+                                <div class="notificationContainer">
+                                    <p
+                                        id="inonlinecount"
+                                        class="notificationContent br-right"
+                                    >
+                                        <span>Online</span> ...
+                                    </p>
+                                    <p
+                                        id="inofflinecount"
+                                        class="notificationContent"
+                                    >
+                                        <span>Offline</span> ...
+                                    </p>
+                                </div>
                             </div>
-                            <div class="notificationContainer">
-                                <p id="inonlinecount" class="notificationContent br-right">
-                                    <span>Online</span> ...
-                                </p>
-                                <p id="inofflinecount" class="notificationContent">
-                                    <span>Offline</span> ...
-                                </p>
+                        </div>
+                        <div class="card">
+                            <div class="card-body site-status">
+                                <div
+                                    id="main2"
+                                    class="d-flex flex-column justify-content-between autoheight"
+                                ></div>
+                                <div class="notificationContainer">
+                                    <p
+                                        id="armcount"
+                                        class="notificationContent br-right"
+                                    >
+                                        ARM: ...
+                                    </p>
+                                    <p
+                                        id="disarmcount"
+                                        class="notificationContent"
+                                    >
+                                        DISARM: ...
+                                    </p>
+                                </div>
                             </div>
                         </div>
                     </div>
-                    <div class="card">
-                        <div class="card-body site-status">
-                            <div id="main2" class="d-flex flex-column justify-content-between autoheight"></div>
-                            <div class="notificationContainer">
-                                <p id="armcount" class="notificationContent br-right">
-                                    ARM: ...
-                                </p>
-                                <p id="disarmcount" class="notificationContent">
-                                    DISARM: ...
-                                </p>
-                            </div>
-                        </div>
+                    <div class="col-10 mt-4 mb-3">
+                        <h3>Network Health</h3>
                     </div>
-                </div>
-                <div class="col-10 mt-4 mb-3">
-                    <h3>Network Health</h3>
-                </div>
-                <div class="grid-row grid-row-col-1 mb-3">
-                    <div class="card">
-                        <div class="card-body site-status">
-                            <div class="d-flex">
-                                <div class="graphsection">
-                                    <div id="main3" class="d-flex flex-column justify-content-between autoheight"></div>
-                                    <div class="notificationContainer">
-                                        <p id="glonlinecount" class="notificationContent br-right">
-                                            <span>Online</span> ...
-                                        </p>
-                                        <p id="glofflinecount" class="notificationContent">
-                                            <span>Offline</span> ...
-                                        </p>
+                    <div class="grid-row grid-row-col-1 mb-3">
+                        <div class="card">
+                            <div class="card-body site-status px-0">
+                                <div class="d-flex">
+                                    <div class="graphsection">
+                                        <div
+                                            id="main3"
+                                            class="d-flex flex-column justify-content-between autoheight"
+                                        ></div>
+                                        <div class="notificationContainer">
+                                            <p
+                                                id="glonlinecount"
+                                                class="notificationContent br-right"
+                                            >
+                                                <span>Online</span> ...
+                                            </p>
+                                            <p
+                                                id="glofflinecount"
+                                                class="notificationContent"
+                                            >
+                                                <span>Offline</span> ...
+                                            </p>
+                                        </div>
+                                    </div>
+                                    <div class="notificationWithGraph px-2">
+                                        <ul
+                                            id="glList"
+                                            class="notificationLists mb-0"
+                                        ></ul>
                                     </div>
                                 </div>
-                                <div class="notificationWithGraph ps-1">
-                                    <ul id="glList" class="notificationLists mb-0"></ul>
-                                </div>
                             </div>
                         </div>
                     </div>
-                </div>
 
-                <div class="col-10 mt-4 mb-3">
-                    <h3>NVR Status</h3>
-                </div>
-                <div class="grid-row grid-row-col-1 mb-3">
-                    <div class="card">
-                        <div class="card-body site-status">
-                            <div class="d-flex">
-                                <div class="graphsection">
-                                    <div id="main4" class="d-flex flex-column justify-content-between autoheight"></div>
-                                    <div class="notificationContainer">
-                                        <p id="nvronlinecount" class="notificationContent br-right">
-                                            <span>Online</span> ...
-                                        </p>
-                                        <p id="nvrofflinecount" class="notificationContent">
-                                            <span>Offline</span> ...
-                                        </p>
+                    <div class="col-10 mt-4 mb-3">
+                        <h3>NVR Status</h3>
+                    </div>
+                    <div class="grid-row grid-row-col-1 mb-3">
+                        <div class="card">
+                            <div class="card-body site-status px-0">
+                                <div class="d-flex">
+                                    <div class="graphsection">
+                                        <div
+                                            id="main4"
+                                            class="d-flex flex-column justify-content-between autoheight"
+                                        ></div>
+                                        <div class="notificationContainer">
+                                            <p
+                                                id="nvronlinecount"
+                                                class="notificationContent br-right"
+                                            >
+                                                <span>Online</span> ...
+                                            </p>
+                                            <p
+                                                id="nvrofflinecount"
+                                                class="notificationContent"
+                                            >
+                                                <span>Offline</span> ...
+                                            </p>
+                                        </div>
+                                    </div>
+                                    <div class="notificationWithGraph px-2">
+                                        <ul
+                                            id="nvrList"
+                                            class="notificationLists mb-0"
+                                        ></ul>
                                     </div>
                                 </div>
-                                <div class="notificationWithGraph ps-1">
-                                    <ul id="nvrList" class="notificationLists mb-0"></ul>
-                                </div>
                             </div>
                         </div>
                     </div>
-                </div>
 
-                <div class="col-10 mt-3">
-                    <h2>Network Uptime</h2>
-                </div>
-                <div class="grid-row grid-row-col-1 mt-2 mb-3 networdHelth" style="height: 400px">
-                    <div class="card" style="height: 400px">
-                        <div class="card-body site-status">
-                            <div class="notificationContainer"></div>
-                            <div id="mainDummy" class="d-flex flex-column justify-content-between h-100"></div>
+                    <div class="col-10 mt-3">
+                        <h2>Network Uptime</h2>
+                    </div>
+                    <div
+                        class="grid-row grid-row-col-1 mt-2 mb-3 networdHelth"
+                        style="height: 400px"
+                    >
+                        <div class="card" style="height: 400px">
+                            <div class="card-body site-status px-0">
+                                <div class="notificationContainer"></div>
+                                <div
+                                    id="mainDummy"
+                                    class="d-flex flex-column justify-content-between h-100"
+                                ></div>
+                            </div>
                         </div>
                     </div>
-                </div>
 
                 <div class="col-10 mt-3">
                     <h2>Alarm Panel Uptime</h2>
@@ -254,31 +312,43 @@
                     </div>
                 </div>
 
-                <div class="col-10 mt-4 mb-3">
-                    <h3>Compliance Status</h3>
-                </div>
-                <div class="grid-row grid-row-col-1 mb-3">
-                    <div class="card">
-                        <div class="card-body site-status">
-                            <div class="d-flex">
-                                <div class="graphsection">
-                                    <div id="main5" class="d-flex flex-column justify-content-between autoheight"></div>
-                                    <div class="notificationContainer">
-                                        <p id="compcount" class="notificationContent br-right">
-                                            <span>Online</span> ...
-                                        </p>
-                                        <p id="noncompcount" class="notificationContent">
-                                            <span>Offline</span> ...
-                                        </p>
+                    <div class="col-10 mt-4 mb-3">
+                        <h3>Compliance Status</h3>
+                    </div>
+                    <div class="grid-row grid-row-col-1 mb-3">
+                        <div class="card">
+                            <div class="card-body site-status px-0">
+                                <div class="d-flex">
+                                    <div class="graphsection">
+                                        <div
+                                            id="main5"
+                                            class="d-flex flex-column justify-content-between autoheight"
+                                        ></div>
+                                        <div class="notificationContainer">
+                                            <p
+                                                id="compcount"
+                                                class="notificationContent br-right"
+                                            >
+                                                <span>Online</span> ...
+                                            </p>
+                                            <p
+                                                id="noncompcount"
+                                                class="notificationContent"
+                                            >
+                                                <span>Offline</span> ...
+                                            </p>
+                                        </div>
                                     </div>
-                                </div>
-                                <div class="notificationWithGraph ps-1">
-                                    <ul id="nvrList" class="notificationLists mb-0"></ul>
+                                    <div class="notificationWithGraph px-2">
+                                        <ul
+                                            id="nvrList"
+                                            class="notificationLists mb-0"
+                                        ></ul>
+                                    </div>
                                 </div>
                             </div>
                         </div>
                     </div>
-                </div>
 
                 <!-- <div class="col-10 mt-3">
                     <h2>Compliance Status</h2>
@@ -318,31 +388,43 @@
                     </div>
                 </div> -->
 
-                <div class="col-10 mt-4 mb-3">
-                    <h3>Camera Status</h3>
-                </div>
-                <div class="grid-row grid-row-col-1 mb-3">
-                    <div class="card">
-                        <div class="card-body site-status">
-                            <div class="d-flex">
-                                <div class="graphsection">
-                                    <div id="main6" class="d-flex flex-column justify-content-between autoheight"></div>
-                                    <div class="notificationContainer">
-                                        <p id="camOnlineCount" class="notificationContent br-right">
-                                            <span>Online</span> ...
-                                        </p>
-                                        <p id="camOfflineCount" class="notificationContent">
-                                            <span>Offline</span> ...
-                                        </p>
+                    <div class="col-10 mt-4 mb-3">
+                        <h3>Camera Status</h3>
+                    </div>
+                    <div class="grid-row grid-row-col-1 mb-3">
+                        <div class="card">
+                            <div class="card-body site-status px-">
+                                <div class="d-flex">
+                                    <div class="graphsection">
+                                        <div
+                                            id="main6"
+                                            class="d-flex flex-column justify-content-between autoheight"
+                                        ></div>
+                                        <div class="notificationContainer">
+                                            <p
+                                                id="camOnlineCount"
+                                                class="notificationContent br-right"
+                                            >
+                                                <span>Online</span> ...
+                                            </p>
+                                            <p
+                                                id="camOfflineCount"
+                                                class="notificationContent"
+                                            >
+                                                <span>Offline</span> ...
+                                            </p>
+                                        </div>
                                     </div>
-                                </div>
-                                <div class="notificationWithGraph ps-1">
-                                    <ul id="camerasList" class="notificationLists mb-0"></ul>
+                                    <div class="notificationWithGraph px-2">
+                                        <ul
+                                            id="camerasList"
+                                            class="notificationLists mb-0"
+                                        ></ul>
+                                    </div>
                                 </div>
                             </div>
                         </div>
                     </div>
-                </div>
 
 
                 <div class="row my-3">

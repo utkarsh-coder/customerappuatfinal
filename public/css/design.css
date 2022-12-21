@@ -424,7 +424,7 @@ footer .menuItems img {
       -ms-flex-align: center;
           align-items: center;
   gap: 2px;
-  font-size: 14px;
+  font-size: 16px;
   -webkit-box-flex: 1;
       -ms-flex: 1 1 50%;
           flex: 1 1 50%;
@@ -495,7 +495,23 @@ footer .menuItems img {
       -ms-flex: 1 1 50%;
           flex: 1 1 50%;
   width: 50%;
-  border-left: 1px solid #dfdada;
+  position: relative;
+}
+
+.notificationWithGraph::before {
+  content: '';
+  width: 1px;
+  height: calc(100% + 24px);
+  position: absolute;
+  background: #dfdada;
+  left: -1px;
+  top: -12px;
+}
+
+.devicelist .notificationLists li {
+  margin-bottom: 0.5rem;
+  margin-top: 0.5rem;
+  padding-top: 0.5rem;
 }
 
 .devicelist .notificationLists li .listData h5 {
@@ -541,6 +557,11 @@ footer .menuItems img {
   font-size: 14px;
   font-weight: 400;
   margin-bottom: 0px;
+  text-transform: lowercase;
+}
+
+.notificationLists li h5::first-letter {
+  text-transform: capitalize;
 }
 
 .notificationLists li p {
@@ -559,6 +580,7 @@ footer .menuItems img {
   background: #000;
   color: #fff;
   line-height: 1;
+  border-radius: 4px;
 }
 
 .notificationLists li .NotificationDate span {
@@ -619,9 +641,18 @@ footer .menuItems img {
   height: 3px;
   background: #f45137;
   bottom: 0;
+  border-radius: 10px;
 }
 
 .tabspage .nav-tabs .nav-item.show .nav-link, .tabspage .nav-tabs .nav-link.active {
   border-color: transparent;
+}
+
+.tabspage li .listData h5 {
+  font-size: 16px;
+}
+
+.tabspage li .listData p {
+  font-size: 14px;
 }
 /*# sourceMappingURL=design.css.map */
