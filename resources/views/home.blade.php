@@ -309,7 +309,7 @@
                                             </p>
                                         </div>
                                     </div>
-                                    <div class="notificationWithGraph px-2">
+                                    <div class="notificationWithGraph ps-2">
                                         <ul
                                             id="nvrList"
                                             class="notificationLists mb-0"
