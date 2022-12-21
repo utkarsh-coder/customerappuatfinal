@@ -69,7 +69,7 @@
 
                 <section>                
                     <div class="nav nav-tabs px-3" id="nav-tab" role="tablist">
-                        <button class="nav-link active" id="nav-home-tab" data-bs-toggle="tab" data-bs-target="#nav-home" type="button" role="tab" aria-controls="nav-home" aria-selected="true">Home</button>
+                        <button class="nav-link active" id="nav-home-tab" data-bs-toggle="tab" data-bs-target="#nav-home" type="button" role="tab" aria-controls="nav-home" aria-selected="true">All(4)</button>
                         <button class="nav-link" id="nav-profile-tab" data-bs-toggle="tab" data-bs-target="#nav-profile" type="button" role="tab" aria-controls="nav-profile" aria-selected="false">Profile</button>
                         <button class="nav-link" id="nav-contact-tab" data-bs-toggle="tab" data-bs-target="#nav-contact" type="button" role="tab" aria-controls="nav-contact" aria-selected="false">Contact</button>
                     </div>
@@ -81,7 +81,10 @@
                         <div class="d-flex w-100 align-items-start flex-nowrap gap-1">
                             <div class="listData">
                                 <h5>Mothkur,Telangana</h5>
+                                <div class="d-flex gap-3 align-items-start">
                                 <p>Fincare Small Finance Bank Ltd,H No.5-245, First Floor Opp APMC Market Yard,Bhongiri Road, Mothkur,Yadadri Dist,Telangana </p>
+                                <span class="badge bg-danger">Offline</span>
+                                </div>
                             </div>
                         </div>
                     </li>
@@ -91,6 +94,8 @@
                             <div class="listData">
                                 <h5>Mothkur,Telangana</h5>
                                 <p>Fincare Small Finance Bank Ltd,H No.5-245, First Floor Opp APMC Market Yard,Bhongiri Road, Mothkur,Yadadri Dist,Telangana </p>
+                                <span class="badge bg-primary">Online</span>
+                                
                             </div>
                         </div>
                     </li>
