@@ -641,6 +641,7 @@ footer .menuItems img {
   height: 3px;
   background: #f45137;
   bottom: 0;
+  border-radius: 10px;
 }
 
 .tabspage .nav-tabs .nav-item.show .nav-link, .tabspage .nav-tabs .nav-link.active {
