@@ -7,6 +7,10 @@ setInterval(waitAndshow, 60000);
 
 $(document).ready(function () {
 
+    document.getElementById('cardIn').addEventListener("click", function(){
+        window.location.href = document.getElementById('fetchHost').innerHTML+"/alarmPanelList";
+    });
+
     // http://54.197.121.111:8001/iot/1.6/public/getSiteHealthStatus?business_id=193
     console.log('printing data to check document ready function');
 
