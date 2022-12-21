@@ -5,7 +5,7 @@ let offlineListString = ``;
 console.log(offlineDevices);
 console.log('length: ', offlineDevices.length);
 for(let i=0; i < offlineDevices.length;i++){
-    offlineListString += `<li><div class="d-flex w-100 align-items-start flex-nowrap gap-1"><div class="NotificationDate"><span>16</span><p>mins</p></div><div class="listData"><h5>${offlineDevices[i].location_name}</h5><p>${offlineDevices[i].address}</p></div></div></li>`;
+    offlineListString += `<li><div class="d-flex w-100 align-items-start flex-nowrap gap-1"><div class="NotificationDate"><span>16</span><p>mins</p></div><div class="listData"><h5>${offlineDevices[i].location_name}</h5><p>${offlineDevices[i].address.slice(0,1).toUpperCase()+offlineDevices[i].address.slice(1).toLowerCase()}</p></div></div></li>`;
 }
 
 document.getElementById('deviceListUl').innerHTML = offlineListString;

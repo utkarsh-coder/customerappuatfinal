@@ -71,7 +71,7 @@ fetch(document.getElementById("fetchHost").innerHTML + "/getChartData")
 
         sessionStorage.setItem("offSites", data.in[0].in_offline_count);
         sessionStorage.setItem("workingHardDriveCount", data.nvr[0].hdd_count);
-        sessionStorage.setItem("faultyHardDriveCount", Number(sessionStorage.getItem("nvrOnlineCount")) + Number(sessionStorage.getItem("nvrOfflineCount")) - Number(sessionStorage.getItem("hardDriveCount")));
+        sessionStorage.setItem("faultyHardDriveCount", Number(sessionStorage.getItem("nvrOnlineCount")) + Number(sessionStorage.getItem("nvrOfflineCount")) - Number(sessionStorage.getItem("workingHardDriveCount")));
         sessionStorage.setItem("open-noti", data.openNotification[0].count);
 
         sessionStorage.setItem(

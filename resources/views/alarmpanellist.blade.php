@@ -51,118 +51,73 @@
 
 <body>
 
+    <p id="fetchHost" hidden>{{ env("APP_URL") }}</p>
+
     <main>
-      
-           <div class="pb-4 tabspage devicelist">
-                <div class="container pb-2">
-                    <div class="row headerBar align-items-center">
-                        <div class="col">
-                            <h2 class="fw-bold">Alarm Panel</h2>
-                        </div>
-                        
+
+        <div class="pb-4 tabspage devicelist">
+            <div class="container pb-2">
+                <div class="row headerBar align-items-center">
+                    <div class="col">
+                        <h2 class="fw-bold">Alarm Panel</h2>
                     </div>
 
-                    
-  
                 </div>
-                <nav>
+            </div>
 
-                <section>                
+            <section>
+                <nav>
                     <div class="nav nav-tabs px-3" id="nav-tab" role="tablist">
                         <button class="nav-link active" id="nav-home-tab" data-bs-toggle="tab" data-bs-target="#nav-home" type="button" role="tab" aria-controls="nav-home" aria-selected="true">All(4)</button>
                         <button class="nav-link" id="nav-profile-tab" data-bs-toggle="tab" data-bs-target="#nav-profile" type="button" role="tab" aria-controls="nav-profile" aria-selected="false">Profile</button>
                         <button class="nav-link" id="nav-contact-tab" data-bs-toggle="tab" data-bs-target="#nav-contact" type="button" role="tab" aria-controls="nav-contact" aria-selected="false">Contact</button>
                     </div>
-                    </nav>
-                    <div class="tab-content" id="nav-tabContent">
+                </nav>
+                <div class="tab-content" id="nav-tabContent">
                     <div class="tab-pane fade show active px-3" id="nav-home" role="tabpanel" aria-labelledby="nav-home-tab">
-                    <ul class="notificationLists mb-0 mt-3">
-                    <li>
-                        <div class="d-flex w-100 align-items-start flex-nowrap gap-1">
-                            <div class="listData">
-                                <h5>Mothkur,Telangana</h5>
-                                <div class="d-flex gap-2 align-items-start">
-                                <p>Fincare Small Finance Bank Ltd,H No.5-245, First Floor Opp APMC Market Yard,Bhongiri Road, Mothkur,Yadadri Dist,Telangana </p>
-                                <span class="badge bg-danger">Offline</span>
+                        <ul id="allIn" class="notificationLists mb-0 mt-3">
+                            <!-- <li>
+                                <div class="d-flex w-100 align-items-start flex-nowrap gap-1">
+                                    <div class="listData">
+                                        <h5>Mothkur,Telangana</h5>
+                                        <div class="d-flex gap-2 align-items-start">
+                                            <p>Fincare Small Finance Bank Ltd,H No.5-245, First Floor Opp APMC Market Yard,Bhongiri Road, Mothkur,Yadadri Dist,Telangana </p>
+                                            <span class="badge bg-danger">Offline</span>
+                                        </div>
+                                    </div>
                                 </div>
-                            </div>
-                        </div>
-                    </li>
+                            </li>
 
-                    <li>
-                        <div class="d-flex w-100 align-items-start flex-nowrap gap-1">
-                            <div class="listData">
-                                <h5>Mothkur,Telangana</h5>
-                                 <div class="d-flex gap-2 align-items-start">
-                                <p>Fincare Small Finance Bank Ltd,H No.5-245, First Floor Opp APMC Market Yard,Bhongiri Road, Mothkur,Yadadri Dist,Telangana </p>
-                                <span class="badge bg-primary">Online</span>
+                            <li>
+                                <div class="d-flex w-100 align-items-start flex-nowrap gap-1">
+                                    <div class="listData">
+                                        <h5>Mothkur,Telangana</h5>
+                                        <div class="d-flex gap-2 align-items-start">
+                                            <p>Fincare Small Finance Bank Ltd,H No.5-245, First Floor Opp APMC Market Yard,Bhongiri Road, Mothkur,Yadadri Dist,Telangana </p>
+                                            <span class="badge bg-primary">Online</span>
+                                        </div>
+                                    </div>
                                 </div>
-                                
-                            </div>
-                        </div>
-                    </li>
- 
- <li>
-                        <div class="d-flex w-100 align-items-start flex-nowrap gap-1">
-                            <div class="listData">
-                                <h5>Mothkur,Telangana</h5>
-                                <div class="d-flex gap-2 align-items-start">
-                                <p>Fincare Small Finance Bank Ltd,H No.5-245, First Floor Opp APMC Market Yard,Bhongiri Road, Mothkur,Yadadri Dist,Telangana </p>
-                                <span class="badge bg-danger">Offline</span>
-                                </div>
-                            </div>
-                        </div>
-                    </li>
+                            </li> -->
 
-                    <li>
-                        <div class="d-flex w-100 align-items-start flex-nowrap gap-1">
-                            <div class="listData">
-                                <h5>Mothkur,Telangana</h5>
-                                 <div class="d-flex gap-2 align-items-start">
-                                <p>Fincare Small Finance Bank Ltd,H No.5-245, First Floor Opp APMC Market Yard,Bhongiri Road, Mothkur,Yadadri Dist,Telangana </p>
-                                <span class="badge bg-primary">Online</span>
-                                </div>
-                                
-                            </div>
-                        </div>
-                    </li>
-                    <li>
-                        <div class="d-flex w-100 align-items-start flex-nowrap gap-1">
-                            <div class="listData">
-                                <h5>Mothkur,Telangana</h5>
-                                <div class="d-flex gap-2 align-items-start">
-                                <p>Fincare Small Finance Bank Ltd,H No.5-245, First Floor Opp APMC Market Yard,Bhongiri Road, Mothkur,Yadadri Dist,Telangana </p>
-                                <span class="badge bg-danger">Offline</span>
-                                </div>
-                            </div>
-                        </div>
-                    </li>
-
-                    <li>
-                        <div class="d-flex w-100 align-items-start flex-nowrap gap-1">
-                            <div class="listData">
-                                <h5>Mothkur,Telangana</h5>
-                                 <div class="d-flex gap-2 align-items-start">
-                                <p>Fincare Small Finance Bank Ltd,H No.5-245, First Floor Opp APMC Market Yard,Bhongiri Road, Mothkur,Yadadri Dist,Telangana </p>
-                                <span class="badge bg-primary">Online</span>
-                                </div>
-                                
-                            </div>
-                        </div>
-                    </li>
- 
-                    </ul>
+                        </ul>
                     </div>
-                    <div class="tab-pane fade" id="nav-profile" role="tabpanel" aria-labelledby="nav-profile-tab">...</div>
-                    <div class="tab-pane fade" id="nav-contact" role="tabpanel" aria-labelledby="nav-contact-tab">...</div>
+                    <div class="tab-pane fade" id="nav-profile" role="tabpanel" aria-labelledby="nav-profile-tab">
+                        <ul id="onlineIn" class="notificationLists mb-0 mt-3">
+                        </ul>
                     </div>
-                </section>
+                    <div class="tab-pane fade" id="nav-contact" role="tabpanel" aria-labelledby="nav-contact-tab">
+                        <ul id="offlineIn" class="notificationLists mb-0 mt-3">
+                        </ul>
+                    </div>
+                </div>
+            </section>
 
-            </div>
+        </div>
 
     </main>
 
-    <script src="js/devicelist.js"></script>
+    <script src="js/alarmPanelList.js"></script>
 </body>
 
 </html>

@@ -30,7 +30,7 @@ $(document).ready(function () {
 
             let glListString = ``;
             for (let i = 0; i < 4; i++) {
-                glListString += `<li><div class="d-flex w-100 align-items-start flex-nowrap gap-1"><div class="NotificationDate"><span>16</span><p>mins</p></div><div class="listData"><h5>${data.data[i].location_name}</h5><p>${data.data[i].address}</p></div></div></li>`;
+                glListString += `<li><div class="d-flex w-100 align-items-start flex-nowrap gap-1"><div class="NotificationDate"><span>16</span><p>mins</p></div><div class="listData"><h5>${data.data[i].location_name}</h5><p>${data.data[i].address.slice(0,1).toUpperCase()+data.data[i].address.slice(1).toLowerCase()}</p></div></div></li>`;
             }
 
             glListString += `<li class="text-center pb-0 viewAll"><a onclick="hitDeviceListPage('gl')" class="text-dark">All</a></li>`;
@@ -86,7 +86,7 @@ $(document).ready(function () {
 
             let nvrListString = ``;
             for (let i = 0; i < 4; i++) {
-                nvrListString += `<li><div class="d-flex w-100 align-items-start flex-nowrap gap-1"><div class="NotificationDate"><span>16</span><p>mins</p></div><div class="listData"><h5>${data.data[i].location_name}</h5><p>${data.data[i].address}</p></div></div></li>`;
+                nvrListString += `<li><div class="d-flex w-100 align-items-start flex-nowrap gap-1"><div class="NotificationDate"><span>16</span><p>mins</p></div><div class="listData"><h5>${data.data[i].location_name}</h5><p>${data.data[i].address.slice(0,1).toUpperCase()+data.data[i].address.slice(1).toLowerCase()}</p></div></div></li>`;
             }
 
             nvrListString += `<li class="text-center pb-0 viewAll"><a onclick="hitDeviceListPage('nvr')" class="text-dark">All</a></li>`;
@@ -108,13 +108,13 @@ $(document).ready(function () {
     }).then(res => {
         return res.json();
     })
-        .then(data1 => {
-            sessionStorage.setItem("camerasOffline", JSON.stringify(data1.data));
-            console.log('device List data cameras: ', data1);
+        .then(data => {
+            sessionStorage.setItem("camerasOffline", JSON.stringify(data.data));
+            console.log('device List data cameras: ', data);
 
             let camerasListString = ``;
             for (let i = 0; i < 4; i++) {
-                camerasListString += `<li><div class="d-flex w-100 align-items-start flex-nowrap gap-1"><div class="NotificationDate"><span>16</span><p>mins</p></div><div class="listData"><h5>${data1.data[i].location_name}</h5><p>${data1.data[i].address}</p></div></div></li>`;
+                camerasListString += `<li><div class="d-flex w-100 align-items-start flex-nowrap gap-1"><div class="NotificationDate"><span>16</span><p>mins</p></div><div class="listData"><h5>${data.data[i].location_name}</h5><p>${data.data[i].address.slice(0,1).toUpperCase()+data.data[i].address.slice(1).toLowerCase()}</p></div></div></li>`;
             }
 
             camerasListString += `<li class="text-center pb-0 viewAll"><a onclick="hitDeviceListPage('cameras')" class="text-dark">All</a></li>`;
