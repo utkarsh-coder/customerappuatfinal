@@ -549,13 +549,13 @@ footer .menuItems img {
 
 .notificationLists li .listData p {
   font-size: 12px;
-  font-weight: 300;
+  font-weight: 400;
   width: 95%;
 }
 
 .notificationLists li h5 {
   font-size: 14px;
-  font-weight: 400;
+  font-weight: 500;
   margin-bottom: 0px;
   text-transform: lowercase;
 }
@@ -566,7 +566,7 @@ footer .menuItems img {
 
 .notificationLists li p {
   margin-bottom: 0;
-  color: #a7a7a7;
+  color: #bdbdbd;
   font-size: 10px;
   white-space: nowrap;
   text-overflow: ellipsis;
@@ -621,6 +621,10 @@ footer .menuItems img {
 .tabspage .nav-tabs .nav-link {
   font-size: 16px;
   color: #212529;
+}
+
+.tabspage .nav-tabs .nav-item.show .nav-link, .tabspage .nav-tabs .nav-link {
+  font-size: 18px;
 }
 
 .tabspage .nav-tabs .nav-item.show .nav-link, .tabspage .nav-tabs .nav-link.active {

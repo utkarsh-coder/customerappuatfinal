@@ -461,14 +461,14 @@ top: -12px;
         padding: 0;
         p{
             font-size: 12px;
-            font-weight: 300;
+            font-weight: 400;
             width: 95%;
 
         }
        }
         h5{
             font-size: 14px;
-            font-weight: 400;
+            font-weight: 500;
             margin-bottom: 0px;
             text-transform: lowercase;
             &::first-letter{
@@ -477,7 +477,7 @@ top: -12px;
         }
         p{
             margin-bottom: 0;
-            color:#a7a7a7;
+            color:#bdbdbd;
             font-size: 10px;
             white-space: nowrap;
             text-overflow: ellipsis;
@@ -531,6 +531,9 @@ top: -12px;
     .nav-tabs .nav-link{
         font-size: 16px;
         color:#212529;
+    }
+    .nav-tabs .nav-item.show .nav-link, .nav-tabs .nav-link{
+        font-size: 18px;
     }
     .nav-tabs .nav-item.show .nav-link, .nav-tabs .nav-link.active{
         color:#f45137;
