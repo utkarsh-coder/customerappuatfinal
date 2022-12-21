@@ -466,6 +466,10 @@ top: -12px;
             font-size: 14px;
             font-weight: 400;
             margin-bottom: 0px;
+            text-transform: lowercase;
+            &::first-letter{
+                text-transform: capitalize;
+            }
         }
         p{
             margin-bottom: 0;
