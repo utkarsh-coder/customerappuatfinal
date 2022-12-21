@@ -623,6 +623,10 @@ footer .menuItems img {
   color: #212529;
 }
 
+.tabspage .nav-tabs .nav-item.show .nav-link, .tabspage .nav-tabs .nav-link {
+  font-size: 18px;
+}
+
 .tabspage .nav-tabs .nav-item.show .nav-link, .tabspage .nav-tabs .nav-link.active {
   color: #f45137;
   display: -webkit-box;
