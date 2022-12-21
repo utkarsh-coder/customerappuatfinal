@@ -640,4 +640,12 @@ footer .menuItems img {
 .tabspage .nav-tabs .nav-item.show .nav-link, .tabspage .nav-tabs .nav-link.active {
   border-color: transparent;
 }
+
+.tabspage .listData h5 {
+  font-size: 16px;
+}
+
+.tabspage .listData p {
+  font-size: 14px;
+}
 /*# sourceMappingURL=design.css.map */
