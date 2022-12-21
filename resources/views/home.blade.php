@@ -127,7 +127,7 @@
             <div class="container pb-2">
                 <div class="row headerBar align-items-center">
                     <div class="col">
-                        <h2 class="fw-bold">Good Morning!</h2>
+                        <h2 class="fw-bold">Igzy Mobile App</h2>
                     </div>
                     <div class="col-3 text-end">
                         <span id="timeAgoId" class="timeAgo">0 mins ago</span>
