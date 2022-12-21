@@ -249,7 +249,7 @@
                     </div>
                     <div class="grid-row grid-row-col-1 mb-3">
                         <div class="card">
-                            <div class="card-body site-status">
+                            <div class="card-body site-status px-0">
                                 <div class="d-flex">
                                     <div class="graphsection">
                                         <div
@@ -309,7 +309,7 @@
                                             </p>
                                         </div>
                                     </div>
-                                    <div class="notificationWithGraph ps-2">
+                                    <div class="notificationWithGraph px-2">
                                         <ul
                                             id="nvrList"
                                             class="notificationLists mb-0"
