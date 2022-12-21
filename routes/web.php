@@ -109,7 +109,7 @@ Route::post("/getTableData", [CustomerController::class, 'getTableData']);
 Route::post("/getDeviceList", [CustomerController::class, 'getDeviceList']);
 Route::get("/getSensorData", [CustomerController::class, 'getSensorData']);
 Route::post("/deviceList", [CustomerController::class, 'deviceList']);
-Route::get("/alarmPanelList", [CustomerController::class, 'alarmPanelList']);
+Route::get("/alarmPanelList", [CustomerController::class, 'alarmPanelList'])->middleware('guard');
 
 
 Route::post('/send-mail', [MailController::class, 'sendOTPMail']);
