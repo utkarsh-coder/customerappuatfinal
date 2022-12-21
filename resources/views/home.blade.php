@@ -271,7 +271,7 @@
                                             </p>
                                         </div>
                                     </div>
-                                    <div class="notificationWithGraph ps-1">
+                                    <div class="notificationWithGraph px-2">
                                         <ul
                                             id="glList"
                                             class="notificationLists mb-0"
@@ -287,7 +287,7 @@
                     </div>
                     <div class="grid-row grid-row-col-1 mb-3">
                         <div class="card">
-                            <div class="card-body site-status">
+                            <div class="card-body site-status px-0">
                                 <div class="d-flex">
                                     <div class="graphsection">
                                         <div
@@ -309,7 +309,7 @@
                                             </p>
                                         </div>
                                     </div>
-                                    <div class="notificationWithGraph ps-1">
+                                    <div class="notificationWithGraph px-2">
                                         <ul
                                             id="nvrList"
                                             class="notificationLists mb-0"
@@ -328,7 +328,7 @@
                         style="height: 400px"
                     >
                         <div class="card" style="height: 400px">
-                            <div class="card-body site-status">
+                            <div class="card-body site-status px-0">
                                 <div class="notificationContainer"></div>
                                 <div
                                     id="mainDummy"
@@ -361,7 +361,7 @@
                     </div>
                     <div class="grid-row grid-row-col-1 mb-3">
                         <div class="card">
-                            <div class="card-body site-status">
+                            <div class="card-body site-status px-0">
                                 <div class="d-flex">
                                     <div class="graphsection">
                                         <div
@@ -383,7 +383,7 @@
                                             </p>
                                         </div>
                                     </div>
-                                    <div class="notificationWithGraph ps-1">
+                                    <div class="notificationWithGraph px-2">
                                         <ul
                                             id="nvrList"
                                             class="notificationLists mb-0"
@@ -437,7 +437,7 @@
                     </div>
                     <div class="grid-row grid-row-col-1 mb-3">
                         <div class="card">
-                            <div class="card-body site-status">
+                            <div class="card-body site-status px-">
                                 <div class="d-flex">
                                     <div class="graphsection">
                                         <div
@@ -459,7 +459,7 @@
                                             </p>
                                         </div>
                                     </div>
-                                    <div class="notificationWithGraph ps-1">
+                                    <div class="notificationWithGraph px-2">
                                         <ul
                                             id="camerasList"
                                             class="notificationLists mb-0"
@@ -475,7 +475,7 @@
                     </div>
                     <div class="grid-row grid-row-col-3 mt-2 mb-3">
                         <div class="card">
-                            <div class="card-body site-status">
+                            <div class="card-body site-status px-0">
                                 <div
                                     class="d-flex flex-column justify-content-between h-100"
                                 >
