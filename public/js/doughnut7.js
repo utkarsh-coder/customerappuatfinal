@@ -5,30 +5,30 @@
 
 var ROOT_PATH = 'https://echarts.apache.org/examples';
 
-var chartDom6 = document.getElementById('main6');
-var myChart6 = echarts.init(chartDom6);
-var option6;
-let text6 = '';
+var chartDom7 = document.getElementById('main7');
+var myChart7 = echarts.init(chartDom7);
+var option7;
+let text7 = '';
 
 
-function runCamera() {
+function runSensor() {
     console.log("starting hello world!");
 
-    document.getElementById("camOnlineCount").innerHTML =
-            "<span>Online</span> " + sessionStorage.getItem('cameraOnlineCount');
-        document.getElementById("camOnlineCount").classList.add("br-right");
-        document.getElementById("camOfflineCount").innerHTML =
-            "<span>Offline</span> " + sessionStorage.getItem('cameraOfflineCount');
+    document.getElementById("workingsensorcount").innerHTML =
+            "<span>Working</span> " + sessionStorage.getItem('workingSensorCount');
+        document.getElementById("workingsensorcount").classList.add("br-right");
+        document.getElementById("faultysensorcount").innerHTML =
+            "<span>Faulty</span> " + sessionStorage.getItem('faultySensorCount');
 
     // document.getElementById('camOnlineCount').innerHTML = 'Online: ' + sessionStorage.getItem('cameraOnlineCount');
     // document.getElementById('camOfflineCount').innerHTML = 'Offline: ' + sessionStorage.getItem('cameraOfflineCount');
 
-    let cameraOnlinePercent = Math.round((Number(sessionStorage.getItem('cameraOnlineCount')) / (Number(sessionStorage.getItem('cameraOnlineCount')) + Number(sessionStorage.getItem('cameraOfflineCount')))) * 100);
-    let cameraOfflinePercent = Math.round((Number(sessionStorage.getItem('cameraOfflineCount')) / (Number(sessionStorage.getItem('cameraOnlineCount')) + Number(sessionStorage.getItem('cameraOfflineCount')))) * 100);
+    let workingSensorPercent = Math.round((Number(sessionStorage.getItem('workingSensorCount')) / (Number(sessionStorage.getItem('workingSensorCount')) + Number(sessionStorage.getItem('faultySensorCount')))) * 100);
+    let faultySensorPercent = Math.round((Number(sessionStorage.getItem('faultySensorCount')) / (Number(sessionStorage.getItem('workingSensorCount')) + Number(sessionStorage.getItem('faultySensorCount')))) * 100);
 
-    option6 = {
+    option7 = {
         title: {
-            text: text6,
+            text: text7,
             // text: 'NVR',
             // subtext: 'Real-time data',
             left: 'center'
@@ -36,7 +36,7 @@ function runCamera() {
         legend: {
             top: '5%',
             left: 'center',
-            data: ['offline: ' + cameraOfflinePercent + '%', 'online: ' + cameraOnlinePercent + '%']
+            data: ['faulty: ' + faultySensorPercent + '%', 'working: ' + workingSensorPercent + '%']
         },
         height: '100%',
         width: '100%',
@@ -73,8 +73,8 @@ function runCamera() {
                     show: false
                 },
                 data: [
-                    { value: cameraOfflinePercent, name: cameraOfflinePercent + '%' +'\n Offline' },
-                    { value: cameraOnlinePercent, name: cameraOnlinePercent + '%' +'\n Online' },
+                    { value: faultySensorPercent, name: faultySensorPercent + '%' +'\n faulty' },
+                    { value: workingSensorPercent, name: workingSensorPercent + '%' +'\n working' },
                 ]
             }
         ],
@@ -92,8 +92,8 @@ function runCamera() {
 
     console.log("11");
 
-    option6 && myChart6.setOption(option6);
-    runSensor();
+    option7 && myChart7.setOption(option7);
+    runHDD();
 
     // if (checkAllData == 2) {
     //     document.body.style.opacity = 1;
@@ -102,7 +102,7 @@ function runCamera() {
     // }
 }
 
-myChart6.on('click', function (params) {
+myChart7.on('click', function (params) {
 
     console.log('val: ', params.name);
 

@@ -5,30 +5,30 @@
 
 var ROOT_PATH = 'https://echarts.apache.org/examples';
 
-var chartDom6 = document.getElementById('main6');
-var myChart6 = echarts.init(chartDom6);
-var option6;
-let text6 = '';
+var chartDom8 = document.getElementById('main8');
+var myChart8 = echarts.init(chartDom8);
+var option8;
+let text8 = '';
 
 
-function runCamera() {
+function runHDD() {
     console.log("starting hello world!");
 
-    document.getElementById("camOnlineCount").innerHTML =
-            "<span>Online</span> " + sessionStorage.getItem('cameraOnlineCount');
-        document.getElementById("camOnlineCount").classList.add("br-right");
-        document.getElementById("camOfflineCount").innerHTML =
-            "<span>Offline</span> " + sessionStorage.getItem('cameraOfflineCount');
+    document.getElementById("workinghddcount").innerHTML =
+            "<span>Working</span> " + sessionStorage.getItem('workingHardDriveCount');
+        document.getElementById("workinghddcount").classList.add("br-right");
+        document.getElementById("faultyhddcount").innerHTML =
+            "<span>Faulty</span> " + sessionStorage.getItem('faultyHardDriveCount');
 
     // document.getElementById('camOnlineCount').innerHTML = 'Online: ' + sessionStorage.getItem('cameraOnlineCount');
     // document.getElementById('camOfflineCount').innerHTML = 'Offline: ' + sessionStorage.getItem('cameraOfflineCount');
 
-    let cameraOnlinePercent = Math.round((Number(sessionStorage.getItem('cameraOnlineCount')) / (Number(sessionStorage.getItem('cameraOnlineCount')) + Number(sessionStorage.getItem('cameraOfflineCount')))) * 100);
-    let cameraOfflinePercent = Math.round((Number(sessionStorage.getItem('cameraOfflineCount')) / (Number(sessionStorage.getItem('cameraOnlineCount')) + Number(sessionStorage.getItem('cameraOfflineCount')))) * 100);
+    let workingHddPercent = Math.round((Number(sessionStorage.getItem('workingHardDriveCount')) / (Number(sessionStorage.getItem('workingHardDriveCount')) + Number(sessionStorage.getItem('faultyHardDriveCount')))) * 100);
+    let faultyHddPercent = Math.round((Number(sessionStorage.getItem('faultyHardDriveCount')) / (Number(sessionStorage.getItem('workingHardDriveCount')) + Number(sessionStorage.getItem('faultyHardDriveCount')))) * 100);
 
-    option6 = {
+    option8 = {
         title: {
-            text: text6,
+            text: text8,
             // text: 'NVR',
             // subtext: 'Real-time data',
             left: 'center'
@@ -36,7 +36,7 @@ function runCamera() {
         legend: {
             top: '5%',
             left: 'center',
-            data: ['offline: ' + cameraOfflinePercent + '%', 'online: ' + cameraOnlinePercent + '%']
+            data: ['faulty: ' + faultyHddPercent + '%', 'working: ' + workingHddPercent + '%']
         },
         height: '100%',
         width: '100%',
@@ -73,8 +73,8 @@ function runCamera() {
                     show: false
                 },
                 data: [
-                    { value: cameraOfflinePercent, name: cameraOfflinePercent + '%' +'\n Offline' },
-                    { value: cameraOnlinePercent, name: cameraOnlinePercent + '%' +'\n Online' },
+                    { value: faultyHddPercent, name: faultyHddPercent + '%' +'\n faulty' },
+                    { value: workingHddPercent, name: workingHddPercent + '%' +'\n working' },
                 ]
             }
         ],
@@ -92,17 +92,16 @@ function runCamera() {
 
     console.log("11");
 
-    option6 && myChart6.setOption(option6);
-    runSensor();
+    option8 && myChart8.setOption(option8);
 
-    // if (checkAllData == 2) {
-    //     document.body.style.opacity = 1;
-    //     document.getElementById('loaderImgBlack').remove();
-    //     document.body.style.pointerEvents = "auto";
-    // }
+    if (checkAllData == 2) {
+        document.body.style.opacity = 1;
+        document.getElementById('loaderImgBlack').remove();
+        document.body.style.pointerEvents = "auto";
+    }
 }
 
-myChart6.on('click', function (params) {
+myChart8.on('click', function (params) {
 
     console.log('val: ', params.name);
 

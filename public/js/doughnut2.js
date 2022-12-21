@@ -92,7 +92,7 @@ function runArmDisarm() {
                     formatter: function (d) {
                         return d.name;
                     },
-                    fontSize: 10,
+                    fontSize: 18,
                 },
                 emphasis: {
                     label: {

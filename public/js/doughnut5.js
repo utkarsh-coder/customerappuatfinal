@@ -57,6 +57,7 @@ function runCompNonComp() {
                     formatter: function (d) {
                         return d.name;
                     },
+                    fontSize: 18,
                 },
                 emphasis: {
                     label: {
@@ -70,7 +71,7 @@ function runCompNonComp() {
                 },
                 data: [
                     { value: nonCompPercent, name: nonCompPercent + '%' +'\n Non-Compliance' },
-                    { value: compPercent, name: compPercent + '%' +'Compliance' },
+                    { value: compPercent, name: compPercent + '%' +'\n Compliance' },
                 ]
             }
         ],

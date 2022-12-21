@@ -37,6 +37,7 @@ fetch(document.getElementById("fetchHost").innerHTML + "/getSensorData")
         checkAllData++;
         console.log(dataSensor[0]["count(id)"]);
         sessionStorage.setItem("faultySensorCount", dataSensor[0]["count(id)"]);
+        sessionStorage.setItem("workingSensorCount", 95);
 
         if (checkAllData == 2) {
             document.body.style.opacity = 1;
@@ -69,7 +70,8 @@ fetch(document.getElementById("fetchHost").innerHTML + "/getChartData")
         sessionStorage.setItem("nonCompCount", data.nvr[0].non_cpm_count);
 
         sessionStorage.setItem("offSites", data.in[0].in_offline_count);
-        sessionStorage.setItem("hardDriveCount", data.nvr[0].hdd_count);
+        sessionStorage.setItem("workingHardDriveCount", data.nvr[0].hdd_count);
+        sessionStorage.setItem("faultyHardDriveCount", Number(sessionStorage.getItem("nvrOnlineCount")) + Number(sessionStorage.getItem("nvrOfflineCount")) - Number(sessionStorage.getItem("hardDriveCount")));
         sessionStorage.setItem("open-noti", data.openNotification[0].count);
 
         sessionStorage.setItem(
@@ -92,10 +94,7 @@ fetch(document.getElementById("fetchHost").innerHTML + "/getChartData")
 
         document.getElementById("siteoff").innerHTML =
             sessionStorage.getItem("offSites");
-        document.getElementById("hddCount").innerHTML =
-            Number(sessionStorage.getItem("nvrOnlineCount")) +
-            Number(sessionStorage.getItem("nvrOfflineCount")) -
-            Number(sessionStorage.getItem("hardDriveCount"));
+        document.getElementById("hddCount").innerHTML = sessionStorage.getItem("faultyHardDriveCount");
         document.getElementById("open-noti").innerHTML =
             sessionStorage.getItem("open-noti");
         document.getElementById("faultySensorCount").innerHTML =
@@ -152,7 +151,7 @@ fetch(document.getElementById("fetchHost").innerHTML + "/getChartData")
                         formatter: function (d) {
                             return d.name;
                         },
-                        fontSize: 10,
+                        fontSize: 18,
                     },
                     labelLayout: {
                         verticalAlign: "center",
