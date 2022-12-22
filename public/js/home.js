@@ -7,8 +7,8 @@ setInterval(waitAndshow, 60000);
 
 $(document).ready(function () {
 
-    document.getElementById('cardIn').addEventListener("click", function(){
-        window.location.href = document.getElementById('fetchHost').innerHTML+"/alarmPanelList";
+    document.getElementById('cardIn').addEventListener("click", function () {
+        window.location.href = document.getElementById('fetchHost').innerHTML + "/alarmPanelList";
     });
 
     // http://54.197.121.111:8001/iot/1.6/public/getSiteHealthStatus?business_id=193
@@ -28,13 +28,13 @@ $(document).ready(function () {
         return res.json();
     })
         .then(data => {
-            
+
             sessionStorage.setItem("glOffline", JSON.stringify(data.data));
             console.log('device List data gl: ', data);
 
             let glListString = ``;
             for (let i = 0; i < 4; i++) {
-                glListString += `<li><div class="d-flex w-100 align-items-start flex-nowrap gap-1"><div class="NotificationDate"><span>16</span><p>mins</p></div><div class="listData"><h5>${data.data[i].location_name}</h5><p>${data.data[i].address.slice(0,1).toUpperCase()+data.data[i].address.slice(1).toLowerCase()}</p></div></div></li>`;
+                glListString += `<li><div class="d-flex w-100 align-items-start flex-nowrap gap-1"><div class="NotificationDate"><span>16</span><p>mins</p></div><div class="listData"><h5>${data.data[i].location_name}</h5><p>${data.data[i].address.slice(0, 1).toUpperCase() + data.data[i].address.slice(1).toLowerCase()}</p></div></div></li>`;
             }
 
             glListString += `<li class="text-center pb-0 viewAll"><a onclick="hitDeviceListPage('gl')" class="text-dark">All</a></li>`;
@@ -90,7 +90,7 @@ $(document).ready(function () {
 
             let nvrListString = ``;
             for (let i = 0; i < 4; i++) {
-                nvrListString += `<li><div class="d-flex w-100 align-items-start flex-nowrap gap-1"><div class="NotificationDate"><span>16</span><p>mins</p></div><div class="listData"><h5>${data.data[i].location_name}</h5><p>${data.data[i].address.slice(0,1).toUpperCase()+data.data[i].address.slice(1).toLowerCase()}</p></div></div></li>`;
+                nvrListString += `<li><div class="d-flex w-100 align-items-start flex-nowrap gap-1"><div class="NotificationDate"><span>16</span><p>mins</p></div><div class="listData"><h5>${data.data[i].location_name}</h5><p>${data.data[i].address.slice(0, 1).toUpperCase() + data.data[i].address.slice(1).toLowerCase()}</p></div></div></li>`;
             }
 
             nvrListString += `<li class="text-center pb-0 viewAll"><a onclick="hitDeviceListPage('nvr')" class="text-dark">All</a></li>`;
@@ -118,7 +118,7 @@ $(document).ready(function () {
 
             let camerasListString = ``;
             for (let i = 0; i < 4; i++) {
-                camerasListString += `<li><div class="d-flex w-100 align-items-start flex-nowrap gap-1"><div class="NotificationDate"><span>16</span><p>mins</p></div><div class="listData"><h5>${data.data[i].location_name}</h5><p>${data.data[i].address.slice(0,1).toUpperCase()+data.data[i].address.slice(1).toLowerCase()}</p></div></div></li>`;
+                camerasListString += `<li><div class="d-flex w-100 align-items-start flex-nowrap gap-1"><div class="NotificationDate"><span>16</span><p>mins</p></div><div class="listData"><h5>${data.data[i].location_name}</h5><p>${data.data[i].address.slice(0, 1).toUpperCase() + data.data[i].address.slice(1).toLowerCase()}</p></div></div></li>`;
             }
 
             camerasListString += `<li class="text-center pb-0 viewAll"><a onclick="hitDeviceListPage('cameras')" class="text-dark">All</a></li>`;
@@ -126,4 +126,8 @@ $(document).ready(function () {
             document.getElementById('camerasList').innerHTML = camerasListString;
         })
         .catch(error => console.log('ERROR: ', error));
+
 });
+
+
+
