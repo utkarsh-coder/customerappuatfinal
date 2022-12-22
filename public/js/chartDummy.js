@@ -65,7 +65,7 @@ fetch("https://cc.gizmosmart.io/iot/1.6/public/getUptimeDowntime?type=in&from=20
 
     optiondummy = {
       title: {
-        text: 'Stacked Area Chart'
+        text: ''
       },
       tooltip: {
         trigger: 'axis',
