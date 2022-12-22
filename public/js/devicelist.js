@@ -1,6 +1,6 @@
 console.log('entered device list js file', document.getElementById('type').innerHTML);
 
-var offlineDevices = JSON.parse(sessionStorage.getItem(document.getElementById('type').innerHTML+'Offline'));
+var offlineDevices = JSON.parse(sessionStorage.getItem(document.getElementById('type').innerHTML+'List'));
 let offlineListString = ``;
 console.log(offlineDevices);
 console.log('length: ', offlineDevices.length);

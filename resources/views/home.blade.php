@@ -102,7 +102,7 @@
 
         function hitDeviceListPage(type) {
             document.getElementById("type").value = type;
-            document.getElementById("status").value = "offline";
+            document.getElementById("status").value = "non-compliance";
             console.log("This is the data of the site:  ", "offline");
             document.getElementById("deviceListForm").submit();
         }
@@ -273,7 +273,7 @@
                                     </div>
                                 </div>
                                 <div class="notificationWithGraph px-2">
-                                    <ul id="nvrList" class="notificationLists mb-0"></ul>
+                                    <ul id="nonCompList" class="notificationLists mb-0"></ul>
                                 </div>
                             </div>
                         </div>

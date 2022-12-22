@@ -29,7 +29,7 @@ $(document).ready(function () {
     })
         .then(data => {
 
-            sessionStorage.setItem("glOffline", JSON.stringify(data.data));
+            sessionStorage.setItem("glOfflineList", JSON.stringify(data.data));
             console.log('device List data gl: ', data);
 
             let glListString = ``;
@@ -37,7 +37,7 @@ $(document).ready(function () {
                 glListString += `<li><div class="d-flex w-100 align-items-start flex-nowrap gap-1"><div class="NotificationDate"><span>16</span><p>mins</p></div><div class="listData"><h5>${data.data[i].location_name}</h5><p>${data.data[i].address.slice(0, 1).toUpperCase() + data.data[i].address.slice(1).toLowerCase()}</p></div></div></li>`;
             }
 
-            glListString += `<li class="text-center pb-0 viewAll"><a onclick="hitDeviceListPage('gl')" class="text-dark">All</a></li>`;
+            glListString += `<li class="text-center pb-0 viewAll"><a onclick="hitDeviceListPage('glOffline')" class="text-dark">All</a></li>`;
 
             document.getElementById('glList').innerHTML = glListString;
 
@@ -85,7 +85,7 @@ $(document).ready(function () {
         return res.json();
     })
         .then(data => {
-            sessionStorage.setItem("nvrOffline", JSON.stringify(data.data));
+            sessionStorage.setItem("nvrOfflineList", JSON.stringify(data.data));
             console.log('device List data nvr: ', data.data);
 
             let nvrListString = ``;
@@ -93,7 +93,7 @@ $(document).ready(function () {
                 nvrListString += `<li><div class="d-flex w-100 align-items-start flex-nowrap gap-1"><div class="NotificationDate"><span>16</span><p>mins</p></div><div class="listData"><h5>${data.data[i].location_name}</h5><p>${data.data[i].address.slice(0, 1).toUpperCase() + data.data[i].address.slice(1).toLowerCase()}</p></div></div></li>`;
             }
 
-            nvrListString += `<li class="text-center pb-0 viewAll"><a onclick="hitDeviceListPage('nvr')" class="text-dark">All</a></li>`;
+            nvrListString += `<li class="text-center pb-0 viewAll"><a onclick="hitDeviceListPage('nvrOffline')" class="text-dark">All</a></li>`;
 
             document.getElementById('nvrList').innerHTML = nvrListString;
         })
@@ -113,7 +113,7 @@ $(document).ready(function () {
         return res.json();
     })
         .then(data => {
-            sessionStorage.setItem("camerasOffline", JSON.stringify(data.data));
+            sessionStorage.setItem("camerasOfflineList", JSON.stringify(data.data));
             console.log('device List data cameras: ', data);
 
             let camerasListString = ``;
@@ -121,9 +121,39 @@ $(document).ready(function () {
                 camerasListString += `<li><div class="d-flex w-100 align-items-start flex-nowrap gap-1"><div class="NotificationDate"><span>16</span><p>mins</p></div><div class="listData"><h5>${data.data[i].location_name}</h5><p>${data.data[i].address.slice(0, 1).toUpperCase() + data.data[i].address.slice(1).toLowerCase()}</p></div></div></li>`;
             }
 
-            camerasListString += `<li class="text-center pb-0 viewAll"><a onclick="hitDeviceListPage('cameras')" class="text-dark">All</a></li>`;
+            camerasListString += `<li class="text-center pb-0 viewAll"><a onclick="hitDeviceListPage('camerasOffline')" class="text-dark">All</a></li>`;
 
             document.getElementById('camerasList').innerHTML = camerasListString;
+        })
+        .catch(error => console.log('ERROR: ', error));
+
+
+
+
+    fetch(document.getElementById('fetchHost').innerHTML + "/getDeviceList", {
+        method: 'POST',
+        headers: {
+            'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({
+            'typeValue': 'nvr',
+            'statusValue': 'footage_noncompliance'
+        }),
+    }).then(res => {
+        return res.json();
+    })
+        .then(data => {
+            sessionStorage.setItem("footageNonComplianceList", JSON.stringify(data.data));
+            console.log('device List data cameras: ', data);
+
+            let complianceListString = ``;
+            for (let i = 0; i < 4; i++) {
+                complianceListString += `<li><div class="d-flex w-100 align-items-start flex-nowrap gap-1"><div class="NotificationDate"><span>16</span><p>mins</p></div><div class="listData"><h5>${data.data[i].location_name}</h5><p>${data.data[i].address.slice(0, 1).toUpperCase() + data.data[i].address.slice(1).toLowerCase()}</p></div></div></li>`;
+            }
+
+            complianceListString += `<li class="text-center pb-0 viewAll"><a onclick="hitDeviceListPage('footageNonCompliance')" class="text-dark">All</a></li>`;
+
+            document.getElementById('nonCompList').innerHTML = complianceListString;
         })
         .catch(error => console.log('ERROR: ', error));
 
