@@ -106,6 +106,10 @@
             console.log("This is the data of the site:  ", "offline");
             document.getElementById("deviceListForm").submit();
         }
+
+        function switchNetworkUptime(element) {
+            console.log("switched.........", element.value);
+        }
     </script>
 
     <form id="deviceListForm" action="{{ url('/') }}/deviceList" method="post" class="primeContainer">
@@ -236,6 +240,11 @@
                 <div class="grid-row grid-row-col-1 mt-2 mb-3 networdHelth" style="height: 400px">
                     <div class="card" style="height: 400px">
                         <div class="card-body site-status px-0">
+                            <!-- <select onchange="switchNetworkUptime(this)" name="cars" id="cars">
+                                <option value="daily">Daily</option>
+                                <option value="weekly">Weekly</option>
+                                <option value="monthly">Monthly</option>
+                            </select> -->
                             <div class="notificationContainer"></div>
                             <div id="mainDummy" class="d-flex flex-column justify-content-between h-100"></div>
                         </div>

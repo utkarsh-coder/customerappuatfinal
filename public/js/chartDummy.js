@@ -2,7 +2,12 @@ var chartDomdummy = document.getElementById('mainDummy');
 var myChartdummy = echarts.init(chartDomdummy);
 var optiondummy;
 
-fetch("https://cc.gizmosmart.io/iot/1.6/public/getUptimeDowntime?type=in&from=2022-12-5&to=2022-12-20&business_name=fincare").then(res => {
+let d = new Date();
+d.setDate(d.getDate()-1);
+let stringDate = d.getFullYear()+"-"+(d.getMonth()+1)+"-"+d.getDate();
+console.log('checking today date:  ',stringDate);
+
+fetch("https://cc.gizmosmart.io/iot/1.6/public/getUptimeDowntime?type=gl&from=2022-12-7&to="+stringDate+"&business_name=fincare").then(res => {
   return res.json();
 })
   .then(data => {
@@ -10,9 +15,9 @@ fetch("https://cc.gizmosmart.io/iot/1.6/public/getUptimeDowntime?type=in&from=20
 
     let inMap = new Map();
     let inCount = new Map();
-    let startDate = new Date("2022-12-05");
-    let traverseDate = new Date("2022-12-05");
-    let endDate = new Date("2022-12-20");
+    let startDate = new Date("2022-12-07");
+    let traverseDate = new Date("2022-12-07");
+    let endDate = new Date(stringDate);
     let keyArray = [];
     let valueArray = [];
     let count = 0;
@@ -63,84 +68,84 @@ fetch("https://cc.gizmosmart.io/iot/1.6/public/getUptimeDowntime?type=in&from=20
 
     // optiondummy && myChartdummy.setOption(optiondummy);
 
-    // optiondummy = {
-    //   title: {
-    //     text: ''
-    //   },
-    //   tooltip: {
-    //     trigger: 'axis',
-    //     axisPointer: {
-    //       type: 'cross',
-    //       label: {
-    //         backgroundColor: '#6a7985'
-    //       }
-    //     }
-    //   },
-    //   legend: {
-    //     data: ['Uptime']
-    //   },
-    //   toolbox: {
-    //     feature: {
-    //       saveAsImage: {}
-    //     }
-    //   },
-    //   grid: {
-    //     left: '3%',
-    //     right: '4%',
-    //     bottom: '3%',
-    //     containLabel: true
-    //   },
-    //   xAxis: [
-    //     {
-    //       type: 'category',
-    //       axisLabel: {
-    //         rotate: 70
-    //       },
-    //       boundaryGap: false,
-    //       data: keyArray
-    //     }
-    //   ],
-    //   yAxis: [
-    //     {
-    //       type: 'value'
-    //     }
-    //   ],
-    //   series: [
-    //     {
-    //       name: 'Uptime',
-    //       type: 'line',
-    //       stack: 'Total',
-    //       label: {
-    //         show: false,
-    //         position: 'top'
-    //       },
-    //       areaStyle: {},
-    //       emphasis: {
-    //         focus: 'series'
-    //       },
-    //       data: valueArray
-    //     }
-    //   ]
-    // };
-
-    // optiondummy && myChartdummy.setOption(optiondummy);
-
-
-    myChartdummy.setOption({
-      xAxis: {
-        data: [3, 4, 5]
+    optiondummy = {
+      title: {
+        text: ''
       },
-      yAxis: {
+      tooltip: {
+        trigger: 'axis',
+        axisPointer: {
+          type: 'cross',
+          label: {
+            backgroundColor: '#6a7985'
+          }
+        }
       },
-      brush: {
-        toolbox: ['lineX'],
-        type: 'lineX',
+      legend: {
+        data: ['Uptime']
       },
-      series: [{
-        type: 'line', // changing this to scatter or other types makes the brush selection work
-        data: [120, 200, 150]
-      }]
-    });
+      toolbox: {
+        feature: {
+          saveAsImage: {}
+        }
+      },
+      grid: {
+        left: '3%',
+        right: '4%',
+        bottom: '3%',
+        containLabel: true
+      },
+      xAxis: [
+        {
+          type: 'category',
+          axisLabel: {
+            rotate: 70
+          },
+          boundaryGap: false,
+          data: keyArray
+        }
+      ],
+      yAxis: [
+        {
+          type: 'value'
+        }
+      ],
+      series: [
+        {
+          name: 'Uptime',
+          type: 'line',
+          stack: 'Total',
+          label: {
+            show: false,
+            position: 'top'
+          },
+          areaStyle: {},
+          emphasis: {
+            focus: 'series'
+          },
+          data: valueArray
+        }
+      ]
+    };
+
+    optiondummy && myChartdummy.setOption(optiondummy);
+
+
+    // myChartdummy.setOption({
+    //   xAxis: {
+    //     data: [3, 4, 5]
+    //   },
+    //   yAxis: {
+    //   },
+    //   brush: {
+    //     toolbox: ['lineX'],
+    //     type: 'lineX',
+    //   },
+    //   series: [{
+    //     type: 'line', // changing this to scatter or other types makes the brush selection work
+    //     data: [120, 200, 150]
+    //   }]
+    // });
 
 
   })
