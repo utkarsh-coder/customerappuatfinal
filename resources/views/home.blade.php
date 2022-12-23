@@ -357,6 +357,15 @@
                     >
                         <div class="card" style="height: 400px">
                             <div class="card-body site-status">
+                                <select
+                                    class="form-select ms-auto me-2"
+                                    aria-label="Default select example"
+                                >
+                                    <option selected>Select</option>
+                                    <option value="1">Daily</option>
+                                    <option value="2">Monthly</option>
+                                    <option value="3">Yearly</option>
+                                </select>
                                 <div class="notificationContainer"></div>
                                 <div
                                     id="mainDummy2"
