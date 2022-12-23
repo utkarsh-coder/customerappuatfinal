@@ -159,24 +159,26 @@ fetch("https://cc.gizmosmart.io/iot/1.6/public/getUptimeDowntime?type=in&from=20
     // optiondummy2 && myChartdummy2.setOption(optiondummy2);
 
 
-    myChartdummy2.setOption({
-      xAxis: {
-        data: [1,2,3],
-        axisLabel: {
-          rotate: 70
-        },
-      },
-      yAxis: {
-      },
-      brush: {
-        toolbox: ['lineX'],
-        type: 'lineX',
-      },
-      series: [{
-        type: 'line', // changing this to scatter or other types makes the brush selection work
-        data: [1,2,3]
-      }]
-    });
+    // myChartdummy2.setOption({
+    //   xAxis: {
+    //     data: [1,2,3],
+    //     axisLabel: {
+    //       rotate: 70
+    //     },
+    //   },
+    //   yAxis: {
+    //   },
+    //   brush: {
+    //     toolbox: ['lineX'],
+    //     type: 'lineX',
+    //   },
+    //   series: [{
+    //     type: 'line', // changing this to scatter or other types makes the brush selection work
+    //     data: [1,2,3]
+    //   }]
+    // });
+
+    myChartdummy2.setOption(option2);
 
 
   })
