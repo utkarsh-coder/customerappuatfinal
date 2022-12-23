@@ -508,6 +508,11 @@ footer .menuItems img {
   top: -12px;
 }
 
+.selectNewStyle {
+  width: 100px;
+  font-size: 14px;
+}
+
 .devicelist .notificationLists li {
   margin-bottom: 0.5rem;
   margin-top: 0.5rem;
