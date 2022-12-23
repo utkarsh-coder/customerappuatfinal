@@ -31,11 +31,11 @@ var myChartdummy2 = echarts.init(chartDomdummy2);
 var optiondummy2;
 
 let dIn = new Date();
-dIn.setDate(d.getDate()-1);
-let stringDateIn = dIn.getFullYear()+"-"+(dIn.getMonth()+1)+"-"+dIn.getDate();
-console.log('checking today date:  ',stringDateIn);
+dIn.setDate(d.getDate() - 1);
+let stringDateIn = dIn.getFullYear() + "-" + (dIn.getMonth() + 1) + "-" + dIn.getDate();
+console.log('checking today date:  ', stringDateIn);
 
-fetch("https://cc.gizmosmart.io/iot/1.6/public/getUptimeDowntime?type=in&from=2022-12-7&to="+stringDate+"&business_name=fincare").then(res => {
+fetch("https://cc.gizmosmart.io/iot/1.6/public/getUptimeDowntime?type=in&from=2022-12-7&to=" + stringDate + "&business_name=fincare").then(res => {
   return res.json();
 })
   .then(data => {
@@ -96,84 +96,87 @@ fetch("https://cc.gizmosmart.io/iot/1.6/public/getUptimeDowntime?type=in&from=20
 
     // optiondummy && myChartdummy.setOption(optiondummy);
 
-    optiondummy2 = {
-      title: {
-        text: ''
-      },
-      tooltip: {
-        trigger: 'axis',
-        axisPointer: {
-          type: 'cross',
-          label: {
-            backgroundColor: '#6a7985'
-          }
-        }
-      },
-      legend: {
-        data: ['Uptime']
-      },
-      toolbox: {
-        feature: {
-          saveAsImage: {}
-        }
-      },
-      grid: {
-        left: '3%',
-        right: '4%',
-        bottom: '3%',
-        containLabel: true
-      },
-      xAxis: [
-        {
-          type: 'category',
-          axisLabel: {
-            rotate: 70
-          },
-          boundaryGap: false,
-          data: keyArray
-        }
-      ],
-      yAxis: [
-        {
-          type: 'value'
-        }
-      ],
-      series: [
-        {
-          name: 'Uptime',
-          type: 'line',
-          stack: 'Total',
-          label: {
-            show: false,
-            position: 'top'
-          },
-          areaStyle: {},
-          emphasis: {
-            focus: 'series'
-          },
-          data: valueArray
-        }
-      ]
-    };
-
-    optiondummy2 && myChartdummy2.setOption(optiondummy2);
-
-
-    // myChartdummy.setOption({
-    //   xAxis: {
-    //     data: [3, 4, 5]
+    // optiondummy2 = {
+    //   title: {
+    //     text: ''
     //   },
-    //   yAxis: {
+    //   tooltip: {
+    //     trigger: 'axis',
+    //     axisPointer: {
+    //       type: 'cross',
+    //       label: {
+    //         backgroundColor: '#6a7985'
+    //       }
+    //     }
     //   },
-    //   brush: {
-    //     toolbox: ['lineX'],
-    //     type: 'lineX',
+    //   legend: {
+    //     data: ['Uptime']
     //   },
-    //   series: [{
-    //     type: 'line', // changing this to scatter or other types makes the brush selection work
-    //     data: [120, 200, 150]
-    //   }]
-    // });
+    //   toolbox: {
+    //     feature: {
+    //       saveAsImage: {}
+    //     }
+    //   },
+    //   grid: {
+    //     left: '3%',
+    //     right: '4%',
+    //     bottom: '3%',
+    //     containLabel: true
+    //   },
+    //   xAxis: [
+    //     {
+    //       type: 'category',
+    //       axisLabel: {
+    //         rotate: 70
+    //       },
+    //       boundaryGap: false,
+    //       data: keyArray
+    //     }
+    //   ],
+    //   yAxis: [
+    //     {
+    //       type: 'value'
+    //     }
+    //   ],
+    //   series: [
+    //     {
+    //       name: 'Uptime',
+    //       type: 'line',
+    //       stack: 'Total',
+    //       label: {
+    //         show: false,
+    //         position: 'top'
+    //       },
+    //       areaStyle: {},
+    //       emphasis: {
+    //         focus: 'series'
+    //       },
+    //       data: valueArray
+    //     }
+    //   ]
+    // };
+
+    // optiondummy2 && myChartdummy2.setOption(optiondummy2);
+
+
+    myChartdummy2.setOption({
+      xAxis: {
+        data: keyArray,
+        axisLabel: {
+          rotate: 70
+        },
+      },
+      yAxis: {
+      },
+      brush: {
+        toolbox: ['lineX'],
+        type: 'lineX',
+      },
+      series: [{
+        type: 'line', // changing this to scatter or other types makes the brush selection work
+        data: valueArray
+      }]
+    });
 
 
   })
