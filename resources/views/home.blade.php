@@ -326,9 +326,9 @@
                     </div>
                     <div
                         class="grid-row grid-row-col-1 mt-2 mb-3 networdHelth"
-                        style="height: 400px"
+                        style="height: 440px"
                     >
-                        <div class="card" style="height: 400px">
+                        <div class="card" style="height: 440px">
                             <div class="card-body site-status px-0">
                                 <select
                                     class="form-select ms-auto selectNewStyle me-2"
@@ -353,9 +353,9 @@
                     </div>
                     <div
                         class="grid-row grid-row-col-1 mt-2 mb-3 networdHelth"
-                        style="height: 400px"
+                        style="height: 440px"
                     >
-                        <div class="card" style="height: 400px">
+                        <div class="card" style="height: 440px">
                             <div class="card-body site-status">
                                 <select
                                     class="form-select selectNewStyle ms-auto me-2"
