@@ -342,7 +342,32 @@
                     </div>
                 </div>
 
-                    
+                    <div class="col-10 mt-3">
+                        <h3>Alarm Panel Uptime</h3>
+                    </div>
+                    <div
+                        class="grid-row grid-row-col-1 mt-2 mb-3 networdHelth"
+                        style="height: 440px"
+                    >
+                        <div class="card" style="height: 440px">
+                            <div class="card-body site-status">
+                                <select
+                                    class="form-select selectNewStyle ms-auto me-2"
+                                    aria-label="Default select example"
+                                >
+                                    <option selected>Select</option>
+                                    <option value="1">Daily</option>
+                                    <option value="2">Monthly</option>
+                                    <option value="3">Yearly</option>
+                                </select>
+                                <div class="notificationContainer"></div>
+                                <div
+                                    id="mainDummy2"
+                                    class="d-flex flex-column justify-content-between h-100"
+                                >checking the data</div>
+                            </div>
+                        </div>
+                    </div>
 
                     <div class="col-10 mt-4 mb-3">
                         <h3>Compliance Status</h3>

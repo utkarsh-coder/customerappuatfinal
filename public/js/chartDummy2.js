@@ -178,7 +178,7 @@ fetch("https://cc.gizmosmart.io/iot/1.6/public/getUptimeDowntime?type=in&from=20
     //   }]
     // });
 
-    myChartdummy2.setOption(option2);
+    // myChartdummy2.setOption(option2);
 
 
   })
