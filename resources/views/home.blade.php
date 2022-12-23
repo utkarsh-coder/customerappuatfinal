@@ -331,7 +331,7 @@
                         <div class="card" style="height: 400px">
                             <div class="card-body site-status px-0">
                                 <select
-                                    class="form-select"
+                                    class="form-select ms-auto me-2"
                                     aria-label="Default select example"
                                 >
                                     <option selected>Select</option>
