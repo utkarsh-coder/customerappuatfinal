@@ -360,7 +360,7 @@
                     </div>
                 </div>
 
-                <div class="row my-3">
+                <!-- <div class="row my-3">
                     <div class="col-12">
                         <h3>Sensors Status</h3>
                     </div>
@@ -379,7 +379,7 @@
                             </div>
                         </div>
                     </div>
-                </div>
+                </div> -->
 
                 <div class="row my-3">
                     <div class="col-12">
