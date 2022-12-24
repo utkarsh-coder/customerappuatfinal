@@ -146,7 +146,7 @@
                         </label>
                     </div>
                 </div> -->
-                
+
                 <div class="row my-3">
                     <div class="col-12">
                         <h3>Alarm Panel</h3>
@@ -418,7 +418,7 @@
                     <div class="card">
                         <div class="card-body site-status">
                             <div class="d-flex flex-column justify-content-between h-100">
-                                <p class="subHeading">HDD Count</p>
+                                <p class="subHeading">Faulty HDD</p>
                                 <span id="hddCount" class="num">...</span>
                             </div>
                         </div>
