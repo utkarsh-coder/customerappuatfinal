@@ -93,7 +93,8 @@ function runCamera() {
     console.log("11");
 
     option6 && myChart6.setOption(option6);
-    runSensor();
+    runHDD();
+    // runSensor();
 
     // if (checkAllData == 2) {
     //     document.body.style.opacity = 1;
