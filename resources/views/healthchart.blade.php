@@ -229,7 +229,7 @@
                     </div>
                 </div>
 
-                <div class="col-12 mb-3">
+                <!-- <div class="col-12 mb-3">
                     <div class="card siteHealthCard">
                         <div class="card-body">
                             <h4>Footage</h4>
@@ -241,7 +241,7 @@
 
                         </div>
                     </div>
-                </div>
+                </div> -->
 
                 <div class="col-12 mb-3">
                     <div class="card siteHealthCard">
