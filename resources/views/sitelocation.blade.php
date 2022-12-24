@@ -264,10 +264,10 @@
             <img src="{{asset('img/graph.svg')}}" alt="" />
             <span>Status</span>
         </div>
-        <div class="menuItems">
+        <!-- <div class="menuItems">
             <img src="{{asset('img/setting.svg')}}" alt="" />
             <span>Setting</span>
-        </div>
+        </div> -->
     </footer>
 
 

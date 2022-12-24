@@ -611,10 +611,10 @@
             <img src="{{ asset('img/graph.svg') }}" alt="" />
             <span>Status</span>
         </div>
-        <div id="setting" class="menuItems">
+        <!-- <div id="setting" class="menuItems">
             <img src="{{ asset('img/setting.svg') }}" alt="" />
             <span>Setting</span>
-        </div>
+        </div> -->
     </footer>
 
     <!-- <h4 class="heading">Network Health</h4>
