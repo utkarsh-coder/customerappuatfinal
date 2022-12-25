@@ -138,14 +138,14 @@
                     </div>
                 </div>
 
-                <!-- <div class="row mb-4">
+                <div class="row mb-4">
                     <div class="col-12">
                         <label for="" class="position-relative w-100">
                             <span class="searchIcon"><i class="bi bi-search"></i></span>
                             <input type="text" name="" class="searchBar" id="" />
                         </label>
                     </div>
-                </div> -->
+                </div>
 
                 <div class="row my-3">
                     <div class="col-12">
