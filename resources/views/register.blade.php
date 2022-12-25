@@ -23,15 +23,14 @@
 
                  <div class="col ">
                      <img src="{{ asset('img/IGZY_logo.png') }}" alt="description of myimage" class="logoCenter">
-
                  </div>
+
              </div>
              <div class="row">
-                 <div class="col-12 authHeading">
+                 <!-- <div class="col-12 authHeading">
                      <h3>Join IGZY</h3>
                      <p>Don't have an account? <a href="#" class="loginLink">Sign up</a></p>
-
-                 </div>
+                 </div> -->
                  <div class="col-12">
 
                      <form action="{{url('/')}}/verify" method="post" onSubmit="return validateForm()" class="formLayout">
@@ -51,10 +50,10 @@
                          <input id="email" type="text" name="email" label="Enter Email" />
                          <h5>Password</h5>
                          <input id="password" type="password" name="password" label="Enter Password" /> -->
-                         <div class="forgotPassword d-flex justify-content-end">
+                         <!-- <div class="forgotPassword d-flex justify-content-end">
                              <button id="forgotPassword" class="forgotPassword-btn helpingBtn">Forgot Password ?</button>
 
-                         </div>
+                         </div> -->
                          <button type="submit" class="btn btn-primary" style="width: 100%; margin-top: 20px">Login</button>
                      </form>
 
@@ -89,8 +88,8 @@
          }
 
          document.getElementById("forgotPassword").onclick = function() {
-            window.location.href = "forgotmail";
-        };
+             window.location.href = "forgotmail";
+         };
      </script>
  </body>
 
