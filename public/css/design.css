@@ -642,6 +642,12 @@ footer .menuItems img {
   border: none;
 }
 
+.dropdown-align-filter button.btn-secondary:focus {
+  outline: none !important;
+  -webkit-box-shadow: none !important;
+          box-shadow: none !important;
+}
+
 .dropdown-align-filter button.btn-secondary:hover {
   color: var(--primary-500);
   border: none;
