@@ -193,25 +193,32 @@
                                     <button class="btn btn-secondary p-1" type="button" id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false">
                                         <i class="bi bi-funnel"></i>
                                     </button>
-                                    <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
-                                      <li><div class="form-check dropdown-item">
+                                    <ul class="dropdown-menu px-2" aria-labelledby="dropdownMenuButton1">
+                                      <li><div class="form-check ">
   <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
   <label class="form-check-label" for="flexCheckDefault">
     All
   </label>
 </div>
 </li>
-                                      <li><div class="form-check dropdown-item">
+                                      <li><div class="form-check ">
   <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
   <label class="form-check-label" for="flexCheckDefault">
    East
   </label>
 </div>
 </li>
-<li><div class="form-check dropdown-item">
+<li><div class="form-check">
   <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
   <label class="form-check-label" for="flexCheckDefault">
     West
+  </label>
+</div>
+</li>
+<li><div class="form-check">
+  <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
+  <label class="form-check-label" for="flexCheckDefault">
+South
   </label>
 </div>
 </li>
