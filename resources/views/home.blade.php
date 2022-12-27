@@ -22,6 +22,9 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/2.3.0/socket.io.js"></script>
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/echarts/5.3.3/echarts.min.js"></script>
+
+    <script src="js/chartDummy.js"></script>
+
     <style>
         .searchBtn {
             border: none;
@@ -58,6 +61,10 @@
     </style>
 
     <script>
+        $(document).ready(function() {
+            runUptime('gl', 'mainDummy', 'daily');
+            runUptime('in', 'mainDummy2', 'daily');
+        })
         var minutes = 0;
 
         function waitAndshow() {
@@ -109,10 +116,12 @@
 
         function switchNetworkUptime(element) {
             console.log("switched.........", element.value);
+            runUptime('gl', 'mainDummy', JSON.stringify(element.value).slice(1, -1));
         }
 
         function switchAlarmPanelUptime(element) {
             console.log("switched.........", element.value);
+            runUptime('in', 'mainDummy2', JSON.stringify(element.value).slice(1, -1));
         }
     </script>
 
@@ -757,8 +766,8 @@
     <script src="js/doughnut6.js"></script>
     <script src="js/doughnut7.js"></script>
     <script src="js/doughnut8.js"></script>
-    <script src="js/chartDummy.js"></script>
-    <script src="js/chartDummy2.js"></script>
+
+    <!-- <script src="js/chartDummy2.js"></script> -->
     <script src="js/home.js"></script>
 </body>
 

@@ -1,8 +1,10 @@
-var chartDomdummy = document.getElementById('mainDummy');
-var myChartdummy = echarts.init(chartDomdummy);
-var optiondummy;
 
-function runGlUptime(mode) {
+
+function runUptime(type, id, mode) {
+  var chartDomdummy = document.getElementById(id);
+  var myChartdummy = echarts.init(chartDomdummy);
+  var optiondummy;
+
   let d = new Date();
   d.setDate(d.getDate() - 1);
   let startDateString = '';
@@ -20,15 +22,30 @@ function runGlUptime(mode) {
   else if (mode.localeCompare('weekly') == 0) {
     let noofweeks = 0;
     d.setDate(d.getDate() - 7);
-    let tempDateString = d.getFullYear() + "-" + (d.getMonth() + 1) + "-" + d.getDate();
-    while ((new Date(tempDateString)) >= new Date('2022-12-07') && noofweeks <= 15) {
+
+    while (d >= new Date('2022-12-7') && noofweeks <= 15) {
       startDateString = d.getFullYear() + "-" + (d.getMonth() + 1) + "-" + d.getDate();
       noofweeks++;
+      console.log('string date check: ', startDateString);
       d.setDate(d.getDate() - 7);
     }
   }
+  else if (mode.localeCompare('monthly') == 0) {
+    let noofmonths = 0;
+    d.setDate(d.getDate() - 30);
 
-  fetch("https://cc.gizmosmart.io/iot/1.6/public/getUptimeDowntime?type=gl&from=" + startDateString + "&to=" + endDateString + "&business_name=fincare").then(res => {
+    while (d >= new Date('2022-12-7') && noofmonths <= 6) {
+      startDateString = d.getFullYear() + "-" + (d.getMonth() + 1) + "-" + d.getDate();
+      noofmonths++;
+      console.log('string date check: ', startDateString);
+      d.setDate(d.getDate() - 30);
+    }
+    if (startDateString == '') {
+      startDateString = '2022-12-07';
+    }
+  }
+
+  fetch("https://cc.gizmosmart.io/iot/1.6/public/getUptimeDowntime?type="+type+"&from=" + startDateString + "&to=" + endDateString + "&business_name=fincare").then(res => {
     return res.json();
   })
     .then(data => {
@@ -41,28 +58,91 @@ function runGlUptime(mode) {
       let endDate = new Date(endDateString);
       let keyArray = [];
       let valueArray = [];
-      let count = 1;
 
 
       for (let i = 0; i < data.data.length; i++) {
         const d = new Date(data.data[i].created_at);
+        d.setDate(d.getDate() - 1);
         // d.setDate(d.getDate() - 1);
         let stringDate = d.getFullYear() + '-' + (d.getMonth() + 1) + '-' + d.getDate();
         inMap.set(stringDate, inMap.has(stringDate) ? inMap.get(stringDate) + (Number(data.data[i].uptime) / 100) * 24 : (Number(data.data[i].uptime) / 100) * 24);
         inCount.set(stringDate, inCount.has(stringDate) ? inCount.get(stringDate) + 1 : 0 + 1);
       }
 
-      let noofweeks = 0;
-      while (traverseDate <= endDate) {
-        let stringDate = traverseDate.getFullYear() + '-' + (traverseDate.getMonth() + 1) + '-' + traverseDate.getDate();
-        console.log("string date: ", stringDate);
-        if (inCount.has(stringDate)) {
-          keyArray[count] = stringDate;
-          valueArray[count] = Math.round((inMap.get(stringDate) / (inCount.get(stringDate) * 24)) * 10000) / 100;
-          noofweeks++;
+      let noofdays = 0;
+      let weeklycount = 0;
+      let weeklySum = 0;
+      let monthlycount = 0;
+      let monthlySum = 0;
+      let count = 0;
+
+      if (mode.localeCompare('daily') == 0) {
+        while (traverseDate <= endDate) {
+          let stringDate = traverseDate.getFullYear() + '-' + (traverseDate.getMonth() + 1) + '-' + traverseDate.getDate();
+          console.log("string date: ", stringDate);
+          if (inCount.has(stringDate)) {
+            keyArray[count] = stringDate;
+            valueArray[count] = Math.round((inMap.get(stringDate) / (inCount.get(stringDate) * 24)) * 10000) / 100;
+          }
+          traverseDate.setDate(traverseDate.getDate() + 1);
+          count++;
         }
-        traverseDate.setDate(traverseDate.getDate() + 1);
-        count++;
+      }
+      else if (mode.localeCompare('weekly') == 0) {
+        while (traverseDate <= endDate) {
+          let stringDate = traverseDate.getFullYear() + '-' + (traverseDate.getMonth() + 1) + '-' + traverseDate.getDate();
+          console.log("string date sample: ", stringDate);
+          console.log('status: ', inMap.has(stringDate));
+          console.log('test1');
+          do {
+            console.log('test2', noofdays);
+            weeklySum += inMap.get(stringDate);
+            weeklycount += inCount.get(stringDate);
+            console.log('weekly check', weeklySum);
+            console.log('weekly check date', stringDate);
+            noofdays++;
+            traverseDate.setDate(traverseDate.getDate() + 1);
+            stringDate = traverseDate.getFullYear() + '-' + (traverseDate.getMonth() + 1) + '-' + traverseDate.getDate();
+          } while (noofdays % 7 != 0 && traverseDate <= endDate);
+
+          console.log('weekly sum', weeklySum);
+          keyArray[Math.floor(noofdays / 7) - 1] = mode + Math.floor(noofdays / 7);
+          valueArray[Math.floor(noofdays / 7) - 1] = Math.round((weeklySum / (weeklycount * 24)) * 10000) / 100;
+          weeklySum = 0;
+          weeklycount = 0;
+        }
+      }
+      else if (mode.localeCompare('monthly') == 0) {
+        while (traverseDate <= endDate) {
+          let stringDate = traverseDate.getFullYear() + '-' + (traverseDate.getMonth() + 1) + '-' + traverseDate.getDate();
+          // console.log("string date sample: ", stringDate);
+          // console.log('status: ', inMap.has(stringDate));
+          // console.log('test1');
+          console.log("start: ", startDateString);
+          console.log("end: ", endDateString);
+          do {
+            // console.log('test2');
+            monthlySum += inMap.get(stringDate);
+            monthlycount += inCount.get(stringDate);
+            noofdays++;
+            traverseDate.setDate(traverseDate.getDate() + 1);
+            stringDate = traverseDate.getFullYear() + '-' + (traverseDate.getMonth() + 1) + '-' + traverseDate.getDate();
+            // console.log('monthly sum: ',monthlySum);
+          } while (noofdays % 30 != 0 && traverseDate <= endDate);
+
+          // console.log('monthly sum: ',monthlySum);
+          if (noofdays < 30) {
+            keyArray[Math.floor(noofdays / 30)] = mode + Math.floor(noofdays / 30)+1;
+            valueArray[Math.floor(noofdays / 30)] = Math.round((monthlySum / (monthlycount * 24)) * 10000) / 100;
+          }
+          else {
+            keyArray[Math.floor(noofdays / 30) - 1] = mode + Math.floor(noofdays / 30);
+            valueArray[Math.floor(noofdays / 30) - 1] = Math.round((monthlySum / (monthlycount * 24)) * 10000) / 100;
+          }
+
+          monthlySum = 0;
+          monthlycount = 0;
+        }
       }
 
       console.log('keyarray: ', keyArray);
