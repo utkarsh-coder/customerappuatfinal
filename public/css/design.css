@@ -636,6 +636,10 @@ footer .menuItems img {
   right: 0;
 }
 
+.dropdown-align-filter button {
+  background-color: transparent !important;
+}
+
 .tabspage .nav-tabs .nav-link {
   font-size: 16px;
   color: #212529;

@@ -190,7 +190,7 @@
                                     id=""
                                 />
                                 <div class="dropdown dropdown-align-filter">
-                                    <button class="btn btn-secondary" type="button" id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false">
+                                    <button class="btn btn-secondary p-1" type="button" id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false">
                                         <i class="bi bi-funnel"></i>
                                     </button>
                                     <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
