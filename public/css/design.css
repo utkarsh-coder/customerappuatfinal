@@ -636,12 +636,12 @@ footer .menuItems img {
   right: 0;
 }
 
-.dropdown-align-filter button {
+.dropdown-align-filter button.btn-secondary {
   background-color: transparent !important;
   color: #000;
 }
 
-.dropdown-align-filter button:hover {
+.dropdown-align-filter button.btn-secondary:hover {
   color: var(--primary-500);
 }
 
