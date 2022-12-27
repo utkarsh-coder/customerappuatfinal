@@ -533,6 +533,24 @@ top: -12px;
 .nav-tabs .nav-link{
     margin-bottom: 0;
 }
+.dropdown-align-filter{
+    position: absolute;
+    top: 6px;
+    right: 8px;
+button.btn-secondary{
+    background-color: transparent !important;
+    color: #000;
+    border: none;
+    &:focus{
+        outline:none !important;
+        box-shadow:none !important;
+    }
+    &:hover{
+        color:var(--primary-500);
+        border: none;
+    }
+}
+}
 
 .tabspage{
 

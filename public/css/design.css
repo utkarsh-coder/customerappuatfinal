@@ -350,8 +350,8 @@ h4 {
 footer {
   display: -ms-grid;
   display: grid;
-  -ms-grid-columns: 1fr 1fr 1fr; /*1fr*/
-      grid-template-columns: 1fr 1fr 1fr; /*1fr*/
+  -ms-grid-columns: 1fr 1fr 1fr 1fr;
+      grid-template-columns: 1fr 1fr 1fr 1fr;
   gap: 24px;
   text-align: center;
   padding: 10px 16px;
@@ -628,6 +628,29 @@ footer .menuItems img {
 
 .nav-tabs .nav-link {
   margin-bottom: 0;
+}
+
+.dropdown-align-filter {
+  position: absolute;
+  top: 6px;
+  right: 8px;
+}
+
+.dropdown-align-filter button.btn-secondary {
+  background-color: transparent !important;
+  color: #000;
+  border: none;
+}
+
+.dropdown-align-filter button.btn-secondary:focus {
+  outline: none !important;
+  -webkit-box-shadow: none !important;
+          box-shadow: none !important;
+}
+
+.dropdown-align-filter button.btn-secondary:hover {
+  color: var(--primary-500);
+  border: none;
 }
 
 .tabspage .nav-tabs .nav-link {
