@@ -194,11 +194,27 @@
                                         <i class="bi bi-funnel"></i>
                                     </button>
                                     <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
-                                      <li><a class="dropdown-item" href="#">All</a></li>
-                                      <li><a class="dropdown-item" href="#">East</a></li>
-                                      <li><a class="dropdown-item" href="#">West</a></li>
-                                      <li><a class="dropdown-item" href="#">North</a></li>
-                                      <li><a class="dropdown-item" href="#">south</a></li>
+                                      <li><div class="form-check dropdown-item">
+  <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
+  <label class="form-check-label" for="flexCheckDefault">
+    All
+  </label>
+</div>
+</li>
+                                      <li><div class="form-check dropdown-item">
+  <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
+  <label class="form-check-label" for="flexCheckDefault">
+   East
+  </label>
+</div>
+</li>
+<li><div class="form-check dropdown-item">
+  <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
+  <label class="form-check-label" for="flexCheckDefault">
+    West
+  </label>
+</div>
+</li>
                                     </ul>
                                 </div>
                                 
