@@ -190,36 +190,18 @@
                                     id=""
                                 />
                                 <div class="dropdown">
-                                    <button
-                                        class="btn btn-secondary dropdown-toggle"
-                                        type="button"
-                                        id="dropdownMenuButton1"
-                                        data-bs-toggle="dropdown"
-                                        aria-expanded="false"
-                                    >
+                                    <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false">
                                         <i class="bi bi-funnel"></i>
                                     </button>
-                                    <ul
-                                        class="dropdown-menu"
-                                        aria-labelledby="dropdownMenuButton1"
-                                    >
-                                        <li>
-                                            <a class="dropdown-item" href="#"
-                                                >Action</a
-                                            >
-                                        </li>
-                                        <li>
-                                            <a class="dropdown-item" href="#"
-                                                >Another action</a
-                                            >
-                                        </li>
-                                        <li>
-                                            <a class="dropdown-item" href="#"
-                                                >Something else here</a
-                                            >
-                                        </li>
+                                    <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
+                                      <li><a class="dropdown-item" href="#">All</a></li>
+                                      <li><a class="dropdown-item" href="#">East</a></li>
+                                      <li><a class="dropdown-item" href="#">West</a></li>
+                                      <li><a class="dropdown-item" href="#">North</a></li>
+                                      <li><a class="dropdown-item" href="#">south</a></li>
                                     </ul>
                                 </div>
+                                
                             </label>
                         </div>
                     </div>
