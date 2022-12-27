@@ -639,10 +639,12 @@ footer .menuItems img {
 .dropdown-align-filter button.btn-secondary {
   background-color: transparent !important;
   color: #000;
+  border: none;
 }
 
 .dropdown-align-filter button.btn-secondary:hover {
   color: var(--primary-500);
+  border: none;
 }
 
 .tabspage .nav-tabs .nav-link {

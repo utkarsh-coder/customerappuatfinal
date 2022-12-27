@@ -540,8 +540,10 @@ right: 0;
 button.btn-secondary{
     background-color: transparent !important;
     color: #000;
+    border: none;
     &:hover{
         color:var(--primary-500);
+        border: none;
     }
 }
 }
