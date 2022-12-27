@@ -631,7 +631,7 @@ footer .menuItems img {
 }
 
 .dropdown-align-filter {
-  position: absolute;
+  position: absolute !important;
   top: 0px;
   right: 0;
 }
