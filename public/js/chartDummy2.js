@@ -31,15 +31,15 @@ var myChartdummy2 = echarts.init(chartDomdummy2);
 var optiondummy2;
 
 let dIn = new Date();
-dIn.setDate(d.getDate() - 1);
+dIn.setDate(dIn.getDate() - 1);
 let stringDateIn = dIn.getFullYear() + "-" + (dIn.getMonth() + 1) + "-" + dIn.getDate();
 console.log('checking today date:  ', stringDateIn);
 
-fetch("https://cc.gizmosmart.io/iot/1.6/public/getUptimeDowntime?type=in&from=2022-12-7&to=" + stringDate + "&business_name=fincare").then(res => {
+fetch("https://cc.gizmosmart.io/iot/1.6/public/getUptimeDowntime?type=in&from=2022-12-7&to=" + stringDateIn + "&business_name=fincare").then(res => {
   return res.json();
 })
   .then(data => {
-    console.log(data.data);
+    console.log('hey', data.data);
 
     let inMap = new Map();
     let inCount = new Map();
@@ -75,26 +75,44 @@ fetch("https://cc.gizmosmart.io/iot/1.6/public/getUptimeDowntime?type=in&from=20
     console.log('inmap: ', inMap);
     console.log('incount: ', inCount);
 
-    // optiondummy = {
-    //   xAxis: [{
-    //     type: 'category',
-    //     axisLabel: {
-    //       rotate: 70
-    //     },
-    //     data: keyArray
-    //   }],
-    //   yAxis: {
-    //     type: 'value'
-    //   },
-    //   series: [
-    //     {
-    //       data: valueArray,
-    //       type: 'line'
-    //     }
-    //   ]
-    // };
-
-    // optiondummy && myChartdummy.setOption(optiondummy);
+    optiondummy2 = {
+      title: {
+        text: ''
+      },
+      tooltip: {
+        trigger: 'axis'
+      },
+      legend: {
+        data: ['Uptime']
+      },
+      grid: {
+        left: '3%',
+        right: '4%',
+        bottom: '3%',
+        containLabel: true
+      },
+      toolbox: {
+        feature: {
+          saveAsImage: {}
+        }
+      },
+      xAxis: {
+        type: 'category',
+        boundaryGap: false,
+        data: keyArray
+      },
+      yAxis: {
+        type: 'value'
+      },
+      series: [
+        {
+          name: 'Uptime',
+          type: 'line',
+          stack: 'Total',
+          data: valueArray
+        }
+      ]
+    };
 
     // optiondummy2 = {
     //   title: {
@@ -156,30 +174,7 @@ fetch("https://cc.gizmosmart.io/iot/1.6/public/getUptimeDowntime?type=in&from=20
     //   ]
     // };
 
-    // optiondummy2 && myChartdummy2.setOption(optiondummy2);
-
-
-    // myChartdummy2.setOption({
-    //   xAxis: {
-    //     data: [1,2,3],
-    //     axisLabel: {
-    //       rotate: 70
-    //     },
-    //   },
-    //   yAxis: {
-    //   },
-    //   brush: {
-    //     toolbox: ['lineX'],
-    //     type: 'lineX',
-    //   },
-    //   series: [{
-    //     type: 'line', // changing this to scatter or other types makes the brush selection work
-    //     data: [1,2,3]
-    //   }]
-    // });
-
-    // myChartdummy2.setOption(option2);
-
+    optiondummy2 && myChartdummy2.setOption(optiondummy2);
 
   })
   .catch(error => console.log('ERROR: ', error));

@@ -110,6 +110,10 @@
         function switchNetworkUptime(element) {
             console.log("switched.........", element.value);
         }
+
+        function switchAlarmPanelUptime(element){
+            console.log("switched.........", element.value);
+        }
     </script>
 
     <form id="deviceListForm" action="{{ url('/') }}/deviceList" method="post" class="primeContainer">
@@ -211,7 +215,7 @@
                         </div>
                     </div>
                 </div>
-                
+
                 <div class="col-10 mt-4 mb-3">
                     <h3>NVR Status</h3>
                 </div>
@@ -244,34 +248,33 @@
                 <div class="grid-row grid-row-col-1 mt-2 mb-3 networdHelth" style="height: 400px">
                     <div class="card" style="height: 400px">
                         <div class="card-body site-status px-0">
-                            <select onchange="switchNetworkUptime(this)" name="cars" id="cars">
+                            <select onchange="switchNetworkUptime(this)" class="form-select selectNewStyle ms-auto me-2">
                                 <option value="daily">Daily</option>
                                 <option value="weekly">Weekly</option>
                                 <option value="monthly">Monthly</option>
                             </select>
                             <div class="notificationContainer"></div>
-                            <div id="mainDummy" class="d-flex flex-column justify-content-between h-100">testing its visibility !!</div>
+                            <div id="mainDummy" class="d-flex flex-column justify-content-between h-100"></div>
                         </div>
                     </div>
                 </div>
 
-                <!-- <div class="col-10 mt-3">
+                <div class="col-10 mt-3">
                     <h3>Alarm Panel Uptime</h3>
                 </div>
                 <div class="grid-row grid-row-col-1 mt-2 mb-3 networdHelth" style="height: 440px">
                     <div class="card" style="height: 440px">
                         <div class="card-body site-status">
-                            <select class="form-select selectNewStyle ms-auto me-2" aria-label="Default select example">
-                                <option selected>Select</option>
-                                <option value="1">Daily</option>
-                                <option value="2">Monthly</option>
-                                <option value="3">Yearly</option>
+                            <select onchange="switchAlarmPanelUptime(this)" class="form-select selectNewStyle ms-auto me-2">
+                                <option selected value="daily">Daily</option>
+                                <option value="weekly">Weekly</option>
+                                <option value="monthly">Monthly</option>
                             </select>
                             <div class="notificationContainer"></div>
-                            <div id="mainDummy2" class="d-flex flex-column justify-content-between h-100">checking the data</div>
+                            <div id="mainDummy2" class="d-flex flex-column justify-content-between h-100"></div>
                         </div>
                     </div>
-                </div> -->
+                </div>
 
                 <div class="col-10 mt-4 mb-3">
                     <h3>Compliance Status</h3>
@@ -715,8 +718,8 @@
     <script src="js/doughnut6.js"></script>
     <script src="js/doughnut7.js"></script>
     <script src="js/doughnut8.js"></script>
-    <!-- <script src="js/chartDummy.js"></script>
-    <script src="js/chartDummy2.js"></script> -->
+    <script src="js/chartDummy.js"></script>
+    <script src="js/chartDummy2.js"></script>
     <script src="js/home.js"></script>
 </body>
 
