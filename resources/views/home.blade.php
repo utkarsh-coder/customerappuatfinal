@@ -189,7 +189,7 @@
                                     class="searchBar"
                                     id=""
                                 />
-                                <div class="dropdown dropdown-align-filter">
+                                <div class="dropdown ropdown-align-filter">
                                     <button class="btn btn-secondary" type="button" id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false">
                                         <i class="bi bi-funnel"></i>
                                     </button>
