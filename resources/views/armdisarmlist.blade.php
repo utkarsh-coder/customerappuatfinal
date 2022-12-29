@@ -56,9 +56,9 @@
     <script>
         function triggerState(cust_hub_id, state) {
             console.log('hi IN !'+cust_hub_id+"    "+state);
-            console.log("http://uat.gizmosmart.io/amit/iotmax/sendRelayOffCommand?cust_hub_id=" + cust_hub_id + "&type=" + state);
-            fetch("http://uat.gizmosmart.io/amit/iotmax/sendRelayOffCommand?cust_hub_id=7885&type=arm").then(res => {
-                console.log('response no prior: ',res.json());
+            console.log("https://cc.gizmosmart.io/iot/1.6/public/scheduleINCommand?cust_hub_id=" + cust_hub_id + "&type=" + state);
+            fetch("http://cc.gizmosmart.io/iot/1.6/public/scheduleINCommand?cust_hub_id=" + cust_hub_id + "&type=" + state).then(res => {
+                // console.log('response no prior: ',JSON.stringify(res.json()));
                 return res.json();
                 })
                 .then(data => {

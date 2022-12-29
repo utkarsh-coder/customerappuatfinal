@@ -123,6 +123,10 @@
             console.log("switched.........", element.value);
             runUptime('in', 'mainDummy2', JSON.stringify(element.value).slice(1, -1));
         }
+
+        function run(){
+            console.log('hello igzy! check mode');
+        }
     </script>
 
     <form id="deviceListForm" action="{{ url('/') }}/deviceList" method="post" class="primeContainer">
@@ -160,7 +164,7 @@
                                 <button class="btn btn-secondary p-1" type="button" id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false">
                                     <i class="bi bi-funnel"></i>
                                 </button>
-                                <ul class="dropdown-menu px-2" aria-labelledby="dropdownMenuButton1">
+                                <ul onchange="run()" class="dropdown-menu px-2" aria-labelledby="dropdownMenuButton1">
                                     <li>
                                         <div class="form-check ">
                                             <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
@@ -198,6 +202,14 @@
                                             <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
                                             <label class="form-check-label" for="flexCheckDefault">
                                                 South
+                                            </label>
+                                        </div>
+                                    </li>
+                                    <li>
+                                        <div class="form-check ">
+                                            <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
+                                            <label class="form-check-label" for="flexCheckDefault">
+                                                Central
                                             </label>
                                         </div>
                                     </li>
