@@ -99,6 +99,10 @@ class CustomerController extends Controller
         return view("alarmpanellist");
     }
 
+    public function armDisarmList(){
+        return view("armdisarmlist");
+    }
+
     public function verify(Request $request)
     {
         // $customers = new customers();

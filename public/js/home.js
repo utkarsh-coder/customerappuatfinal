@@ -11,6 +11,10 @@ $(document).ready(function () {
         window.location.href = document.getElementById('fetchHost').innerHTML + "/alarmPanelList";
     });
 
+    document.getElementById('cardInArmDisarm').addEventListener("click", function () {
+        window.location.href = document.getElementById('fetchHost').innerHTML + "/armDisarmList";
+    });
+
     // http://54.197.121.111:8001/iot/1.6/public/getSiteHealthStatus?business_id=193
     console.log('printing data to check document ready function');
 

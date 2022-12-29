@@ -173,6 +173,14 @@
                                         <div class="form-check ">
                                             <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
                                             <label class="form-check-label" for="flexCheckDefault">
+                                                North
+                                            </label>
+                                        </div>
+                                    </li>
+                                    <li>
+                                        <div class="form-check ">
+                                            <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
+                                            <label class="form-check-label" for="flexCheckDefault">
                                                 East
                                             </label>
                                         </div>
@@ -210,7 +218,7 @@
                     <div id="cardIn" class="card">
                         <div class="card-body site-status graphsReverse">
                             <div id="main1" class="d-flex flex-column justify-content-between autoheight">
-                                <img src="https://cdn-icons-png.flaticon.com/512/5555/5555775.png" class="img-flude" />
+                                <!-- <img src="https://cdn-icons-png.flaticon.com/512/5555/5555775.png" class="img-flude" /> -->
                             </div>
                             <div class="notificationContainer">
                                 <p id="inonlinecount" class="notificationContent br-right">
@@ -224,7 +232,7 @@
                     </div>
 
                     <div class="card">
-                        <div class="card-body site-status">
+                        <div id="cardInArmDisarm" class="card-body site-status">
                             <div id="main2" class="d-flex flex-column justify-content-between autoheight"></div>
                             <div class="notificationContainer">
                                 <p id="armcount" class="notificationContent br-right">
