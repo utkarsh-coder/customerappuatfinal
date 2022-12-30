@@ -218,7 +218,7 @@ flex-direction: column;
         gap:6px;
         &-content{
             flex: 1 1 100%;
-
+            max-width: calc(100% - 100px);
         }
         &-icon{
             flex: 1 1 10%;
@@ -305,7 +305,7 @@ grid-template-rows: 100px;
 
 footer{
     display: grid;
-    grid-template-columns: 1fr 1fr 1fr 1fr;
+    grid-template-columns: 1fr 1fr 1fr ;
     gap:24px;
     text-align: center;
     padding:10px 16px;
