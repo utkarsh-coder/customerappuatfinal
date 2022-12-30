@@ -593,3 +593,15 @@ button.btn-secondary{
         }
     }
 }
+.dropdown-align-filter ul.dropdown-menu {
+    li{
+        padding: 0.25rem 0px;
+border-bottom: 1px solid #f2efef;
+font-size: 14px;
+
+&:nth-last-child(1){
+    border-bottom:none;
+}
+
+    }
+}
