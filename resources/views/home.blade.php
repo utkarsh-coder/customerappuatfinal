@@ -167,7 +167,7 @@
                                 <ul onchange="run()" class="dropdown-menu px-2" aria-labelledby="dropdownMenuButton1">
                                     <li>
                                         <div class="form-check ">
-                                            <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
+                                            <input class="form-check-input" type="radio" value="" id="flexCheckDefault">
                                             <label class="form-check-label" for="flexCheckDefault">
                                                 All
                                             </label>
@@ -175,7 +175,7 @@
                                     </li>
                                     <li>
                                         <div class="form-check ">
-                                            <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
+                                            <input class="form-check-input" type="radio" value="" id="flexCheckDefault">
                                             <label class="form-check-label" for="flexCheckDefault">
                                                 North
                                             </label>

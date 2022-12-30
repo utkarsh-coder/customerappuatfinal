@@ -704,4 +704,8 @@ footer .menuItems img {
 .dropdown-align-filter ul.dropdown-menu li:nth-last-child(1) {
   border-bottom: none;
 }
+
+.form-check-input {
+  accent-color: #0361a1;
+}
 /*# sourceMappingURL=design.css.map */
