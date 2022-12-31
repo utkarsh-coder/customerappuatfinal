@@ -91,16 +91,43 @@ class CustomerController extends Controller
         return view('usermapping');
     }
 
-    public function deviceList(Request $request){
+    public function deviceList(Request $request)
+    {
         return view('devicelist', ['type' => $request->type, 'status' => $request->status]);
     }
 
-    public function alarmPanelList(){
+    public function alarmPanelList()
+    {
         return view("alarmpanellist");
     }
 
-    public function armDisarmList(){
+    public function armDisarmList()
+    {
         return view("armdisarmlist");
+    }
+
+    public function tiggerArmDisarm(Request $request)
+    {
+        $curl = curl_init();
+
+        curl_setopt_array($curl, array(
+            CURLOPT_URL => 'http://cc.gizmosmart.io/iot/1.6/public/scheduleINCommand?cust_hub_id='.$request->cust_hub_id.'&cmd='.$request->state,
+            CURLOPT_RETURNTRANSFER => true,
+            CURLOPT_ENCODING => '',
+            CURLOPT_MAXREDIRS => 10,
+            CURLOPT_TIMEOUT => 0,
+            CURLOPT_FOLLOWLOCATION => true,
+            CURLOPT_HTTP_VERSION => CURL_HTTP_VERSION_1_1,
+            CURLOPT_CUSTOMREQUEST => 'GET',
+            CURLOPT_HTTPHEADER => array(
+                'Cookie: JSESSIONID=eyJpdiI6IlViMEhBZGcrTmlEakZFVzJkYXp2XC9BPT0iLCJ2YWx1ZSI6InNxYThkQmpjQWRGVWVDK2xpTzBlNnVtZlFIRVF5SkpBUEhudDl4WlRWWDdleXM5WkprYjFxd1dWMlNSSFEwRTRpREtLY0JLRFE2dytFOXdveWZvSWx3PT0iLCJtYWMiOiIyYWFiMjFmOTU4Y2U3ZjE5MTRmNWU2MWM0NTY3MjQ5ZGRiODJlNjNjNTA1ZTA0MjM5MDgyMjZjNmFhNTYzYmM4In0%3D'
+            ),
+        ));
+
+        $response = curl_exec($curl);
+
+        curl_close($curl);
+        echo $response;
     }
 
     public function verify(Request $request)
@@ -282,16 +309,15 @@ class CustomerController extends Controller
     public function getSensorData()
     {
         $siteName = 'icici';
-        if(session()->get('business_id') == 193){
+        if (session()->get('business_id') == 193) {
             $siteName = 'fincare';
-        }
-        else if(session()->get('business_id') == 257){
+        } else if (session()->get('business_id') == 257) {
             $siteName = 'icici';
         }
         $curl = curl_init();
 
         curl_setopt_array($curl, array(
-            CURLOPT_URL => 'https://crm.igzy.com/get_faulty_sensors.php?account_name='.$siteName,
+            CURLOPT_URL => 'https://crm.igzy.com/get_faulty_sensors.php?account_name=' . $siteName,
             CURLOPT_RETURNTRANSFER => true,
             CURLOPT_ENCODING => '',
             CURLOPT_MAXREDIRS => 10,

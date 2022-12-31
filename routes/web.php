@@ -111,7 +111,7 @@ Route::get("/getSensorData", [CustomerController::class, 'getSensorData']);
 Route::post("/deviceList", [CustomerController::class, 'deviceList']);
 Route::get("/alarmPanelList", [CustomerController::class, 'alarmPanelList'])->middleware('guard');
 Route::get("/armDisarmList", [CustomerController::class, 'armDisarmList'])->middleware('guard');
-
+Route::post("/tiggerArmDisarm", [CustomerController::class, 'tiggerArmDisarm']);
 
 Route::post('/send-mail', [MailController::class, 'sendOTPMail']);
 Route::post("/verifyotp", [MailController::class, "verifyOTP"]);

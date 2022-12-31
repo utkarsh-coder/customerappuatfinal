@@ -20,7 +20,7 @@ fetch(document.getElementById('fetchHost').innerHTML + "/getDeviceList", {
         console.log('device List data in: ', data);
 
         for (let i = 0; i < data.data.length; i++) {
-            inDisarmListString += `<li><div class="d-flex w-100 align-items-start flex-nowrap gap-1"><div class="listData"><h5>${data.data[i].location_name}</h5><div class="d-flex gap-2 align-items-start"><p>${data.data[i].address.slice(0,1).toUpperCase()+data.data[i].address.slice(1).toLowerCase()} </p><span class="badge bg-primary" onclick="triggerState(7885, 'arm')">Arm</span></div></div></div></li>`;
+            inDisarmListString += `<li><div class="d-flex w-100 align-items-start flex-nowrap gap-1"><div class="listData"><h5>${data.data[i].location_name}</h5><div class="d-flex gap-2 align-items-start"><p>${data.data[i].address.slice(0,1).toUpperCase()+data.data[i].address.slice(1).toLowerCase()} </p><span class="badge bg-primary" onclick="triggerState(7975, 'arm')">Arm</span></div></div></div></li>`;
         }
 
         $(document).ready(function () {
@@ -47,7 +47,7 @@ fetch(document.getElementById('fetchHost').innerHTML + "/getDeviceList", {
         console.log('device List data in: ', data);
 
         for (let i = 0; i < data.data.length; i++) {
-            inArmListString += `<li><div class="d-flex w-100 align-items-start flex-nowrap gap-1"><div class="listData"><h5>${data.data[i].location_name}</h5><div class="d-flex gap-2 align-items-start"><p>${data.data[i].address.slice(0,1).toUpperCase()+data.data[i].address.slice(1).toLowerCase()}</p><span class="badge bg-danger" onclick="triggerState(7885, 'disarm')">Disarm</span></div></div></div></li>`;
+            inArmListString += `<li><div class="d-flex w-100 align-items-start flex-nowrap gap-1"><div class="listData"><h5>${data.data[i].location_name}</h5><div class="d-flex gap-2 align-items-start"><p>${data.data[i].address.slice(0,1).toUpperCase()+data.data[i].address.slice(1).toLowerCase()}</p><span class="badge bg-danger" onclick="triggerState(7975, 'disarm')">Disarm</span></div></div></div></li>`;
         }
 
         $(document).ready(function () {

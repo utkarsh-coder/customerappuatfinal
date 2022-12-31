@@ -22,6 +22,7 @@ class VerifyCsrfToken extends Middleware
         "sitelist",
         "getDeviceList",
         "getTableData",
-        "deviceList"
+        "deviceList",
+        "tiggerArmDisarm"
     ];
 }

@@ -55,11 +55,20 @@
 
     <script>
         function triggerState(cust_hub_id, state) {
-            console.log('hi IN !'+cust_hub_id+"    "+state);
+            console.log('hi IN !' + cust_hub_id + "    " + state);
             console.log("https://cc.gizmosmart.io/iot/1.6/public/scheduleINCommand?cust_hub_id=" + cust_hub_id + "&type=" + state);
-            fetch("http://cc.gizmosmart.io/iot/1.6/public/scheduleINCommand?cust_hub_id=" + cust_hub_id + "&type=" + state).then(res => {
-                // console.log('response no prior: ',JSON.stringify(res.json()));
-                return res.json();
+            fetch(document.getElementById('fetchHost').innerHTML+"/tiggerArmDisarm", {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json'
+                    },
+                    body: JSON.stringify({
+                        'cust_hub_id': cust_hub_id,
+                        'state': state
+                    })
+                }).then(res => {
+                    // console.log('response no prior: ',JSON.stringify(res.json()));
+                    return res.json();
                 })
                 .then(data => {
                     console.log('state change status:  ', data);

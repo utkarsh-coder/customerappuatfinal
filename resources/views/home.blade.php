@@ -124,8 +124,8 @@
             runUptime('in', 'mainDummy2', JSON.stringify(element.value).slice(1, -1));
         }
 
-        function run(){
-            console.log('hello igzy! check mode');
+        function zoneChange(value){
+            console.log('hello igzy! check mode', value);
         }
     </script>
 
@@ -164,10 +164,10 @@
                                 <button class="btn btn-secondary p-1" type="button" id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false">
                                     <i class="bi bi-funnel"></i>
                                 </button>
-                                <ul onchange="run()" class="dropdown-menu px-2" aria-labelledby="dropdownMenuButton1">
+                                <ul class="dropdown-menu px-2" aria-labelledby="dropdownMenuButton1">
                                     <li>
                                         <div class="form-check ">
-                                            <input class="form-check-input" type="radio" value="" id="flexCheckDefault">
+                                            <input onclick="zoneChange('all')" class="form-check-input" type="radio" value="all" id="all" name="zone">
                                             <label class="form-check-label" for="flexCheckDefault">
                                                 All
                                             </label>
@@ -175,7 +175,7 @@
                                     </li>
                                     <li>
                                         <div class="form-check ">
-                                            <input class="form-check-input" type="radio" value="" id="flexCheckDefault">
+                                            <input onclick="zoneChange('north')" class="form-check-input" type="radio" value="north" id="north" name="zone">
                                             <label class="form-check-label" for="flexCheckDefault">
                                                 North
                                             </label>
@@ -183,7 +183,7 @@
                                     </li>
                                     <li>
                                         <div class="form-check ">
-                                            <input class="form-check-input" type="radio" value="" id="flexCheckDefault">
+                                            <input onclick="zoneChange('east')" class="form-check-input" type="radio" value="east" id="east" name="zone">
                                             <label class="form-check-label" for="flexCheckDefault">
                                                 East
                                             </label>
@@ -191,7 +191,7 @@
                                     </li>
                                     <li>
                                         <div class="form-check">
-                                            <input class="form-check-input" type="radio" value="" id="flexCheckDefault">
+                                            <input onclick="zoneChange('west')" class="form-check-input" type="radio" value="west" id="west" name="zone">
                                             <label class="form-check-label" for="flexCheckDefault">
                                                 West
                                             </label>
@@ -199,7 +199,7 @@
                                     </li>
                                     <li>
                                         <div class="form-check">
-                                            <input class="form-check-input" type="radio" value="" id="flexCheckDefault">
+                                            <input onclick="zoneChange('south')" class="form-check-input" type="radio" value="south" id="south" name="zone">
                                             <label class="form-check-label" for="flexCheckDefault">
                                                 South
                                             </label>
@@ -207,7 +207,7 @@
                                     </li>
                                     <li>
                                         <div class="form-check ">
-                                            <input class="form-check-input" type="radio" value="" id="flexCheckDefault">
+                                            <input onclick="zoneChange('central')" class="form-check-input" type="radio" value="central" id="central" name="zone">
                                             <label class="form-check-label" for="flexCheckDefault">
                                                 Central
                                             </label>
