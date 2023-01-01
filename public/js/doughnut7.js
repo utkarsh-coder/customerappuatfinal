@@ -93,6 +93,7 @@ function runSensor() {
     console.log("11");
 
     option7 && myChart7.setOption(option7);
+    text7 = '';
     runHDD();
 
     // if (checkAllData == 2) {

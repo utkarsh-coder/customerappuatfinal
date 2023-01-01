@@ -119,6 +119,7 @@ function runGl() {
     console.log("11");
 
     option3 && myChart3.setOption(option3);
+    text3 = '';
     runNvr();
     // runGlPie();
 

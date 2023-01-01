@@ -93,6 +93,7 @@ function runCamera() {
     console.log("11");
 
     option6 && myChart6.setOption(option6);
+    text6 = '';
     runHDD();
     // runSensor();
 

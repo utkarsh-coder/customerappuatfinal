@@ -130,6 +130,7 @@ function runArmDisarm() {
     console.log("11");
 
     option2 && myChart2.setOption(option2);
+    text2 = '';
     runGl();
 
     // var tr = document.createElement('tr');

@@ -123,10 +123,6 @@
             console.log("switched.........", element.value);
             runUptime('in', 'mainDummy2', JSON.stringify(element.value).slice(1, -1));
         }
-
-        function zoneChange(value){
-            console.log('hello igzy! check mode', value);
-        }
     </script>
 
     <form id="deviceListForm" action="{{ url('/') }}/deviceList" method="post" class="primeContainer">
@@ -159,7 +155,7 @@
                     <div class="col-12">
                         <label for="" class="position-relative w-100">
                             <span class="searchIcon"><i class="bi bi-search"></i></span>
-                            <input type="text" name="" class="searchBar" id="" />
+                            <input type="text" name="" class="searchBar" id="searchInput" />
                             <div class="dropdown dropdown-align-filter">
                                 <button class="btn btn-secondary p-1" type="button" id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false">
                                     <i class="bi bi-funnel"></i>
@@ -167,7 +163,7 @@
                                 <ul class="dropdown-menu px-2" aria-labelledby="dropdownMenuButton1">
                                     <li>
                                         <div class="form-check ">
-                                            <input onclick="zoneChange('all')" class="form-check-input" type="radio" value="all" id="all" name="zone">
+                                            <input class="form-check-input" type="radio" value="all" id="all" name="zone">
                                             <label class="form-check-label" for="flexCheckDefault">
                                                 All
                                             </label>
@@ -175,7 +171,7 @@
                                     </li>
                                     <li>
                                         <div class="form-check ">
-                                            <input onclick="zoneChange('north')" class="form-check-input" type="radio" value="north" id="north" name="zone">
+                                            <input class="form-check-input" type="radio" value="north" id="north" name="zone">
                                             <label class="form-check-label" for="flexCheckDefault">
                                                 North
                                             </label>
@@ -183,7 +179,7 @@
                                     </li>
                                     <li>
                                         <div class="form-check ">
-                                            <input onclick="zoneChange('east')" class="form-check-input" type="radio" value="east" id="east" name="zone">
+                                            <input class="form-check-input" type="radio" value="east" id="east" name="zone">
                                             <label class="form-check-label" for="flexCheckDefault">
                                                 East
                                             </label>
@@ -191,7 +187,7 @@
                                     </li>
                                     <li>
                                         <div class="form-check">
-                                            <input onclick="zoneChange('west')" class="form-check-input" type="radio" value="west" id="west" name="zone">
+                                            <input class="form-check-input" type="radio" value="west" id="west" name="zone">
                                             <label class="form-check-label" for="flexCheckDefault">
                                                 West
                                             </label>
@@ -199,7 +195,7 @@
                                     </li>
                                     <li>
                                         <div class="form-check">
-                                            <input onclick="zoneChange('south')" class="form-check-input" type="radio" value="south" id="south" name="zone">
+                                            <input class="form-check-input" type="radio" value="south" id="south" name="zone">
                                             <label class="form-check-label" for="flexCheckDefault">
                                                 South
                                             </label>
@@ -207,7 +203,7 @@
                                     </li>
                                     <li>
                                         <div class="form-check ">
-                                            <input onclick="zoneChange('central')" class="form-check-input" type="radio" value="central" id="central" name="zone">
+                                            <input class="form-check-input" type="radio" value="central" id="central" name="zone">
                                             <label class="form-check-label" for="flexCheckDefault">
                                                 Central
                                             </label>
@@ -311,7 +307,7 @@
                 </div>
 
                 <div class="col-10 mt-3">
-                    <h3>Network Uptime</h3>
+                    <h3>Network Uptime (PAN India)</h3>
                 </div>
                 <div class="grid-row grid-row-col-1 mt-2 mb-3 networdHelth" style="height: 400px">
                     <div class="card" style="height: 400px">
@@ -328,7 +324,7 @@
                 </div>
 
                 <div class="col-10 mt-3">
-                    <h3>Alarm Panel Uptime</h3>
+                    <h3>Alarm Panel Uptime (PAN India)</h3>
                 </div>
                 <div class="grid-row grid-row-col-1 mt-2 mb-3 networdHelth" style="height: 440px">
                     <div class="card" style="height: 440px">
@@ -483,7 +479,7 @@
                     <div class="card">
                         <div class="card-body site-status">
                             <div class="d-flex flex-column justify-content-between h-100">
-                                <p class="subHeading">Faulty Sensors</p>
+                                <p class="subHeading">Faulty Sensors (PAN India)</p>
                                 <span id="faultySensorCount" class="num">...</span>
                             </div>
                         </div>

@@ -93,6 +93,7 @@ function runHDD() {
     console.log("11");
 
     option8 && myChart8.setOption(option8);
+    text8 = '';
 
     if (checkAllData == 2) {
         document.body.style.opacity = 1;

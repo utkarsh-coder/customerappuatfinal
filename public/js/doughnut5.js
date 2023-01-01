@@ -90,6 +90,7 @@ function runCompNonComp() {
     console.log("11");
 
     option5 && myChart5.setOption(option5);
+    text5 = '';
     runCamera();
 }
 

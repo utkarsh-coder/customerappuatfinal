@@ -285,8 +285,14 @@ class CustomerController extends Controller
         $curl = curl_init();
 
         // https://cc.gizmosmart.io/iot/1.6/public/getDeviceInfo?business_id=257&type=nvr&status=offline
+
+        $url = 'http://cc.gizmosmart.io/iot/1.6/public/getDeviceInfo?business_id=' . session()->get('business_id') . '&type=' . $request->typeValue . '&status=' . $request->statusValue;
+
+        if(strcmp($request->filter_type,'none') != 0){
+            $url = 'http://cc.gizmosmart.io/iot/1.6/public/getDeviceInfo?business_id=' . session()->get('business_id') . '&type=' . $request->typeValue . '&status=' . $request->statusValue.'&filter_type='.$request->filter_type.'&value='.$request->value;
+        }
         curl_setopt_array($curl, array(
-            CURLOPT_URL => 'http://cc.gizmosmart.io/iot/1.6/public/getDeviceInfo?business_id=' . session()->get('business_id') . '&type=' . $request->typeValue . '&status=' . $request->statusValue,
+            CURLOPT_URL => $url,
             CURLOPT_RETURNTRANSFER => true,
             CURLOPT_ENCODING => '',
             CURLOPT_MAXREDIRS => 10,
@@ -336,12 +342,17 @@ class CustomerController extends Controller
         return $response;
     }
 
-    public function getChartData()
+    public function getChartData(Request $request)
     {
         $curl = curl_init();
 
+        $url = 'http://cc.gizmosmart.io/iot/1.6/public/getSiteHealthStatus?business_id=' . session()->get('business_id');
+        // http://cc.gizmosmart.io/iot/1.6/public/getSiteHealthStatus?business_id=193&filter_type=zone&value=north
+        if(strcmp($request->filter_type,'none') != 0){
+            $url = 'http://cc.gizmosmart.io/iot/1.6/public/getSiteHealthStatus?business_id=' . session()->get('business_id').'&filter_type='.$request->filter_type.'&value='.$request->value;
+        }
         curl_setopt_array($curl, array(
-            CURLOPT_URL => 'http://cc.gizmosmart.io/iot/1.6/public/getSiteHealthStatus?business_id=' . session()->get('business_id'),
+            CURLOPT_URL => $url,
             CURLOPT_RETURNTRANSFER => true,
             CURLOPT_ENCODING => '',
             CURLOPT_MAXREDIRS => 10,
