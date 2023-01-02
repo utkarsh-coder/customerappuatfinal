@@ -96,6 +96,7 @@ function runHDD() {
     text8 = '';
 
     if (checkAllData == 2) {
+        checkAllData = 0;
         document.body.style.opacity = 1;
         document.getElementById('loaderImgBlack').remove();
         document.body.style.pointerEvents = "auto";

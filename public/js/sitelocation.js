@@ -45,7 +45,7 @@ fetch(document.getElementById('fetchHost').innerHTML + "/getLocationData").then(
                         //     console.log(inList);
                         // }
                         // console.log('count original:  ', dataDevices.data.length);
-                        if (checkCount == 6) {
+                        if (checkCount == 7) {
                             runProcess();
                         }
                     })
@@ -144,6 +144,9 @@ function runProcess() {
                     if (siteStatus == null) {
                         siteStatus = 'online';
                     }
+                }
+                else{
+                    console.log('nvr error part: ',name);
                 }
             }
         }

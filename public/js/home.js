@@ -5,6 +5,24 @@ console.log('running the home.js file');
 var glData = null;
 setInterval(waitAndshow, 60000);
 
+function resetTimer() {
+    minutes = 0;
+    document.getElementById("timeAgoId").innerHTML =
+        minutes + " min ago";
+}
+
+function runLoader() {
+    document.body.style.opacity = 0.4;
+    document.getElementById("loader").innerHTML = `<img id="loaderImgBlack" id="loaderimg" src="img/loaderImgBlack.gif" alt="" />`;
+
+    // const node = document.createElement("li");
+    // const textnode = document.createTextNode("Water");
+    // node.appendChild(textnode);
+    // document.getElementById("myList").appendChild(node);
+
+    document.body.style.pointerEvents = "none";
+}
+
 $(document).ready(function () {
 
     runIN('none', 'none');
@@ -20,31 +38,39 @@ $(document).ready(function () {
     });
 
     document.getElementById('searchInput').addEventListener('change', function () {
+        runLoader();
         runIN('any', document.getElementById('searchInput').value);
         fetchDeviceList('any', document.getElementById('searchInput').value);
+        resetTimer();
     });
 
     document.getElementById('all').addEventListener("click", function () {
+        runLoader();
         runIN('none', 'none');
         fetchDeviceList('none', 'none');
     });
     document.getElementById('north').addEventListener("click", function () {
+        runLoader();
         runIN('zone', 'north');
         fetchDeviceList('zone', 'north');
     });
     document.getElementById('east').addEventListener("click", function () {
+        runLoader();
         runIN('zone', 'east');
         fetchDeviceList('zone', 'east');
     });
     document.getElementById('west').addEventListener("click", function () {
+        runLoader();
         runIN('zone', 'west');
         fetchDeviceList('zone', 'west');
     });
     document.getElementById('south').addEventListener("click", function () {
+        runLoader();
         runIN('zone', 'south');
         fetchDeviceList('zone', 'south');
     });
     document.getElementById('central').addEventListener("click", function () {
+        runLoader();
         runIN('zone', 'central');
         fetchDeviceList('zone', 'central');
     });
