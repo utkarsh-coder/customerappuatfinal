@@ -62,8 +62,11 @@
 
     <script>
         $(document).ready(function() {
+            document.getElementById('all').checked = true;
             runUptime('gl', 'mainDummy', 'daily');
             runUptime('in', 'mainDummy2', 'daily');
+            sessionStorage.setItem('filter_type', 'none');
+            sessionStorage.setItem('value', 'none');
         })
         var minutes = 0;
 

@@ -38,6 +38,8 @@ $(document).ready(function () {
     });
 
     document.getElementById('searchInput').addEventListener('change', function () {
+        sessionStorage.setItem('filter_type','any');
+        sessionStorage.setItem('value',document.getElementById('searchInput').value);
         runLoader();
         runIN('any', document.getElementById('searchInput').value);
         fetchDeviceList('any', document.getElementById('searchInput').value);
@@ -45,31 +47,43 @@ $(document).ready(function () {
     });
 
     document.getElementById('all').addEventListener("click", function () {
+        sessionStorage.setItem('filter_type','none');
+        sessionStorage.setItem('value','none');
         runLoader();
         runIN('none', 'none');
         fetchDeviceList('none', 'none');
     });
     document.getElementById('north').addEventListener("click", function () {
+        sessionStorage.setItem('filter_type','zone');
+        sessionStorage.setItem('value','north');
         runLoader();
         runIN('zone', 'north');
         fetchDeviceList('zone', 'north');
     });
     document.getElementById('east').addEventListener("click", function () {
+        sessionStorage.setItem('filter_type','zone');
+        sessionStorage.setItem('value','east');
         runLoader();
         runIN('zone', 'east');
         fetchDeviceList('zone', 'east');
     });
     document.getElementById('west').addEventListener("click", function () {
+        sessionStorage.setItem('filter_type','zone');
+        sessionStorage.setItem('value','west');
         runLoader();
         runIN('zone', 'west');
         fetchDeviceList('zone', 'west');
     });
     document.getElementById('south').addEventListener("click", function () {
+        sessionStorage.setItem('filter_type','zone');
+        sessionStorage.setItem('value','south');
         runLoader();
         runIN('zone', 'south');
         fetchDeviceList('zone', 'south');
     });
     document.getElementById('central').addEventListener("click", function () {
+        sessionStorage.setItem('filter_type','zone');
+        sessionStorage.setItem('value','central');
         runLoader();
         runIN('zone', 'central');
         fetchDeviceList('zone', 'central');

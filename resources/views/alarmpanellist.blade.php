@@ -87,7 +87,7 @@
                                     </div>
                                 </div>
                             </li>
-
+                            
                             <li>
                                 <div class="d-flex w-100 align-items-start flex-nowrap gap-1">
                                     <div class="listData">
@@ -118,6 +118,10 @@
     </main>
 
     <script src="js/alarmPanelList.js"></script>
+
+    <script>
+        fetchAlarmPanel(sessionStorage.getItem('filter_type'),sessionStorage.getItem('value'));
+    </script>
 </body>
 
 </html>

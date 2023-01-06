@@ -71,6 +71,7 @@
                     return res.json();
                 })
                 .then(data => {
+                    alert(data.msg);
                     console.log('state change status:  ', data);
                 })
                 .catch(error => console.log('ERROR: ', error));
@@ -134,6 +135,9 @@
     </main>
 
     <script src="js/armDisarmList.js"></script>
+    <script>
+        fetchArmDisarm(sessionStorage.getItem('filter_type'), sessionStorage.getItem('value'));
+    </script>
 </body>
 
 </html>
