@@ -25,17 +25,15 @@ function runLoader() {
 
 $(document).ready(function () {
 
-    console.log('running check!!', document.getElementById('searchInput').value);
+    console.log('running check!!', sessionStorage.getItem('value'));
 
-    document.getElementById('searchInput').value = "goa";
-
-    if (document.getElementById('searchInput').value = '') { 
+    if (sessionStorage.getItem('value') == none) { 
         runIN('none', 'none');
         fetchDeviceList('none', 'none');
     }
     else {
-        runIN('any', document.getElementById('searchInput').value);
-        fetchDeviceList('any', document.getElementById('searchInput').value);
+        runIN('any', sessionStorage.getItem('value'));
+        fetchDeviceList('any', sessionStorage.getItem('value'));
     }
 
     document.getElementById('cardIn').addEventListener("click", function () {
@@ -46,7 +44,7 @@ $(document).ready(function () {
         window.location.href = document.getElementById('fetchHost').innerHTML + "/armDisarmList";
     });
 
-    document.getElementById('searchInput').addEventListener('input', function () {
+    document.getElementById('searchInput').addEventListener('change', function () {
         sessionStorage.setItem('filter_type', 'any');
         sessionStorage.setItem('value', document.getElementById('searchInput').value);
         runLoader();
@@ -116,6 +114,7 @@ $(document).ready(function () {
                 'typeValue': 'gl',
                 'statusValue': 'offline',
                 'filter_type': filter_type,
+                
                 'value': value
             }),
         }).then(res => {
@@ -132,7 +131,7 @@ $(document).ready(function () {
                     glListString += `<li><div class="d-flex w-100 align-items-start flex-nowrap gap-1"><div class="NotificationDate"><i class="fa-solid fa-location-dot"></i></div><div class="listData"><h5>${data.data[i].location_name}</h5><p>${data.data[i].address.slice(0, 1).toUpperCase() + data.data[i].address.slice(1).toLowerCase()}</p></div></div></li>`;
                 }
 
-                glListString += `<li class="text-center pb-0 viewAll"><a onclick="hitDeviceListPage('glOffline')" class="text-dark">All</a></li>`;
+                glListString += `<li class="text-center pb-0 viewAll"><a onclick="hitDeviceListPage('glOffline', 'Network Health (Offline)')" class="text-dark">All</a></li>`;
 
                 document.getElementById('glList').innerHTML = glListString;
 
@@ -191,7 +190,7 @@ $(document).ready(function () {
                     nvrListString += `<li><div class="d-flex w-100 align-items-start flex-nowrap gap-1"><div class="NotificationDate"><i class="fa-solid fa-location-dot"></i></div><div class="listData"><h5>${data.data[i].location_name}</h5><p>${data.data[i].address.slice(0, 1).toUpperCase() + data.data[i].address.slice(1).toLowerCase()}</p></div></div></li>`;
                 }
 
-                nvrListString += `<li class="text-center pb-0 viewAll"><a onclick="hitDeviceListPage('nvrOffline')" class="text-dark">All</a></li>`;
+                nvrListString += `<li class="text-center pb-0 viewAll"><a onclick="hitDeviceListPage('nvrOffline', 'NVR Health (Offline)')" class="text-dark">All</a></li>`;
 
                 document.getElementById('nvrList').innerHTML = nvrListString;
             })
@@ -222,7 +221,7 @@ $(document).ready(function () {
                     camerasListString += `<li><div class="d-flex w-100 align-items-start flex-nowrap gap-1"><div class="NotificationDate"><i class="fa-solid fa-location-dot"></i></div><div class="listData"><h5>${data.data[i].location_name}</h5><p>${data.data[i].address.slice(0, 1).toUpperCase() + data.data[i].address.slice(1).toLowerCase()}</p></div></div></li>`;
                 }
 
-                camerasListString += `<li class="text-center pb-0 viewAll"><a onclick="hitDeviceListPage('camerasOffline')" class="text-dark">All</a></li>`;
+                camerasListString += `<li class="text-center pb-0 viewAll"><a onclick="hitDeviceListPage('camerasOffline', 'Camera Health (Offline)')" class="text-dark">All</a></li>`;
 
                 document.getElementById('camerasList').innerHTML = camerasListString;
             })
@@ -255,7 +254,7 @@ $(document).ready(function () {
                     complianceListString += `<li><div class="d-flex w-100 align-items-start flex-nowrap gap-1"><div class="NotificationDate"><i class="fa-solid fa-location-dot"></i></div><div class="listData"><h5>${data.data[i].location_name}</h5><p>${data.data[i].address.slice(0, 1).toUpperCase() + data.data[i].address.slice(1).toLowerCase()}</p></div></div></li>`;
                 }
 
-                complianceListString += `<li class="text-center pb-0 viewAll"><a onclick="hitDeviceListPage('footageNonCompliance')" class="text-dark">All</a></li>`;
+                complianceListString += `<li class="text-center pb-0 viewAll"><a onclick="hitDeviceListPage('footageNonCompliance', 'Non-Compliance Health')" class="text-dark">All</a></li>`;
 
                 document.getElementById('nonCompList').innerHTML = complianceListString;
             })

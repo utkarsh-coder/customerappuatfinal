@@ -55,7 +55,7 @@
     <main>
         <header class="p-3 bg-primary d-flex appHeader align-items-center text-white">
             <!-- <a href="#"><i class="bi bi-arrow-left"></i></a> -->
-            <h6>Network Health</h6>
+            <h6 id="deviceType">Device List</h6>
             <div class="searchBoxBar ms-auto">
                 <i class="bi bi-search"></i>
             </div>

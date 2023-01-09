@@ -110,7 +110,8 @@
             document.getElementById(id).classList.add("active-state");
         }
 
-        function hitDeviceListPage(type) {
+        function hitDeviceListPage(type, deviceTypeHeadingText) {
+            sessionStorage.setItem('deviceTypeHeadingText',deviceTypeHeadingText);
             document.getElementById("type").value = type;
             document.getElementById("status").value = "non-compliance";
             console.log("This is the data of the site:  ", "offline");
