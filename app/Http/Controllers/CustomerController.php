@@ -201,6 +201,7 @@ class CustomerController extends Controller
         //         return "incorrect credentials";
         //     }
         // }
+        // echo '<script type="text/JavaScript">window.localStorage.removeItem("filter_type");window.localStorage.removeItem("value");</script>';
         return view("home");
     }
 

@@ -136,7 +136,7 @@
 
     <script src="js/armDisarmList.js"></script>
     <script>
-        fetchArmDisarm(sessionStorage.getItem('filter_type'), sessionStorage.getItem('value'));
+        fetchArmDisarm(localStorage.getItem('filter_type'), localStorage.getItem('value'));
     </script>
 </body>
 

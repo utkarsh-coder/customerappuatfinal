@@ -25,19 +25,20 @@ function runLoader() {
 
 $(document).ready(function () {
 
-    runIN('none', 'none');
-    fetchDeviceList('none', 'none');
+    // runIN('none', 'none');
+    // fetchDeviceList('none', 'none');
 
-    // console.log('running check!!', document.getElementById('searchInput').value);
+    console.log('running check!!', localStorage.getItem('value'));
 
-    // if (sessionStorage.getItem('value') == null) {
-    //     runIN('none', 'none');
-    //     fetchDeviceList('none', 'none');
-    // }
-    // else {
-    //     runIN('any', sessionStorage.getItem('value'));
-    //     fetchDeviceList('any', sessionStorage.getItem('value'));
-    // }
+    if (localStorage.getItem('value') == null) {
+        runIN('none', 'none');
+        fetchDeviceList('none', 'none');
+    }
+    else {
+        document.getElementById('searchInput').value = localStorage.getItem('value');
+        runIN('any', localStorage.getItem('value'));
+        fetchDeviceList('any', localStorage.getItem('value'));
+    }
 
     document.getElementById('cardIn').addEventListener("click", function () {
         window.location.href = document.getElementById('fetchHost').innerHTML + "/alarmPanelList";
@@ -48,8 +49,8 @@ $(document).ready(function () {
     });
 
     document.getElementById('searchInput').addEventListener('change', function () {
-        sessionStorage.setItem('filter_type', 'any');
-        sessionStorage.setItem('value', document.getElementById('searchInput').value);
+        localStorage.setItem('filter_type', 'any');
+        localStorage.setItem('value', document.getElementById('searchInput').value);
         runLoader();
         runIN('any', document.getElementById('searchInput').value);
         fetchDeviceList('any', document.getElementById('searchInput').value);
@@ -61,43 +62,54 @@ $(document).ready(function () {
 
     document.getElementById('all').addEventListener("click", function () {
 
-        sessionStorage.setItem('filter_type', 'none');
-        sessionStorage.setItem('value', 'none');
+        document.getElementById('searchInput').value = '';
+        localStorage.setItem('filter_type', 'none');
+        localStorage.setItem('value', 'none');
         runLoader();
         runIN('none', 'none');
         fetchDeviceList('none', 'none');
     });
     document.getElementById('north').addEventListener("click", function () {
-        sessionStorage.setItem('filter_type', 'zone');
-        sessionStorage.setItem('value', 'north');
+
+        document.getElementById('searchInput').value = '';
+        localStorage.setItem('filter_type', 'zone');
+        localStorage.setItem('value', 'north');
         runLoader();
         runIN('zone', 'north');
         fetchDeviceList('zone', 'north');
     });
     document.getElementById('east').addEventListener("click", function () {
-        sessionStorage.setItem('filter_type', 'zone');
-        sessionStorage.setItem('value', 'east');
+
+        document.getElementById('searchInput').value = '';
+        localStorage.setItem('filter_type', 'zone');
+        localStorage.setItem('value', 'east');
         runLoader();
         runIN('zone', 'east');
         fetchDeviceList('zone', 'east');
     });
     document.getElementById('west').addEventListener("click", function () {
-        sessionStorage.setItem('filter_type', 'zone');
-        sessionStorage.setItem('value', 'west');
+
+        document.getElementById('searchInput').value = '';
+        localStorage.setItem('filter_type', 'zone');
+        localStorage.setItem('value', 'west');
         runLoader();
         runIN('zone', 'west');
         fetchDeviceList('zone', 'west');
     });
     document.getElementById('south').addEventListener("click", function () {
-        sessionStorage.setItem('filter_type', 'zone');
-        sessionStorage.setItem('value', 'south');
+
+        document.getElementById('searchInput').value = '';
+        localStorage.setItem('filter_type', 'zone');
+        localStorage.setItem('value', 'south');
         runLoader();
         runIN('zone', 'south');
         fetchDeviceList('zone', 'south');
     });
     document.getElementById('central').addEventListener("click", function () {
-        sessionStorage.setItem('filter_type', 'zone');
-        sessionStorage.setItem('value', 'central');
+
+        document.getElementById('searchInput').value = '';
+        localStorage.setItem('filter_type', 'zone');
+        localStorage.setItem('value', 'central');
         runLoader();
         runIN('zone', 'central');
         fetchDeviceList('zone', 'central');

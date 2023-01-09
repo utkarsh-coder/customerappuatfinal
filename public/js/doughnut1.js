@@ -9,7 +9,7 @@ var chartDom1 = document.getElementById("main1");
 var myChart1 = echarts.init(chartDom1);
 var option1;
 let text1 = "";
-let checkAllData = 0;
+// let checkAllData = 0;
 
 // $("#main1").append("<div id='loading1' class='loading';></div");
 
@@ -38,17 +38,17 @@ function runIN(filter_type, value) {
             return resSensor.json();
         })
         .then((dataSensor) => {
-            checkAllData++;
+            // checkAllData++;
             console.log(dataSensor[0]["count(id)"]);
             sessionStorage.setItem("faultySensorCount", dataSensor[0]["count(id)"]);
             sessionStorage.setItem("workingSensorCount", 95);
 
-            if (checkAllData == 2) {
-                checkAllData = 0;
-                document.body.style.opacity = 1;
-                document.getElementById("loaderImgBlack").remove();
-                document.body.style.pointerEvents = "auto";
-            }
+            // if (checkAllData == 2) {
+            //     checkAllData = 0;
+            //     document.body.style.opacity = 1;
+            //     document.getElementById("loaderImgBlack").remove();
+            //     document.body.style.pointerEvents = "auto";
+            // }
         })
         .catch((error) => console.log("ERROR: ", error));
 
@@ -66,30 +66,33 @@ function runIN(filter_type, value) {
             return res.json();
         })
         .then((data) => {
-            checkAllData++;
+            // checkAllData++;
+            document.body.style.opacity = 1;
+            document.getElementById("loaderImgBlack").remove();
+            document.body.style.pointerEvents = "auto";
 
-            sessionStorage.setItem("nvrOnlineCount", (data.nvr[0].online_count == null)?0:data.nvr[0].online_count);
-            sessionStorage.setItem("nvrOfflineCount", (data.nvr[0].offline_count == null)?0:data.nvr[0].offline_count);
+            sessionStorage.setItem("nvrOnlineCount", (data.nvr[0].online_count == null) ? 0 : data.nvr[0].online_count);
+            sessionStorage.setItem("nvrOfflineCount", (data.nvr[0].offline_count == null) ? 0 : data.nvr[0].offline_count);
 
-            sessionStorage.setItem("glOnlineCount", (data.gl[0].online == null)?0:data.gl[0].online);
-            sessionStorage.setItem("glOfflineCount", (data.gl[0].offline == null)?0:data.gl[0].offline);
+            sessionStorage.setItem("glOnlineCount", (data.gl[0].online == null) ? 0 : data.gl[0].online);
+            sessionStorage.setItem("glOfflineCount", (data.gl[0].offline == null) ? 0 : data.gl[0].offline);
 
-            sessionStorage.setItem("inOnlineCount", (data.in[0].in_online_count == null)?0:data.in[0].in_online_count);
-            sessionStorage.setItem("inOfflineCount", (data.in[0].in_offline_count == null?0:data.in[0].in_offline_count));
+            sessionStorage.setItem("inOnlineCount", (data.in[0].in_online_count == null) ? 0 : data.in[0].in_online_count);
+            sessionStorage.setItem("inOfflineCount", (data.in[0].in_offline_count == null ? 0 : data.in[0].in_offline_count));
 
-            sessionStorage.setItem("armCount", (data.in[0].arm_count == null?0:data.in[0].arm_count));
-            sessionStorage.setItem("disarmCount", (data.in[0].disarm_count == null)?0:data.in[0].disarm_count);
+            sessionStorage.setItem("armCount", (data.in[0].arm_count == null ? 0 : data.in[0].arm_count));
+            sessionStorage.setItem("disarmCount", (data.in[0].disarm_count == null) ? 0 : data.in[0].disarm_count);
 
-            sessionStorage.setItem("compCount", (data.nvr[0].comp_count == null)?0:data.nvr[0].comp_count);
-            sessionStorage.setItem("nonCompCount", (data.nvr[0].non_cpm_count == null)?0:data.nvr[0].non_cpm_count);
+            sessionStorage.setItem("compCount", (data.nvr[0].comp_count == null) ? 0 : data.nvr[0].comp_count);
+            sessionStorage.setItem("nonCompCount", (data.nvr[0].non_cpm_count == null) ? 0 : data.nvr[0].non_cpm_count);
 
             // sessionStorage.setItem("offSites", data.in[0].in_offline_count);
             sessionStorage.setItem("workingHardDriveCount", data.nvr[0].hdd_count);
             sessionStorage.setItem("faultyHardDriveCount", Number(sessionStorage.getItem("nvrOnlineCount")) + Number(sessionStorage.getItem("nvrOfflineCount")) - Number(sessionStorage.getItem("workingHardDriveCount")));
             sessionStorage.setItem("open-noti", data.openNotification[0].count);
 
-            sessionStorage.setItem("cameraOnlineCount",(Number(data.nvr[0].camera_online_count) == null)?0:Number(data.nvr[0].camera_online_count));
-            sessionStorage.setItem("cameraOfflineCount",(data.nvr[0].camera_offline_count == null)?0:data.nvr[0].camera_offline_count);
+            sessionStorage.setItem("cameraOnlineCount", (Number(data.nvr[0].camera_online_count) == null) ? 0 : Number(data.nvr[0].camera_online_count));
+            sessionStorage.setItem("cameraOfflineCount", (data.nvr[0].camera_offline_count == null) ? 0 : data.nvr[0].camera_offline_count);
 
             sessionStorage.setItem("modbusOnlineCount", data.modbus[0].online);
             sessionStorage.setItem("modbusOfflineCount", data.modbus[0].offline);
@@ -157,7 +160,7 @@ function runIN(filter_type, value) {
                             // edgeDistance: '-20%',
                             // bleedMargin: 0,
                             formatter: function (d) {
-                                if(d.name == offlinePercent + '%' + '\n Offline'){
+                                if (d.name == offlinePercent + '%' + '\n Offline') {
                                     return '';
                                 }
                                 return d.name;
