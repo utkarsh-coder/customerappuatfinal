@@ -129,8 +129,8 @@
             window.location.href = link;
         }
 
-        function refresh(){
-            window.location.href = document.getElementById("fetchHost").innerHTML+"/sitelocation";
+        function refresh() {
+            window.location.href = document.getElementById("fetchHost").innerHTML + "/sitelocation";
         }
     </script>
 

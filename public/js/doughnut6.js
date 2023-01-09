@@ -15,10 +15,10 @@ function runCamera() {
     console.log("starting hello world!");
 
     document.getElementById("camOnlineCount").innerHTML =
-            "<span>Online</span> " + sessionStorage.getItem('cameraOnlineCount');
-        document.getElementById("camOnlineCount").classList.add("br-right");
-        document.getElementById("camOfflineCount").innerHTML =
-            "<span>Offline</span> " + sessionStorage.getItem('cameraOfflineCount');
+        "<span>Online</span> " + sessionStorage.getItem('cameraOnlineCount');
+    document.getElementById("camOnlineCount").classList.add("br-right");
+    document.getElementById("camOfflineCount").innerHTML =
+        "<span>Offline</span> " + sessionStorage.getItem('cameraOfflineCount');
 
     // document.getElementById('camOnlineCount').innerHTML = 'Online: ' + sessionStorage.getItem('cameraOnlineCount');
     // document.getElementById('camOfflineCount').innerHTML = 'Offline: ' + sessionStorage.getItem('cameraOfflineCount');
@@ -58,23 +58,25 @@ function runCamera() {
                     show: true,
                     position: 'center',
                     formatter: function (d) {
+                        if (d.name == cameraOfflinePercent + '%' + '\n Offline') {
+                            return '';
+                        }
                         return d.name;
                     },
                     fontSize: 16,
                 },
                 emphasis: {
                     label: {
-                        show: false,
-                        fontSize: "18",
-                        fontWeight: "regular"
+                        show: true,
+                        fontSize: "16",
                     }
                 },
                 labelLine: {
                     show: false
                 },
                 data: [
-                    { value: cameraOfflinePercent, name: cameraOfflinePercent + '%' +'\n Offline' },
-                    { value: cameraOnlinePercent, name: cameraOnlinePercent + '%' +'\n Online' },
+                    { value: cameraOfflinePercent, name: cameraOfflinePercent + '%' + '\n Offline' },
+                    { value: cameraOnlinePercent, name: cameraOnlinePercent + '%' + '\n Online' },
                 ]
             }
         ],

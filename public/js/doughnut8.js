@@ -15,10 +15,10 @@ function runHDD() {
     console.log("starting hello world!");
 
     document.getElementById("workinghddcount").innerHTML =
-            "<span>Working</span> " + sessionStorage.getItem('workingHardDriveCount');
-        document.getElementById("workinghddcount").classList.add("br-right");
-        document.getElementById("faultyhddcount").innerHTML =
-            "<span>Faulty</span> " + sessionStorage.getItem('faultyHardDriveCount');
+        "<span>Working</span> " + sessionStorage.getItem('workingHardDriveCount');
+    document.getElementById("workinghddcount").classList.add("br-right");
+    document.getElementById("faultyhddcount").innerHTML =
+        "<span>Faulty</span> " + sessionStorage.getItem('faultyHardDriveCount');
 
     // document.getElementById('camOnlineCount').innerHTML = 'Online: ' + sessionStorage.getItem('cameraOnlineCount');
     // document.getElementById('camOfflineCount').innerHTML = 'Offline: ' + sessionStorage.getItem('cameraOfflineCount');
@@ -58,23 +58,25 @@ function runHDD() {
                     show: true,
                     position: 'center',
                     formatter: function (d) {
+                        if (d.name == faultyHddPercent + '%' + '\n faulty') {
+                            return '';
+                        }
                         return d.name;
                     },
                     fontSize: 16,
                 },
                 emphasis: {
                     label: {
-                        show: false,
-                        fontSize: "18",
-                        fontWeight: "regular"
+                        show: true,
+                        fontSize: "16",
                     }
                 },
                 labelLine: {
                     show: false
                 },
                 data: [
-                    { value: faultyHddPercent, name: faultyHddPercent + '%' +'\n faulty' },
-                    { value: workingHddPercent, name: workingHddPercent + '%' +'\n working' },
+                    { value: faultyHddPercent, name: faultyHddPercent + '%' + '\n faulty' },
+                    { value: workingHddPercent, name: workingHddPercent + '%' + '\n working' },
                 ]
             }
         ],

@@ -15,10 +15,10 @@ function runSensor() {
     console.log("starting hello world!");
 
     document.getElementById("workingsensorcount").innerHTML =
-            "<span>Working</span> " + sessionStorage.getItem('workingSensorCount');
-        document.getElementById("workingsensorcount").classList.add("br-right");
-        document.getElementById("faultysensorcount").innerHTML =
-            "<span>Faulty</span> " + sessionStorage.getItem('faultySensorCount');
+        "<span>Working</span> " + sessionStorage.getItem('workingSensorCount');
+    document.getElementById("workingsensorcount").classList.add("br-right");
+    document.getElementById("faultysensorcount").innerHTML =
+        "<span>Faulty</span> " + sessionStorage.getItem('faultySensorCount');
 
     // document.getElementById('camOnlineCount').innerHTML = 'Online: ' + sessionStorage.getItem('cameraOnlineCount');
     // document.getElementById('camOfflineCount').innerHTML = 'Offline: ' + sessionStorage.getItem('cameraOfflineCount');
@@ -58,23 +58,25 @@ function runSensor() {
                     show: true,
                     position: 'center',
                     formatter: function (d) {
+                        if (d.name == faultySensorPercent + '%' + '\n faulty') {
+                            return '';
+                        }
                         return d.name;
                     },
                     fontSize: 16,
                 },
                 emphasis: {
                     label: {
-                        show: false,
-                        fontSize: "18",
-                        fontWeight: "regular"
+                        show: true,
+                        fontSize: "16",
                     }
                 },
                 labelLine: {
                     show: false
                 },
                 data: [
-                    { value: faultySensorPercent, name: faultySensorPercent + '%' +'\n faulty' },
-                    { value: workingSensorPercent, name: workingSensorPercent + '%' +'\n working' },
+                    { value: faultySensorPercent, name: faultySensorPercent + '%' + '\n faulty' },
+                    { value: workingSensorPercent, name: workingSensorPercent + '%' + '\n working' },
                 ]
             }
         ],

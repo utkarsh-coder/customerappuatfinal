@@ -15,10 +15,10 @@ function runCompNonComp() {
     console.log("starting hello world!");
 
     document.getElementById("compcount").innerHTML =
-            "<span>Online</span> " + sessionStorage.getItem('compCount');
-        document.getElementById("compcount").classList.add("br-right");
-        document.getElementById("noncompcount").innerHTML =
-            "<span>Offline</span> " + sessionStorage.getItem('nonCompCount');
+        "<span>Online</span> " + sessionStorage.getItem('compCount');
+    document.getElementById("compcount").classList.add("br-right");
+    document.getElementById("noncompcount").innerHTML =
+        "<span>Offline</span> " + sessionStorage.getItem('nonCompCount');
 
     let compPercent = Math.round((Number(sessionStorage.getItem('compCount')) / (Number(sessionStorage.getItem('compCount')) + Number(sessionStorage.getItem('nonCompCount')))) * 100);
     let nonCompPercent = Math.round((Number(sessionStorage.getItem('nonCompCount')) / (Number(sessionStorage.getItem('compCount')) + Number(sessionStorage.getItem('nonCompCount')))) * 100);
@@ -33,7 +33,7 @@ function runCompNonComp() {
         legend: {
             top: '5%',
             left: 'center',
-            data: ['offline: ' + nonCompPercent + '%','online: ' + compPercent + '%']
+            data: ['offline: ' + nonCompPercent + '%', 'online: ' + compPercent + '%']
         },
         height: '100%',
         width: '100%',
@@ -55,23 +55,25 @@ function runCompNonComp() {
                     show: true,
                     position: 'center',
                     formatter: function (d) {
+                        if (d.name == nonCompPercent + '%' + '\n Non-Compliance') {
+                            return '';
+                        }
                         return d.name;
                     },
                     fontSize: 16,
                 },
                 emphasis: {
                     label: {
-                        show: false,
-                        fontSize: "18",
-                        fontWeight: "regular"
+                        show: true,
+                        fontSize: "16",
                     }
                 },
                 labelLine: {
                     show: false
                 },
                 data: [
-                    { value: nonCompPercent, name: nonCompPercent + '%' +'\n Non-Compliance' },
-                    { value: compPercent, name: compPercent + '%' +'\n Compliance' },
+                    { value: nonCompPercent, name: nonCompPercent + '%' + '\n Non-Compliance' },
+                    { value: compPercent, name: compPercent + '%' + '\n Compliance' },
                 ]
             }
         ],

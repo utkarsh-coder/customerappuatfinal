@@ -90,15 +90,17 @@ function runArmDisarm() {
                     show: true,
                     position: 'center',
                     formatter: function (d) {
+                        if(d.name == armPercent + '%'+'\n Arm'){
+                            return '';
+                        }
                         return d.name;
                     },
                     fontSize: 16,
                 },
                 emphasis: {
                     label: {
-                        show: false,
-                        fontSize: "18",
-                        fontWeight: "regular",
+                        show: true,
+                        fontSize: "16",
                     },
                 },
                 labelLine: {

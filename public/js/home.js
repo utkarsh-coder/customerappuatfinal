@@ -25,9 +25,18 @@ function runLoader() {
 
 $(document).ready(function () {
 
-    runIN('none', 'none');
+    console.log('running check!!', document.getElementById('searchInput').value);
 
-    fetchDeviceList('none', 'none');
+    document.getElementById('searchInput').value = "goa";
+
+    if (document.getElementById('searchInput').value = '') { 
+        runIN('none', 'none');
+        fetchDeviceList('none', 'none');
+    }
+    else {
+        runIN('any', document.getElementById('searchInput').value);
+        fetchDeviceList('any', document.getElementById('searchInput').value);
+    }
 
     document.getElementById('cardIn').addEventListener("click", function () {
         window.location.href = document.getElementById('fetchHost').innerHTML + "/alarmPanelList";
@@ -37,53 +46,57 @@ $(document).ready(function () {
         window.location.href = document.getElementById('fetchHost').innerHTML + "/armDisarmList";
     });
 
-    document.getElementById('searchInput').addEventListener('change', function () {
-        sessionStorage.setItem('filter_type','any');
-        sessionStorage.setItem('value',document.getElementById('searchInput').value);
+    document.getElementById('searchInput').addEventListener('input', function () {
+        sessionStorage.setItem('filter_type', 'any');
+        sessionStorage.setItem('value', document.getElementById('searchInput').value);
         runLoader();
         runIN('any', document.getElementById('searchInput').value);
         fetchDeviceList('any', document.getElementById('searchInput').value);
+        if (document.getElementById('searchInput').value == '') {
+            console.log('input value printing');
+        }
         resetTimer();
     });
 
-    document.getElementById('all').addEventListener("click", function () {
-        sessionStorage.setItem('filter_type','none');
-        sessionStorage.setItem('value','none');
+    document.getElementById('all').addEventListener("click", function () {  
+        
+        sessionStorage.setItem('filter_type', 'none');
+        sessionStorage.setItem('value', 'none');
         runLoader();
         runIN('none', 'none');
         fetchDeviceList('none', 'none');
     });
     document.getElementById('north').addEventListener("click", function () {
-        sessionStorage.setItem('filter_type','zone');
-        sessionStorage.setItem('value','north');
+        sessionStorage.setItem('filter_type', 'zone');
+        sessionStorage.setItem('value', 'north');
         runLoader();
         runIN('zone', 'north');
         fetchDeviceList('zone', 'north');
     });
     document.getElementById('east').addEventListener("click", function () {
-        sessionStorage.setItem('filter_type','zone');
-        sessionStorage.setItem('value','east');
+        sessionStorage.setItem('filter_type', 'zone');
+        sessionStorage.setItem('value', 'east');
         runLoader();
         runIN('zone', 'east');
         fetchDeviceList('zone', 'east');
     });
     document.getElementById('west').addEventListener("click", function () {
-        sessionStorage.setItem('filter_type','zone');
-        sessionStorage.setItem('value','west');
+        sessionStorage.setItem('filter_type', 'zone');
+        sessionStorage.setItem('value', 'west');
         runLoader();
         runIN('zone', 'west');
         fetchDeviceList('zone', 'west');
     });
     document.getElementById('south').addEventListener("click", function () {
-        sessionStorage.setItem('filter_type','zone');
-        sessionStorage.setItem('value','south');
+        sessionStorage.setItem('filter_type', 'zone');
+        sessionStorage.setItem('value', 'south');
         runLoader();
         runIN('zone', 'south');
         fetchDeviceList('zone', 'south');
     });
     document.getElementById('central').addEventListener("click", function () {
-        sessionStorage.setItem('filter_type','zone');
-        sessionStorage.setItem('value','central');
+        sessionStorage.setItem('filter_type', 'zone');
+        sessionStorage.setItem('value', 'central');
         runLoader();
         runIN('zone', 'central');
         fetchDeviceList('zone', 'central');
@@ -116,7 +129,7 @@ $(document).ready(function () {
                 let glListString = ``;
                 let len = (data.data.length > 4) ? 4 : data.data.length;
                 for (let i = 0; i < len; i++) {
-                    glListString += `<li><div class="d-flex w-100 align-items-start flex-nowrap gap-1"><div class="NotificationDate"><span>16</span><p>mins</p></div><div class="listData"><h5>${data.data[i].location_name}</h5><p>${data.data[i].address.slice(0, 1).toUpperCase() + data.data[i].address.slice(1).toLowerCase()}</p></div></div></li>`;
+                    glListString += `<li><div class="d-flex w-100 align-items-start flex-nowrap gap-1"><div class="NotificationDate"><i class="fa-solid fa-location-dot"></i></div><div class="listData"><h5>${data.data[i].location_name}</h5><p>${data.data[i].address.slice(0, 1).toUpperCase() + data.data[i].address.slice(1).toLowerCase()}</p></div></div></li>`;
                 }
 
                 glListString += `<li class="text-center pb-0 viewAll"><a onclick="hitDeviceListPage('glOffline')" class="text-dark">All</a></li>`;
@@ -175,7 +188,7 @@ $(document).ready(function () {
                 let nvrListString = ``;
                 let len = (data.data.length > 4) ? 4 : data.data.length;
                 for (let i = 0; i < len; i++) {
-                    nvrListString += `<li><div class="d-flex w-100 align-items-start flex-nowrap gap-1"><div class="NotificationDate"><span>16</span><p>mins</p></div><div class="listData"><h5>${data.data[i].location_name}</h5><p>${data.data[i].address.slice(0, 1).toUpperCase() + data.data[i].address.slice(1).toLowerCase()}</p></div></div></li>`;
+                    nvrListString += `<li><div class="d-flex w-100 align-items-start flex-nowrap gap-1"><div class="NotificationDate"><i class="fa-solid fa-location-dot"></i></div><div class="listData"><h5>${data.data[i].location_name}</h5><p>${data.data[i].address.slice(0, 1).toUpperCase() + data.data[i].address.slice(1).toLowerCase()}</p></div></div></li>`;
                 }
 
                 nvrListString += `<li class="text-center pb-0 viewAll"><a onclick="hitDeviceListPage('nvrOffline')" class="text-dark">All</a></li>`;
@@ -206,7 +219,7 @@ $(document).ready(function () {
                 let camerasListString = ``;
                 let len = (data.data.length > 4) ? 4 : data.data.length;
                 for (let i = 0; i < len; i++) {
-                    camerasListString += `<li><div class="d-flex w-100 align-items-start flex-nowrap gap-1"><div class="NotificationDate"><span>16</span><p>mins</p></div><div class="listData"><h5>${data.data[i].location_name}</h5><p>${data.data[i].address.slice(0, 1).toUpperCase() + data.data[i].address.slice(1).toLowerCase()}</p></div></div></li>`;
+                    camerasListString += `<li><div class="d-flex w-100 align-items-start flex-nowrap gap-1"><div class="NotificationDate"><i class="fa-solid fa-location-dot"></i></div><div class="listData"><h5>${data.data[i].location_name}</h5><p>${data.data[i].address.slice(0, 1).toUpperCase() + data.data[i].address.slice(1).toLowerCase()}</p></div></div></li>`;
                 }
 
                 camerasListString += `<li class="text-center pb-0 viewAll"><a onclick="hitDeviceListPage('camerasOffline')" class="text-dark">All</a></li>`;
@@ -239,7 +252,7 @@ $(document).ready(function () {
                 let complianceListString = ``;
                 let len = (data.data.length > 4) ? 4 : data.data.length;
                 for (let i = 0; i < len; i++) {
-                    complianceListString += `<li><div class="d-flex w-100 align-items-start flex-nowrap gap-1"><div class="NotificationDate"><span>16</span><p>mins</p></div><div class="listData"><h5>${data.data[i].location_name}</h5><p>${data.data[i].address.slice(0, 1).toUpperCase() + data.data[i].address.slice(1).toLowerCase()}</p></div></div></li>`;
+                    complianceListString += `<li><div class="d-flex w-100 align-items-start flex-nowrap gap-1"><div class="NotificationDate"><i class="fa-solid fa-location-dot"></i></div><div class="listData"><h5>${data.data[i].location_name}</h5><p>${data.data[i].address.slice(0, 1).toUpperCase() + data.data[i].address.slice(1).toLowerCase()}</p></div></div></li>`;
                 }
 
                 complianceListString += `<li class="text-center pb-0 viewAll"><a onclick="hitDeviceListPage('footageNonCompliance')" class="text-dark">All</a></li>`;

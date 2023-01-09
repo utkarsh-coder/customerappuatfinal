@@ -145,8 +145,8 @@ function runProcess() {
                         siteStatus = 'online';
                     }
                 }
-                else{
-                    console.log('nvr error part: ',name);
+                else {
+                    console.log('nvr error part: ', name);
                 }
             }
         }
@@ -224,14 +224,20 @@ function runProcess() {
     document.getElementById('sitedisarmed').innerHTML = totalDisarmed;
 
     console.log('site Array length: ', siteArray.length);
-    
+
+    siteArray = siteArray.sort((a, b) => {
+        if (a.name < b.name) {
+            return -1;
+        }
+    });
+
     for (let i = 0; i < siteArray.length; i++) {
         let tempVal = null;
         let tempClass = null;
         // console.log(siteArray[i].name+"        "+siteArray[i].status+"         "+siteArray[i].mode);
         if (siteArray[i].mode != null) {
             tempClass = siteArray[i].mode;
-            tempVal = siteArray[i].mode == 'arm'?'ARM':'DISARM';
+            tempVal = siteArray[i].mode == 'arm' ? 'ARM' : 'DISARM';
         }
         else {
             // tempVal = siteArray[i].status;

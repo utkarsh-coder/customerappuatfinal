@@ -38,10 +38,10 @@ function runNvr() {
     // document.getElementById('alloffline').innerHTML = data.nvr[0].offline_count + data.gl[0].offline + data.in[0].in_offline_count;
 
     document.getElementById("nvronlinecount").innerHTML =
-            "<span>Online</span> " + sessionStorage.getItem('nvrOnlineCount');
-        document.getElementById("nvronlinecount").classList.add("br-right");
-        document.getElementById("nvrofflinecount").innerHTML =
-            "<span>Offline</span> " + sessionStorage.getItem('nvrOfflineCount');
+        "<span>Online</span> " + sessionStorage.getItem('nvrOnlineCount');
+    document.getElementById("nvronlinecount").classList.add("br-right");
+    document.getElementById("nvrofflinecount").innerHTML =
+        "<span>Offline</span> " + sessionStorage.getItem('nvrOfflineCount');
 
     console.log("starting hello world!");
 
@@ -62,7 +62,7 @@ function runNvr() {
         legend: {
             top: '5%',
             left: 'center',
-            data: ['offline: ' + nvrOfflinePercent + '%','online: ' + nvrOnlinePercent + '%']
+            data: ['offline: ' + nvrOfflinePercent + '%', 'online: ' + nvrOnlinePercent + '%']
         },
         color: [
             '#FF0000',
@@ -84,23 +84,25 @@ function runNvr() {
                     show: true,
                     position: 'center',
                     formatter: function (d) {
+                        if (d.name == nvrOfflinePercent + '%' + '\n Offline') {
+                            return '';
+                        }
                         return d.name;
                     },
                     fontSize: 16,
                 },
                 emphasis: {
                     label: {
-                        show: false,
-                        fontSize: "18",
-                        fontWeight: "regular"
+                        show: true,
+                        fontSize: "16",
                     }
                 },
                 labelLine: {
                     show: false
                 },
                 data: [
-                    { value: nvrOfflinePercent, name: nvrOfflinePercent + '%'+ '\n Offline' },
-                    { value: nvrOnlinePercent, name: nvrOnlinePercent + '%'+' \n Online' },
+                    { value: nvrOfflinePercent, name: nvrOfflinePercent + '%' + '\n Offline' },
+                    { value: nvrOnlinePercent, name: nvrOnlinePercent + '%' + ' \n Online' },
                 ]
             }
         ],

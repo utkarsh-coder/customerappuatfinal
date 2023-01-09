@@ -157,6 +157,9 @@ function runIN(filter_type, value) {
                             // edgeDistance: '-20%',
                             // bleedMargin: 0,
                             formatter: function (d) {
+                                if(d.name == offlinePercent + '%' + '\n Offline'){
+                                    return '';
+                                }
                                 return d.name;
                             },
                             fontSize: 16,
@@ -170,9 +173,8 @@ function runIN(filter_type, value) {
                         },
                         emphasis: {
                             label: {
-                                show: false,
-                                fontSize: "18",
-                                fontWeight: "regular",
+                                show: true,
+                                fontSize: "16",
                             },
                         },
                         data: [

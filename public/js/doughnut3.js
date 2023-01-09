@@ -38,10 +38,10 @@ function runGl() {
     // document.getElementById('alloffline').innerHTML = data.nvr[0].offline_count + data.gl[0].offline + data.in[0].in_offline_count;
 
     document.getElementById("glonlinecount").innerHTML =
-            "<span>Online</span> " + sessionStorage.getItem('glOnlineCount');
-        document.getElementById("glonlinecount").classList.add("br-right");
-        document.getElementById("glofflinecount").innerHTML =
-            "<span>Offline</span> " + sessionStorage.getItem('glOfflineCount');
+        "<span>Online</span> " + sessionStorage.getItem('glOnlineCount');
+    document.getElementById("glonlinecount").classList.add("br-right");
+    document.getElementById("glofflinecount").innerHTML =
+        "<span>Offline</span> " + sessionStorage.getItem('glOfflineCount');
 
     console.log("starting hello world!");
 
@@ -64,7 +64,7 @@ function runGl() {
         legend: {
             top: '5%',
             left: 'center',
-            data: ['offline: ' + glOfflinePercent + '%','online: ' + glOnlinePercent + '%']
+            data: ['offline: ' + glOfflinePercent + '%', 'online: ' + glOnlinePercent + '%']
         },
         color: [
             '#FF0000',
@@ -84,23 +84,25 @@ function runGl() {
                     show: true,
                     position: 'center',
                     formatter: function (d) {
+                        if (d.name == glOfflinePercent + '%' + '\n Offline') {
+                            return '';
+                        }
                         return d.name;
                     },
                     fontSize: 16,
                 },
                 emphasis: {
                     label: {
-                        show: false,
-                        fontSize: "18",
-                        fontWeight: "regular"
+                        show: true,
+                        fontSize: "16",
                     }
                 },
                 labelLine: {
                     show: false
                 },
                 data: [
-                    { value: glOfflinePercent, name: glOfflinePercent + '%'+ '\n Offline' },
-                    { value: glOnlinePercent, name: glOnlinePercent + '%'+'\n Online' },
+                    { value: glOfflinePercent, name: glOfflinePercent + '%' + '\n Offline' },
+                    { value: glOnlinePercent, name: glOnlinePercent + '%' + '\n Online' },
                 ]
             }
         ],
