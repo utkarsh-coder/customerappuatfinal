@@ -25,16 +25,19 @@ function runLoader() {
 
 $(document).ready(function () {
 
-    console.log('running check!!', sessionStorage.getItem('value'));
+    runIN('none', 'none');
+    fetchDeviceList('none', 'none');
 
-    if (sessionStorage.getItem('value') == none) { 
-        runIN('none', 'none');
-        fetchDeviceList('none', 'none');
-    }
-    else {
-        runIN('any', sessionStorage.getItem('value'));
-        fetchDeviceList('any', sessionStorage.getItem('value'));
-    }
+    // console.log('running check!!', document.getElementById('searchInput').value);
+
+    // if (sessionStorage.getItem('value') == null) {
+    //     runIN('none', 'none');
+    //     fetchDeviceList('none', 'none');
+    // }
+    // else {
+    //     runIN('any', sessionStorage.getItem('value'));
+    //     fetchDeviceList('any', sessionStorage.getItem('value'));
+    // }
 
     document.getElementById('cardIn').addEventListener("click", function () {
         window.location.href = document.getElementById('fetchHost').innerHTML + "/alarmPanelList";
@@ -56,8 +59,8 @@ $(document).ready(function () {
         resetTimer();
     });
 
-    document.getElementById('all').addEventListener("click", function () {  
-        
+    document.getElementById('all').addEventListener("click", function () {
+
         sessionStorage.setItem('filter_type', 'none');
         sessionStorage.setItem('value', 'none');
         runLoader();
@@ -114,7 +117,6 @@ $(document).ready(function () {
                 'typeValue': 'gl',
                 'statusValue': 'offline',
                 'filter_type': filter_type,
-                
                 'value': value
             }),
         }).then(res => {
