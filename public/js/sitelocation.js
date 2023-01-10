@@ -12,6 +12,8 @@ let totalDisarmed = 0;
 let typeValues = ["nvr", "in", "gl"];
 let statusValues = ["online", "offline"];
 
+setInterval(waitAndshow, 60000);
+
 // document.getElementById('fetchHost').innerHTML+"/customerapp/public/getData"
 fetch(document.getElementById("fetchHost").innerHTML + "/getLocationData")
     .then((res) => {
@@ -32,7 +34,7 @@ fetch(document.getElementById("fetchHost").innerHTML + "/getLocationData")
                 );
                 fetch(
                     document.getElementById("fetchHost").innerHTML +
-                        "/getDeviceList",
+                    "/getDeviceList",
                     {
                         method: "POST", // or 'PUT'
                         headers: {
@@ -53,9 +55,9 @@ fetch(document.getElementById("fetchHost").innerHTML + "/getLocationData")
                         checkCount++;
                         eval(
                             typeValue +
-                                "List=" +
-                                typeValue +
-                                "List.concat(dataDevices.data)"
+                            "List=" +
+                            typeValue +
+                            "List.concat(dataDevices.data)"
                         );
                         // console.log('nvrList:  ', nvrList);
                         // console.log('count' + typeValue + "  " + statusValue, eval(typeValue + 'List.length'));

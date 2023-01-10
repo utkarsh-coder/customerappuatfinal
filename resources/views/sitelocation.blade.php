@@ -112,11 +112,12 @@
             border: 2px solid black;
             border-radius: 50px;
         }
-        .clamp-two{
+
+        .clamp-two {
             display: -webkit-box;
-  -webkit-box-orient: vertical;
-  -webkit-line-clamp: 2;
-  overflow: hidden;
+            -webkit-box-orient: vertical;
+            -webkit-line-clamp: 2;
+            overflow: hidden;
         }
     </style>
 </head>
@@ -131,6 +132,14 @@
     </style>
 
     <script>
+        var minutes = 0;
+
+        function waitAndshow() {
+            minutes++;
+            document.getElementById("timeAgoId").innerHTML =
+                minutes + " min ago";
+        }
+
         function hitLink(link) {
             window.location.href = link;
         }
@@ -160,11 +169,11 @@
                         <h2 class="text-white">Current Status</h2>
                         <i onclick="refresh()" class="fa fa-refresh"></i>
                     </div>
-                      <div class="col-3 text-end">
+                    <div class="col-3 text-end">
                         <span id="timeAgoId" class="timeAgo text-white">0 mins ago</span>
                     </div>
                 </div>
-                
+
             </div>
 
             <div class="container">
