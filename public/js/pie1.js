@@ -20,7 +20,16 @@ let text1 = '';
 
 // 'http://54.197.121.111:8001/iot/1.6/public/getSiteHealthStatus?business_id=193'
 console.log("url is:  ", document.getElementById('fetchHost').innerHTML + "/getChartData");
-fetch(document.getElementById('fetchHost').innerHTML + "/getChartData").then(res => {
+fetch(document.getElementById('fetchHost').innerHTML + "/getChartData", {
+    method: 'POST',
+    headers: {
+        'Content-Type': 'application/json'
+    },
+    body: JSON.stringify({
+        'filter_type':'none',
+        'value':'none'
+    })
+}).then(res => {
     return res.json();
 })
     .then(data => {
