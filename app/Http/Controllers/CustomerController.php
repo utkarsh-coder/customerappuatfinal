@@ -324,7 +324,7 @@ class CustomerController extends Controller
         $curl = curl_init();
 
         curl_setopt_array($curl, array(
-            CURLOPT_URL => 'https://crm.igzy.com/get_faulty_sensors.php?account_name=' . $siteName,
+            CURLOPT_URL => 'https://crm.igzy.com/v1/get_faulty_sensors.php?account_name=' . $siteName,
             CURLOPT_RETURNTRANSFER => true,
             CURLOPT_ENCODING => '',
             CURLOPT_MAXREDIRS => 10,

@@ -27,12 +27,21 @@ $(document).ready(function () {
 
     // runIN('none', 'none');
     // fetchDeviceList('none', 'none');
+    localStorage.setItem('complianceCheck', 0);
 
     console.log('running check!!', localStorage.getItem('value'));
 
     if (localStorage.getItem('value') == null) {
         runIN('none', 'none');
         fetchDeviceList('none', 'none');
+    }
+    else if (localStorage.getItem('filter_type') == 'zone') {
+        runIN('zone', localStorage.getItem('value'));
+        fetchDeviceList('zone', localStorage.getItem('value'));
+    }
+    else if (localStorage.getItem('filter_type') == 'none') {
+        runIN('none', 'none');
+        fetchDeviceList('none', localStorage.getItem('value'));
     }
     else {
         document.getElementById('searchInput').value = localStorage.getItem('value');
@@ -41,11 +50,33 @@ $(document).ready(function () {
     }
 
     document.getElementById('cardIn').addEventListener("click", function () {
+        localStorage.setItem('type', 'in');
         window.location.href = document.getElementById('fetchHost').innerHTML + "/alarmPanelList";
     });
 
     document.getElementById('cardInArmDisarm').addEventListener("click", function () {
         window.location.href = document.getElementById('fetchHost').innerHTML + "/armDisarmList";
+    });
+
+    document.getElementById('cardGl').addEventListener("click", function () {
+        localStorage.setItem('type', 'gl');
+        window.location.href = document.getElementById('fetchHost').innerHTML + "/alarmPanelList";
+    });
+
+    document.getElementById('cardNvr').addEventListener("click", function () {
+        localStorage.setItem('type', 'nvr');
+        window.location.href = document.getElementById('fetchHost').innerHTML + "/alarmPanelList";
+    });
+
+    document.getElementById('cardComp').addEventListener("click", function () {
+        localStorage.setItem('type', 'nvr');
+        localStorage.setItem('complianceCheck', 1);
+        window.location.href = document.getElementById('fetchHost').innerHTML + "/alarmPanelList";
+    });
+
+    document.getElementById('cardCamera').addEventListener("click", function () {
+        localStorage.setItem('type', 'cameras');
+        window.location.href = document.getElementById('fetchHost').innerHTML + "/alarmPanelList";
     });
 
     document.getElementById('searchInput').addEventListener('change', function () {
@@ -145,7 +176,12 @@ $(document).ready(function () {
                     glListString += `<li><div class="d-flex w-100 align-items-start flex-nowrap gap-1"><div class="NotificationDate"><i class="fa-solid fa-location-dot"></i></div><div class="listData"><h5>${data.data[i].location_name}</h5><p>${data.data[i].address.slice(0, 1).toUpperCase() + data.data[i].address.slice(1).toLowerCase()}</p></div></div></li>`;
                 }
 
-                glListString += `<li class="text-center pb-0 viewAll"><a onclick="hitDeviceListPage('glOffline', 'Network Health (Offline)')" class="text-dark">All</a></li>`;
+                if (data.data.length > 0) {
+                    glListString += `<li class="text-center pb-0 viewAll"><a onclick="hitDeviceListPage('glOffline', 'Network Health (Offline)')" class="text-dark">All</a></li>`;
+                }
+                else {
+                    glListString += `<li>No Offline Device</li>`;
+                }
 
                 document.getElementById('glList').innerHTML = glListString;
 
@@ -204,8 +240,12 @@ $(document).ready(function () {
                     nvrListString += `<li><div class="d-flex w-100 align-items-start flex-nowrap gap-1"><div class="NotificationDate"><i class="fa-solid fa-location-dot"></i></div><div class="listData"><h5>${data.data[i].location_name}</h5><p>${data.data[i].address.slice(0, 1).toUpperCase() + data.data[i].address.slice(1).toLowerCase()}</p></div></div></li>`;
                 }
 
-                nvrListString += `<li class="text-center pb-0 viewAll"><a onclick="hitDeviceListPage('nvrOffline', 'NVR Health (Offline)')" class="text-dark">All</a></li>`;
-
+                if (data.data.length > 0) {
+                    nvrListString += `<li class="text-center pb-0 viewAll"><a onclick="hitDeviceListPage('nvrOffline', 'NVR Health (Offline)')" class="text-dark">All</a></li>`;
+                }
+                else {
+                    nvrListString += `<li>No Offline Device</li>`;
+                }
                 document.getElementById('nvrList').innerHTML = nvrListString;
             })
             .catch(error => console.log('ERROR: ', error));
@@ -235,7 +275,13 @@ $(document).ready(function () {
                     camerasListString += `<li><div class="d-flex w-100 align-items-start flex-nowrap gap-1"><div class="NotificationDate"><i class="fa-solid fa-location-dot"></i></div><div class="listData"><h5>${data.data[i].location_name}</h5><p>${data.data[i].address.slice(0, 1).toUpperCase() + data.data[i].address.slice(1).toLowerCase()}</p></div></div></li>`;
                 }
 
-                camerasListString += `<li class="text-center pb-0 viewAll"><a onclick="hitDeviceListPage('camerasOffline', 'Camera Health (Offline)')" class="text-dark">All</a></li>`;
+
+                if (data.data.length > 0) {
+                    camerasListString += `<li class="text-center pb-0 viewAll"><a onclick="hitDeviceListPage('camerasOffline', 'Camera Health (Offline)')" class="text-dark">All</a></li>`;
+                }
+                else {
+                    camerasListString += `<li>No Offline Device</li>`;
+                }
 
                 document.getElementById('camerasList').innerHTML = camerasListString;
             })
@@ -262,15 +308,21 @@ $(document).ready(function () {
                 sessionStorage.setItem("footageNonComplianceList", JSON.stringify(data.data));
                 console.log('device List data cameras: ', data);
 
-                let complianceListString = ``;
+                let NonComplianceListString = ``;
                 let len = (data.data.length > 4) ? 4 : data.data.length;
                 for (let i = 0; i < len; i++) {
-                    complianceListString += `<li><div class="d-flex w-100 align-items-start flex-nowrap gap-1"><div class="NotificationDate"><i class="fa-solid fa-location-dot"></i></div><div class="listData"><h5>${data.data[i].location_name}</h5><p>${data.data[i].address.slice(0, 1).toUpperCase() + data.data[i].address.slice(1).toLowerCase()}</p></div></div></li>`;
+                    NonComplianceListString += `<li><div class="d-flex w-100 align-items-start flex-nowrap gap-1"><div class="NotificationDate"><i class="fa-solid fa-location-dot"></i></div><div class="listData"><h5>${data.data[i].location_name}</h5><p>${data.data[i].address.slice(0, 1).toUpperCase() + data.data[i].address.slice(1).toLowerCase()}</p></div></div></li>`;
                 }
 
-                complianceListString += `<li class="text-center pb-0 viewAll"><a onclick="hitDeviceListPage('footageNonCompliance', 'Non-Compliance Health')" class="text-dark">All</a></li>`;
 
-                document.getElementById('nonCompList').innerHTML = complianceListString;
+                if (data.data.length > 0) {
+                    NonComplianceListString += `<li class="text-center pb-0 viewAll"><a onclick="hitDeviceListPage('footageNonCompliance', 'Non-Compliance Health')" class="text-dark">All</a></li>`;
+                }
+                else {
+                    NonComplianceListString += `<li>No Offline Device</li>`;
+                }
+
+                document.getElementById('nonCompList').innerHTML = NonComplianceListString;
             })
             .catch(error => console.log('ERROR: ', error));
     }

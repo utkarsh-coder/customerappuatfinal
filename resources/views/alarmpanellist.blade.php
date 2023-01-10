@@ -120,7 +120,7 @@
     <script src="js/alarmPanelList.js"></script>
 
     <script>
-        fetchAlarmPanel(localStorage.getItem('filter_type'),localStorage.getItem('value'));
+        fetchAlarmPanel(localStorage.getItem('type'), localStorage.getItem('filter_type'),localStorage.getItem('value'), localStorage.getItem('complianceCheck'));
     </script>
 </body>
 

@@ -7,15 +7,15 @@ function concatOnlineOfflineIn() {
     document.getElementById('allIn').innerHTML = inOfflineListString + inOnlineListString;
 }
 
-function fetchAlarmPanel(filter_type, value) {
+function fetchAlarmPanel(type, filter_type, value, complianceCheck) {
     fetch(document.getElementById('fetchHost').innerHTML + "/getDeviceList", {
         method: 'POST',
         headers: {
             'Content-Type': 'application/json',
         },
         body: JSON.stringify({
-            'typeValue': 'in',
-            'statusValue': 'offline',
+            'typeValue': type,
+            'statusValue': (localStorage.getItem('complianceCheck') == 0)?'offline':'footage_noncompliance',
             'filter_type': filter_type,
             'value': value
         }),
@@ -50,8 +50,8 @@ function fetchAlarmPanel(filter_type, value) {
             'Content-Type': 'application/json',
         },
         body: JSON.stringify({
-            'typeValue': 'in',
-            'statusValue': 'online',
+            'typeValue': type,
+            'statusValue': (localStorage.getItem('complianceCheck') == 0)?'online':'footage_compliance',
             'filter_type': filter_type,
             'value': value
         }),

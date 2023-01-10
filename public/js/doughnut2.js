@@ -90,7 +90,10 @@ function runArmDisarm() {
                     show: true,
                     position: 'center',
                     formatter: function (d) {
-                        if(d.name == armPercent + '%'+'\n Arm'){
+                        if(armPercent>disarmPercent && d.name == disarmPercent + '%'+'\n Disarm'){
+                            return '';
+                        }
+                        if(disarmPercent>armPercent && d.name == armPercent + '%'+'\n Arm'){
                             return '';
                         }
                         return d.name;

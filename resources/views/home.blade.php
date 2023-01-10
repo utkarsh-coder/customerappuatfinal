@@ -63,8 +63,8 @@
     <script>
         $(document).ready(function() {
             document.getElementById('all').checked = true;
-            // runUptime('gl', 'mainDummy', 'daily');
-            // runUptime('in', 'mainDummy2', 'daily');
+            runUptime('gl', 'mainDummy', 'daily');
+            runUptime('in', 'mainDummy2', 'daily');
             sessionStorage.setItem('filter_type', 'none');
             sessionStorage.setItem('value', 'none');
         })
@@ -118,15 +118,15 @@
             document.getElementById("deviceListForm").submit();
         }
 
-        // function switchNetworkUptime(element) {
-        //     console.log("switched.........", element.value);
-        //     runUptime('gl', 'mainDummy', JSON.stringify(element.value).slice(1, -1));
-        // }
+        function switchNetworkUptime(element) {
+            console.log("switched.........", element.value);
+            runUptime('gl', 'mainDummy', JSON.stringify(element.value).slice(1, -1));
+        }
 
-        // function switchAlarmPanelUptime(element) {
-        //     console.log("switched.........", element.value);
-        //     runUptime('in', 'mainDummy2', JSON.stringify(element.value).slice(1, -1));
-        // }
+        function switchAlarmPanelUptime(element) {
+            console.log("switched.........", element.value);
+            runUptime('in', 'mainDummy2', JSON.stringify(element.value).slice(1, -1));
+        }
     </script>
 
     <form id="deviceListForm" action="{{ url('/') }}/deviceList" method="post" class="primeContainer">
@@ -262,7 +262,7 @@
                     <h3>Network Health</h3>
                 </div>
                 <div class="grid-row grid-row-col-1 mb-3">
-                    <div class="card">
+                    <div id="cardGl" class="card">
                         <div class="card-body site-status px-0">
                             <div class="d-flex">
                                 <div class="graphsection">
@@ -288,7 +288,7 @@
                     <h3>NVR Status</h3>
                 </div>
                 <div class="grid-row grid-row-col-1 mb-3">
-                    <div class="card">
+                    <div id="cardNvr" class="card">
                         <div class="card-body site-status px-0">
                             <div class="d-flex">
                                 <div class="graphsection">
@@ -310,7 +310,7 @@
                     </div>
                 </div>
 
-                <!-- <div class="col-10 mt-3">
+                <div class="col-10 mt-3">
                     <h3>Network Uptime (PAN India)</h3>
                 </div>
                 <div class="grid-row grid-row-col-1 mt-2 mb-3 networdHelth" style="height: 400px">
@@ -342,13 +342,13 @@
                             <div id="mainDummy2" class="d-flex flex-column justify-content-between h-100"></div>
                         </div>
                     </div>
-                </div> -->
+                </div>
 
                 <div class="col-10 mt-4 mb-3">
                     <h3>Compliance Status</h3>
                 </div>
                 <div class="grid-row grid-row-col-1 mb-3">
-                    <div class="card">
+                    <div id="cardComp" class="card">
                         <div class="card-body site-status px-0">
                             <div class="d-flex">
                                 <div class="graphsection">
@@ -412,7 +412,7 @@
                     <h3>Camera Status</h3>
                 </div>
                 <div class="grid-row grid-row-col-1 mb-3">
-                    <div class="card">
+                    <div id="cardCamera" class="card">
                         <div class="card-body site-status px-">
                             <div class="d-flex">
                                 <div class="graphsection">
