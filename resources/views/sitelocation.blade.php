@@ -156,11 +156,15 @@
             <!-- <img id="loaderimg" src="img/loaderImg.gif" alt=""> -->
             <div class="container pb-2">
                 <div class="row">
-                    <div class="col">
+                    <div class="col d-flex gap-3 align-items-center">
                         <h2 class="text-white">Current Status</h2>
+                        <i onclick="refresh()" class="fa fa-refresh"></i>
+                    </div>
+                      <div class="col-3 text-end">
+                        <span id="timeAgoId" class="timeAgo">0 mins ago</span>
                     </div>
                 </div>
-                <i onclick="refresh()" class="fa fa-refresh"></i>
+                
             </div>
 
             <div class="container">
