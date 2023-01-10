@@ -112,6 +112,12 @@
             border: 2px solid black;
             border-radius: 50px;
         }
+        .clamp-two{
+            display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 2;
+  overflow: hidden;
+        }
     </style>
 </head>
 
