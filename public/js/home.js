@@ -34,22 +34,28 @@ $(document).ready(function () {
     if (localStorage.getItem('value') == null) {
         runIN('none', 'none');
         fetchDeviceList('none', 'none');
+        document.getElementById('all').checked = true;
     }
     else if (localStorage.getItem('filter_type') == 'zone') {
         runIN('zone', localStorage.getItem('value'));
         fetchDeviceList('zone', localStorage.getItem('value'));
+        document.getElementById(localStorage.getItem('value')).checked = true;
     }
     else if (localStorage.getItem('filter_type') == 'none') {
         runIN('none', 'none');
-        fetchDeviceList('none', localStorage.getItem('value'));
+        fetchDeviceList('none', 'none');
+        document.getElementById('all').checked = true;
     }
     else {
         document.getElementById('searchInput').value = localStorage.getItem('value');
         runIN('any', localStorage.getItem('value'));
         fetchDeviceList('any', localStorage.getItem('value'));
+        let radio = document.querySelector('input[type=radio][name=zone]:checked');
+        radio.checked = false;
     }
 
     document.getElementById('cardIn').addEventListener("click", function () {
+        sessionStorage.setItem('deviceTypeHeadingText', 'Alarm Panel');
         localStorage.setItem('type', 'in');
         window.location.href = document.getElementById('fetchHost').innerHTML + "/alarmPanelList";
     });
@@ -59,22 +65,26 @@ $(document).ready(function () {
     });
 
     document.getElementById('cardGl').addEventListener("click", function () {
+        sessionStorage.setItem('deviceTypeHeadingText', 'GL Router');
         localStorage.setItem('type', 'gl');
         window.location.href = document.getElementById('fetchHost').innerHTML + "/alarmPanelList";
     });
 
     document.getElementById('cardNvr').addEventListener("click", function () {
+        sessionStorage.setItem('deviceTypeHeadingText', 'NVR');
         localStorage.setItem('type', 'nvr');
         window.location.href = document.getElementById('fetchHost').innerHTML + "/alarmPanelList";
     });
 
     document.getElementById('cardComp').addEventListener("click", function () {
+        sessionStorage.setItem('deviceTypeHeadingText', 'Compliance');
         localStorage.setItem('type', 'nvr');
         localStorage.setItem('complianceCheck', 1);
         window.location.href = document.getElementById('fetchHost').innerHTML + "/alarmPanelList";
     });
 
     document.getElementById('cardCamera').addEventListener("click", function () {
+        sessionStorage.setItem('deviceTypeHeadingText', 'Cameras');
         localStorage.setItem('type', 'cameras');
         window.location.href = document.getElementById('fetchHost').innerHTML + "/alarmPanelList";
     });
@@ -88,6 +98,8 @@ $(document).ready(function () {
         if (document.getElementById('searchInput').value == '') {
             console.log('input value printing');
         }
+        let radio = document.querySelector('input[type=radio][name=zone]:checked');
+        radio.checked = false;
         resetTimer();
     });
 

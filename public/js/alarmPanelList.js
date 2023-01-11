@@ -8,6 +8,8 @@ function concatOnlineOfflineIn() {
 }
 
 function fetchAlarmPanel(type, filter_type, value, complianceCheck) {
+
+    document.getElementById('deviceHeading').innerHTML = sessionStorage.getItem('deviceTypeHeadingText');
     fetch(document.getElementById('fetchHost').innerHTML + "/getDeviceList", {
         method: 'POST',
         headers: {

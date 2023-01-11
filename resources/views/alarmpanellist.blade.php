@@ -59,7 +59,7 @@
             <div class="container pb-2">
                 <div class="row headerBar align-items-center">
                     <div class="col">
-                        <h2 class="fw-bold">Alarm Panel</h2>
+                        <h2 id="deviceHeading" class="fw-bold">Devices</h2>
                     </div>
 
                 </div>
@@ -120,7 +120,9 @@
     <script src="js/alarmPanelList.js"></script>
 
     <script>
-        fetchAlarmPanel(localStorage.getItem('type'), localStorage.getItem('filter_type'),localStorage.getItem('value'), localStorage.getItem('complianceCheck'));
+        $(document).ready(function() {
+            fetchAlarmPanel(localStorage.getItem('type'), localStorage.getItem('filter_type'), localStorage.getItem('value'), localStorage.getItem('complianceCheck'));
+        })
     </script>
 </body>
 

@@ -35,7 +35,7 @@
     <p id="fetchHost" hidden>{{ env("APP_URL") }}</p>
     <script>
         function backTable() {
-            location.replace(document.getElementById('fetchHost').innerHTML+'/healthchart');
+            location.replace(document.getElementById('fetchHost').innerHTML + '/healthchart');
         }
     </script>
 
@@ -117,6 +117,11 @@
                                         console.log('success');
                                         $('#loaderimg').remove();
                                         $('.loading').remove();
+                                        let sortedList = result.data.sort((a, b) => {
+                                            if (a.name < b.name) {
+                                                return -1;
+                                            }
+                                        });
                                         for (let i in result.data) {
                                             console.log(result.data[i]);
                                             var tr = document.createElement('tr');
